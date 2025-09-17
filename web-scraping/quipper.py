@@ -76,9 +76,9 @@ print(f"\nSuccessfully extracted {len(links_list)} links.")
 
 
 # end result are 3 dataframes:
-# 1. primary_key (increasing integer) | email | institution_name | link | fee | people_amount(json) | contact(json) | description
-# 2. primary_key (increasing integer) | faculty | prodi  | PK_on_dataframe_one
-# 3. primary_key (increasing integer) | faculty | address | PK_on_dataframe_one
+# 1. quipper_institution_code (act as primary key, increasing integer) | email | institution_name | link | fee | people_amount(json) | contact(json) | description
+# 2. quipper_prodi_code (act as primary key, increasing integer) | faculty | prodi  | PK_on_dataframe_one
+# 3. quipper_faculty_code (act as primary key, increasing integer) | faculty | address | PK_on_dataframe_one
 
 
 # Close the driver
