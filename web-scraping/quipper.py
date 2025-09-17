@@ -1,9 +1,9 @@
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 from bs4 import BeautifulSoup
 
@@ -63,9 +63,10 @@ for tag in a_tags:
         # Optional: Handle relative URLs by joining them with the base URL
         if link.startswith('/directory'):
             link = "https://campus.quipper.com" + link
+            print(link)
         
         links_list.append(link)
-        print(link)
+        
 
 print(f"\nSuccessfully extracted {len(links_list)} links.")
 # -------------------------------------------------------------------------------------------------------------
