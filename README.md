@@ -1,9 +1,6 @@
 ## Table of Contents
 - [Installation](#installation)
 - [Maintainance](#maintainance)
-- [Usage](#usage)
-- [Technologies Used](#technologies-used)
-- [License](#license)
 
 ## Installation
 
