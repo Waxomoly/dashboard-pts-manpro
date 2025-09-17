@@ -73,5 +73,13 @@ print(f"\nSuccessfully extracted {len(links_list)} links.")
 
 
 
+
+
+# end result are 3 dataframes:
+# 1. primary_key (increasing integer) | email | institution_name | link | fee | people_amount(json) | contact(json) | description
+# 2. primary_key (increasing integer) | faculty | prodi  | PK_on_dataframe_one
+# 3. primary_key (increasing integer) | faculty | address | PK_on_dataframe_one
+
+
 # Close the driver
 # driver.quit()
