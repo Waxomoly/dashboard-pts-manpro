@@ -12,7 +12,7 @@ Follow these steps to get your development environment set up.
     ```
 2.  Navigate to the project directory:
     ```bash
-    cd your-repo-name
+    cd dashboard-pts-manpro
     ```
 3.  Run virtual environment (ini supaya perubahan dependency kalian g ngaruh ke python global di laptop kalian, 
     apapun command terminal setelah ini, ketik di terminal yg kegenerate dengan command ini):
