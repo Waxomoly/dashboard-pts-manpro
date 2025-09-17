@@ -8,7 +8,7 @@ Follow these steps to get your development environment set up.
 
 1.  Clone the repository to your local machine:
     ```bash
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+    git clone https://github.com/Waxomoly/dashboard-pts-manpro.git
     ```
 2.  Navigate to the project directory:
     ```bash
