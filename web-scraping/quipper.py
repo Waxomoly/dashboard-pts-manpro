@@ -1,14 +1,17 @@
+import pandas as pd
+import time
+import json
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-import time
 from bs4 import BeautifulSoup
 
 # constants
 url = 'https://campus.quipper.com/directory?location=Jawa%20Timur'
+pd.set_option('display.max_columns', None)
 
 # Initialize Chrome driver instance
 options = Options()
@@ -63,9 +66,9 @@ for tag in a_tags:
         # Optional: Handle relative URLs by joining them with the base URL
         if link.startswith('/directory'):
             link = "https://campus.quipper.com" + link
-            print(link)
+            links_list.append(link)
         
-        links_list.append(link)
+        
         
 
 print(f"\nSuccessfully extracted {len(links_list)} links.")
@@ -76,10 +79,124 @@ print(f"\nSuccessfully extracted {len(links_list)} links.")
 
 
 # end result are 3 dataframes:
-# 1. quipper_institution_code (act as primary key, increasing integer) | email | institution_name | link | fee | people_amount(json) | contact(json) | description
+# 1. quipper_institution_code (act as primary key, increasing integer) | email | institution_name | body_type (negeri or swasta) | link | fee | student_amount | lecturer_amount | contact(json) | description
 # 2. quipper_prodi_code (act as primary key, increasing integer) | faculty | prodi  | PK_on_dataframe_one
 # 3. quipper_faculty_code (act as primary key, increasing integer) | faculty | address | PK_on_dataframe_one
 
+def get_text(soup_object, tag=None, class_name="", find_all=False):
+    """
+    Finds a single element and returns its cleaned text.
+    Returns None if the element is not found.
+    """
+    texts = None
+    text = None
+    if(find_all):
+        texts = soup_object.find_all(tag, class_=class_name)
+    else:
+        text = soup_object.find(tag, class_=class_name)
+    
+
+    if texts:
+        return [t.text.strip() for t in texts]
+    elif text:
+        return text.text.strip()
+    return None
+
+
+
+
+# lists for dataframes
+data_institution = []
+data_prodi = []
+data_faculty = []
+
+print(links_list)
+
+# iterate through each link to get the data
+for idx,link in enumerate(links_list):
+
+    if(idx>=5): # for testing purposes, limit to first 5 links
+        break
+    driver.get(link)
+    time.sleep(2) # wait for 2 seconds to load the page
+    html_content = driver.page_source
+
+    # save the html for scraping
+    soup = BeautifulSoup(html_content, 'html.parser')
+
+    # for df_institution ---------------------------------------------------------------------------
+    data_institution_row = {}
+    data_institution_row['quipper_institution_code'] = idx + 1
+    data_institution_row['institution_name'] = get_text(soup, 'h1', 'school-page-banner__title')
+    data_institution_row['body_type'] = get_text(soup, 'p', 'school-page-banner__subbody')
+
+    description_p = soup.select_one('div.school-profile__description > p')
+    if description_p:
+        data_institution_row['description'] = description_p.text.strip()
+    else:
+        print("Description paragraph not found.")
+
+    data_institution_row['link'] = link
+    #---
+    keys = get_text(soup, class_name='school-profile__detail-key', find_all=True)
+    values = get_text(soup, class_name='school-profile__detail-val', find_all=True)
+    # turn to dictionary for better access
+    info_dict = dict(zip(keys, values))
+    data_institution_row['email'] = info_dict.get('Email', None)
+    data_institution_row['accred'] = info_dict.pop('Akreditasi', None)
+    data_institution_row['fee'] = info_dict.pop('Biaya Kuliah', None)
+    data_institution_row['student_amount'] = info_dict.pop('Siswa', None)
+    data_institution_row['lecturer_amount'] = info_dict.pop('Dosen', None)
+    # get contacts, turn to json
+    contact_dict = {}
+    contact_dict['website'] = info_dict.pop('Website', None)
+    contact_dict['email'] = info_dict.pop('Email', None)
+    contact_dict['phone'] = info_dict.pop('Telepon', None)
+    data_institution_row['contact'] = json.dumps(contact_dict)
+    data_institution_row['unknown_field'] = json.dumps(info_dict) # save the remaining info in json format
+
+    data_institution.append(data_institution_row)
+    # -------------------------------------------------------------------------------------------------------------
+
+    # for df_prodi ------------------------------------------------------------------------------------------------
+    faculty_blocks = soup.find_all(class_='faculty-item__content')
+
+    for block in faculty_blocks:
+        faculty_name = block.find(class_='faculty-item__name').text.strip()
+        
+
+        subject_items = block.find_all(class_='faculty-subjects__item')
+        
+        for subject in subject_items:
+            data_prodi.append((faculty_name, subject.text.strip(), idx + 1)) # (faculty, prodi, quipper_institution_code)
+        
+
+    # -------------------------------------------------------------------------------------------------------------
+
+    # for df_faculty ----------------------------------------------------------------------------------------------
+    location_blocks = soup.find_all(class_='school-locations__list-item')        
+
+    for block in location_blocks:
+        # print(block.prettify())
+        campus_name = get_text(block, class_name='school-locations__campus-name')
+        address = get_text(block, class_name='text-variant-body')
+        faculties = get_text(block, class_name='school-locations__faculty-link', find_all=True)
+
+        if not faculties or len(faculties) == 0:
+            data_faculty.append(("ALL", campus_name, address, idx + 1))
+            continue
+
+        for faculty_name in faculties:
+            data_faculty.append((faculty_name, campus_name, address, idx + 1)) # (faculty, prodi, quipper_institution_code)
+    
+
+    
+    # -------------------------------------------------------------------------------------------------------------
+
+
+df_institution = pd.DataFrame(data_institution, columns=['quipper_institution_code', 'email', 'institution_name', 'body_type', 'link', 'fee', 'student_amount', 'lecturer_amount', 'contact', 'description', 'unknown_field'])
+df_prodi = pd.DataFrame(data_prodi, columns=['faculty', 'prodi', 'quipper_institution_code'])
+df_faculty = pd.DataFrame(data_faculty, columns=['faculty', 'building_name', 'address', 'quipper_institution_code']) 
 
 # Close the driver
-# driver.quit()
+driver.quit()
