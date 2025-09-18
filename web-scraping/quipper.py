@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 
 # constants
 url = 'https://campus.quipper.com/directory?location=Jawa%20Timur'
+debug = False
 pd.set_option('display.max_columns', None)
 
 # Initialize Chrome driver instance
@@ -115,7 +116,7 @@ print(links_list)
 # iterate through each link to get the data
 for idx,link in enumerate(links_list):
 
-    if(idx>=5): # for testing purposes, limit to first 5 links
+    if(idx>=5 and debug): # for testing purposes, limit to first 5 links
         break
     driver.get(link)
     time.sleep(2) # wait for 2 seconds to load the page
@@ -200,3 +201,8 @@ df_faculty = pd.DataFrame(data_faculty, columns=['faculty', 'building_name', 'ad
 
 # Close the driver
 driver.quit()
+
+#    index=False prevents Pandas from writing the DataFrame index as a column
+df_institution.to_excel('institution.xlsx', index=False)
+df_prodi.to_excel('prodi.xlsx', index=False)
+df_faculty.to_excel('faculty.xlsx', index=False)
