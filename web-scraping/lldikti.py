@@ -88,9 +88,9 @@ df_institutions = pd.DataFrame(institutions)
 df_institutions.to_csv("institutions.csv", index=False)
 print(f"Total institutions: {len(df_institutions)}")
 
-# --------------------
-# BAGIAN DF2 - Program Studi
-# --------------------
+
+# BAGIAN DF2 - prodi
+
 # buka ulang selenium untuk scrape prodi
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
 
