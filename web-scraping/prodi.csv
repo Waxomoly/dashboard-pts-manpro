@@ -1,1 +1,1665 @@
-
+prodi_code,prodi_name,jenjang,akreditasi_prodi,institution_code
+1,Akupunktur,D3,Baik,1
+2,Analis Farmasi Dan Makanan,D3,Baik,2
+3,Farmasi,D3,Baik,2
+4,Analis Kesehatan,D3,BAIK SEKALI,3
+5,Teknologi Laboratorium Medis,D3,-,4
+6,Farmasi,D3,Baik Sekali,5
+7,Farmasi,D3,BAIK SEKALI,6
+8,Farmasi,D3,Baik,7
+9,Gizi,D3,Baik Sekali,8
+10,Kebidanan,D3,BAIK SEKALI,9
+11,Kebidanan,D3,Baik,10
+12,Kebidanan,D3,-,11
+13,Kebidanan,D3,B,12
+14,Kebidanan,D3,-,13
+15,Kebidanan,D3,Baik Sekali,14
+16,Kebidanan,D3,Baik,15
+17,Kebidanan,D3,Baik Sekali,16
+18,Kebidanan,D3,-,17
+19,Kebidanan,D3,B,18
+20,Ketatalaksanaan Pelayaran Niaga Dan Kepel,D3,B,19
+21,Manajemen Logistik,D3,Baik,19
+22,Nautika,D3,-,19
+23,Keperawatan,D3,Baik,20
+24,Keperawatan,D3,B,21
+25,Keperawatan,D3,Baik,22
+26,Keperawatan,D3,B,23
+27,Farmasi,D3,C,24
+28,Fisioterapi,D3,-,24
+29,Kebidanan,D3,Baik,25
+30,Keperawatan,D3,BAIK SEKALI,25
+31,Farmasi,D3,Baik,26
+32,Administrasi Jaringan Komputer,D2,Baik,27
+33,Produksi Tekstil,D2,Baik,27
+34,Kesehatan Kulit dan Rambut,D1,Baik,27
+35,Budi Daya Tanaman Kopi,D2,-,28
+36,Pemasaran Komoditas Kopi,D2,-,28
+37,Budi Daya Tanaman Kopi,D2,-,29
+38,Komputer Akutansi,D2,Baik,30
+39,Perikanan Tangkap,D1,-,31
+40,Otomasi Perkantoran,D2,Baik,32
+41,Teknik Operasional Mesin dan Peralatan Industri,D2,Baik,32
+42,Teknik Perawatan Mesin dan Peralatan Industri,D2,Baik,32
+43,Administrasi Perkantoran,D2,Tidak Terakreditasi,33
+44,Seni Kuliner,D3,Baik,34
+45,Seni Kuliner,D3,Baik,35
+46,Manajemen Informatika,D3,Baik,36
+47,Sistem Informasi,D3,Baik,37
+48,Sistem Informasi Akuntansi,D3,Baik,37
+49,Teknologi Informasi,D3,Baik,37
+50,Manajemen Keuangan,D3,Baik,38
+51,Keuangan Dan Perbankan,D3,-,39
+52,Manajemen Perpajakan,D3,-,39
+53,Perhotelan,D3,-,40
+54,Usaha Perjalanan Wisata,D3,-,40
+55,Perhotelan,D3,Baik,41
+56,Usaha Perjalanan Wisata,D3,Baik,41
+57,Perhotelan,D3,B,42
+58,Usaha Perjalanan Wisata,D3,Baik,42
+59,Refraksi Optisi,D3,C,43
+60,Seni Kuliner,D3,Baik,44
+61,Administrasi Perkantoran,D3,B,45
+62,Sekretari,D3,Baik,45
+63,Teknik Alat Berat,D3,Baik,46
+64,Kebidanan,D3,Baik,47
+65,Pendidikan Bahasa Dan Sastra Indonesia,S1,B,48
+66,Pendidikan Bahasa Inggris,S1,B,48
+67,Pendidikan Ekonomi,S1,B,48
+68,Pendidikan Matematika,S1,B,48
+69,Pendidikan Pancasila Dan Kewarganegaraan,S1,B,48
+70,Pendidikan Teknologi Informasi,S1,Baik,48
+71,Pendidikan Bahasa Dan Sastra Indonesia,S1,Baik Sekali,49
+72,Pendidikan Bahasa Inggris,S1,Baik Sekali,49
+73,Pendidikan Ekonomi,S1,B,49
+74,Pendidikan Matematika,S1,Baik Sekali,49
+75,Pendidikan Pancasila Dan Kewarganegaraan,S1,Baik Sekali,49
+76,Administrasi Rumah Sakit,S1,Baik,50
+77,Biologi,S1,B,50
+78,Farmasi,S1,Baik Sekali,50
+79,Gizi,S1,Baik Sekali,50
+80,Kebidanan,S1,Baik,50
+81,Keperawatan,S1,Baik Sekali,50
+82,Kesehatan Masyarakat,S1,Baik Sekali,50
+83,Kimia,S1,B,50
+84,Pendidikan Dokter Gigi,S1,Baik Sekali,50
+85,Psikologi,S1,Baik,50
+86,Administrasi Kesehatan,S1,Baik,51
+87,Gizi,S1,Baik,51
+88,Ilmu Keperawatan,S1,Baik Sekali,51
+89,Kebidanan,S1,BAIK SEKALI,51
+90,Pendidikan Profesi Bidan,Profesi,BAIK SEKALI,51
+91,Pendidikan Profesi Ners,Profesi,Baik Sekali,51
+92,Kebidanan,D3,-,51
+93,Desain Komunikasi Visual,S1,B,52
+94,Sistem Informasi,S1,Baik Sekali,52
+95,Teknik Informatika,S1,Baik Sekali,52
+96,Desain Produk,S1,-,52
+97,Teknik Komputer,S1,Baik,52
+98,Manajemen Informatika,D3,Baik,52
+99,Akuntansi,S1,B,53
+100,Ilmu Gizi,S1,Baik Sekali,53
+101,Ilmu Keperawatan,S1,Baik,53
+102,Manajemen,S1,B,53
+103,Pendidikan Profesi Ners,Profesi,Baik,53
+104,Kebidanan,D3,Baik,53
+105,Agribisnis,S1,Baik,54
+106,Kehutanan,S1,Baik,54
+107,Teknologi Industri Pertanian,S1,Baik,54
+108,Statistika,S1,-,55
+109,Teknik Industri,S1,-,55
+110,Teknik Informatika,S1,-,55
+111,Teknik Kimia,S1,-,55
+112,Teknik Komputer,D3,-,55
+113,Teknologi Informasi,S2,Baik Sekali,56
+114,Desain Komunikasi Visual,S1,B,56
+115,Desain Produk,S1,Baik,56
+116,Informatika,S1,B,56
+117,Sistem Informasi,S1,Baik Sekali,56
+118,Teknik Elektro,S1,B,56
+119,Teknik Industri,S1,B,56
+120,Sistem Informasi,D3,Baik Sekali,56
+121,Bisnis Digital,S1,Baik,57
+122,Ilmu Keperawatan,S1,B,57
+123,Rekayasa Perangkat Lunak,S1,Baik,57
+124,Profesi Ners,Profesi,B,57
+125,Kebidanan,D3,Baik Sekali,57
+126,Teknik Industri,S2,Baik Sekali,58
+127,Teknik Lingkungan,S2,Baik Sekali,58
+128,Arsitektur,S1,B,58
+129,Desain Produk,S1,B,58
+130,Sistem Informasi,S1,B,58
+131,Sistem Komputer,S1,-,58
+132,Teknik Elektro,S1,B,58
+133,Teknik Geologi,S1,B,58
+134,Teknik Industri,S1,Baik Sekali,58
+135,Teknik Informatika,S1,B,58
+136,Informatika,S1,Baik,59
+137,Sistem Informasi,S1,Baik,59
+138,Teknik Sipil,S1,Baik,59
+139,Kewirausahaan,S1,-,59
+140,Rekayasa Perangkat Lunak,S1,-,59
+141,Sistem dan Teknologi Informasi,S1,-,59
+142,Bio-Kewirausahaan,S1,Baik,60
+143,Bioteknologi,S1,Baik,60
+144,Bisnis Digital,S1,Baik,60
+145,Gizi,S1,-,60
+146,Manajemen,S2,Baik Sekali,61
+147,Akuntansi,S1,Baik Sekali,61
+148,Arsitektur,S1,Baik,61
+149,Bisnis Digital,S1,Baik,61
+150,Manajemen,S1,Baik Sekali,61
+151,Teknik Sipil,S1,Baik,61
+152,Teknologi Informasi,S1,Baik,61
+153,Perpajakan,D3,Baik,61
+154,Manajemen,S2,Baik Sekali,62
+155,Akuntansi,S1,B,62
+156,Desain Komunikasi Visual,S1,B,62
+157,Manajemen,S1,B,62
+158,Sistem Komputer,S1,B,62
+159,Teknik Informatika,S1,Baik Sekali,62
+160,Bisnis Digital,S1,-,63
+161,Agribisnis,S1,Baik,64
+162,Bisnis Digital,S1,Baik,65
+163,Ilmu Komputer,S1,Baik,65
+164,Manajemen Ritel,S1,Baik,65
+165,Bisnis Digital,S1,Baik,66
+166,Desain Komunikasi Visual,S1,Baik,66
+167,Kewirausahaan,S1,Baik,66
+168,Manajemen Ritel,S1,Baik,66
+169,Sistem Informasi,S1,Baik,66
+170,Manajemen,S2,-,67
+171,Akuntansi,S1,B,67
+172,Informatika,S1,Baik,67
+173,Manajemen,S1,B,67
+174,Akuntansi,S1,B,68
+175,Hukum Bisnis,S1,Baik,68
+176,Manajemen,S1,B,68
+177,Sistem dan Teknologi Informasi,S1,B,68
+178,Sistem Informasi,S1,Baik,68
+179,Sistem Informasi,D3,-,68
+180,Manajemen,S2,Baik Sekali,69
+181,Akuntansi,S1,Baik Sekali,69
+182,Ekonomi Pembangunan,S1,Baik Sekali,69
+183,Manajemen,S1,Baik Sekali,69
+184,Rekayasa Perangkat Lunak,S1,Baik,69
+185,Sistem dan Teknologi Informasi,S1,Baik,69
+186,Keuangan dan Perbankan,D3,Baik,69
+187,Bisnis Digital,S1,-,70
+188,Informatika,S1,Baik,70
+189,Teknik Logistik,S1,Baik,70
+190,Ilmu Gizi,S1,BAIK SEKALI,71
+191,Ilmu Keperawatan,S1,Baik Sekali,71
+192,Kebidanan,S1,-,71
+193,Pendidikan Profesi Bidan,Profesi,-,71
+194,Profesi Ners,Profesi,Baik Sekali,71
+195,Kebidanan,D3,B,71
+196,Radiodiagnostik dan Radioterapi,D3,Baik Sekali,71
+197,Rekam Medik dan Informasi Kesehatan,D3,B,71
+198,Pendidikan Teknologi Informasi,S1,Baik,72
+199,Sistem Informasi,S1,Baik,72
+200,Teknik Industri,S1,Baik,72
+201,Teknik Elektro,S2,Baik,73
+202,Teknik Industri,S2,B,73
+203,Teknik Sipil,S2,Baik Sekali,73
+204,Arsitektur,S1,Baik Sekali,73
+205,Bisnis Digital,S1,Baik,73
+206,Perencanaan Wilayah Dan Kota,S1,A,73
+207,Teknik Elektro,S1,Unggul,73
+208,Teknik Geodesi,S1,Baik Sekali,73
+209,Teknik Industri,S1,B,73
+210,Teknik Informatika,S1,B,73
+211,Teknik Elektro,S1,-,74
+212,Teknik Industri,S1,-,74
+213,Teknik Kimia,S1,-,74
+214,Teknik Lingkungan,S1,-,74
+215,Teknik Mesin,S1,-,74
+216,Teknik Sipil,S1,-,74
+217,Administrasi Rumah Sakit,S1,Baik,75
+218,Bisnis Digital,S1,Baik Sekali,75
+219,Ilmu Keperawatan,S1,B,75
+220,Informatika,S1,Baik,75
+221,Profesi Ners,Profesi,B,75
+222,Kebidanan,D4,B,75
+223,Kebidanan,D3,B,75
+224,Keperawatan,D3,Baik Sekali,75
+225,Teknologi Laboratorium Medis,D3,Baik Sekali,75
+226,Teknik Kimia,S1,Baik,76
+227,Farmasi Klinis dan Komunitas,S1,Baik,76
+228,Fisioterapi,S1,Baik,76
+229,Informatika,S1,Baik Sekali,76
+230,Kebidanan,S1,Baik,76
+231,Kedokteran Gigi,S1,Baik,76
+232,Keperawatan,S1,Baik,76
+233,Pendidikan Profesi Dokter Gigi,Profesi,Baik,76
+234,Pendidikan Profesi Fisioterapis,Profesi,Baik,76
+235,Pendidikan Profesi Ners,Profesi,Baik,76
+236,M.A. Digital Futures,S2,,77
+237,M.Sc. Digital Economies,S2,,77
+238,Akuntansi Bisnis DIgital,D4,,78
+239,Pengelolaan Perhotelan,D4,,78
+240,Teknologi Rekayasa Perangkat Lunak,D4,,78
+241,Akuntansi,D3,B,79
+242,Teknologi Komputer,D3,Baik,80
+243,Teknologi Listrik,D3,Baik,80
+244,Teknologi Mesin,D3,Baik,80
+245,Farmasi,D3,Baik Sekali,81
+246,Kebidanan,D3,Baik Sekali,81
+247,Teknologi Laboratorium Medis,D3,-,81
+248,Pendidikan Profesi Ners,Profesi,Baik,82
+249,Keperawatan,D4,Baik,82
+250,Keselamatan Dan Kesehatan Kerja,D4,-,82
+251,Promosi Kesehatan,D4,-,82
+252,Keperawatan,D3,Baik Sekali,82
+253,Analis Farmasi dan Makanan,D3,Baik Sekali,83
+254,Farmasi,D3,Baik Sekali,83
+255,Gizi,D3,-,83
+256,Fisioterapi,D4,Baik,84
+257,Manajemen Informasi Kesehatan,D4,-,84
+258,Farmasi,D3,-,84
+259,Kebidanan,D3,Baik,84
+260,Destinasi Pariwisata,D4,Tidak Terakreditasi,85
+261,Teknik Informatika,D3,B,85
+262,Teknik Mekatronika,D3,B,85
+263,Teknik Telekomunikasi,D3,B,85
+264,Teknik Komputer dan Jaringan,D1,-,85
+265,Akuntansi,D3,Baik,86
+266,Teknologi Komputer,D3,Baik,86
+267,Teknologi Komputer,D3,Baik,86
+268,Teknologi Mesin,D3,Baik,86
+269,Akuntansi,D3,Baik,87
+270,Kebidanan,D3,Baik,87
+271,Teknologi Informasi,D3,Baik,87
+272,Pengelolaan Agribisnis,D4,Baik,88
+273,Akuntansi,D3,Baik,88
+274,Teknik Informatika,D3,Baik,88
+275,Teknik Telekomunikasi,D3,-,88
+276,Manajemen Pemasaran Internasional,D4,Baik,89
+277,Pengelolaan Perhotelan,D4,Baik,89
+278,Administrasi Bisnis,D3,-,89
+279,Administrasi Niaga,D3,B,89
+280,Akuntansi,D3,Baik,89
+281,Perhotelan,D3,B,89
+282,Teknik Komputer,D3,Baik,89
+283,Agribinis,D3,Baik,90
+284,Budi Daya Tanaman Hortikultura,D3,Baik,90
+285,Budidaya Ternak,D3,Baik,90
+286,Administrasi Niaga,D3,Baik,91
+287,Teknik Elektronika,D3,Tidak Terakreditasi,91
+288,Teknik Komputer,D3,-,91
+289,Teknik Mesin,D3,-,91
+290,Administrasi Perkantoran,D3,Baik,92
+291,Akuntansi,D3,Baik,92
+292,Teknologi Informasi,D3,Baik,92
+293,Teknologi Mesin,D3,Baik,92
+294,Bisnis Jasa Makanan,D4,-,93
+295,Komputerisasi Akuntansi,D3,Baik,93
+296,Manajemen Informatika,D3,Tidak Terakreditasi,93
+297,Teknik Komputer,D3,-,93
+298,Akuntansi,D3,A,94
+299,Bahasa Inggris,D3,Baik Sekali,94
+300,Manajemen Pemasaran,D3,B,94
+301,Perpajakan,D3,A,94
+302,Sekretari,D3,B,94
+303,Teknologi Rekayasa Komputer Jaringan,D4,Baik,95
+304,Teknik Listrik,D3,Baik,95
+305,Teknik Mesin,D3,Baik,95
+306,Sastra Inggris,S1,-,96
+307,Sastra Inggris,S1,Tidak Terakreditasi,97
+308,Teologi,S3,Baik,98
+309,Filsafat,S2,A,98
+310,Filsafat Keilahian,S1,A,98
+311,Ilmu Administrasi Negara,S1,B,99
+312,Ilmu Administrasi Niaga,S1,Baik,99
+313,Ilmu Administrasi,S2,Baik,100
+314,Administrasi Bisnis,S1,B,100
+315,Administrasi Publik,S1,Baik Sekali,100
+316,Perekam Dan Informasi Kesehatan,D3,Baik Sekali,100
+317,Ilmu Administrasi Negara,S1,B,101
+318,Ilmu Administrasi Niaga,S1,B,101
+319,Sastra Inggris,S1,Baik,102
+320,Bahasa Inggris,D3,-,102
+321,Akuntansi,S1,Baik,103
+322,Manajemen,S1,Baik,103
+323,Manajemen,S2,Baik,104
+324,Akuntansi,S1,-,104
+325,Manajemen,S1,-,104
+326,Keuangan Dan Perbankan,D3,-,104
+327,Akuntansi,S1,Baik Sekali,105
+328,Manajemen,S1,Baik,105
+329,Akuntansi,S1,Baik,106
+330,Manajemen,S1,Baik,106
+331,Manajemen,S1,Baik,107
+332,Akuntansi,S1,Baik,108
+333,Manajemen,S1,B,108
+334,Manajemen,S2,Baik,109
+335,Manajemen,S1,Baik,109
+336,Manajemen,S2,Baik,110
+337,Akuntansi,S1,-,110
+338,Manajemen,S1,-,110
+339,Akuntansi,S1,Baik,111
+340,Manajemen,S1,Baik,111
+341,Akuntansi,S1,B,112
+342,Manajemen,S1,Baik,112
+343,Manajemen Perkantoran,D3,Baik,112
+344,Ilmu Manajemen,S3,Baik Sekali,113
+345,Akuntansi,S2,Unggul,113
+346,Manajemen,S2,Unggul,113
+347,Akuntansi,S1,Unggul,113
+348,Manajemen,S1,Unggul,113
+349,Profesi Akuntan,Profesi,B,113
+350,Akuntansi,D3,Unggul,113
+351,Manajemen Perpajakan,D3,Unggul,113
+352,Manajemen,S2,Baik,114
+353,Akuntansi,S1,Baik,114
+354,Manajemen,S1,Baik Sekali,114
+355,Manajemen,S1,Baik,115
+356,Akuntansi,S1,Baik,116
+357,Manajemen,S1,Baik,116
+358,Manajemen,S1,Baik,117
+359,Keuangan Dan Perbankan,D3,Baik,117
+360,Manajemen Personalia,D3,-,117
+361,Manajemen Produksi,D3,-,117
+362,Manajemen,S2,Baik Sekali,118
+363,Akuntansi,S1,Baik Sekali,118
+364,Bisnis Digital,S1,-,118
+365,Kewirausahaan,S1,-,118
+366,Manajemen,S1,Baik Sekali,118
+367,Manajemen,S2,Baik Sekali,119
+368,Akuntansi,S1,Unggul,119
+369,Manajemen,S1,Unggul,119
+370,Profesi Akuntansi,Profesi,Baik Sekali,119
+371,Akuntansi,S1,Baik,120
+372,Manajemen,S1,Baik,120
+373,Akuntansi,S1,Baik,121
+374,Manajemen,S1,Baik,121
+375,Manajemen,S1,Baik Sekali,122
+376,Manajemen,S1,Baik,122
+377,Akuntansi,D3,Baik,122
+378,Akuntansi,S1,-,123
+379,Manajemen,S1,Baik Sekali,123
+380,Manajemen,S1,Baik,124
+381,Akuntansi,D3,Baik,124
+382,Akuntansi,S1,Baik Sekali,125
+383,Manajemen,S1,B,125
+384,Akuntansi,S1,Baik,126
+385,Manajemen,S1,Baik,126
+386,Akuntansi,S1,Baik,127
+387,Manajemen,S1,Baik,127
+388,Manajemen,S2,Baik,128
+389,Akuntansi,S1,Baik,128
+390,Manajemen,S1,-,128
+391,Ilmu Hukum,S1,Baik,129
+392,Ilmu Hukum,S1,Baik,130
+393,Ilmu Hukum,S1,Baik,131
+394,Ilmu Keperawatan,S1,Baik,132
+395,Ners,Profesi,Baik,132
+396,Kebidanan,D3,Baik,132
+397,Keperawatan,D3,-,132
+398,Administrasi Rumah Sakit,S1,Baik,133
+399,Kebidanan,D3,Baik Sekali,133
+400,Gizi,S1,-,134
+401,Keperawatan,S1,UNGGUL,134
+402,Pendidikan Profesi Ners,Profesi,UNGGUL,134
+403,manajemen Informasi kesehatan,D4,-,134
+404,Keperawatan,D3,B,134
+405,Farmasi,S1,C,135
+406,Farmasi,D3,Baik,135
+407,Gizi,S1,-,136
+408,Ilmu Keperawatan,S1,Baik Sekali,136
+409,Kebidanan,S1,Baik,136
+410,Ners,Profesi,Baik Sekali,136
+411,Pendidikan Profesi Bidan,Profesi,Baik,136
+412,Kebidanan,D3,BAIK SEKALI,136
+413,Ilmu Keperawatan,S1,Baik Sekali,137
+414,Kebidanan,S1,Baik,137
+415,Pendidikan Profesi Bidan,Profesi,-,137
+416,Profesi Ners,Profesi,Baik Sekali,137
+417,Kebidanan,D3,Baik,137
+418,Keperawatan,D3,-,137
+419,Keperawatan,S1,Baik Sekali,138
+420,Pendidikan Profesi Ners,Profesi,Baik Sekali,138
+421,Kebidanan,D3,B,138
+422,Teknologi Laboratorium Medis,D3,B,138
+423,Kesehatan Masyarakat,S2,Baik Sekali,139
+424,Ilmu Keperawatan,S1,Baik Sekali,139
+425,Kebidanan,S1,Baik,139
+426,Kesehatan Masyarakat,S1,Baik Sekali,139
+427,Ners,Profesi,Baik Sekali,139
+428,Pendidikan Profesi Bidan,Profesi,Baik,139
+429,Keperawatan,D3,-,139
+430,Administrasi Kesehatan,S2,Baik,140
+431,Administrasi Kesehatan,S1,BAIK SEKALI,140
+432,Farmasi Klinik Dan Komunitas,S1,-,140
+433,Ilmu Keperawatan,S1,B,140
+434,Pendidikan Profesi Bidan,Profesi,Baik Sekali,140
+435,Profesi Ners,Profesi,B,140
+436,Kebidanan,D4,Baik Sekali,140
+437,Analis Kesehatan,D3,Baik Sekali,140
+438,Fisioterapi,D3,C,140
+439,Perekam dan Informasi Kesehatan,D3,B,140
+440,Administrasi Kesehatan,S1,Baik,141
+441,Kebidanan,S1,BAIK SEKALI,141
+442,Keperawatan,S1,B,141
+443,Keselamatan dan Kesehatan Kerja,S1,Baik,141
+444,Pendidikan Profesi Ners,Profesi,B,141
+445,Profesi Bidan,Profesi,BAIK SEKALI,141
+446,Kebidanan,D3,B,141
+447,Keperawatan,D3,Baik Sekali,141
+448,Farmasi,S1,Baik,142
+449,Kebidanan,S1,Baik,142
+450,Keperawatan,S1,Baik,142
+451,Pendidikan Profesi Bidan,Profesi,Baik,142
+452,Pendidikan Profesi Ners,Profesi,Baik,142
+453,Keperawatan,D3,Baik Sekali,142
+454,Teknologi Bank Darah,D3,Baik,142
+455,Fisioterapi,S1,Baik,143
+456,Kebidanan,S1,Baik,143
+457,Pendidikan Profesi Bidan,Profesi,,143
+458,Kebidanan,D3,Baik Sekali,143
+459,Keperawatan,D3,Baik Sekali,143
+460,Administrasi Kesehatan,S1,Baik,144
+461,Kebidanan,D3,Baik Sekali,144
+462,Keperawatan,S1,Baik Sekali,145
+463,Profesi Ners,Profesi,Baik Sekali,145
+464,Kebidanan,D3,Baik Sekali,145
+465,Keperawatan,D3,Baik Sekali,145
+466,Teknik Informatika,S1,Baik Sekali,146
+467,Manajemen Informatika,D3,Baik,146
+468,Ilmu Komunikasi,S1,B,147
+469,Budidaya Perairan,S1,B,148
+470,Agroteknologi,S1,Baik,149
+471,Desain Komunikasi Visual,S1,Baik Sekali,150
+472,Informatika,S1,B,150
+473,Sistem Informasi,S1,B,150
+474,Sistem Informasi,D3,Baik Sekali,150
+475,Seni Karawitan,S1,Baik Sekali,151
+476,Seni Rupa Murni,S1,Baik Sekali,151
+477,Seni Tari,S1,Baik,151
+478,Seni Teater,S1,Baik,151
+479,Manajemen Pariwisata,D4,Baik,152
+480,Manajemen Perhotelan,D4,Baik,152
+481,Bina Wisata,D3,Baik,152
+482,Perhotelan,D3,Baik,152
+483,Administrasi Publik,S2,Baik,153
+484,Bisnis Digital,S1,Baik,153
+485,Ilmu Administrasi Negara,S1,B,153
+486,Arsitektur,S1,Baik,154
+487,Teknik Elektro,S1,Baik,154
+488,Teknik Industri,S1,C,154
+489,Teknik Sipil,S1,-,154
+490,Teknik Elektronika,D3,Tidak Terakreditasi,154
+491,Teknik Sipil,D3,-,154
+492,Teknik Mesin,S1,Baik,155
+493,Teknik Sipil,S1,Baik,155
+494,Teknik Informatika,S1,Baik,156
+495,Teknik Mesin,S1,Baik,157
+496,Manajemen Informatika,D3,Baik,157
+497,Desain Komunikasi Visual,S1,-,158
+498,Informatika,S1,Baik,158
+499,Teknik Industri,S1,Baik,159
+500,Teknik Informatika,S1,Baik,159
+501,Arsitektur,S1,Baik,160
+502,Teknik Informatika,S1,Baik,160
+503,Komputer Multimedia,D3,Baik,160
+504,Ilmu Administrasi Bisnis,S1,B,161
+505,Ekonomi Islam,S1,Baik,162
+506,Ekonomi Pembangunan,S1,Baik,162
+507,Administrasi Rumah Sakit,S1,Baik,163
+508,Keperawatan,S1,Baik,163
+509,Pendidikan Profesi Ners,Profesi,Baik,163
+510,Keperawatan,D3,Baik Sekali,163
+511,Administrasi Rumah Sakit,S1,Baik,164
+512,Perekam dan Informasi Kesehatan,D4,Baik,164
+513,Fisioterapi,D3,Baik,164
+514,Ilmu Keperawatan,S1,C,165
+515,Profesi Ners,Profesi,C,165
+516,Kebidanan,D3,BAIK SEKALI,165
+517,Gizi,S1,Baik,166
+518,Ilmu Keperawatan,S1,Baik Sekali,166
+519,Kebidanan,S1,Baik,166
+520,Pendidikan Profesi Bidan,Profesi,Baik,166
+521,Profesi Ners,Profesi,Baik Sekali,166
+522,Teknologi Laboratorium Medis,D4,Baik,166
+523,Farmasi,D3,Baik Sekali,166
+524,Kebidanan,D3,-,166
+525,Keperawatan,D3,Baik Sekali,166
+526,Ilmu Keperawatan,S1,Baik Sekali,167
+527,Kebidanan,D3,Baik,167
+528,Farmasi,S1,B,168
+529,Keperawatan,S1,Baik Sekali,168
+530,Kesehatan Masyarakat,S1,BAIK SEKALI,168
+531,Profesi Ners,Profesi,Baik Sekali,168
+532,Farmasi,D3,B,168
+533,Kebidanan,D3,Baik Sekali,168
+534,Perekam dan Informasi Kesehatan,D3,BAIK SEKALI,168
+535,Ilmu Keperawatan,S1,Baik,169
+536,Keselamatan dan Kesehatan Kerja,S1,Baik,169
+537,Profesi Ners,Profesi,Baik,169
+538,Kebidanan,D3,BAIK SEKALI,169
+539,Ilmu Keperawatan,S1,Baik Sekali,170
+540,Rekam Medis dan Informasi Kesehatan,D3,-,170
+541,Ilmu Keperawatan,S1,Baik Sekali,171
+542,Ners,Profesi,Baik Sekali,171
+543,Kebidanan,D3,C,171
+544,Farmasi,S1,Baik,172
+545,Ilmu Keperawatan,S1,Baik Sekali,172
+546,Profesi Ners,Profesi,Baik Sekali,172
+547,Kebidanan,D3,-,172
+548,Keperawatan,S1,Baik Sekali,173
+549,Pendidikan Profesi Ners,Profesi,Baik Sekali,173
+550,Teknologi Laboratorium Medis,D4,Baik,173
+551,Kebidanan,D3,-,173
+552,Keperawatan,D3,-,173
+553,Teknologi Laboratorium Medis,D3,Baik Sekali,173
+554,Ilmu Keperawatan,S1,-,174
+555,Kebidanan,D3,-,174
+556,Gizi,S1,-,175
+557,Ilmu Keperawatan,S1,B,175
+558,Kebidanan,S1,Baik,175
+559,Ners,Profesi,B,175
+560,Pendidikan Profesi Bidan,Profesi,Baik,175
+561,Kebidanan,D3,B,175
+562,Keperawatan,D3,B,175
+563,Farmasi,S1,Baik Sekali,176
+564,Analis Kesehatan,D3,Baik Sekali,176
+565,Teknologi Laboratorium Medis,D3,-,176
+566,Administrasi Rumah Sakit,S1,Baik,177
+567,Ilmu Keperawatan,S1,B,177
+568,Profesi Ners,Profesi,B,177
+569,Fisioterapi,D3,Baik Sekali,177
+570,Keperawatan,D3,B,177
+571,Administrasi Rumah Sakit,S1,Baik Sekali,178
+572,Gizi,S1,Baik,178
+573,Perekam dan Informasi Kesehatan,D3,Baik Sekali,178
+574,Administrasi Kesehatan,S1,Baik,179
+575,Keperawatan,S1,Baik,179
+576,Pendidikan Profesi Ners,Profesi,Baik,179
+577,kebidanan,D3,Baik Sekali,179
+578,Keperawatan,D3,Baik Sekali,179
+579,Farmasi,S1,Baik,180
+580,Keperawatan,S1,Baik,180
+581,Pendidikan Profesi Ners,Profesi,Baik,180
+582,Manajemen Informasi Kesehatan,D4,Baik,180
+583,Keperawatan,D3,B,180
+584,Ilmu Keperawatan,S1,Baik Sekali,181
+585,Kebidanan,S1,Baik,181
+586,Ners,Profesi,Baik Sekali,181
+587,Pendidikan Profesi Bidan,Profesi,Baik,181
+588,Kebidanan,D3,-,181
+589,Administrasi Rumah Sakit,S1,Baik,182
+590,Keperawatan,S1,B,182
+591,Pendidikan Profesi Ners,Profesi,B,182
+592,Manajemen Informasi Kesehatan,D4,-,182
+593,Keperawatan,D3,Baik Sekali,182
+594,Ilmu Keperawatan,S1,Baik Sekali,183
+595,Profesi Ners,Profesi,Baik Sekali,183
+596,Kebidanan,D3,Baik Sekali,183
+597,Keperawatan,D3,Baik Sekali,183
+598,Administrasi Rumah Sakit,S1,Baik,184
+599,Ilmu Keperawatan,S1,Baik Sekali,184
+600,Kebidanan,S1,-,184
+601,Kesehatan Lingkungan,S1,Baik Sekali,184
+602,Pendidikan Profesi Bidan,Profesi,-,184
+603,Profesi Ners,Profesi,Baik Sekali,184
+604,Kebidanan,D3,Baik Sekali,184
+605,Administrasi Rumah Sakit,S1,Baik Sekali,185
+606,Rekam Medik dan Informasi Kesehatan,D3,B,185
+607,Pendidikan Bahasa Indonesia,S1,B,186
+608,Pendidikan Bahasa Inggris,S1,B,186
+609,Pendidikan Fisika,S1,Baik,186
+610,Pendidikan Guru sekolah Dasar,S1,Baik,186
+611,Pendidikan Matematika,S1,Baik Sekali,186
+612,Pendidikan Bahasa Dan Sastra Indonesia,S1,B,187
+613,Pendidikan Bahasa Inggris,S1,Baik Sekali,187
+614,Pendidikan Guru Pendidikan Anak Usia Dini,S1,B,187
+615,Pendidikan Guru Sekolah Dasar,S1,B,187
+616,Pendidikan Matematika,S1,Baik Sekali,187
+617,Pendidikan Guru Pendidikan Anak Usia Dini,S1,Baik,188
+618,Pendidikan Guru Sekolah Dasar,S1,Baik,188
+619,Pendidikan IPA,S1,Baik,188
+620,Pendidikan Jasmani Kesehatan dan Rekreasi,S1,Baik Sekali,188
+621,Pendidikan Matematika,S1,Baik,188
+622,Pendidikan Bahasa Dan Sastra Indonesia,S1,Baik,189
+623,Pendidikan Bahasa Dan Sastra Indonesia,S1,B,190
+624,Pendidikan Bahasa Inggris,S1,Baik Sekali,190
+625,Pendidikan Bahasa Inggris,S1,B,190
+626,Pendidikan Ekonomi,S1,Baik Sekali,190
+627,Pendidikan Guru Sekolah Dasar,S1,Baik Sekali,190
+628,Pendidikan Matematika,S1,B,190
+629,Pendidikan Olah Raga,S1,Baik Sekali,190
+630,Pendidikan Pancasila Dan Kewarganegaraan,S1,Baik Sekali,190
+631,Pendidikan Ekonomi,S1,Baik Sekali,191
+632,Pendidikan Matematika,S1,Baik Sekali,191
+633,Pendidikan Bahasa Inggris,S1,Baik Sekali,192
+634,Pendidikan Ekonomi,S1,Baik Sekali,192
+635,Pendidikan Ilmu Pengetahuan Alam,S1,Baik Sekali,192
+636,Pendidikan Matematika,S1,Baik Sekali,192
+637,Pendidikan Pancasila Dan Kewarganegaraan,S1,B,192
+638,Pendidikan Bahasa Dan Sastra Indonesia,S1,B,193
+639,Pendidikan Bahasa Inggris,S1,B,193
+640,Pendidikan Guru Sekolah Dasar,S1,Baik Sekali,193
+641,Pendidikan Informatika,S1,Baik Sekali,193
+642,Pendidikan Jasmani Kesehatan dan Rekreasi,S1,Baik Sekali,193
+643,Pendidikan Matematika,S1,B,193
+644,Pendidikan Sejarah,S1,B,193
+645,Pendidikan Profesi Guru,Profesi,-,193
+646,Pendidikan Bahasa Dan Sastra Indonesia,S1,Baik Sekali,194
+647,Pendidikan Bahasa Inggris,S1,Baik,194
+648,Pendidikan Bahasa Jawa,S1,Baik Sekali,194
+649,Pendidikan Guru Pendidikan Anak Usia Dini,S1,Baik,194
+650,Pendidikan Bahasa dan Sastra Indonesia,S1,Baik,195
+651,Pendidikan Pancasila Dan Kewarganegaraan,S1,Baik,195
+652,Pendidikan Ekonomi,S1,Baik Sekali,196
+653,Pendidikan Matematika,S1,Baik Sekali,196
+654,Pendidikan Teknologi Informasi,S1,Baik Sekali,196
+655,Bimbingan dan Konseling,S1,Baik Sekali,197
+656,Pendidikan Bahasa Dan Sastra Indonesia,S1,B,197
+657,Pendidikan Guru Sekolah Dasar,S1,Baik Sekali,197
+658,Pendidikan Jasmani Kesehatan dan Rekreasi,S1,Baik Sekali,197
+659,Pendidikan Matematika,S1,Baik,197
+660,Pendidikan Pancasila Dan Kewarganegaraan,S1,Baik Sekali,197
+661,Pendidikan Bahasa Inggris,S1,Baik Sekali,198
+662,Pendidikan Bahasa Dan Sastra Indonesia,S1,B,198
+663,Pendidikan Guru Sekolah Dasar,S1,Baik Sekali,198
+664,Pendidikan Jasmani Kesehatan dan Rekreasi,S1,Baik Sekali,198
+665,Pendidikan Pancasila Dan Kewarganegaraan,S1,B,198
+666,Ilmu Pendidikan Theologi,S1,B,199
+667,Sistem Informasi,S1,-,200
+668,Sistem Informasi,S1,B,201
+669,Teknologi Informasi,S1,Baik,201
+670,Sistem Informasi,D3,B,201
+671,Administrasi Publik,S1,Baik,202
+672,Agroteknologi,S1,Baik Sekali,202
+673,Akuntansi,S1,Baik,202
+674,Hukum,S1,B,202
+675,Ilmu Perikanan,S1,Baik,202
+676,Manajemen,S1,Baik,202
+677,Pendidikan Bahasa Inggris,S1,B,202
+678,Pendidikan Biologi,S1,Baik Sekali,202
+679,Pendidikan Sejarah,S1,Baik Sekali,202
+680,Teknik Industri,S1,B,202
+681,Ilmu Administrasi,S3,B,203
+682,Ilmu Ekonomi,S3,Unggul,203
+683,Ilmu Hukum,S3,B,203
+684,Ilmu Administrasi Publik,S2,B,203
+685,Ilmu Hukum,S2,B,203
+686,Ilmu Komunikasi,S2,Baik,203
+687,Manajemen,S2,Unggul,203
+688,Psikologi,S2,B,203
+689,Psikologi Profesi,S2,B,203
+690,Teknik Sipil,S2,B,203
+691,Akuntansi,S1,-,204
+692,Hukum,S1,-,204
+693,Manajemen,S1,Baik,204
+694,Psikologi,S1,B,204
+695,Teknik Industri,S1,Baik,204
+696,Teknik Informatika,S1,Baik,204
+697,Teknik Mesin,S1,Baik,204
+698,Kepariwisataan,D3,-,204
+699,Televisi dan Film,D3,-,204
+700,Manajemen,S2,-,205
+701,Administrasi Publik,S1,B,205
+702,Agribisnis,S1,B,205
+703,Biologi,S1,Baik,205
+704,Bisnis Digital,S1,-,205
+705,Ilmu Hukum,S1,B,205
+706,Manajemen,S1,B,205
+707,Matematika,S1,Baik,205
+708,Pendidikan Guru Sekolah Dasar,S1,Baik Sekali,205
+709,Sastra Inggris,S1,Baik,205
+710,Biologi,S1,Baik,206
+711,Bisnis Digital,S1,Baik,206
+712,Ilmu Komunikasi,S1,Terakreditasi Sementara,206
+713,Kimia,S1,Baik,206
+714,Matematika,S1,Baik,206
+715,Teknik Sipil,S1,Baik,206
+716,Teknologi Hasil Pertanian,S1,Baik,206
+717,Teknologi Informasi,S1,Baik,206
+718,Administrasi Kesehatan,S1,Baik,207
+719,Bisnis Digital,S1,Baik,207
+720,Farmasi,S1,BAIK SEKALI,207
+721,Fisioterapi,S1,Baik,207
+722,Kewirausahaan,S1,Baik,207
+723,Rekayasa Perangkat Lunak,S1,Baik,207
+724,Sistem Informasi,S1,Baik,207
+725,Farmasi,D3,Baik Sekali,207
+726,Teknologi Laboratorium Medis,D3,B,207
+727,Administrasi Pendidikan,S2,Baik,208
+728,Akuntansi,S1,Tidak Terakreditasi,208
+729,Biologi,S1,Baik,208
+730,Ilmu Hukum,S1,Baik,208
+731,Ilmu Keperawatan,S1,Baik,208
+732,Kesehatan Masyarakat,S1,BAIK SEKALI,208
+733,Kimia,S1,Baik,208
+734,Manajemen,S1,Baik,208
+735,Pendidikan Bahasa dan Sastra Indonesia,S1,Baik,208
+736,Pendidikan Guru Pendidikan Anak Usia Dini,S1,Baik,208
+737,Ilmu Hukum,S2,B,209
+738,Manajemen,S2,B,209
+739,Administrasi Publik,S1,Baik Sekali,209
+740,Akuntansi,S1,Baik Sekali,209
+741,Ekonomi Pembangunan,S1,Baik Sekali,209
+742,Ilmu Hukum,S1,Baik Sekali,209
+743,Ilmu Komunikasi,S1,Baik Sekali,209
+744,Manajemen,S1,B,209
+745,Teknik Elektro,S1,Baik Sekali,209
+746,Teknik Informatika,S1,Baik Sekali,209
+747,Pendidikan Ilmu Pengetahuan Sosial,S2,Baik Sekali,210
+748,Pendidikan Matematika,S2,Baik,210
+749,Arsitektur,S1,Baik,210
+750,Informatika,S1,Baik,210
+751,Pendidikan Bahasa Inggris,S1,B,210
+752,Pendidikan Ekonomi,S1,Baik Sekali,210
+753,Pendidikan Guru Sekolah Dasar,S1,Unggul,210
+754,Pendidikan Ilmu Pengetahuan Alam,S1,Baik,210
+755,Pendidikan Matematika,S1,Baik Sekali,210
+756,Pendidikan Pancasila Dan Kewarganegaraan,S1,Baik Sekali,210
+757,Biologi,S1,Baik,211
+758,Fisika,S1,Baik,211
+759,Ilmu Hukum,S1,Baik,211
+760,Matematika,S1,Baik,211
+761,Pendidikan Agama Islam,S1,B,211
+762,Pendidikan Bahasa Indonesia,S1,Baik,211
+763,Pendidikan Bahasa Inggris,S1,Baik,211
+764,Pendidikan Guru Madrasah Ibtidaiyah,S1,Baik,211
+765,Pendidikan Kimia,S1,Baik,211
+766,Teknik Elektro,S1,Baik,211
+767,Keperawatan,S2,Baik,212
+768,Akuntansi,S1,-,212
+769,Ilmu Keperawatan,S1,B,212
+770,Informatika,S1,Baik,212
+771,Kebidanan,S1,Baik,212
+772,Manajemen,S1,-,212
+773,Pendidikan Profesi Bidan,Profesi,Baik,212
+774,Profesi Ners,Profesi,B,212
+775,Kebidanan,D3,-,212
+776,Keperawatan,D3,Baik Sekali,212
+777,Administrasi Publik,S1,B,213
+778,Agribisnis,S1,B,213
+779,Ekonomi Pembangunan,S1,B,213
+780,Hukum,S1,B,213
+781,Ilmu Lingkungan,S1,Baik,213
+782,Kimia,S1,Baik,213
+783,Manajemen Ritel,S1,Baik,213
+784,Teknik Industri,S1,Baik,213
+785,Teknik Sipil,S1,Baik,213
+786,Agribisnis,S1,Baik,214
+787,Bimbingan Dan Konseling,S1,-,214
+788,Hukum,S1,Baik,214
+789,Hukum Keluarga (Ahwal Syakhshiyah),S1,Baik,214
+790,Ilmu Administrasi Negara,S1,Baik,214
+791,Ilmu Hukum,S1,-,214
+792,Kependidikan Islam,S1,-,214
+793,Pendidikan Matematika,S1,Baik,214
+794,Teknik Sipil,S1,Baik,214
+795,Keperawatan,D3,BAIK SEKALI,214
+796,Ilmu Manajemen,S3,Baik Sekali,215
+797,Manajemen,S2,Unggul,215
+798,Akuntansi,S1,Unggul,215
+799,Arsitektur,S1,Baik Sekali,215
+800,Desain Komunikasi Visual,S1,A,215
+801,Desain Komunikasi Visual (Kampus Kota Makassar),S1,Baik,215
+802,Desain Produk,S1,Baik,215
+803,Ilmu Komunikasi,S1,Baik,215
+804,Informatika,S1,Unggul,215
+805,Informatika (Kampus Kota Makassar),S1,Baik Sekali,215
+806,Ilmu Ekonomi,S2,B,216
+807,Pendidikan Islam,S2,Baik,216
+808,Agribisnis,S1,Baik,216
+809,Agroteknologi,S1,Baik,216
+810,Akuntansi,S1,Baik,216
+811,Bimbingan Dan Konseling,S1,Baik Sekali,216
+812,Ekonomi Pembangunan,S1,Baik,216
+813,Ilmu Al-Qur'an Dan Tafsir,S1,Baik,216
+814,Ilmu Hubungan Internasional,S1,B,216
+815,Ilmu Hukum,S1,Baik,216
+816,Aqidah dan Filsafat Islam,S3,Baik Sekali,217
+817,Aqidah dan Filsafat Islam,S2,Unggul,217
+818,Hukum Ekonomi Syariah,S2,Unggul,217
+819,Pendidikan Bahasa Arab,S2,B,217
+820,Agroteknologi,S1,Baik,217
+821,Aqidah dan Filsafat Islam,S1,A,217
+822,Ekonomi Islam,S1,Unggul,217
+823,Farmasi,S1,B,217
+824,Hubungan Internasional,S1,B,217
+825,Hukum Ekonomi Syariah,S1,Unggul,217
+826,Akuntansi,S1,Baik,218
+827,Desain Komunikasi Visual,S1,Baik Sekali,218
+828,Desain Produk,S1,Baik Sekali,218
+829,Manajemen,S1,Baik Sekali,218
+830,Sistem Informasi,S1,Baik Sekali,218
+831,Teknik Komputer,S1,B,218
+832,Produksi Film dan Televisi,D4,Baik Sekali,218
+833,Sistem Informasi,D3,Baik Sekali,218
+834,Pendidikan Dasar,S2,Baik,219
+835,Informatika,S1,Baik,219
+836,Pendidikan Bahasa Inggris,S1,B,219
+837,Pendidikan Guru Pendidikan Anak Usia Dini,S1,Baik,219
+838,Pendidikan Guru Sekolah Dasar,S1,B,219
+839,"Pendidikan Jasmani, Kesehatan dan Rekreasi",S1,B,219
+840,Pendidikan Khusus,S1,Baik,219
+841,Sosial Ekonomi Pertanian,S1,Baik,219
+842,Teknik Sipil,S1,Baik,219
+843,Teknologi Pangan,S1,Baik,219
+844,Manajemen,S3,Baik Sekali,220
+845,Ilmu Administrasi,S2,B,220
+846,Ilmu Hukum,S2,B,220
+847,Ilmu Komunikasi,S2,B,220
+848,Manajemen,S2,Baik Sekali,220
+849,Pendidikan Bahasa Indonesia,S2,B,220
+850,Teknologi Pendidikan,S2,B,220
+851,Agrobisnis Perikanan,S1,B,220
+852,Akuntansi,S1,B,220
+853,Budidaya Perairan,S1,B,220
+854,Bisnis Digital,S1,Baik,221
+855,Bisnis Digital,S1,Baik,221
+856,Farmasi,S1,Baik,221
+857,Ilmu Keperawatan,S1,Baik Sekali,221
+858,Kebidanan,S1,Baik,221
+859,Kewirausahaan,S1,Baik,221
+860,Pendidikan Profesi Bidan,Profesi,Baik,221
+861,Profesi Ners,Profesi,Baik Sekali,221
+862,Teknologi Laboratorium Medis,D4,Baik,221
+863,Manajemen,S3,Baik,222
+864,Akuntansi,S2,Baik Sekali,222
+865,Manajemen,S2,Baik Sekali,222
+866,Akuntansi,S1,Unggul,222
+867,Bahasa Inggris,S1,B,222
+868,Ekonomi Pembangunan,S1,Baik,222
+869,Fisika,S1,-,222
+870,Ilmu Komunikasi,S1,Baik,222
+871,Manajemen,S1,Baik Sekali,222
+872,Psikologi,S1,Baik Sekali,222
+873,Manajemen Pendidikan,S2,Baik Sekali,223
+874,Administrasi Pendidikan,S1,B,223
+875,Akuntansi,S1,Baik,223
+876,Ilmu Hukum,S1,B,223
+877,Ilmu Keperawatan,S1,B,223
+878,Ilmu Komputer,S1,Baik,223
+879,Keselamatan dan Kesehatan Kerja,S1,Baik,223
+880,Manajemen,S1,Baik Sekali,223
+881,Sastra Inggris,S1,Baik,223
+882,Teknik Mesin,S1,Baik,223
+883,Bisnis Digital,S1,-,224
+884,Farmasi Klinik dan Komunitas,S1,Baik,224
+885,Ilmu Keolahragaan,S1,Baik,224
+886,Ilmu Keperawatan,S1,Baik Sekali,224
+887,Kebidanan,S1,Baik,224
+888,Ners,Profesi,Baik Sekali,224
+889,Pendidikan Profesi Bidan,Profesi,-,224
+890,Bidan Pendidik,D4,-,224
+891,Kebidanan,D3,-,224
+892,Keperawatan,D3,Baik Sekali,224
+893,Administrasi Publik,S3,Baik,225
+894,Administrasi Publik,S2,Baik Sekali,225
+895,Ilmu Hukum,S2,Unggul,225
+896,Teknik Kelautan,S2,Baik Sekali,225
+897,Administrasi Bisnis,S1,B,225
+898,Administrasi Publik,S1,Unggul,225
+899,Farmasi,S1,UNGGUL,225
+900,Ilmu Hukum,S1,Unggul,225
+901,Kedokteran,S1,Unggul,225
+902,Oseanografi,S1,UNGGUL,225
+903,Hukum Keluarga (Ahwal Al-syakhshiyyah),S2,Baik,226
+904,Pendidikan Agama Islam,S2,B,226
+905,Pendidikan Bahasa Arab,S2,Baik,226
+906,Akuntansi,S1,Baik,226
+907,Ekonomi Islam,S1,Baik,226
+908,Hukum Ekonomi Syariah (Muamalah),S1,Baik,226
+909,Hukum Keluarga (Ahwal Al Syakhshiyah),S1,B,226
+910,Komunikasi dan Penyiaran Islam,S1,B,226
+911,Manajemen,S1,Baik Sekali,226
+912,Manajemen Pendidikan Islam,S1,Baik,226
+913,Manajemen,S2,Unggul,227
+914,Akuntansi,S1,A,227
+915,Desain Komunikasi Visual,S1,Baik,227
+916,Ekonomi Syariah,S1,Unggul,227
+917,Informatika,S1,Baik Sekali,227
+918,Manajemen,S1,A,227
+919,Sistem Informasi,S1,Baik Sekali,227
+920,Akuntansi,D3,A,227
+921,Perbankan dan Keuangan,D3,A,227
+922,Hukum Ekonomi Syariah (Muamalah),S2,B,228
+923,Pendidikan Agama Islam,S2,Baik Sekali,228
+924,Akuntansi,S1,Baik,228
+925,Akuntansi Syariah,S1,Baik,228
+926,Arsitektur,S1,Baik,228
+927,Bimbingan dan Penyuluhan Islam,S1,Baik,228
+928,Ekonomi Syariah,S1,B,228
+929,Farmasi,S1,C,228
+930,Hukum,S1,Baik,228
+931,Hukum Ekonomi Syariah (Muamalah),S1,B,228
+932,Pendidikan Olahraga,S2,Baik Sekali,229
+933,Pendidikan Bahasa dan Sastra Indonesia,S1,B,229
+934,Pendidikan Bahasa Inggris,S1,Baik Sekali,229
+935,Pendidikan Biologi,S1,B,229
+936,Pendidikan Ekonomi,S1,B,229
+937,"Pendidikan Jasmani, Kesehatan & Rekreasi",S1,Baik Sekali,229
+938,Pendidikan Matematika,S1,B,229
+939,Pendidikan Sejarah dan Sosiologi,S1,Baik Sekali,229
+940,Teknik Elektro,S1,Baik,229
+941,Teknik Kimia,S1,Baik,229
+942,Akuntansi,S1,Baik Sekali,230
+943,Desain Komunikasi Visual,S1,Baik Sekali,230
+944,Ekonomi Syariah,S1,Baik Sekali,230
+945,Informatika,S1,Baik Sekali,230
+946,Manajemen,S1,Baik Sekali,230
+947,Manajemen Rekayasa,S1,Baik Sekali,230
+948,Sistem Informasi,S1,B,230
+949,Teknik Kimia,S1,Baik Sekali,230
+950,Teknik Logistik,S1,Baik Sekali,230
+951,Teknologi Industri Pertanian,S1,Baik,230
+952,Agribisnis,S1,B,231
+953,Agroteknologi,S1,Baik,231
+954,Akuntansi,S1,B,231
+955,Bimbingan Konseling Islam,S1,-,231
+956,Ilmu Administrasi Negara,S1,Baik Sekali,231
+957,Ilmu Administrasi Niaga,S1,B,231
+958,Ilmu Hukum,S1,B,231
+959,Ilmu Komunikasi,S1,B,231
+960,Ilmu ternak,S1,B,231
+961,Manajemen,S1,B,231
+962,Pendidikan Agama Islam,S2,Baik Sekali,232
+963,Pendidikan Bahasa Dan Sastra Indonesia,S2,B,232
+964,Agroteknologi,S1,B,232
+965,Akuntansi,S1,Baik,232
+966,Arsitektur,S1,B,232
+967,Ekonomi Syariah,S1,Baik,232
+968,Ilmu Hukum,S1,B,232
+969,Ilmu Pemerintahan,S1,Baik,232
+970,Ilmu Politik,S1,B,232
+971,Informatika,S1,Baik,232
+972,Pendidikan Agama Islam,S2,Baik,233
+973,Agribisnis,S1,B,233
+974,Agroteknologi,S1,B,233
+975,Bimbingan Dan Konseling,S1,B,233
+976,Ekonomi Syariah,S1,Baik,233
+977,Ilmu Administrasi Negara,S1,B,233
+978,Ilmu Hukum,S1,B,233
+979,Ilmu Komunikasi,S1,B,233
+980,Manajemen Bisnis Syariah,S1,Baik,233
+981,Pendidikan Agama Islam,S1,Baik Sekali,233
+982,Agribisnis,S2,B,234
+983,Ilmu Hukum,S2,B,234
+984,Manajemen,S2,B,234
+985,Agribisnis,S1,Baik,234
+986,Agroteknologi,S1,B,234
+987,Akuntansi,S1,Baik Sekali,234
+988,Ilmu Hukum,S1,B,234
+989,Kimia,S1,Baik,234
+990,Manajemen,S1,Baik Sekali,234
+991,Pendidikan Bahasa Inggris,S1,B,234
+992,Manajemen,S2,Baik,235
+993,Pendidikan Agama Islam,S2,Baik Sekali,235
+994,Agrobisnis Perikanan,S1,B,235
+995,Akuntansi,S1,B,235
+996,Ekonomi Syari`ah,S1,Baik,235
+997,Ilmu Hukum,S1,Baik,235
+998,Kesehatan Lingkungan,S1,BAIK SEKALI,235
+999,Manajemen,S1,Baik Sekali,235
+1000,Manajemen Sumber Daya Perairan,S1,B,235
+1001,Pendidikan Agama Islam,S1,Unggul,235
+1002,Manajemen Pendidikan Islam,S2,Baik,236
+1003,Agribisnis,S1,B,236
+1004,Agrobisnis Perikanan,S1,Baik,236
+1005,Agroteknologi,S1,B,236
+1006,Akuntansi,S1,B,236
+1007,Hukum Keluarga Islam (Ahwal Syakhshiyah),S1,B,236
+1008,Ilmu Hukum,S1,Baik,236
+1009,Matematika,S1,Baik,236
+1010,Pendidikan Agama Islam,S1,B,236
+1011,Pendidikan Bahasa Inggris,S1,Baik Sekali,236
+1012,Akuntansi,S1,B,237
+1013,Ilmu Komunikasi,S1,B,237
+1014,Ilmu Pemerintahan,S1,Baik,237
+1015,Informatika,S1,Baik,237
+1016,Manajemen,S1,B,237
+1017,Pendidikan Agama Islam,S1,B,237
+1018,Pendidikan Bahasa Indonesia,S1,B,237
+1019,Pendidikan Bahasa Inggris,S1,B,237
+1020,Pendidikan Matematika,S1,B,237
+1021,Teknik Industri,S1,Baik,237
+1022,Pendidikan Agama Islam,S3,Unggul,238
+1023,Administrasi Publik,S2,Baik Sekali,238
+1024,Hukum,S2,Baik,238
+1025,Hukum Keluarga Islam (Ahwal Syakhshiyyah),S2,B,238
+1026,Kenotariatan,S2,Baik Sekali,238
+1027,Manajemen,S2,Baik Sekali,238
+1028,Pendidikan agama Islam,S2,Unggul,238
+1029,Pendidikan Bahasa Indonesia,S2,Baik,238
+1030,Pendidikan Bahasa Inggris,S2,Baik Sekali,238
+1031,Pendidikan Matematika,S2,Baik,238
+1032,Pendidikan Agama Islam,S2,B,239
+1033,Agroteknologi,S1,Baik,239
+1034,Ekonomi Syariah,S1,Baik,239
+1035,Ilmu Pemerintahan,S1,Baik,239
+1036,Manajemen,S1,Baik Sekali,239
+1037,Pendidikan Agama Islam,S1,Baik Sekali,239
+1038,Pendidikan Guru Madrasah Ibtidaiyah,S1,Baik Sekali,239
+1039,Pendidikan Guru Sekolah Dasar,S1,Baik Sekali,239
+1040,Pendidikan IPS,S1,Baik,239
+1041,Perbankan Syariah,S1,Baik,239
+1042,Administrasi Publik,S2,B,240
+1043,Hukum,S2,Baik Sekali,240
+1044,Kesehatan Masyarakat,S2,Baik,240
+1045,Manajemen,S2,Baik,240
+1046,Administrasi Publik,S1,B,240
+1047,Agribisnis,S1,Baik Sekali,240
+1048,Agroteknologi,S1,B,240
+1049,Ekonomi Pembangunan,S1,Baik,240
+1050,Farmasi,S1,B,240
+1051,Hukum,S1,B,240
+1052,Agribisnis,S1,Baik,241
+1053,Agroteknologi,S1,Baik,241
+1054,Akuntansi,S1,B,241
+1055,Manajemen,S1,Baik,241
+1056,"Pendidikan Jasmani, Kesehatan dan Rekreasi",S1,Baik,241
+1057,Pendidikan Pancasila dan Kewarganegaraan,S1,Baik,241
+1058,Peternakan,S1,Baik,241
+1059,Teknik Elektro,S1,Baik,241
+1060,Teknik Informatika,S1,Baik,241
+1061,Teknik Sipil,S1,Baik,241
+1062,Akuntansi,S1,Baik Sekali,242
+1063,Arsitektur,S1,B,242
+1064,Ilmu Hukum,S1,Baik Sekali,242
+1065,Ilmu Informatika,S1,Baik,242
+1066,Manajemen,S1,Baik Sekali,242
+1067,Teknik Industri,S1,Baik,242
+1068,Akupuntur dan Pengobatan Herbal,D4,Baik,242
+1069,Agribisnis,S1,B,243
+1070,Akuntansi,S1,Baik,243
+1071,Hukum,S1,B,243
+1072,Manajemen,S1,B,243
+1073,Sistem Informasi,S1,Baik,243
+1074,Teknik Mesin,S1,Baik,243
+1075,Teknik Sipil,S1,B,243
+1076,Teknologi Pangan,S1,B,243
+1077,Admnistrasi Perkantoran,D3,Baik,243
+1078,Sistem Informasi,D3,Baik,243
+1079,Ilmu Manajemen,S3,-,244
+1080,Pendidikan Bahasa Inggris,S3,Baik,244
+1081,Akuntansi,S2,Baik Sekali,244
+1082,Manajemen,S2,Baik Sekali,244
+1083,Pendidikan Bahasa Inggris,S2,Baik Sekali,244
+1084,Teknik Kimia,S2,Baik Sekali,244
+1085,Akuntansi,S1,-,244
+1086,Akuntansi (Kampus Kota Madiun),S1,Baik Sekali,244
+1087,Bahasa Inggris (Kampus Kota Madiun),S1,Baik Sekali,244
+1088,Bimbingan dan Konseling (Kampus Kota Madiun),S1,Baik Sekali,244
+1089,Administrasi Rumah Sakit,S1,,245
+1090,Bisnis Digital,S1,,245
+1091,Keperawatan,S1,,245
+1092,Keselamatan dan Kesehatan Kerja,S1,,245
+1093,Kewirausahaan,S1,,245
+1094,Pariwisata,S1,,245
+1095,Pendidikan Profesi Ners,Profesi,,245
+1096,Keperawatan,D3,,245
+1097,Pendidikan Agama Islam,S2,Baik,246
+1098,Agribisnis,S1,Baik,246
+1099,Agroekoteknologi,S1,Baik,246
+1100,Ekonomi Syariah,S1,B,246
+1101,Informatika,S1,Baik Sekali,246
+1102,Manajemen,S1,Baik,246
+1103,Pendidikan Agama Islam,S1,B,246
+1104,Pendidikan Bahasa Arab,S1,Baik Sekali,246
+1105,Pendidikan Bahasa Inggris,S1,Baik Sekali,246
+1106,Pendidikan Biologi,S1,Baik Sekali,246
+1107,Akuntansi,S1,Baik,247
+1108,Informatika,S1,Baik,247
+1109,Manajemen,S1,Baik,247
+1110,Sistem Informasi,S1,Baik,247
+1111,Teknik Industri,S1,Baik,247
+1112,Teknik Industri,S1,Tidak Terakreditasi,247
+1113,Ilmu Hukum,S1,Baik,248
+1114,Manajemen,S1,-,248
+1115,Pendidikan Biologi,S1,Baik,248
+1116,Pendidikan Pancasila Dan Kewarganegaraan,S1,Baik,248
+1117,Sastra Inggris,S1,Baik,248
+1118,Teknik Mesin,S1,Baik,248
+1119,Teknik Sipil,S1,Baik,248
+1120,Teknologi Hasil Pertanian,S1,Baik,248
+1121,Ilmu Manajemen,S3,Baik,249
+1122,Teknik Sipil,S3,Baik Sekali,249
+1123,Arsitektur,S2,B,249
+1124,Manajemen,S2,Unggul,249
+1125,Sastra,S2,Baik,249
+1126,Teknik Industri,S2,Baik Sekali,249
+1127,Teknik Sipil,S2,B,249
+1128,Akuntansi,S1,A,249
+1129,Arsitektur,S1,Unggul,249
+1130,Bahasa Mandarin,S1,B,249
+1131,Agribisnis,S1,Baik,250
+1132,Ilmu Administrasi Negara,S1,B,250
+1133,Ilmu Hukum,S1,Baik,250
+1134,Manajemen Inovasi,S2,Baik,251
+1135,Akuntansi,S1,B,251
+1136,Desain Komunikasi Visual -,S1,Baik,251
+1137,Farmasi,S1,B,251
+1138,Kimia,S1,-,251
+1139,Manajemen,S1,B,251
+1140,Pendidikan Bahasa Mandarin,S1,Baik,251
+1141,Sastra Inggris,S1,A,251
+1142,Sistem Informasi,S1,B,251
+1143,Teknik Industri,S1,Baik Sekali,251
+1144,Hukum,S2,-,252
+1145,Manajemen,S2,-,252
+1146,Akuntansi,S1,Baik Sekali,252
+1147,Desain Komunikasi Visual,S1,Baik,252
+1148,Hukum,S1,Baik,252
+1149,Kewirausahaan,S1,-,252
+1150,Manajemen,S1,Baik Sekali,252
+1151,Mikrobiologi,S1,-,252
+1152,Teknik Industri,S1,B,252
+1153,Teknik Informatika,S1,Baik Sekali,252
+1154,Informatika,S1,,253
+1155,Manajemen,S1,,253
+1156,Pendidikan Bahasa Inggris,S1,,253
+1157,Pendidikan Guru Pendidikan Anak Usia Dini,S1,,253
+1158,Pendidikan Guru Sekolah Dasar,S1,,253
+1159,Pendidikan Jasmani,S1,,253
+1160,Peternakan,S1,,253
+1161,Rekayasa Sipil,S1,,253
+1162,Bahasa Korea,D3,,253
+1163,Kebidanan,D3,,253
+1164,Hukum,S2,Baik,254
+1165,Manajemen,S2,Baik,254
+1166,Administrasi Publik,S1,B,254
+1167,Agribisnis,S1,Baik,254
+1168,Akuntansi,S1,B,254
+1169,Bisnis Digital,S1,Baik,254
+1170,Hukum,S1,B,254
+1171,Informatika,S1,Baik,254
+1172,Manajemen,S1,B,254
+1173,Pendidikan Bahasa Indonesia,S1,Baik Sekali,254
+1174,Agribisnis,S1,B,255
+1175,Akuntansi,S1,Baik,255
+1176,Ilmu Hukum,S1,B,255
+1177,Manajemen,S1,Baik Sekali,255
+1178,Pendidikan Bahasa Inggris,S1,Baik,255
+1179,Agroteknologi,S1,B,256
+1180,Akuntansi,S1,B,256
+1181,Ilmu Administrasi Negara,S1,B,256
+1182,Ilmu Hukum,S1,B,256
+1183,Ilmu Komunikasi,S1,B,256
+1184,Manajemen,S1,Baik Sekali,256
+1185,Teknik Mesin,S1,Baik,256
+1186,Teknik Sipil,S1,Baik Sekali,256
+1187,Manajemen Informatika,D3,Baik Sekali,256
+1188,Ilmu Ekonomi,S3,B,257
+1189,Ilmu Sosial,S3,B,257
+1190,Administrasi Publik,S2,A,257
+1191,Akuntansi,S2,Baik Sekali,257
+1192,Arsitektur,S2,B,257
+1193,Hukum,S2,A,257
+1194,Manajemen,S2,A,257
+1195,Administrasi Bisnis,S1,B,257
+1196,Administrasi Publik,S1,Baik,257
+1197,Agroteknologi (Kampus Kabupaten Ponorogo),S1,Baik,257
+1198,Agroteknologi,S1,B,258
+1199,Ilmu Hukum,S1,B,258
+1200,Manajemen,S1,B,258
+1201,Rekayasa Perangkat Lunak,S1,Baik,258
+1202,Teknik Informatika,S1,Baik Sekali,258
+1203,Agroteknologi,S1,B,259
+1204,Akuntansi,S1,Baik,259
+1205,Arsitektur,S1,Baik,259
+1206,Ilmu Hukum,S1,Baik Sekali,259
+1207,Manajemen,S1,Baik,259
+1208,Kebidanan,D3,B,259
+1209,Agroteknologi,S1,B,260
+1210,Bimbingan Dan Konseling,S1,B,260
+1211,Ekonomi Pembangunan,S1,B,260
+1212,Ilmu Administrasi Negara,S1,B,260
+1213,Ilmu Hukum,S1,B,260
+1214,Manajemen,S1,B,260
+1215,Teknik Sipil,S1,Baik,260
+1216,Manajemen,S2,Baik,261
+1217,Pendidikan Bahasa Inggris,S2,Baik Sekali,261
+1218,Agribisnis,S1,Baik,261
+1219,Agroteknologi,S1,B,261
+1220,Akuntansi,S1,B,261
+1221,Budidaya Perikanan,S1,B,261
+1222,Hukum,S1,B,261
+1223,Ilmu Gizi,S1,B,261
+1224,Ilmu Keperawatan,S1,B,261
+1225,Kebidanan,S1,Baik,261
+1226,Manajemen,S2,B,262
+1227,Agribisnis,S1,A,262
+1228,Agroteknologi,S1,A,262
+1229,Akuntansi,S1,Unggul,262
+1230,Ekonomi Syariah,S1,Baik,262
+1231,Ilmu Hukum,S1,Baik Sekali,262
+1232,Ilmu Keperawatan,S1,B,262
+1233,Ilmu Komunikasi,S1,A,262
+1234,Ilmu Pemerintahan,S1,A,262
+1235,Manajemen,S1,Unggul,262
+1236,Administrasi Rumah Sakit,S1,Baik Sekali,263
+1237,Akuntansi,S1,Baik,263
+1238,Biologi,S1,Baik,263
+1239,Ekonomi Syariah,S1,Baik,263
+1240,Farmasi,S1,Baik,263
+1241,Fisika,S1,Baik,263
+1242,Informatika Medis,S1,Baik,263
+1243,Kebidanan,S1,BAIK SEKALI,263
+1244,Keperawatan,S1,B,263
+1245,Keselamatan dan Kesehatan Kerja,S1,Baik,263
+1246,Administrasi Kesehatan,S1,Baik,264
+1247,Biokewirausahaan,S1,Baik,264
+1248,Ilmu Aktuaria,S1,Baik,264
+1249,Ilmu Kesejahteraan Sosial,S1,Baik Sekali,264
+1250,Ilmu Komunikasi,S1,Baik Sekali,264
+1251,Ilmu Lingkungan,S1,Baik,264
+1252,Informatika,S1,Baik,264
+1253,Kebidanan,D3,BAIK SEKALI,264
+1254,Ilmu Pertanian,S3,B,265
+1255,Pendidikan,S3,Baik,265
+1256,Pendidikan Agama Islam,S3,Unggul,265
+1257,Sosiologi,S3,B,265
+1258,Agribisnis,S2,Unggul,265
+1259,Akuntansi,S2,Baik,265
+1260,Hukum,S2,A,265
+1261,Manajemen,S2,Baik Sekali,265
+1262,Pedagogi,S2,B,265
+1263,Pendidikan Agama Islam,S2,A,265
+1264,Pendidikan Agama Islam,S2,B,266
+1265,Manajemen,S2,Baik,266
+1266,Pedagogi,S2,Baik,266
+1267,Akuntansi,S1,B,266
+1268,Ekonomi Pembangunan,S1,B,266
+1269,Ekonomi Syariah,S1,Baik,266
+1270,Fisioterapi,S1,Baik,266
+1271,Ilmu Hukum,S1,Baik Sekali,266
+1272,Ilmu Komunikasi,S1,Baik Sekali,266
+1273,Ilmu Pemerintahan,S1,Baik Sekali,266
+1274,Manajemen,S2,B,267
+1275,Manajemen Pendidikan Islam,S2,B,267
+1276,Administrasi Publik,S1,Unggul,267
+1277,Agroteknologi,S1,Baik Sekali,267
+1278,Akuntansi,S1,Unggul,267
+1279,Bisnis Digital,S1,Baik Sekali,267
+1280,Fisioterapi,S1,Baik,267
+1281,Hukum,S1,B,267
+1282,Ilmu Komunikasi,S1,Unggul,267
+1283,Informatika,S1,B,267
+1284,Administrasi Rumah Sakit,S2,Baik,268
+1285,Hukum Ekonomi Syariah,S2,Baik Sekali,268
+1286,Pendidikan Bahasa dan Sastra Indonesia,S2,Unggul,268
+1287,Pendidikan Islam,S2,Baik,268
+1288,Akuntansi,S1,B,268
+1289,Arsitektur,S1,Baik Sekali,268
+1290,Desain Komunikasi Visual,S1,Baik,268
+1291,Farmasi,S1,BAIK SEKALI,268
+1292,Fisioterapi,S1,BAIK SEKALI,268
+1293,Hukum Keluarga (Ahwal Syakhshiyah),S1,Unggul,268
+1294,Ekonomi Syariah,S1,Baik,269
+1295,Fisika,S1,Baik,269
+1296,Hukum Keluarga Islam,S1,Baik,269
+1297,Ilmu Al-Quran dan Tafsir,S1,Baik,269
+1298,Ilmu Komputer,S1,Baik,269
+1299,Komunikasi Penyiaran Islam,S1,Baik,269
+1300,Matematika,S1,Baik Sekali,269
+1301,Pendidikan Bahasa Indonesia,S1,Baik,269
+1302,Pendidikan Bahasa Inggris,S1,Baik,269
+1303,Pendidikan Guru Sekolah Dasar,S1,Baik,269
+1304,Desain Komunikasi Visual,S1,Baik,270
+1305,Pendidikan Biologi - S1,S1,Baik,270
+1306,Pendidikan Fisika,S1,Baik,270
+1307,Pendidikan Matematika,S1,Baik,270
+1308,Teknik Industri,S1,Baik,270
+1309,Teknik Kimia,S1,Baik,270
+1310,Teknologi Hasil Pertanian,S1,Baik,270
+1311,Akuntansi,S1,Baik,271
+1312,Desain Komunikasi Visual,S1,Baik,271
+1313,Manajemen,S1,Baik,271
+1314,Pendidikan Bahasa Inggris,S1,Baik Sekali,271
+1315,Pendidikan Guru Madrasah Ibtidaiyah,S1,Baik,271
+1316,Pendidikan Guru Sekolah Dasar,S1,Unggul,271
+1317,Pendidikan Islam Anak Usia Dini,S1,Baik,271
+1318,Sistem Informasi,S1,Baik,271
+1319,Teknik Industri,S1,Baik,271
+1320,Teknik Informatika,S1,Baik,271
+1321,Hukum Ekonomi Syariah (Mu'amalah),S2,Baik,272
+1322,Pendidikan Agama Islam,S2,Baik,272
+1323,Bahasa dan Sastra Arab,S1,Baik Sekali,272
+1324,Bimbingan Konseling,S1,-,272
+1325,Farmasi,S1,BAIK SEKALI,272
+1326,Hukum Ekonomi Syariah (Muamalah),S1,A,272
+1327,Hukum Keluarga Islam (Ahwal Al Syakhshiyah),S1,B,272
+1328,Pendidikan Agama Islam,S1,Baik Sekali,272
+1329,Pendidikan Bahasa Inggris,S1,Baik Sekali,272
+1330,Pendidikan Guru Madrasah Ibtidaiyah,S1,B,272
+1331,Keperawatan,S2 Terapan,UNGGUL,273
+1332,Pendidikan Dasar,S2,Baik,273
+1333,Akuntansi,S1,Unggul,273
+1334,Gizi,S1,Unggul,273
+1335,Kebidanan,S1,UNGGUL,273
+1336,Keperawatan,S1,B,273
+1337,Kesehatan Masyarakat,S1,A,273
+1338,Manajemen,S1,Unggul,273
+1339,Pendidikan Bahasa Inggris,S1,Unggul,273
+1340,Pendidikan Dokter,S1,B,273
+1341,Ilmu Hukum,S2,B,274
+1342,Kenotariatan,S2,B,274
+1343,Manajemen,S2,Baik Sekali,274
+1344,Teknik Sipil,S2,Baik Sekali,274
+1345,Akuntansi,S1,B,274
+1346,Ilmu Hukum,S1,B,274
+1347,Manajemen,S1,B,274
+1348,Pendidikan Guru Pendidikan Anak Usia Dini,S1,B,274
+1349,Sistem Informasi,S1,Baik Sekali,274
+1350,Sistem Komputer,S1,B,274
+1351,Agribisnis,S1,Baik,275
+1352,Bisnis Digital,S1,Baik,275
+1353,Gizi,S1,Baik,275
+1354,Keperawatan,S1,Baik,275
+1355,Kewirausahaan,S1,Baik,275
+1356,Perdagangan Internasional,S1,-,275
+1357,Pendidikan Profesi Ners,Profesi,Baik,275
+1358,Keperawatan,D3,B,275
+1359,Manajemen Pendidikan Islam,S2,Baik Sekali,276
+1360,Pendidikan Agama Islam,S2,Baik Sekali,276
+1361,Ekonomi,S1,Baik,276
+1362,Ekonomi Syari'ah,S1,Baik Sekali,276
+1363,Hukum,S1,Baik,276
+1364,Hukum Keluarga (Ahwal Syakhshiyah),S1,B,276
+1365,Ilmu Alqur'an dan Tafsir,S1,Baik Sekali,276
+1366,Ilmu Keperawatan,S1,Baik Sekali,276
+1367,Komunikasi dan Penyiaran Islam,S1,B,276
+1368,Manajemen Pendidikan Islam,S1,Unggul,276
+1369,Keguruan Olahraga,S2,Baik Sekali,277
+1370,Pendidikan Ekonomi,S2,Baik Sekali,277
+1371,Akuntansi,S1,Baik Sekali,277
+1372,Bimbingan Dan Konseling,S1,Baik Sekali,277
+1373,Manajemen,S1,B,277
+1374,Pendidikan Bahasa Dan Sastra Indonesia,S1,B,277
+1375,Pendidikan Bahasa Inggris,S1,B,277
+1376,Pendidikan Biologi,S1,B,277
+1377,Pendidikan Ekonomi,S1,Baik Sekali,277
+1378,Pendidikan Guru Pendidikan Anak Usia Dini,S1,Unggul,277
+1379,Administrasi Publik,S1,B,278
+1380,Agribisnis,S1,Baik,278
+1381,Agroteknologi,S1,Baik,278
+1382,Akuntansi,S1,Baik Sekali,278
+1383,Bahasa Inggris,S1,B,278
+1384,Bisnis Digital,S1,Baik,278
+1385,Hukum,S1,B,278
+1386,Informatika,S1,Baik,278
+1387,Manajemen,S1,Baik Sekali,278
+1388,Pendidikan Guru Sekolah Dasar,S1,Baik Sekali,278
+1389,Administrasi Bisnis,S1,B,279
+1390,Administrasi Publik,S1,Baik,279
+1391,Akuntansi,S1,Baik,279
+1392,Hukum,S1,Baik,279
+1393,Manajemen,S1,Baik,279
+1394,Pendidikan Matematika,S1,Baik,279
+1395,Teknik Elektro,S1,Baik,279
+1396,Teknik Mesin,S1,Baik,279
+1397,Kesehatan Masyarakat,S2,Baik,280
+1398,Manajemen Pendidikan Islam,S2,Baik Sekali,280
+1399,Hukum Keluarga (Ahwal Syakhshiyah),S1,Baik,280
+1400,Ilmu Administrasi Niaga,S1,B,280
+1401,Ilmu Keperawatan,S1,BAIK SEKALI,280
+1402,Matematika,S1,Baik,280
+1403,Pendidikan Agama Islam,S1,Unggul,280
+1404,Pendidikan Bahasa Inggris,S1,Baik Sekali,280
+1405,Pendidikan Guru Madrasah Ibtidaiyah,S1,Unggul,280
+1406,Pendidikan Matematika,S1,Baik Sekali,280
+1407,Manajemen,S2,-,281
+1408,Pendidikan Bahasa Inggris,S2,Baik,281
+1409,Pendidikan Dasar,S2,Baik,281
+1410,Pendidikan Jasmani,S2,Baik Sekali,281
+1411,Teknologi Pendidikan,S2,Unggul,281
+1412,Akuntansi,S1,A,281
+1413,Bimbingan Dan Konseling,S1,A,281
+1414,Biologi,S1,B,281
+1415,Farmasi,S1,Baik,281
+1416,Kebidanan,S1,Baik,281
+1417,Teknologi Pembelajaran,S2,B,282
+1418,Bimbingan dan Konseling,S1,B,282
+1419,Biologi,S1,Baik,282
+1420,Manajemen,S1,Baik Sekali,282
+1421,Pendidikan Biologi,S1,B,282
+1422,Pendidikan Ekonomi,S1,Baik Sekali,282
+1423,Pendidikan Guru Pendidikan Anak Usia Dini,S1,B,282
+1424,Pendidikan Luar Biasa,S1,B,282
+1425,Pendidikan Matematika,S1,Baik Sekali,282
+1426,Pendidikan Pancasila dan Kewarganegaraan,S1,Baik Sekali,282
+1427,Bimbingan dan Konseling,S1,Baik Sekali,283
+1428,Biologi,S1,B,283
+1429,Kimia,S1,Baik,283
+1430,Pendidikan Bahasa Inggris,S1,Baik Sekali,283
+1431,"Pendidikan Jasmani, Kesehatan Dan Rekreas",S1,Baik Sekali,283
+1432,Pendidikan Matematika,S1,Baik Sekali,283
+1433,Pendidikan Pancasila Dan Kewarganegaraan,S1,Baik Sekali,283
+1434,Pendidikan Sejarah,S1,Baik Sekali,283
+1435,Teknik Elektro,S1,Baik,283
+1436,Teknik Mesin,S1,Baik Sekali,283
+1437,Pendidikan Bahasa Inggris,S2,Baik Sekali,284
+1438,Informatika,S1,,284
+1439,Pendidikan Bahasa Inggris,S1,B,284
+1440,Pendidikan Guru Sekolah Dasar,S1,Baik Sekali,284
+1441,Pendidikan Matematika,S1,Baik,284
+1442,Pendidikan Sejarah,S1,B,284
+1443,Sistem Informasi,S1,,284
+1444,Statistika,S1,,284
+1445,Pendidikan Bahasa Indonesia,S2,Baik,285
+1446,Pendidikan Ekonomi,S2,-,285
+1447,Pendidikan Matematika,S2,Baik,285
+1448,Bisnis Digital,S1,Baik,285
+1449,Desain Komunikasi Visual,S1,Baik,285
+1450,Informatika,S1,Baik,285
+1451,Pendidikan Bahasa Indonesia,S1,B,285
+1452,Pendidikan Bahasa Inggris,S1,B,285
+1453,Pendidikan Ekonomi,S1,Baik,285
+1454,Pendidikan Jasmani,S1,B,285
+1455,Manajemen,S2,Baik Sekali,286
+1456,Pendidikan Bahasa Inggris,S2,Baik,286
+1457,Pendidikan Ilmu Pengetahuan Sosial,S2,Baik Sekali,286
+1458,Pendidikan Matematika,S2,-,286
+1459,Akuntansi,S1,B,286
+1460,Bimbingan dan Konseling,S1,Baik Sekali,286
+1461,Ilmu Hukum,S1,B,286
+1462,Manajemen,S1,B,286
+1463,Pendidikan Bahasa dan Sastra Indonesia,S1,Baik Sekali,286
+1464,Pendidikan Bahasa Inggris,S1,B,286
+1465,Pendidikan Bahasa dan Sastra Indonesia,S2,Baik Sekali,287
+1466,Pendidikan Dasar,S2,Baik,287
+1467,Pendidikan Ilmu Pengetahuan Sosial,S2,Unggul,287
+1468,Akuntansi,S1,Baik Sekali,287
+1469,Bimbingan Dan Konseling,S1,Baik Sekali,287
+1470,Farmasi,S1,BAIK SEKALI,287
+1471,Hukum,S1,Baik,287
+1472,Ilmu Keolahragaan,S1,Baik,287
+1473,Manajemen,S1,Baik Sekali,287
+1474,Pendidikan Akuntansi,S1,B,287
+1475,Pendidikan Biologi,S2,Baik Sekali,288
+1476,Pendidikan Dasar,S2,Baik Sekali,288
+1477,Pendidikan Dasar,S2,Baik,288
+1478,Biologi,S1,Baik Sekali,288
+1479,Ilmu Kelautan,S1,B,288
+1480,Ilmu Komunikasi,S1,Baik,288
+1481,Ilmu Perikanan,S1,B,288
+1482,Ilmu Politik,S1,Baik,288
+1483,Matematika,S1,Baik,288
+1484,Pendidikan Bahasa Dan Sastra Indonesia,S1,Baik Sekali,288
+1485,Pendidikan Ekonomi,S2,Baik,289
+1486,Ekonomi Syariah,S1,-,289
+1487,Ilmu Komputer,S1,Baik,289
+1488,Manajemen Bisnis Syariah,S1,-,289
+1489,Pendidikan Agama Islam,S1,B,289
+1490,Pendidikan Bahasa Dan Sastra Indonesia,S1,B,289
+1491,Pendidikan Bahasa Inggris,S1,B,289
+1492,Pendidikan Ekonomi,S1,B,289
+1493,Pendidikan Guru Madrasah Ibtidaiyah,S1,Baik,289
+1494,Pendidikan Matematika,S1,B,289
+1495,Pendidikan Agama Islam,S2,B,290
+1496,Ekonomi Syariah,S1,Baik,290
+1497,Hukum Keluarga Islam (Ahwal Syakhshiyyah),S1,Baik,290
+1498,Manajemen Pendidikan Islam,S1,B,290
+1499,Pendidikan Agama Islam,S1,B,290
+1500,Pendidikan Bahasa Inggris,S1,Baik Sekali,290
+1501,Pendidikan Matematika,S1,Baik Sekali,290
+1502,Perbankan Syariah,S1,Baik,290
+1503,Teknik Elektro,S1,Baik,290
+1504,Teknik Industri,S1,Baik,290
+1505,Agroteknologi,S1,Baik,291
+1506,Ilmu Administrasi Negara,S1,Baik,291
+1507,Ilmu Hukum,S1,Baik,291
+1508,Manajemen,S1,B,291
+1509,Teknik Mesin,S1,Baik,291
+1510,Teknik Sipil,S1,Baik,291
+1511,Kesehatan Masyarakat,S3,,292
+1512,Keperawatan,S2,,292
+1513,Kesehatan Masyarakat,S2,,292
+1514,Administrasi Rumah Sakit,S1,,292
+1515,Bisnis Digital,S1,,292
+1516,Farmasi,S1,,292
+1517,Kebidanan,S1,,292
+1518,Keperawatan,S1,,292
+1519,Kesehatan Masyarakat,S1,,292
+1520,Manajemen Ritel,S1,,292
+1521,Agroteknologi,S1,Baik,293
+1522,Ilmu Hukum,S1,B,293
+1523,Kewirausahaan,S1,Baik,293
+1524,Teknik Kimia,S1,Baik,293
+1525,Teknik Sipil,S1,Baik,293
+1526,Hukum,S2,B,294
+1527,Hukum Keluarga Islam (Ahwal Syahsiyyah),S2,Baik,294
+1528,Pendidikan Agama Islam,S2,B,294
+1529,Administrasi Publik,S1,Baik,294
+1530,Ekonomi Syariah,S1,B,294
+1531,Hukum,S1,B,294
+1532,Hukum Keluarga Islam (Ahwal Syakhshiyah),S1,B,294
+1533,Manajemen,S1,Baik Sekali,294
+1534,Pendidikan Agama Islam,S1,Baik Sekali,294
+1535,Pendidikan Guru Madrasah Ibtidaiyah,S1,Unggul,294
+1536,Psikologi,S3,Baik,295
+1537,Akuntansi,S2,Unggul,295
+1538,Bioteknologi,S2,Unggul,295
+1539,Farmasi,S2,Unggul,295
+1540,Ilmu Hukum,S2,B,295
+1541,Informatika,S2,Baik,295
+1542,Kenotariatan,S2,Baik Sekali,295
+1543,Manajemen,S2,Unggul,295
+1544,Psikologi,S2,Baik,295
+1545,Psikologi Profesi,S2,A,295
+1546,Manajemen,S2,Baik,296
+1547,Akuntansi,S1,Baik,296
+1548,Ilmu Administrasi Negara,S1,Baik,296
+1549,Ilmu Hukum,S1,Baik,296
+1550,Manajemen,S1,Baik,296
+1551,Teknik Elektro,S1,Baik,296
+1552,Administrasi Publik,S2,Baik Sekali,297
+1553,Ekonomi Pertanian,S2,B,297
+1554,Administrasi Publik,S1,B,297
+1555,Agribisnis,S1,Unggul,297
+1556,Agroteknologi,S1,A,297
+1557,Akuntansi,S1,B,297
+1558,Arsitektur Lanskap,S1,B,297
+1559,Ilmu Komunikasi,S1,B,297
+1560,Keperawatan,S1,Baik Sekali,297
+1561,Manajemen,S1,Baik Sekali,297
+1562,Administrasi Publik,S1,B,298
+1563,Agribisnis,S1,B,298
+1564,Akuntansi,S1,Baik Sekali,298
+1565,Hukum,S1,B,298
+1566,Manajemen,S1,Baik Sekali,298
+1567,Teknik Elektro,S1,Baik,298
+1568,Teknik Sipil,S1,Baik,298
+1569,Kebidanan,D3,Baik Sekali,298
+1570,Administrasi Bisnis,S1,Baik,299
+1571,Administrasi Publik,S1,B,299
+1572,Akuntansi,S1,B,299
+1573,Manajemen,S1,B,299
+1574,Pendidikan Guru Sekolah Dasar,S1,B,299
+1575,Teknik Industri,S1,C,299
+1576,Teknik Kimia,S1,Baik,299
+1577,Agribisnis,S1,Baik,300
+1578,Agroteknologi,S1,Baik,300
+1579,Akuntansi,S1,Baik,300
+1580,Hukum Keluarga Islam (Ahwal Syakhshiyyah),S1,Baik,300
+1581,Manajemen,S1,Baik,300
+1582,Pendidikan Bahasa Inggris,S1,Baik,300
+1583,Pendidikan Guru Pendidikan Anak Usia Dini,S1,Baik,300
+1584,Pendidikan Kimia,S1,Baik,300
+1585,Pendidikan Matematika,S1,Baik,300
+1586,Teknik Industri,S1,Baik,300
+1587,Ilmu Hukum,S2,B,301
+1588,Manajemen,S2,B,301
+1589,Agribisnis,S1,B,301
+1590,Agroteknologi,S1,B,301
+1591,Akuntansi,S1,A,301
+1592,Bisnis Digital,S1,Baik,301
+1593,Ilmu Hukum,S1,B,301
+1594,Manajemen,S1,B,301
+1595,Teknik Elektro,S1,B,301
+1596,Teknik Industri,S1,Baik,301
+1597,Akuntansi,S1,Baik,302
+1598,Arsitektur,S1,B,302
+1599,Manajemen,S1,B,302
+1600,Pendidikan Bahasa Mandarin,S1,Baik,302
+1601,Sastra Inggris,S1,B,302
+1602,Teknik Elektro,S1,Baik,302
+1603,Teknik Informatika,S1,Baik,302
+1604,Teknik Sipil,S1,C,302
+1605,Agribisnis,S2,Baik Sekali,303
+1606,Akuntansi,S2,Baik,303
+1607,Hukum,S2,B,303
+1608,Ilmu Politik,S2,B,303
+1609,Manajemen,S2,Baik,303
+1610,Agribisnis,S1,Unggul,303
+1611,Agroteknologi,S1,A,303
+1612,Akuntansi,S1,B,303
+1613,Ekonomi Pembangunan,S1,B,303
+1614,Hukum,S1,A,303
+1615,Ilmu Administrasi Publik,S2,B,304
+1616,Ilmu Hukum,S2,B,304
+1617,Manajemen,S2,B,304
+1618,Agribisnis,S1,B,304
+1619,Akuntansi,S1,B,304
+1620,Ekonomi Pembangunan,S1,Baik Sekali,304
+1621,Ilmu Administrasi Negara,S1,A,304
+1622,Ilmu Hukum,S1,B,304
+1623,Manajemen,S1,B,304
+1624,Psikologi,S1,Baik,304
+1625,Hukum,S2,B,305
+1626,Administrasi Publik,S1,B,305
+1627,Agribisnis,S1,B,305
+1628,Akuntansi,S1,B,305
+1629,Bisnis Digital,S1,Baik,305
+1630,Desain Komunikasi Visual,S1,Baik,305
+1631,Hukum,S1,A,305
+1632,Informatika,S1,Baik,305
+1633,Informatika,S1,Baik,305
+1634,Kebidanan,S1,Baik Sekali,305
+1635,Ilmu Hukum,S2,B,306
+1636,Manajemen,S2,Baik Sekali,306
+1637,Pendidikan Matematika,S2,Baik,306
+1638,Agribisnis,S1,Baik,306
+1639,Agroteknologi,S1,B,306
+1640,Akuntansi,S1,B,306
+1641,Ilmu Hukum,S1,B,306
+1642,Manajemen,S1,Baik Sekali,306
+1643,Pendidikan Bahasa Dan Sastra Indonesia,S1,Baik Sekali,306
+1644,Pendidikan Matematika,S1,B,306
+1645,Hukum,S1,Baik,307
+1646,Informatika,S1,Baik,307
+1647,Manajemen,S1,Baik Sekali,307
+1648,Teknik Industri,S1,Baik,307
+1649,Teknik Sipil,S1,Baik,307
+1650,Pendidikan Agama Islam,S2,Baik Sekali,308
+1651,Administrasi Bisnis,S1,B,308
+1652,Administrasi Publik,S1,B,308
+1653,Agribisnis,S1,B,308
+1654,Ekonomi Syari`ah,S1,B,308
+1655,Ilmu Al Quran dan Tafsir,S1,Baik,308
+1656,Ilmu dan Teknologi Pangan,S1,B,308
+1657,Ilmu Komunikasi,S1,B,308
+1658,Pendidikan Agama Islam,S1,B,308
+1659,Pendidikan Bahasa Arab,S1,B,308
+1660,Business,S1,-,309
+1661,Computer Science,S1,-,309
+1662,Data Science,S1,-,309
+1663,Engineering Science,S1,-,309
+1664,Information and Communications Technology,S1,-,309
