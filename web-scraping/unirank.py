@@ -8,7 +8,7 @@ import pandas as pd
 import time
 
 # URL target
-url = 'https://www.unirank.org/id/east-java/'
+url = 'https://www.unirank.org/id/ranking/'
 
 # Setup Chrome
 options = Options()
@@ -47,7 +47,7 @@ df = pd.DataFrame(data, columns=["primary_key", "institution_name", "rank"])
 print(df)
 
 # Simpan ke CSV
-df.to_csv("unirank_east_java.csv", index=False, encoding="utf-8-sig")
+df.to_csv("unirank_nasional.csv", index=False, encoding="utf-8-sig")
 print("✅ Data berhasil disimpan ke unirank_east_java.csv")
 
 # Tutup browser
