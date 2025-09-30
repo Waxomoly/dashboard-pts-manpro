@@ -1,8 +1,12 @@
-# link prodi: https://www.banpt.or.id/direktori/data_prodi
-# link institusi: https://www.banpt.or.id/direktori/data_institusi
+# link prodi: https://www.banpt.or.id/direktori/prodi/pencarian_prodi.php
+# link institusi: https://www.banpt.or.id/direktori/institusi/pencarian_institusi.php
 # hasil akhir adalah 2 dataframe dengan kolom: 
 # 1. institution_code (act as primary key, increasing integer) | institution_name | akreditasi_institusi | wilayah
 # 2. prodi_code (act as primary key, increasing integer) prodi_code | prodi_name | jenjang | akreditasi_prodi | institution_code (sama kyk yg di dataframe pertama)
+
+# Yang perlu di cleaning:
+# 1. Pastikan institusi yang diambil hanya PTS (wilayah 01-16)
+# 2. Pastikan prodi yang diambil hanya S1
 
 import requests
 import pandas as pd
@@ -22,6 +26,10 @@ def normalize_name(name):
     return name.split(',')[0].lower().strip() 
 
 def scrape_instansi(api_url, headers):
+    """
+    DataFrame yang bakal dihasilkan:
+    1. DataFrame instansi di Indonesia
+    """
     all_institutions = []
     params = {'_': int(time.time() * 1000)}
 
@@ -43,8 +51,8 @@ def scrape_instansi(api_url, headers):
             akreditasi_institusi = item[1]
             wilayah = item[4]
             
-            if wilayah != '07': # Hapus kalau mau semua wilayah
-                continue
+            # if wilayah != '07': # Hapus kalau mau semua wilayah
+            #     continue
             
             soup = BeautifulSoup(institution_name, 'html.parser')
             institution_name = soup.get_text(strip=True)
@@ -67,8 +75,8 @@ def scrape_instansi(api_url, headers):
 def scrape_prodi(api_url, headers, df_institutions):
     """
     Ada 2 DataFrame yang bakal dihasilkan:
-    1. DataFrame prodi yang berhasil dicocokkan dengan institusi di Jatim
-    2. DataFrame debug lengkap untuk semua prodi S1 di Jatim yang berhasil cocok dan tidak dengan institusi
+    1. DataFrame prodi yang berhasil dicocokkan dengan institusi
+    2. DataFrame debug lengkap untuk semua prodi S1 yang berhasil cocok dan tidak dengan institusi
     """
 
     all_prodi_accepted = []
@@ -90,11 +98,11 @@ def scrape_prodi(api_url, headers, df_institutions):
     for prodi_item in full_prodi_database:
         try:
             jenjang = prodi_item[2]
-            prodi_wilayah_id = prodi_item[3]
+            #prodi_wilayah_id = prodi_item[3]
 
-            # 1. hanya proses prodi S1 dari Wilayah 07
-            if not (jenjang.strip().upper() == 'S1' and prodi_wilayah_id == '07'):
-                continue
+            # # 1. hanya proses prodi S1 dari Wilayah 07
+            # if not (jenjang.strip().upper() == 'S1' and prodi_wilayah_id == '07'):
+            #     continue
 
             parent_institution_name = prodi_item[0]
             prodi_name = prodi_item[1]
@@ -145,14 +153,11 @@ if __name__ == "__main__":
             
             inst_filename = '1_institution_code.csv'
             prodi_filename = '2_prodi_code.csv'
-            debug_filename = '3_debug_prodi_jatim.csv'
+            debug_filename = '3_debug_prodi.csv'
             
             df_institutions_final.drop(columns=['normalized_name']).to_csv(inst_filename, index=False, encoding='utf-8-sig')
             df_prodi_final.to_csv(prodi_filename, index=False, encoding='utf-8-sig')
             df_prodi_debug_report.to_csv(debug_filename, index=False, encoding='utf-8-sig')
 
-            print(f"Institusi Awal (PTS Jatim)\t: {len(df_institutions)} institusi")
-            print(f"Institusi Final (punya S1)\t: {len(df_institutions_final)} institusi")
-            print(f"Total Prodi S1 di Jatim\t\t: {len(df_prodi_debug_report)} prodi")
-            print(f"Prodi S1 Berhasil Dicocokkan\t: {len(df_prodi_final)} prodi")
+            print(f"Prodi Berhasil Dicocokkan\t: {len(df_prodi_final)} prodi")
             
