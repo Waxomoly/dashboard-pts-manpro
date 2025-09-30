@@ -143,9 +143,11 @@ if __name__ == "__main__":
             s1_institution_codes = df_prodi_final['institution_code'].unique()
             df_institutions_final = df_institutions[df_institutions['institution_code'].isin(s1_institution_codes)]
             
-            inst_filename = '1_institution_code.csv'
-            prodi_filename = '2_prodi_code.csv'
-            debug_filename = '3_debug_prodi_jatim.csv'
+            base_folder = "./csv_result"
+
+            inst_filename = base_folder + '1_institution_code.csv'
+            prodi_filename = base_folder + '2_prodi_code.csv'
+            debug_filename = base_folder + '3_debug_prodi_jatim.csv'
             
             df_institutions_final.drop(columns=['normalized_name']).to_csv(inst_filename, index=False, encoding='utf-8-sig')
             df_prodi_final.to_csv(prodi_filename, index=False, encoding='utf-8-sig')

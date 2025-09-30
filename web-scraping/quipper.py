@@ -203,6 +203,7 @@ df_faculty = pd.DataFrame(data_faculty, columns=['faculty', 'building_name', 'ad
 driver.quit()
 
 #    index=False prevents Pandas from writing the DataFrame index as a column
-df_institution.to_excel('institution.xlsx', index=False)
-df_prodi.to_excel('prodi.xlsx', index=False)
-df_faculty.to_excel('faculty.xlsx', index=False)
+base_folder = "./csv_result/"
+df_institution.to_excel(base_folder + 'institution.xlsx', index=False)
+df_prodi.to_excel(base_folder + 'prodi.xlsx', index=False)
+df_faculty.to_excel(base_folder + 'faculty.xlsx', index=False)
