@@ -8,9 +8,6 @@
 # 1. Pastikan institusi yang diambil hanya PTS (wilayah 01-16)
 # 2. Pastikan prodi yang diambil hanya S1
 
-
-import re
-import warnings
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -182,7 +179,6 @@ def scrape_prodi(api_url, headers, df_institutions):
     return df_prodi_accepted, df_prodi_debug
 
 if __name__ == "__main__":
-    warnings.filterwarnings("ignore", category=UserWarning, module='bs4')
     # Scraping data
     df_institutions_scrap = scrape_instansi(INSTITUTION_API_URL, HEADERS)
     
