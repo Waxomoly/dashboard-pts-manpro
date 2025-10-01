@@ -200,9 +200,11 @@ if __name__ == "__main__":
             df_prodi_clean = preprocess_df(df_prodi_final, "Prodi")
             df_prodi_debug_clean = preprocess_df(df_prodi_debug_report, "Debug Prodi")
 
-            inst_filename = '1_institution_code.csv'
-            prodi_filename = '2_prodi_code.csv'
-            debug_filename = '3_debug_prodi.csv'
+            base_folder = "./csv_result"
+
+            inst_filename = base_folder + '1_institution_code.csv'
+            prodi_filename = base_folder + '2_prodi_code.csv'
+            debug_filename = base_folder + '3_debug_prodi_jatim.csv'
             
             # Simpan DataFrame yang SUDAH DIBERSIHKAN
             df_institutions_clean.drop(columns=['normalized_name']).to_csv(inst_filename, index=False, encoding='utf-8-sig')

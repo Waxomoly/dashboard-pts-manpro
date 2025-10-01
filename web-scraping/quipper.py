@@ -3,14 +3,17 @@ import time
 import json
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 
+
 # constants
-url = 'https://campus.quipper.com/directory?location=Jawa%20Timur'
+url = 'https://campus.quipper.com/directory?'
 debug = False
 pd.set_option('display.max_columns', None)
 
@@ -27,18 +30,47 @@ while True:
     try:
         # Find the div based on its exact text content
         # This is often more reliable than using class names
-        load_more_div = driver.find_element(By.XPATH, "//div[text()='Lihat kampus lain']")
+        try:
+            # Attempt to find the element using the most specific locator
+            pop_up_close_button = driver.find_element(By.CLASS_NAME, 'popup-close')
+            
+            # If the element is found, proceed to check if it's displayed and click it
+            if pop_up_close_button.is_displayed():
+                pop_up_close_button.click()
+                print("Closed pop-up window.")
+                time.sleep(1) 
+
+        except NoSuchElementException:
+            # If the element is NOT found, the exception is caught, and we do nothing
+            print("Pop-up close button did not exist or was not found.")
+            pass
+            
+        wait = WebDriverWait(driver, 10) # Wait up to 10 seconds
+        load_more_div = wait.until(
+            EC.element_to_be_clickable((By.XPATH, "//div[text()='Lihat kampus lain']"))
+        )
+
+        # driver.execute_script("arguments[0].scrollIntoView(true);", load_more_div)
         
         # Click the div
         load_more_div.click()
         print("Clicked the 'Lihat kampus lain' div...")
         
         # Wait for 2.5 seconds for new content to load
-        time.sleep(2.5)
+        time.sleep(1.25)
 
     except NoSuchElementException:
         # This error means the div was not found, so we can stop clicking
         print("Button not found. Assuming all content has been loaded.")
+        break
+    except TimeoutException:
+        # This means the button was not found or did not become clickable within MAX_WAIT_TIME.
+        # This is the expected way to stop when all content is loaded.
+        print(f"Button did not become clickable within {MAX_WAIT_TIME} seconds. Assuming all content is loaded.")
+        break
+    except Exception as e:
+        # Catch any other unexpected error (like ElementNotInteractable after clicking)
+        print(f"An unexpected error occurred: {e}. Stopping load.")
         break
 
 print("\nFinished loading all content.")
@@ -203,6 +235,7 @@ df_faculty = pd.DataFrame(data_faculty, columns=['faculty', 'building_name', 'ad
 driver.quit()
 
 #    index=False prevents Pandas from writing the DataFrame index as a column
-df_institution.to_excel('institution.xlsx', index=False)
-df_prodi.to_excel('prodi.xlsx', index=False)
-df_faculty.to_excel('faculty.xlsx', index=False)
+base_folder = "./csv_result/"
+df_institution.to_csv(base_folder + 'institution.csv', index=False)
+df_prodi.to_csv(base_folder + 'prodi.csv', index=False)
+df_faculty.to_csv(base_folder + 'faculty.csv', index=False)
