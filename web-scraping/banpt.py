@@ -8,6 +8,9 @@
 # 1. Pastikan institusi yang diambil hanya PTS (wilayah 01-16)
 # 2. Pastikan prodi yang diambil hanya S1
 
+
+import re
+import warnings
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -23,7 +26,47 @@ HEADERS = {
 
 def normalize_name(name):
     # Normalisasi nama institusi untuk pencocokan
-    return name.split(',')[0].lower().strip() 
+    return name.split(',')[0].lower().strip()
+
+def preprocess_df(df, df_name="DataFrame"):
+    """
+    1. Uppercase semua text
+    2. Hapus semua kurung dan isinya
+    3. TRIM semua text
+    4. Hapus duplikat
+    5. Cek kolom NULL
+    """
+    df = df.copy()
+    initial_rows = len(df)
+
+    print(f"Membersihkan '{df_name}' ({initial_rows} baris)")
+    for col in df.select_dtypes(include=['object']).columns:
+        df[col] = df[col].str.replace(r'\s*\([^)]*\)', '', regex=True).str.upper().str.strip()
+
+    #is_duplicate = df.duplicated(keep=False)
+    # if is_duplicate.any():
+    #     print("\n--- Baris Duplikat yang Ditemukan ---")
+    #     print(df[is_duplicate].sort_values(by=list(df.columns)).to_string())
+    #     print("--------------------------------------------------\n")
+
+    # Hapus duplikat 
+    df.drop_duplicates(inplace=True)
+    rows_after_dedup = len(df)
+    print(f"Menghapus {initial_rows - rows_after_dedup} baris duplikat.")
+    
+    # Cek  data NULL
+    null_rows_df = df[df.isnull().any(axis=1)]
+    if not null_rows_df.empty:
+        print(f"\n {len(null_rows_df)} null")
+        print(null_rows_df.to_string())
+        
+    else:
+        print("Tidak ditemukan baris dengan data kosong.")
+
+    print(f"Jumlah baris setelah pembersihan: {len(df)}")
+    print("-------------------------------------------")
+    
+    return df
 
 def scrape_instansi(api_url, headers):
     """
@@ -37,14 +80,13 @@ def scrape_instansi(api_url, headers):
         response = requests.get(api_url, headers=headers, params=params, timeout=120)
         response.raise_for_status()
         json_data = response.json()
+        full_database = json_data.get('data', [])
+        print(f"Berhasil mendapatkan {len(full_database)} data institusi")
     except (requests.exceptions.RequestException, ValueError) as e:
         print(f"Gagal mengambil data institusi dari API: {e}")
         return None
     
-    full_database = json_data.get('data', [])
-    if not full_database:
-        return None
-    print(f"Berhasil mendapatkan {len(full_database)} data institusi")
+    
     for item in full_database:
         try:
             institution_name = item[0]
@@ -65,8 +107,6 @@ def scrape_instansi(api_url, headers):
             })
         except IndexError:
             continue
-    if not all_institutions:
-        return None
     
     df = pd.DataFrame(all_institutions)
     df.insert(0, 'institution_code', range(1, len(df) + 1))
@@ -142,22 +182,29 @@ def scrape_prodi(api_url, headers, df_institutions):
     return df_prodi_accepted, df_prodi_debug
 
 if __name__ == "__main__":
-    df_institutions = scrape_instansi(INSTITUTION_API_URL, HEADERS)
+    warnings.filterwarnings("ignore", category=UserWarning, module='bs4')
+    # Scraping data
+    df_institutions_scrap = scrape_instansi(INSTITUTION_API_URL, HEADERS)
     
-    if df_institutions is not None:
-        df_prodi_final, df_prodi_debug_report = scrape_prodi(PRODI_API_URL, HEADERS, df_institutions)
+    if df_institutions_scrap is not None:
+        df_prodi_scrap, df_prodi_debug_report = scrape_prodi(PRODI_API_URL, HEADERS, df_institutions_scrap)
         
-        if df_prodi_final is not None and not df_prodi_final.empty:
-            s1_institution_codes = df_prodi_final['institution_code'].unique()
-            df_institutions_final = df_institutions[df_institutions['institution_code'].isin(s1_institution_codes)]
+        if df_prodi_scrap is not None and not df_prodi_scrap.empty:
+            s1_institution_codes = df_prodi_scrap['institution_code'].unique()
+            df_institutions_final = df_institutions_scrap[df_institutions_scrap['institution_code'].isin(s1_institution_codes)]
             
+            df_prodi_final = df_prodi_scrap
+
+            # Preprocess dataframes
+            df_institutions_clean = preprocess_df(df_institutions_final, "Institusi")
+            df_prodi_clean = preprocess_df(df_prodi_final, "Prodi")
+            df_prodi_debug_clean = preprocess_df(df_prodi_debug_report, "Debug Prodi")
+
             inst_filename = '1_institution_code.csv'
             prodi_filename = '2_prodi_code.csv'
             debug_filename = '3_debug_prodi.csv'
             
-            df_institutions_final.drop(columns=['normalized_name']).to_csv(inst_filename, index=False, encoding='utf-8-sig')
-            df_prodi_final.to_csv(prodi_filename, index=False, encoding='utf-8-sig')
-            df_prodi_debug_report.to_csv(debug_filename, index=False, encoding='utf-8-sig')
-
-            print(f"Prodi Berhasil Dicocokkan\t: {len(df_prodi_final)} prodi")
-            
+            # Simpan DataFrame yang SUDAH DIBERSIHKAN
+            df_institutions_clean.drop(columns=['normalized_name']).to_csv(inst_filename, index=False, encoding='utf-8-sig')
+            df_prodi_clean.to_csv(prodi_filename, index=False, encoding='utf-8-sig')
+            df_prodi_debug_clean.to_csv(debug_filename, index=False, encoding='utf-8-sig')
