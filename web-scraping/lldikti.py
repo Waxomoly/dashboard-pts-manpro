@@ -1,6 +1,7 @@
 # link: https://lldikti7.kemdikbud.go.id/rekap-data-pts
 # hasil akhir adalah 2 dataframe dengan kolom: 
 # 1. institution_code (act as primary key, increasing integer) | email | institution_name | akreditasi_institusi | link
+<<<<<<< HEAD
 # 2. prodi_code (act as primary key, increasing integer) | prodi_name | jenjang | akreditasi_prodi | institution_code (sama kyk yg di dataframe pertama)
 
 
@@ -130,3 +131,6 @@ df_prodi.to_csv("prodi.csv", index=False)
 print(f"Total prodi scraped: {len(df_prodi)}")
 
 driver.quit()
+=======
+# 2. prodi_code (act as primary key, increasing integer) | prodi_name | jenjang | akreditasi_prodi | institution_code (sama kyk yg di dataframe pertama)
+>>>>>>> 58e1cc38c3fdc8ca9ee0e003b19c9f1c5fe01f4d
