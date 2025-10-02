@@ -1,0 +1,1230 @@
+faculty,building_name,address,quipper_institution_code
+EVENT MANAGEMENT,Politeknik Internasional Bali,"Jalan Pantai Nyanyi, Beraban",1
+CULINARY ARTS,Politeknik Internasional Bali,"Jalan Pantai Nyanyi, Beraban",1
+HOTEL MANAGEMENT,Politeknik Internasional Bali,"Jalan Pantai Nyanyi, Beraban",1
+ALL,Kantor PPM Center Jababeka,Kawasan Industri Jababeka 1.  Jl. Jababeka Raya Kav A-2 Cikarang JB 17530 – Indonesia,2
+ALL,Kantor PPM Center Surabaya,"Graha Pena, Jl. Ahmad Yani No.88, Ketintang, Gayungan, Kota SBY, Jawa Timur 60234",2
+EKONOMI,Kampus Utama,"Jl. Menteng Raya No.9-19, RT.1/RW.10, Kb. Sirih, Menteng, Jakarta Pusat, DKI Jakarta 10340",2
+ALL,Kantor PPM Center Makassar,"Jl. Boto Lempangan No.52, Sawerigading, Kec. Makassar, Kota Makassar, Sulawesi Selatan 90115",2
+ALL,Cilandak Campus,"Jl. RA. Kartini , Cilandak Barat Jakarta Selatan, Jakarta Selatan 12430",3
+ALL,Kampus BSD,"BSD City Kavling Edutown I.1 Jl. BSD Raya Utama, BSD City 15339 Kabupaten Tangerang, Indonesia",3
+FAKULTAS EKONOMI DAN BISNIS,Kampus 1,"Jl. Tanjung Duren Raya no. 4, Jakarta Barat",4
+FAKULTAS PSIKOLOGI,Kampus 1,"Jl. Tanjung Duren Raya no. 4, Jakarta Barat",4
+FAKULTAS ILMU SOSIAL DAN HUMANIORA,Kampus 1,"Jl. Tanjung Duren Raya no. 4, Jakarta Barat",4
+FAKULTAS TEKNIK DAN ILMU KOMPUTER,Kampus 1,"Jl. Tanjung Duren Raya no. 4, Jakarta Barat",4
+FAKULTAS KEDOKTERAN DAN ILMU KESEHATAN,Kampus 2,"Jl. Arjuna Utara no. 6, Jakarta Barat",4
+ALL,Kampus 3,"Kokan Permata Blok A no. 6-8, Jl. Boulevard Bukit Gading Raya, Kelapa Gading, Jakarta Utara",4
+FAKULTAS TEKNOLOGI INDUSTRI,Universitas Atma Jaya Yogyakarta,Jl. Babarsari 44 Yogyakarta 55281,5
+FAKULTAS TEKNIK,Universitas Atma Jaya Yogyakarta,Jl. Babarsari 44 Yogyakarta 55281,5
+FAKULTAS HUKUM,Universitas Atma Jaya Yogyakarta,Jl. Babarsari 44 Yogyakarta 55281,5
+FAKULTAS TEKNOBIOLOGI,Universitas Atma Jaya Yogyakarta,Jl. Babarsari 44 Yogyakarta 55281,5
+FAKULTAS BISNIS DAN EKONOMIKA,Universitas Atma Jaya Yogyakarta,Jl. Babarsari 44 Yogyakarta 55281,5
+FAKULTAS ILMU SOSIAL DAN POLITIK,Universitas Atma Jaya Yogyakarta,Jl. Babarsari 44 Yogyakarta 55281,5
+PROGRAM INTERNASIONAL,Universitas Atma Jaya Yogyakarta,Jl. Babarsari 44 Yogyakarta 55281,5
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Universitas Esa Unggul,"Jl. Arjuna Utara No. 9, Kebon Jeruk, Jakarta Barat 11510",6
+FAKULTAS ILMU KOMUNIKASI,Universitas Esa Unggul,"Jl. Arjuna Utara No. 9, Kebon Jeruk, Jakarta Barat 11510",6
+FAKULTAS ILMU KOMPUTER,Universitas Esa Unggul,"Jl. Arjuna Utara No. 9, Kebon Jeruk, Jakarta Barat 11510",6
+FAKULTAS TEKNIK,Universitas Esa Unggul,"Jl. Arjuna Utara No. 9, Kebon Jeruk, Jakarta Barat 11510",6
+FAKULTAS FISIOTERAPI,Universitas Esa Unggul,"Jl. Arjuna Utara No. 9, Kebon Jeruk, Jakarta Barat 11510",6
+FAKULTAS DESAIN DAN INDUSTRI KREATIF,Universitas Esa Unggul,"Jl. Arjuna Utara No. 9, Kebon Jeruk, Jakarta Barat 11510",6
+FAKULTAS EKONOMI DAN BISNIS,Universitas Esa Unggul,"Jl. Arjuna Utara No. 9, Kebon Jeruk, Jakarta Barat 11510",6
+FAKULTAS PSIKOLOGI,Universitas Esa Unggul,"Jl. Arjuna Utara No. 9, Kebon Jeruk, Jakarta Barat 11510",6
+FAKULTAS HUKUM,Universitas Esa Unggul,"Jl. Arjuna Utara No. 9, Kebon Jeruk, Jakarta Barat 11510",6
+FAKULTAS ILMU-ILMU KESEHATAN,Universitas Esa Unggul,"Jl. Arjuna Utara No. 9, Kebon Jeruk, Jakarta Barat 11510",6
+ALL,Universitas Esa Unggul - International Campus,"Jl. Raya Legok – Karawaci, Curug Sangereng, Klp. Dua, Tangerang, Banten 15810",6
+ALL,Universitas Esa Unggul - Kampus Tangerang,"Jl. Citra Raya Boulevard Blok. S 25/ 01, Kelurahan Panongan, Kecamatan Panongan, Kabupaten Tangerang, Banten 15711",6
+ALL,Universtas Esa Unggul - Kampus Bekasi,"Jl. Harapan Indah Boulevard No. 2, Pusaka Rakyat, Kec. Tarumajaya, Bekasi, Jawa Barat 17214",6
+ALL,Kampus Semanggi,"Jl. Jenderal Sudirman RT 02 RW 04 No. 51, Karet Semanggi, Jakarta 12930",7
+ALL,Kampus BSD,"Jl. Raya Cisauk Lapan, Sampora, Kec. Cisauk, Kabupaten Tangerang, Banten 15345",7
+ALL,Kampus Pluit,"Jl. Pluit Raya No.2, RT.21/RW.8, Penjaringan, Kec. Penjaringan, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14440",7
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Universitas Pramita Indonesia,"Jl. Boulevard Taman Ubud, Lippo Karawaci",8
+FAKULTAS SAINS DAN TEKNOLOGI,Universitas Pramita Indonesia,"Jl. Boulevard Taman Ubud, Lippo Karawaci",8
+FAKULTAS EKONOMI DAN BISNIS,Universitas Pramita Indonesia,"Jl. Boulevard Taman Ubud, Lippo Karawaci",8
+ALL,Kampus 2,"Jalan Gunung Anyar Boulevard Nomor 1 Surabaya, Jawa Timur 60155",9
+ALL,Kampus 1,"Jalan Raya Hang Tuah Nomor 5, Surabaya 60155",9
+ALL,Kampus Utama,"Jl. Yos Sudarso Kav. 87
+Sunter, Jakarta Utara 14350",10
+ALL,Kampus Utama,"Jalan Letjen Sutoyo Mojosongo, Surakarta, Jawa Tengah, 57127",11
+ALL,Kampus 1,"Jalan Malino Km. 7 Romanglompoa, Kecamatan Bontomarannu. Sungguminasa, Kabupaten Gowa, Sulawesi Selatan, 92171.",12
+ALL,Kampus 2,"Desa Mappesangka & Desa Turuadae, Kecamatan Ponre, Kabupaten Bone, Sulawesi Selatan, 92765.",12
+ALL,Kampus Cawang,"Jl. Mayjen Sutoyo No.2 Cawang, Jakarta Timur 13630",13
+ALL,Kampus Diponegoro,"Jl.Diponegoro No. 84-86, Jakarta Pusat",13
+ALL,Kampus Ancol,"Jl. Lodan Raya No. 2 Ancol, Jakarta Utara 14430",14
+ALL,Kampus Serpong,"Jalan Jalur Sutera Barat kav. 7-9, Alam Sutera, Tangerang, Banten, 15143",14
+ALL,Kampus Utama,"Jl. Pengasinan Rawa Semut, Margahayu, Bekasi Timur 17113",15
+ALL,Kampus Utama,Jalan Kamizaun Mopah Lama Merauke 99611,16
+ALL,Kampus Utama,"Jl. Majasem no. B2, Kota Cirebon",17
+ALL,Kampus Utama,"Jalan Parit H. Mukhsin II, Sungai Raya, Kabupaten Kubu Raya, Kalimantan Barat 78121",18
+ALL,Kampus Utama,"Jl. Dr. Ir. H. Soekarno No.201, Klampis Ngasem, Kec. Sukolilo, Kota Surabaya, Jawa Timur 60117",19
+ALL,Kampus Utama,"Jl. Perunggu No. 53-54,
+Harapan Mulya, Kemayoran
+Jakarta Pusat 10640",20
+ALL,Kampus Utama,Jl. Mayjen Haryono 193 Malang 65144,21
+ALL,Kampus Cibinong,"Jl. Raya Mayor Oking Jaya Atmaja No.9 Cirimekar Cibinong, Bogor 16917",22
+ALL,Kampus Cikarang,"Jl. Raya Industri Pasir Gombong, Jababeka, Cikarang – Bekasi 17530",22
+ALL,Kampus Utama,"Jalan Terusan Rajabasa 2
+Malang 65146 East Java, Indonesia",23
+ALL,Kampus Utama,"Jl. Walet No.21, Sutawinangun, Cirebon",24
+ALL,Kampus Utama,"Jl. Cimanuk No. 20, Wonokromo, Surabaya, Jawa Timur",25
+ALL,Kampus Utama,"Jl. Karapitan No. 116, Bandung, Jawa Barat",26
+FAKULTAS SAINS DAN TEKNOLOGI,Universitas Raharja,Jl. Jenderal Sudirman No. 40 Modern Cikokol Tangerang 15117,27
+ALL,Kampus Utama,"Jl. Kapasari No. 95, Surabaya 60141",28
+ALL,Kampus Utama,Jl. Dr. Wahidin Sudiro Husodo No. 5-25 Yogyakarta 55224,29
+ALL,Kampus I,"Jalan Adisucipto Penfui, Lasiana, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Timur",30
+ALL,Kampus II,"Jl. Prof. Dr. Herman Johanes, Lasiana, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Timur",30
+ALL,Kampus Utama,"Jalan Terusan Candi Kalasan, Blimbing, Malang, Indonesia 65142",31
+MA'HAD ALY RIYADHUL JANNAH,STAI Ma'had Aly Riyadhul Jannah,"Jln. Garuda No. 32 Batujaya, Batuceper, Kota Tangerang",32
+ALL,Kampus Diponegoro,"Jl. Diponegoro No. 74
+Jakarta Pusat 10430",33
+ALL,Kampus Utama,"Jalan Ki Hajar Dewantara 15 A Iringmulyo, Kota Metro, Lampung",34
+ALL,Kampus 1,"Graha Mahardhika, Jl. Wisata Menanggal 42A, Surabaya 60234, Jawa Timur",35
+ALL,Kampus 2,"Graha Pena Lantai 2, Jl. A. Yani No. 88, Surabaya, Jawa Timur",35
+ALL,Kampus Utama,"Jl. Mertojoyo Blok L, Merjosari, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144",36
+FAKULTAS EKONOMI DIGITAL,Institut Teknologi dan Bisnis Ahmad Dahlan,"Jln. Ir H. Juanda No.77, Cireundeu, Kec. Ciputat Tim., Kota Tangerang Selatan, Banten 15419",37
+FAKULTAS TEKNIK DAN DESAIN,Institut Teknologi dan Bisnis Ahmad Dahlan,"Jln. Ir H. Juanda No.77, Cireundeu, Kec. Ciputat Tim., Kota Tangerang Selatan, Banten 15419",37
+ALL,Kampus 1,"Jalan Pemuda Ujung No.17, Hutagalung Siwaluompu, Kec. Tarutung, Kabupaten Tapanuli Utara, Sumatera Utara 22411",38
+ALL,Kampus 2,"Jalan Raya Tarutung Siborongborong, Km. 11 Silangkitang, Desa Sipahutar, Kec. Sipoholon, Kabupaten Tapanuli Utara, Sumatera Utara 22452",38
+ALL,Kampus Utama,"Jl. Kanayakan No.21, Dago, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",39
+ALL,Kampus Utama,"Jalan G. Obos X Palangka Raya
+Kalimantan Tengah, 73112",40
+ALL,Kampus Utama,"Jl. Curug Mekar No. 17, Yasmin, Kota Bogor, Jawa Barat, Indonesia 16113",41
+ALL,Kampus Tomohon,"Jl. Kampus, Matani Satu, Kec. Tomohon Tengah, Kota Tomohon, Sulawesi Utara",42
+ALL,Kampus Tondano,"Jl. Kampus Unima, Kel. Tonsaru, Kec. Tondano Selatan, Kab. Minahasa",42
+ALL,Kampus Utama,"Central Park Mall 3rd Floor – Unit 112 Jl. Let. Jend. S. Parman Kav. 28 West Jakarta, 11470, Indonesia",43
+ALL,Kampus Utama,"Jalan Imam Bonjol, Tanema, Kecamatan Fakfak, Kabupaten Fakfak, Papua Barat 98611",44
+ALL,Kampus I Gedung HZ,"Jl. Harapan Nomor 50, Lenteng Agung
+Jagakarsa, Jakarta Selatan 12610",45
+ALL,Kampus II Gedung JC,"Jl. Camat Gabun 2 No.15, RT.10/RW.8, Lenteng Agung, Kec. Jagakarsa, Jakarta Selatan",45
+ALL,Kampus Utama,"Jl. Matraman Raya No. 27, Jakarta Timur, 13140.",46
+EKONOMI DAN BISNIS,Universtias Yatsi Madani,"Jln. Aria Santika, No. 40A, Kel. Margasari, Kec. Karawaci, Kota Tangerang - Banten 15113",47
+KESEHATAN,Universtias Yatsi Madani,"Jln. Aria Santika, No. 40A, Kel. Margasari, Kec. Karawaci, Kota Tangerang - Banten 15113",47
+SAINS DAN TEKNOLOGI,Universtias Yatsi Madani,"Jln. Aria Santika, No. 40A, Kel. Margasari, Kec. Karawaci, Kota Tangerang - Banten 15113",47
+ALL,Kampus Utama,"Jl. Raya Beji Karangsalam No.25, Kedungbanteng, Banyumas",48
+ALL,Kampus Utama,"Jalan Perak Barat Nomor 173
+Surabaya, Jawa Timur 60165",49
+ALL,Kampus Utama,"Jl. Sabar No 66, Petukangan Selatan, Pesanggrahan, Jakarta Selatan, 12270",50
+ALL,Kampus Utama,"Jl. Ir Juanda No.70 Ciputat Timur, Tangerang Selatan, Banten, Indonesia 15419",51
+ALL,Kampus Utama,"Jl. Siwalankerto 121-131, RT.007/RW.01, Siwalankerto, Wonocolo, Surabaya 60236",52
+ALL,Kampus Utama,"Jl. Brigjend Dharsono No.20, Kertawinangun, Kedawung, Kabupaten Cirebon, Jawa Barat 45153",53
+ALL,Kampus Utama,"Jl. Manila no. 37, Sumberece, Kec. Pesantren, Kota Kediri, Jawa Timur 64133",54
+ALL,Kampus Utama,"Jl.Bintaro Raya No.10, Tanah Kusir, Kebayoran Lama Utara, Jakarta Selatan",55
+ALL,Kampus A,"Komplek Pendidikan Perguruan Muhammadiyah Kramat Jl. Kramat Raya No.49, Lantai 4-5 Jakarta Pusat 10450",56
+ALL,Kampus B,Jl. Minangkabau No. 60 – Manggarai Jakarta Selatan 12970,56
+ALL,Kampus C,Jl. Sungai Kendal No. 146 Jakarta Utara 14140,56
+ALL,Kampus Utama,Jalan Kalidami Nomor 14-16 Surabaya,57
+ALL,Kampus Utama,Jl. Pulomas Selatan Kav. 23 Jakarta Timur,58
+ALL,Kampus Ngagel,"Jalan Ngagel Dadi III-3B/37 Surabaya 60245 Jawa Timur, Indonesia",59
+ALL,Kampus Menanggal,"Jalan Dukuh Menanggal XII, Surabaya 60234 Jawa Timur, Indonesia",59
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Universitas Ibn Khaldun  Bogor,"Jln. KH. Sholeh Iskandar, RT.01/RW.10, Kedung Badak, Kec. Tanah Sereal, Kota Bogor, Jawa Barat 16162",60
+FAKULTAS TEKNIK DAN SAINS,Universitas Ibn Khaldun  Bogor,"Jln. KH. Sholeh Iskandar, RT.01/RW.10, Kedung Badak, Kec. Tanah Sereal, Kota Bogor, Jawa Barat 16162",60
+FAKULTAS HUKUM,Universitas Ibn Khaldun  Bogor,"Jln. KH. Sholeh Iskandar, RT.01/RW.10, Kedung Badak, Kec. Tanah Sereal, Kota Bogor, Jawa Barat 16162",60
+FAKULTAS ILMU KESEHATAN,Universitas Ibn Khaldun  Bogor,"Jln. KH. Sholeh Iskandar, RT.01/RW.10, Kedung Badak, Kec. Tanah Sereal, Kota Bogor, Jawa Barat 16162",60
+FAKULTAS EKONOMI DAN BISNIS,Universitas Ibn Khaldun  Bogor,"Jln. KH. Sholeh Iskandar, RT.01/RW.10, Kedung Badak, Kec. Tanah Sereal, Kota Bogor, Jawa Barat 16162",60
+FAKULTAS AGAMA ISLAM,Universitas Ibn Khaldun  Bogor,"Jln. KH. Sholeh Iskandar, RT.01/RW.10, Kedung Badak, Kec. Tanah Sereal, Kota Bogor, Jawa Barat 16162",60
+ALL,Kampus Cikarang,"Jalan Inspeksi Kalimalang Tegal Danas, Cikarang Pusat",61
+ALL,Kampus Karawang,"Kondangjaya, Karawang Timur, Karawang, West Java 41371",61
+ALL,Kampus Bekasi,"Ruko Bekasi Mas, Jalan A.Yani, RT 004 RW 003, Marga Jaya, Kecamatan Bekasi Selatan, Kota Bekasi, Jawa Barat 17148",61
+ALL,Kampus Utama,"Jl. Sawo Manila, Pejaten Ps. Minggu Jakarta 12520",62
+ALL,Kampus Utama,Jalan Serayu Nomor 79 Madiun 63133,63
+ALL,Kampus 1,"Jl. Salemba Raya No.41, RT.3/RW.5, Paseban, Kec. Senen, Jakarta Pusat",64
+ALL,Kampus 2,"Jl. Salemba Tengah No. 30-32, Jakarta Pusat",64
+ALL,Kampus Utama,"Jl. Rangga Gading No.01, Gudang, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16123",65
+ALL,Kampus Utama,"Jalan Singosari Nomor 2A, Kota Semarang, Jawa Tengah 50242",66
+ALL,Kampus Utama,"Jl. Kalitanjung No.14 - 18 A, Harjamukti, Kec. Harjamukti, Kota Cirebon, Jawa Barat 45143",67
+ALL,Kampus Utama,"Jl. Kedungmundu Raya No.18 Tembalang, Semarang",68
+ALL,Kampus Utama,"Jl. KH. Wahid Hasyim no. 65, Kediri, Jawa Timur, 64114",69
+ALL,Kampus 2,"Tabek, Kecamatan Pariangan, Kabupaten Tanah Datar, Sumatera Barat 27264",70
+ALL,Kampus Utama,"Jalan Jenderal Sudirman No. 137, Limo Kaum, Kecamatan Lima Kaum, Kabupaten Tanah Datar, Sumatera Barat 27217, Indonesia",70
+ALL,Kampus Kolaka,Jalan Pemuda Nomor 339 Kelurahan Tahoa Kolaka Sulawesi Tenggara Indonesia,71
+ALL,Kampus Buton Tengah,"Dusun Lakahoo Desa Wakambangura 2, Kecamatan Mawasangka, Kabupaten Buton Tengah, Sulawesi Tenggara 93762",71
+ALL,Kampus Utama,"Komplek Indonesia Peace and Security Center , Sentul, Bogor, Jawa Barat",72
+ALL,Kampus Utama,"Kawasan Zona Madina Dompet Dhuafa, Jalan Raya Parung Bogor KM 42 Desa Jampang, Kec. Kemang, Kab. Bogor",73
+ALL,Kampus Utama,"Jl. Raya Pasar Minggu, Kecamatan Pasar Minggu, Jakarta Selatan, Jakarta 12520",74
+ALL,Kampus A,"Jl. Hang Jebat III/F3 Kebayoran Baru, Jakarta Selatan 12120",75
+ALL,Kampus B,"Jl. Raya Ragunan No. 29C Pasar Minggu,
+Jakarta Selatan",75
+ALL,Kampus C,"Jl. Percetakan
+Negara No. 23A, Jakarta Pusat.",75
+FAKULTAS PSIKOLOGI DAN ILMU SOSIAL BUDAYA,Kampus Utama,"Jln. Kaliurang Km. 14.5, Sleman, Yogyakarta, 55584",76
+FAKULTAS TEKNIK SIPIL DAN PERENCANAAN,Kampus Utama,"Jln. Kaliurang Km. 14.5, Sleman, Yogyakarta, 55584",76
+FAKULTAS KEDOKTERAN,Kampus Utama,"Jln. Kaliurang Km. 14.5, Sleman, Yogyakarta, 55584",76
+FAKULTAS ILMU AGAMA ISLAM,Kampus Utama,"Jln. Kaliurang Km. 14.5, Sleman, Yogyakarta, 55584",76
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus Utama,"Jln. Kaliurang Km. 14.5, Sleman, Yogyakarta, 55584",76
+FAKULTAS HUKUM,Kampus Utama,"Jln. Kaliurang Km. 14.5, Sleman, Yogyakarta, 55584",76
+FAKULTAS TEKNOLOGI INDUSTRI,Kampus Utama,"Jln. Kaliurang Km. 14.5, Sleman, Yogyakarta, 55584",76
+FAKULTAS BISNIS DAN EKONOMIKA,Kampus Utama,"Jln. Kaliurang Km. 14.5, Sleman, Yogyakarta, 55584",76
+ALL,Graha STTII Surabaya,"Jl. Raya Panjang Jiwo Permai 1, Tenggilis Mojoyo, Surabaya",77
+ALL,Kampus Utama,"Jl. Semolowaru No.84, Surabaya 60283, Jawa Timur, Indonesia",78
+ALL,Kampus Utama,"Sumur Batu, Babakan Madang Bogor, Jawa Barat 16810",79
+ALL,Kampus Utama,"Jalan Nginden Intan Timur I/18, Surabaya 60118",80
+ALL,Kampus Utama,"Jl. S. Supriadi No.22, Sukun, Kec. Sukun, Malang, Jawa Timur 65147",81
+ALL,Kampus Utama,"Jl. Jeruk Purut No. 10 Cilandak Timur Pasar Minggu
+Jakarta Selatan 12650",82
+ALL,Kampus 2,"Pombewe, Kecamatan Sigi Biromaru, Kabupaten Sigi, Sulawesi Tengah 94362",83
+ALL,Kampus 1,"Jalan Diponegoro Nomor 23, Lere, Kecamatan Palu Barat, Kota Palu, Sulawesi Tengah 94221, Indonesia",83
+ALL,Kampus Utama,"Jalan Ngagel Jaya Selatan 169, Surabaya",84
+ALL,Kampus Wiyung,"Jl. Raya Menganti Keramat 133, Wiyung, Surabaya",85
+ALL,Kampus Benowo,"Jalan Raya Benowo 1-3, Pakal, Surabaya",85
+ADMINISTRASI BISNIS,Kampus Utama,"Jl. Rawajati Timur I/1. Kalibata, Pancoran. Jakarta Selatan, DKI Jakarta. 12750",86
+ALL,Kampus I,"Jalan Balai Kota No. 1 Kota Pare-Pare, Sulawesi Selatan",87
+ALL,Kampus II,"Jalan Pemuda No. 6, Kota Pare-Pare, Sulawesi Selatan",87
+ALL,Kampus Utama,"IKIP Gunung Anyar Blok E No.152-154 & 197-198, Gn. Anyar, Kec. Gn. Anyar, Kota Surabaya, Jawa Timur 60295",88
+ALL,Kampus Utama,"Jalan Kantil Bulusulur Wonogiri, Kecamatan Wonogiri, Kabupaten Wonogiri, Jawa Tengah 57615",89
+ALL,Kampus Utama,"Jalan Matahari Nomor 1, Puhrejo, Tulungrejo, Kecamatan Pare, Kabupaten Kediri, Jawa Timur 64212",90
+ALL,Kampus Utama,"Jl. IPN No.2, Cipinang Besar Selatan, Jakarta Timur",91
+ALL,Kampus UBAYA Tenggilis,"Jl. Raya Kalirungkut, Surabaya",92
+ALL,Kampus UBAYA Ngagel,"Jl. Ngagel Jaya Selatan 169, Surabaya",92
+ALL,Kampus UBAYA III Trawas,"Jl. Tamiajeng, Trawas, Mojokerto, Jawa Timur",92
+FAKULTAS EKONOMI DAN BISNIS,Kampus Roxy,"Pusat Niaga Roxy Mas Blok E2 No.38-39, Jl.K.H. Hasyim Ashari, Jakarta Pusat",93
+FAKULTAS TEKNOLOGI INFORMASI,Kampus Roxy,"Pusat Niaga Roxy Mas Blok E2 No.38-39, Jl.K.H. Hasyim Ashari, Jakarta Pusat",93
+FAKULTAS EKONOMI DAN BISNIS,Kampus Salemba,"Sentra Salemba Mas Blok S-T, Jl. Salemba Raya No. 34-36",93
+FAKULTAS TEKNOLOGI INFORMASI,Kampus Salemba,"Sentra Salemba Mas Blok S-T, Jl. Salemba Raya No. 34-36",93
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus Pusat,"Jl. Ciledug Raya, Petukangan Utara, Jakarta Selatan, 12260",93
+FAKULTAS TEKNIK,Kampus Pusat,"Jl. Ciledug Raya, Petukangan Utara, Jakarta Selatan, 12260",93
+FAKULTAS KOMUNIKASI DAN DESAIN KREATIF,Kampus Pusat,"Jl. Ciledug Raya, Petukangan Utara, Jakarta Selatan, 12260",93
+FAKULTAS EKONOMI DAN BISNIS,Kampus Pusat,"Jl. Ciledug Raya, Petukangan Utara, Jakarta Selatan, 12260",93
+FAKULTAS TEKNOLOGI INFORMASI,Kampus Pusat,"Jl. Ciledug Raya, Petukangan Utara, Jakarta Selatan, 12260",93
+ALL,Kampus Utama,"Jalan Sutorejo No 59,
+Surabaya, Jawa Timur,
+Indonesia 60113",94
+ALL,Kampus Utama,"Jalan Soekarno Hatta, Nomor 07 Pare, Kediri, Jawa Timur",95
+TEKNIK PENERBANGAN,Kampus Utama,"Jl. Raya PLP Curug, Serdang Wetan, Kec. Legok, Tangerang, Banten 15820",96
+MANAJEMEN PENERBANGAN,Kampus Utama,"Jl. Raya PLP Curug, Serdang Wetan, Kec. Legok, Tangerang, Banten 15820",96
+PENERBANG,Kampus Utama,"Jl. Raya PLP Curug, Serdang Wetan, Kec. Legok, Tangerang, Banten 15820",96
+KESELAMATAN PENERBANGAN,Kampus Utama,"Jl. Raya PLP Curug, Serdang Wetan, Kec. Legok, Tangerang, Banten 15820",96
+ALL,Kampus Utama,"Jl. Soekarno Hatta Tlogosari, Semarang 59160",97
+ALL,Kampus Utama,"Jl. Pangeran Sogiri No. 283, Tanah Baru, Bogor Utara, Jawa Barat 16154",98
+ALL,Kampus Utama,"Jalan Raya Sentani Depapre, Distrik Waibu, Kabupaten Jayapura, Papua 99352",99
+ALL,Kampus Utama,"Villa Puncak Tidar N-01, 65151, Malang, Jawa Timur, Indonesia",100
+KEDOKTERAN,Kampus 2,Jl. Bendungan Sutami 188A Malang,101
+LLMU KESEHATAN,Kampus 2,Jl. Bendungan Sutami 188A Malang,101
+ALL,Kampus 1,Jl. Bandung No. 1 Malang,101
+ALL,Kampus 3,Jl. Raya Tlogomas No. 246 Malang 65144,101
+ALL,Kampus Utama,Jl. Protokol Halim Perdanakusuma Komplek Bandara Halim Perdanakusuma Jakarta Timur 13610,102
+ALL,Kampus B,"Jl. Angkasa, Komplek Angkasa
+Halim Perdanakusuma
+Jakarta Timur 13610",102
+ALL,Kampus A,"Jalan Arteri Pondok Indah No. 11, Kebayoran Lama, RT 4/RW 2, Kebayoran Lama Utara, Kecamatan Kebayoran Lama, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12240",103
+ALL,Kampus B,"Jalan H. Jampang No.91, Jatimulya, Kecamatan Tambun Selatan, Bekasi, Jawa Barat 17510",103
+ALL,Kampus Benowo,"Jl. Raya Benowo 1-3, Surabaya",104
+ALL,Kampus Wiyung,"Jl. Menganti Kramat 133, Wiyung, Surabaya",104
+ALL,Kampus Utama,"Jalan Laksda Adi Sucipto 249A Blimbing, Malang, Jawa Timur",105
+ALL,Kampus Utama,"Jalan Edutown BSD City Serpong, Pagedangan, Kecamatan Pagedangan, Kabupaten Tangerang, Banten 15339",106
+ALL,Kampus B,"Jalan Raya Jemursari Nomor 57, Jemur Wonosari, Kecamatan Wonocolo, Kota Surabaya, Jawa Timur 60237",107
+ALL,Kampus A,"Jalan Smea Nomor 57, Wonokromo, Kecamatan Wonokromo, Kota Surabaya, Jawa Timur 60243",107
+ALL,Kampus Utama,"Jalan Taman Pendidikan, Moodu, Kota Timur, Kota Gorontalo",108
+ALL,Kampus Cikarang,"Jl. Gaharu Blok F-3 Delta Silicon 2 Lippo Cikarang, Kelurahan Cibatu, Kecamatan Cikarang Selatan, Bekasi, Jawa Barat 17530",109
+ALL,Kampus Sunter,"Komplek PT Astra International Tbk. Gedung B, Jl. Gaya Motor Raya No. 8, Sunter II, Jakarta 14330",109
+ALL,Kampus Wonorejo,"Jl. Wonorejo Utara 16 Rungkut, Surabaya",110
+ALL,Kampus Nginden,"Jl. Nginden Semolo 34-36, Surabaya",110
+ALL,Kampus A,"Jl. Raya Bogor Km.24 Cijantung, Jakarta Timur, 13770",111
+ALL,Kampus B,"Jl. Bintara Raya, Bintara V, Bekasi, Jawa Barat, 17134",111
+ALL,Kampus Utama,"Jl. Parahyangan Kav. 8 Blok B No. 1 Kota Baru Parahyangan, Padalarang, Bandung Barat, Jawa Barat",112
+ALL,Kampus Utama,"Jalan Karimata No. 49, Kecamatan Sumbersari, Jember, Jawa Timur",113
+ALL,Kampus Utama,"Jalan Semolowaru No. 45 Surabaya, Jawa Timur",114
+ALL,Kampus Utama,"Jl. Batan I No. 2 Lebak Bulus, Cilandak, Jakarta Selatan",115
+ALL,Kampus Vokasi,"Jalan Tipar Cakung Nomor 81A, RT 3 RW 7, Cakung Barat, Kecamatan Cakung, Kota Jakarta Timur, 13910",116
+ALL,Kampus E,Jalan Cirendeu Raya Nomor 6 Tangerang Selatan,116
+ALL,Kampus B,"Jalan Raya Industri Jababeka Nomor 69, Mekarmukti, Cikarang Utara, Kabupaten Bekasi 17530",116
+ALL,Kampus Pusat,Jalan Pangkalan Asem Raya Nomor 55 Cempaka Putih Jakarta Pusat 10530,116
+ALL,Kampus D,"Jalan Ir. H. Juanda Nomor 27 Kemiri Muka, Beji, Kota Depok",116
+ALL,Kampus C,"Jalan TB Simatupang Nomor 005 RT 3 RW 11, Gedong, Kecamatan Pasar Rebo, Kota Jakarta Timur, 13760",116
+ALL,Kampus F,Jalan K. H. Hasyim Ashari Nomor 338 Sudimara Pinang Tangerang Kota,116
+ALL,Kampus Pascasarjana,Jalan Letjen Suprapto Nomor 504 Jakarta Pusat 10530,116
+ALL,Kampus Utama,"Jl. Selomangleng No. 1, Pojok, Kec. Mojoroto, Kota Kediri, Jawa Timur 64115",117
+ALL,Kampus Utama,"Jalan R.A.A. Wiranatakusumah 7 Baleendah, Kabupaten Bandung 40258",118
+ALL,Kampus Utama,"Jl. Soegijo Pranoto TP 13, Madiun",119
+ALL,Kampus Utama,"Jl. Kebonsari Elveka V, Kebonsari, Kec. Jambangan, Kota Surabaya, Jawa Timur 60232",120
+ALL,Kampus Utama,Jl. Raya Siliwangi No. 6 Rawa Panjang Kota Bekasi - Jawa Barat,121
+ALL,Kampus Utama,"Jalan BRI Radio Dalam Nomor 17 RT 14 RW 3, Gandaria Utara, Kecamatan Kebayoran Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12140",122
+ALL,Kampus Utama,"Jalan Telaga Warna, Tlogomas
+Malang, Jawa Timur, 65144",123
+ALL,Kampus Utama,"Jalan Raya Panglegur KM. 4 Pamekasan 69371
+Jawa Timur, Indonesia",124
+ALL,Kampus Utama,"Jl. IKPN Bintaro No.1, RT. 4 / RW. 12, Bintaro, Pesanggrahan, Jakarta Selatan, 12330",125
+ALL,Kampus 9,"Jl. Dewi Sartika No. 1 Debong Kulon RT. 001 / RW. 001, Tegal Selatan, Debong Kulon, Tegal",126
+ALL,Kampus 1,"Jl. Tirto Agung Pedalangan, Banyumanik, Semarang 50268",126
+ALL,Kampus 4,"Jl. Ahmad Yani, Ketanggar, Karangjati, Blora",126
+ALL,Kampus 5,"Jl. Perintis Kemerdekaan, Magelang",126
+ALL,Kampus 3,"Jl. Wolter Monginsidi No. 115, Pedurungan,Semarang",126
+ALL,Kampus 6,"Jl. Perintis Kemerdekaan No.5, Pekalongan",126
+ALL,Kampus 8,"Jl. Adipati Mercy, Purwokerto",126
+ALL,Kampus 7,"Jl. Raya Baturraden KM.12, Kabupaten Banyumas",126
+ALL,Kampus 10,"Jl. Laut No.21, Patukangan, Kendal, Kabupaten Kendal",126
+ALL,Kampus Utama,"Jl. Tol Ciawi No. 1, Ciawi-Bogor",127
+ALL,Kampus Utama,"Jl. Trunojoyo No.16, Kepanjen, Malang",128
+ALL,Kampus Utama,"Jl. Arief Rachman Hakim 51, Sukolilo, Surabaya 60117",129
+FAKULTAS BISNIS,Kampus L'Avenue,"L’Avenue Campus Jln. Raya Pasar Minggu, Kav. 16 Pancoran, Jakarta 12780",130
+FAKULTAS PENDIDIKAN,Kampus L'Avenue,"L’Avenue Campus Jln. Raya Pasar Minggu, Kav. 16 Pancoran, Jakarta 12780",130
+FAKULTAS TEKNIK DAN TEKNOLOGI,Kampus L'Avenue,"L’Avenue Campus Jln. Raya Pasar Minggu, Kav. 16 Pancoran, Jakarta 12780",130
+ALL,Kampus Utama,"Jl. Raya Mangga Besar No. 137 - 139, Jakarta Pusat",131
+ALL,Kampus 2,"Jl. Raya Karanglo Km. 2, Malang",132
+ALL,Kampus 1,"Jl. Bendungan Sigura-gura no. 2, Malang",132
+ALL,Kampus 1,"Jalan Kusuma Bangsa Nomor 9, Panjang Baru, Kecamatan Pekalongan Utara, Kota Pekalongan, Jawa Tengah 51141",133
+ALL,Kampus 2,"Jalan Pahlawan KM.5, Rowolaku, Kajen, Pekalongan, Jawa Tengah",133
+ALL,Kampus Utama,"Jalan S.Supriadi Nomor 48 Malang Jawa Timur, Indonesia",134
+ALL,Universitas Ciputra Surabaya,"CitraLand CBD Boulevard, Made, Kecamatan Sambikerep, Kota Surabaya, Jawa Timur, 60219, Indonesia",135
+ALL,Kampus Utama,"Jalan Panjaitan Nomor 3B, Bangsal, Kecamatan Pesantren, Kota Kediri, Jawa Timur 64102",136
+SYARIAH,Kampus 1,"Jalan Pendidikan No.35, Dasan Agung Baru, Kec. Selaparang, Kota Mataram",137
+TARBIYAH DAN KEGURUAN,Kampus 1,"Jalan Pendidikan No.35, Dasan Agung Baru, Kec. Selaparang, Kota Mataram",137
+DAKWAH DAN ILMU KOMUNIKASI,Kampus 1,"Jalan Pendidikan No.35, Dasan Agung Baru, Kec. Selaparang, Kota Mataram",137
+EKONOMI DAN BISNIS ISLAM,Kampus 1,"Jalan Pendidikan No.35, Dasan Agung Baru, Kec. Selaparang, Kota Mataram",137
+USHULUDDIN DAN STUDI AGAMA,Kampus 1,"Jalan Pendidikan No.35, Dasan Agung Baru, Kec. Selaparang, Kota Mataram",137
+PASCASARJANA,Kampus 2,"Jalan Gajah Mada No. 100, Pagesangan, Mataram, Jempong Baru, Kec. Sekarbela, Kota Mataram",137
+ALL,Kampus Utama,Jalan Jambi 12-18 Surabaya 60241,138
+ALL,Kampus Utama,"Jalan Kolonel Masturi Nomor 288,
+Kabupaten Bandung Barat,
+Jawa Barat, Indonesia 40559",139
+ALL,Kampus Pegangsaan,"Jl. Pegangsaan Timur No. 17a, Menteng, Jakarta Pusat 10310",140
+ALL,Kampus Kimia,"Jl. Kimia No. 20. Menteng, Jakarta Pusat 10320",140
+ALL,Kampus Wolter,"Jl. Wolter Monginsidi No. 84AE, Kebayoran Baru, Jakarta Selatan 12170",140
+ALL,Kampus Utama,"Jalan Raya Setu No.89 Bekasi, 17520",141
+ALL,Kampus Soepomo,"Gedung Universitas Sahid Jakarta, Jl. Prof. Dr. Supomo, SH No.84 Tebet, Jakarta Selatan 12870",142
+ALL,Kampus Pascasarjana,"Sahid Sudirman Residence Lt. 5, Jl. Jendral Sudirman No. 86, Jakarta Pusat 10220",142
+ALL,Kampus 2,"Jalan Poros Makale Makassar KM.11, RW.5, Buntu Tangti, Kec. Mengkendek, Kabupaten Tana Toraja, Sulawesi Selatan 91871",143
+ALL,Kampus 1,"Taparan Utara, Kec. Rantetayo, Kabupaten Tana Toraja, Sulawesi Selatan 91862",143
+ALL,Kampus Utama,"Jalan Marunda Makmur Cilincing, Jakarta Utara 14150, Indonesia",144
+FAKULTAS EKONOMI DAN BISNIS ISLAM,Universitas Cendekia Abditama,"Perawat, Pengasuh Bayi/ Anak, Instruktur Perawat, Pekerja Sosial Medis, Perawat Lansia, Perawat Gigi, Terapis Wicara, Teknisi Radiologi Medis, Fisioterapis, Perawat Kesehatan Mental",145
+FAKULTAS ILMU KEPERAWATAN,Universitas Cendekia Abditama,"Perawat, Pengasuh Bayi/ Anak, Instruktur Perawat, Pekerja Sosial Medis, Perawat Lansia, Perawat Gigi, Terapis Wicara, Teknisi Radiologi Medis, Fisioterapis, Perawat Kesehatan Mental",145
+FAKULTAS TARBIYAH DAN ILMU KEGURUAN,Universitas Cendekia Abditama,"Perawat, Pengasuh Bayi/ Anak, Instruktur Perawat, Pekerja Sosial Medis, Perawat Lansia, Perawat Gigi, Terapis Wicara, Teknisi Radiologi Medis, Fisioterapis, Perawat Kesehatan Mental",145
+FAKULTAS TEKNIK,Universitas Cendekia Abditama,"Perawat, Pengasuh Bayi/ Anak, Instruktur Perawat, Pekerja Sosial Medis, Perawat Lansia, Perawat Gigi, Terapis Wicara, Teknisi Radiologi Medis, Fisioterapis, Perawat Kesehatan Mental",145
+ALL,Kampus Utama,"Jalan Ngagel Jaya Tengah 73-77, Surabaya, Indonesia",146
+ALL,Kampus Utama,"Jalan Ujang Dewa, Ujang Dewa, Nunukan Selatan, Kabupaten Nunukan, Kalimantan Utara 77482",147
+ALL,Kampus Utama,"Jl. Buaran II No.30 A, Klender, Duren Sawit - Jakarta Timur",148
+ALL,Kampus Utama,"Jl. Raya Mawar Merah No.23,
+Pondok Kopi. Jakarta Timur.",149
+ALL,Kampus Utama,"Jalan Bougenville, Tateli Satu, Pineleng, Tateli Satu, Mandolang, Kabupaten Minahasa, Sulawesi Utara 95661",150
+ALL,Kampus 2,"Jl. Kandang Perahu No. 8, Cirebon",151
+ALL,Kampus 1,"Jl. Perjuangan No. 17, Cirebon",151
+ALL,Kampus 3,"Jl. Kandang Perahu No. 45, Cirebon",151
+ALL,Kampus Utama,"Jalan Cengger Ayam Nomor 24, Tulusrejo, Kecamatan Lowokwaru, Kota Malang, Jawa Timur 65141",152
+ALL,Kampus A,"Jl. Cipinang Besar No.2, RT.1/RW.1, Cipinang Besar Sel., Jatinegara, Kota Jakarta Timur,13410.",153
+ALL,Kampus B,Jl. Puri Kembangan No.2 Kedoya Kebon Jeruk Jakarta Barat.,153
+ALL,Kampus Utama,"Jl. Gapura No.8 Rawa Banteng Desa Cibuntu, Kecamatan Cibitung, Kabupaten Bekasi, Provinsi Jawa Barat, Indonesia.",154
+ALL,Kampus Utama,Jalan Yulius Usman Nomor 62 Malang,155
+ALL,Kampus III,"Jalan Taman Borobudur Indah Nomor 1, Mojolangu, Kecamatan Lowokwaru, Kota Malang, Jawa Timur 65142",156
+ALL,Kampus II,Jalan Borobudur Nomor 35 Malang,156
+ALL,Kampus Utama,"Jalan R.A. Kartini No. 66 Bekasi, Jawa Barat 17113",157
+PERKERETAAPIAN,Kampus Utama,"Jalan Tirta Raya, Kota Madiun, Jawa Timur",158
+ALL,Kampus Utama,"Jalan Galala Atas, Halong, Kec. Baguala, Kota Ambon, Maluku",159
+ALL,Kampus Utama,"Jl. Simpang Candi Panggung No. 133, Malang, Jawa Timur",160
+ALL,Kampus Utama,"Jalan Dharmawangsa, Benoa, Kecamatan Kuta Selatan, Kabupaten Badung, Bali 80361",161
+ALL,Kampus Utama,"Jalan Sungai Musi Km. 9, Kecamatan Tanete Riattang, Kabupaten Bone, Sulawesi Selatan",162
+ALL,Kampus Utama,"Jalan Sunan Ampel Nomor 7, Ngronggo, Kecamatan Kota, Kabupaten Kediri, Jawa Timur 64127",163
+ALL,Kampus Utama,"Jalan Raya Nomor 1, Karang Serang, Kecamatan Sukadiri, Tangerang, Banten 15330",164
+ALL,Kampus Utama,"Jl. Menur Pumpungan 30, Surabaya 60118",165
+ALL,Kampus Utama,"Jl. DR. Soebandi No.99, Cangkring, Patrang, Kec. Patrang, Kabupaten Jember, Jawa Timur 68111",166
+ALL,Kampus Tangerang,"Jalan Daan Mogot Nomor 31, Tangerang",167
+ALL,Kampus Depok,"Jalan Margonda Raya Nomor 545, Depok",167
+ALL,Kampus Utama,"Jalan Jatiwaringin Nomor 2, Cipinang Melayu, Makasar, Jakarta Timur",167
+ALL,Kampus Cengkareng,"Jalan Kamal Raya Nomor 18, Ringroad Barat, Cengkareng, Jakarta Barat",167
+ALL,Kampus Damai,"Jalan Damai Nomor 8, Warung Jari Barat , Jakarta Selatan",167
+ALL,Kampus Kramat 18,"Jalan Kramat Raya Nomor 18, Jakarta Pusat",167
+ALL,Kampus Bekasi,"Jalan Raya Kaliabang Nomor 8, Perwira, Bekasi Utara",167
+PASCASARJANA,Kampus Pascasarjana,"Jl. Kenyeri No. 57, Denpasar, Bali",168
+DHARMA ACARYA,Kampus Utama,"Jl. Ratna No.51, Tonja, Kec. Denpasar Utara, Kota Denpasar, Bali 80237",168
+DHARMA DUTA,Kampus Utama,"Jl. Ratna No.51, Tonja, Kec. Denpasar Utara, Kota Denpasar, Bali 80237",168
+ALL,Kampus Bangli,"Jl. Nusantara Kubu, Kabupaten Bangli, Bali",168
+BRAHMA WIDYA,Kampus Fakultas Brahma Widya,"Jl. Kenyerti Gang Sekar Kemudia No. 2, Denpasar, Bali",168
+ALL,Kampus Utama,"Jl. Letjend Ibrahim Adjie No. 180, Sindang Barang, Bogor Barat",169
+ALL,Kampus Utama,"Jl. Cikini Raya 73
+Taman Ismail Marzuki 
+Cikini – Menteng
+DKI Jakarta
+10330",170
+ALL,Kampus Utama,"Jl. Pawiyatan Luhur IV/1 Bendan Dhuwur, Semarang 50234",171
+ALL,Kampus Utama,"Jl. Cut Mutia Raya No. 88A, Sepanjangjaya, Bekasi",172
+ALL,Kampus Utama,"Jl. Pumpungan III No. 29, Surabaya",173
+ALL,Kampus Utama,"Jalan Tampung Penyang RTA Milono Km. 6, Palangka Raya, Kalimantan Tengah 73112",174
+ALL,Kampus Utama,"Bumimoro, Morokrembangan, Surabaya 60187",175
+ALL,Kampus Utama,"Jalan Tajoin Tuan, Kel. Naimata, Kec. Maulafa Kota Kupang, Nusa Tenggara Timur 85147",176
+ALL,Kampus Utama,"Jl. Raya Jatiwaringin.
+Jakarta Timur.
+Indonesia.",177
+ALL,Kampus Utama,"Jl. Raya Bojongsari, Depok, Jawa Barat 16517",178
+ALL,Kampus Utama,"Jl. Kedoya Raya No.18,
+Jakarta Barat 11520",179
+ALL,Kampus Utama,"Jl. Taman Makam Pahlawan No. 1 Kalibata, RT.4/RW.4, Duren Tiga, Pancoran, Daerah Khusus Ibukota Jakarta 12760",180
+ALL,Kampus Utama,"Jalan Setia Budi Nomor 85 Madiun, Jawa Timur, Indonesia",181
+ALL,Kampus Cinagara,"Jalan Snakma
+Desa Pasir Buncir, Kecamatan Caringin
+Kabupaten Bogor, Jawa Barat, 16730",182
+ALL,Kampus Cibalagung,"Jl. Aria Surialaga No. 1 Pasirjaya
+Kecamatan. Bogor Barat
+Kota Bogor, Jawa Barat 16119",182
+"FAKULTAS USHULUDDIN, ADAB, DAN HUMANIORA",Kampus Utama,"Jl. Mataram No. 1 Mangli, Jember 68136, Jawa Timur",183
+FAKULTAS DAKWAH,Kampus Utama,"Jl. Mataram No. 1 Mangli, Jember 68136, Jawa Timur",183
+FAKULTAS SYARIAH,Kampus Utama,"Jl. Mataram No. 1 Mangli, Jember 68136, Jawa Timur",183
+FAKULTAS TARBIYAH DAN ILMU KEGURUAN,Kampus Utama,"Jl. Mataram No. 1 Mangli, Jember 68136, Jawa Timur",183
+FAKULTAS EKONOMI DAN BISNIS ISLAM,Kampus Utama,"Jl. Mataram No. 1 Mangli, Jember 68136, Jawa Timur",183
+ALL,Kampus Cikarang,"Jl. Cibarusah No. 168, Cikarang Square, Cikarang",184
+ALL,Kampus Merdeka,Jl. Merdeka No. 168 Bogor,184
+ALL,Kampus Rektorat,"Jl. Kramat No. 98, Jakarta Pusat",184
+ALL,Kampus Depok,"Jl. Margonda Raya No. 8, Depok",184
+ALL,Kampus Salemba,"Jl. Salemba Tengah No.22, Jakarta Pusat",184
+ALL,Kampus Dewi Sartika B,"Jl. Dewi Sartika No. 289, Cawang, Jakarta Timur",184
+ALL,Kampus Cengkareng,"Jl. Kamal Raya No. 18, Ring Road Barat, Jakarta Barat",184
+ALL,Kampus Sukabumi,Jl. Cemerlang No.8 Sukabumi,184
+ALL,Kampus Tegal,"Jl. Sipelem No. 22, Tegal Barat",184
+ALL,Kampus Cilebut,"Jl. Cilebut Raya Pesona Intiland, Kodya, Bogor",184
+ALL,Kampus Cikampek,"Jl. Ir. Juanda, No. 17, Cikampek",184
+ALL,Kampus Slipi,"Jl. Kemanggisan Utama, Jakarta Barat",184
+ALL,Kampus Cibitung,"Jl. KH. Akhmad No. 8, Raya Setu Cibitung Tambun",184
+ALL,Kampus Tasikmalaya,"Jl. Tanuwijaya No. 4 Empang Sari, Tawang, Tasikmalaya",184
+ALL,Kampus Jatiwaringin,"Jl. Unkris No. 2, Jatiwaringin, Jakarta Timur",184
+ALL,Kampus Karawang,"Jl. Banten No.1 Karang Pawitan, Karawang",184
+ALL,Kampus Purwokerto,"Jl. DR. Bunyamin No. 106, Purwokerto",184
+ALL,Kampus Kalimalang,"Jl. SMA KAPIN No. 292 A, Kalimalang, Jakarta Timur",184
+ALL,Kampus Ciputat,"Jl. Ir. H. Juanda No. 39, Ciputat",184
+ALL,Kampus BSD,"BSD Sektor XIV Blok C1/1, Tangerang",184
+ALL,Kampus Pontianak,"Jl. Abdul Rahman Saleh No.18, Pontianak",184
+ALL,Kampus Kaliabang,"Jl. Raya Kaliabang No.8, Perwira, Bekasi Utara",184
+ALL,Kampus Tangerang,"Jl. Gatot Subroto No.8, Cimone, Kota Tangerang",184
+ALL,Kampus Pemuda,"Jl. Kayu Jati 5 No 2, Pemuda, Rawamangun",184
+ALL,Kampus Yogyakarta,"Jl. Ringroad Barat Ambar Ketawang Gamping, Sleman",184
+ALL,Kampus Fatmawati,Jl. RS. Fatmawati No. 24 Jakarta Selatan,184
+ALL,Kampus Ciledug,"Jl. Ciledug Raya No. 108, Cipulir, Jakarta Selatan",184
+ALL,Kampus Bekasi,"Jl. Cut Mutiah No 88, Bekasi",184
+ALL,Kampus Solo,"Jl. Letjen Sutoyo No.43, Kota Surakarta",184
+ALL,Kampus Utama,"Jl. Bukit Hermon No. 1, Tidar Atas, Malang, Jawa Timur 65151",185
+ALL,Kampus Utama,Jl. Balai Rakyat Utan Kayu Kecamatan Matraman Jakarta Timur 13120,186
+ALL,Kampus Utama,"Jalan Ahmad Yani Nomor 114,
+Ketintang, Kecamatan Gayungan, Kota Surabaya, Jawa Timur 60231",187
+FAKULTAS ILMU PENDIDIKAN,Kampus 2,"Jalan Ki Ageng Gribig 45, Kedungkandang, Malang 65138",188
+FAKULTAS ILMU PENDIDIKAN,Kampus 3,"Jalan Ir.Soekarno 3, Kota Blitar",188
+FAKULTAS ILMU SOSIAL,Kampus 1,"Jalan Semarang 5, Kota Malang 65145",188
+FAKULTAS ILMU KEOLAHRAGAAN,Kampus 1,"Jalan Semarang 5, Kota Malang 65145",188
+FAKULTAS EKONOMI,Kampus 1,"Jalan Semarang 5, Kota Malang 65145",188
+FAKULTAS ILMU PENDIDIKAN,Kampus 1,"Jalan Semarang 5, Kota Malang 65145",188
+FAKULTAS MATEMATIKA DAN IPA,Kampus 1,"Jalan Semarang 5, Kota Malang 65145",188
+FAKULTAS SASTRA,Kampus 1,"Jalan Semarang 5, Kota Malang 65145",188
+FAKULTAS TEKNIK,Kampus 1,"Jalan Semarang 5, Kota Malang 65145",188
+FAKULTAS PENDIDIKAN PSIKOLOGI,Kampus 1,"Jalan Semarang 5, Kota Malang 65145",188
+PROGRAM PASCASARJANA,Kampus 1,"Jalan Semarang 5, Kota Malang 65145",188
+FAKULTAS KEDOKTERAN GIGI,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS FARMASI,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS TEKNOLOGI PERTANIAN,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS KEPERAWATAN,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS TEKNIK,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS PETERNAKAN,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS PERTANIAN,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS EKONOMI,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS HUKUM,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS KEDOKTERAN,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS KESEHATAN MASYARAKAT,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS ILMU BUDAYA,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+PASCASARJANA,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS TEKNOLOGI INFORMASI,Kampus 1,"Jl. Universitas Andalas, Limau Manis, Kota Padang",189
+FAKULTAS PERTANIAN,Kampus 4,"Sungai Kambut, Pulau Punjung, Kabupaten Dharmasraya, Sumatera Barat 27573",189
+FAKULTAS PETERNAKAN,Kampus 3,"Jl. Rangkayo Rasuna Said, Kubu Gadang, Kec. Payakumbuh Utara, Kota Payakumbuh",189
+FAKULTAS EKONOMI,Kampus 3,"Jl. Rangkayo Rasuna Said, Kubu Gadang, Kec. Payakumbuh Utara, Kota Payakumbuh",189
+FAKULTAS KEDOKTERAN GIGI,Kampus 2,"Jl. Perintis Kemerdekaan No.77, Kota Padang",189
+FAKULTAS KEDOKTERAN,Kampus 2,"Jl. Perintis Kemerdekaan No.77, Kota Padang",189
+FAKULTAS KESEHATAN MASYARAKAT,Kampus 2,"Jl. Perintis Kemerdekaan No.77, Kota Padang",189
+SEKOLAH BISNIS,Kampus IPB Gunung Gede,"Jl. Raya Pajajaran, Bantarjati, Babakan, Bogor Tengah, Bogor, 16151",190
+SEKOLAH PASCASARJANA,Kampus IPB Baranangsiang,"Jl. Pajajaran Raya No.1, Baranangsiang, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16127",190
+SEKOLAH VOKASI,Kampus IPB Cilibende,"Jl. Kumbang No.14, Cilibende, Babakan, Bogor Tengah, Bogor, 16128",190
+ALL,Kampus IPB Taman Kencana,"Jl. Burangrang No.6, Babakan, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16128",190
+SEKOLAH KEDOKTERAN HEWAN DAN BIOMEDIS,Kampus IPB Dramaga,"Jl. Raya Dramaga, Babakan, Kecamatan Dramaga, Kabupaten Bogor, Jawa Barat, 16680",190
+FAKULTAS KEHUTANAN DAN LINGKUNGAN,Kampus IPB Dramaga,"Jl. Raya Dramaga, Babakan, Kecamatan Dramaga, Kabupaten Bogor, Jawa Barat, 16680",190
+FAKULTAS PETERNAKAN,Kampus IPB Dramaga,"Jl. Raya Dramaga, Babakan, Kecamatan Dramaga, Kabupaten Bogor, Jawa Barat, 16680",190
+FAKULTAS PERTANIAN,Kampus IPB Dramaga,"Jl. Raya Dramaga, Babakan, Kecamatan Dramaga, Kabupaten Bogor, Jawa Barat, 16680",190
+FAKULTAS EKOLOGI MANUSIA,Kampus IPB Dramaga,"Jl. Raya Dramaga, Babakan, Kecamatan Dramaga, Kabupaten Bogor, Jawa Barat, 16680",190
+FAKULTAS PERIKANAN DAN ILMU KELAUTAN,Kampus IPB Dramaga,"Jl. Raya Dramaga, Babakan, Kecamatan Dramaga, Kabupaten Bogor, Jawa Barat, 16680",190
+FAKULTAS EKONOMI DAN MANAJEMEN,Kampus IPB Dramaga,"Jl. Raya Dramaga, Babakan, Kecamatan Dramaga, Kabupaten Bogor, Jawa Barat, 16680",190
+FAKULTAS MATEMATIKA DAN IPA,Kampus IPB Dramaga,"Jl. Raya Dramaga, Babakan, Kecamatan Dramaga, Kabupaten Bogor, Jawa Barat, 16680",190
+FAKULTAS TEKNOLOGI PERTANIAN,Kampus IPB Dramaga,"Jl. Raya Dramaga, Babakan, Kecamatan Dramaga, Kabupaten Bogor, Jawa Barat, 16680",190
+SEKOLAH PASCASARJANA,Kampus IPB Dramaga,"Jl. Raya Dramaga, Babakan, Kecamatan Dramaga, Kabupaten Bogor, Jawa Barat, 16680",190
+SEKOLAH VOKASI,Kampus IPB Sukabumi,"Jl. Sarasa No.45, Babakan, Kec. Cibeureum, Kota Sukabumi, Jawa Barat 43142",190
+JURUSAN TEKNIK MESIN,Kampus Utama,"Kawasan Industri Air Kantung, Sungailiat, Kabupaten Bangka, Bangka Belitung, 33211",191
+JURUSAN TEKNIK ELEKTRO DAN INFORMATIKA,Kampus Utama,"Kawasan Industri Air Kantung, Sungailiat, Kabupaten Bangka, Bangka Belitung, 33211",191
+TEKNIK MESIN,Kampus 2,Gd. B Lt. 1 Jalan Veteran No. 9 Malang,192
+TEKNOLOGI INFORMASI,Kampus 1,Jl. Soekarno Hatta No. 9 Malang,192
+TEKNIK KIMIA,Kampus 1,Jl. Soekarno Hatta No. 9 Malang,192
+ADMINISTRASI NIAGA,Kampus 1,Jl. Soekarno Hatta No. 9 Malang,192
+TEKNIK ELEKTRO,Kampus 1,Jl. Soekarno Hatta No. 9 Malang,192
+TEKNIK SIPIL,Kampus 1,Jl. Soekarno Hatta No. 9 Malang,192
+AKUNTANSI,Kampus 1,Jl. Soekarno Hatta No. 9 Malang,192
+FAKULTAS PERTANIAN,Kampus Utama,"Kampus Bina Widya Km 12,5, Simpang Baru Pekanbaru 28293",193
+FAKULTAS PERIKANAN DAN ILMU KELAUTAN,Kampus Utama,"Kampus Bina Widya Km 12,5, Simpang Baru Pekanbaru 28293",193
+FAKULTAS KEDOKTERAN,Kampus Utama,"Kampus Bina Widya Km 12,5, Simpang Baru Pekanbaru 28293",193
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus Utama,"Kampus Bina Widya Km 12,5, Simpang Baru Pekanbaru 28293",193
+FAKULTAS KEPERAWATAN,Kampus Utama,"Kampus Bina Widya Km 12,5, Simpang Baru Pekanbaru 28293",193
+FAKULTAS TEKNIK,Kampus Utama,"Kampus Bina Widya Km 12,5, Simpang Baru Pekanbaru 28293",193
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus Utama,"Kampus Bina Widya Km 12,5, Simpang Baru Pekanbaru 28293",193
+FAKULTAS EKONOMI DAN BISNIS,Kampus Utama,"Kampus Bina Widya Km 12,5, Simpang Baru Pekanbaru 28293",193
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus Utama,"Kampus Bina Widya Km 12,5, Simpang Baru Pekanbaru 28293",193
+PROGRAM PASCASARJANA,Kampus Utama,"Kampus Bina Widya Km 12,5, Simpang Baru Pekanbaru 28293",193
+FAKULTAS HUKUM,Kampus Utama,"Kampus Bina Widya Km 12,5, Simpang Baru Pekanbaru 28293",193
+ALL,Kampus 2,"Jl. Murahnara No. 6, Sindang, Indramayu, Kabupaten Indramayu, Jawa Barat",194
+JURUSAN TEKNIK MESIN,Kampus 1,"Jl. Lohbener Lama No. 8, Lohbener, Legok, Indramayu, Kabupaten Indramayu, Jawa Barat 45252",194
+JURUSAN TEKNIK PENDINGIN DAN TATA UDARA,Kampus 1,"Jl. Lohbener Lama No. 8, Lohbener, Legok, Indramayu, Kabupaten Indramayu, Jawa Barat 45252",194
+JURUSAN TEKNIK INFORMATIKA,Kampus 1,"Jl. Lohbener Lama No. 8, Lohbener, Legok, Indramayu, Kabupaten Indramayu, Jawa Barat 45252",194
+JURUSAN KEPERAWATAN,Kampus 1,"Jl. Lohbener Lama No. 8, Lohbener, Legok, Indramayu, Kabupaten Indramayu, Jawa Barat 45252",194
+FAKULTAS SYARIAH DAN HUKUM,Kampus Utama,"Jl. Syeikh Abdul Rauf, Kopelma Darussalam, Banda Aceh",195
+FAKULTAS TARBIYAH DAN KEGURUAN,Kampus Utama,"Jl. Syeikh Abdul Rauf, Kopelma Darussalam, Banda Aceh",195
+FAKULTAS SAINS DAN TEKNOLOGI,Kampus Utama,"Jl. Syeikh Abdul Rauf, Kopelma Darussalam, Banda Aceh",195
+FAKULTAS PSIKOLOGI,Kampus Utama,"Jl. Syeikh Abdul Rauf, Kopelma Darussalam, Banda Aceh",195
+FAKULTAS USHULUDDIN DAN FILSAFAT,Kampus Utama,"Jl. Syeikh Abdul Rauf, Kopelma Darussalam, Banda Aceh",195
+FAKULTAS ADAB DAN HUMANIORA,Kampus Utama,"Jl. Syeikh Abdul Rauf, Kopelma Darussalam, Banda Aceh",195
+FAKULTAS EKONOMI DAN BISNIS ISLAM,Kampus Utama,"Jl. Syeikh Abdul Rauf, Kopelma Darussalam, Banda Aceh",195
+FAKULTAS DAKWAH DAN KOMUNIKASI,Kampus Utama,"Jl. Syeikh Abdul Rauf, Kopelma Darussalam, Banda Aceh",195
+FAKULTAS ILMU SOSIAL DAN ILMU PEMERINTAHAN,Kampus Utama,"Jl. Syeikh Abdul Rauf, Kopelma Darussalam, Banda Aceh",195
+PROGRAM PASCASARJANA,Kampus Utama,"Jl. Syeikh Abdul Rauf, Kopelma Darussalam, Banda Aceh",195
+ALL,Kampus Utama,"Jalan Tanjung Pati KM. 7, Koto Tuo, Kecamatan Harau, Kabupaten Lima Puluh Kota, Sumatera Barat 26271",196
+ALL,Kampus Utama,"Jl. Raya Telang, Kecamatan Kamal, Bangkalan, 69162",197
+ALL,Kampus 1,"Jln. Cot Tengku Ni Reuleut Muara Batu, Aceh Utara",198
+ALL,Kampus 3,"Jln. Kampus Unimal Bukit Indah, Blang Pulo, Muara Satu",198
+ALL,Kampus 4,Chunda Lhokseumawe,198
+ALL,Kampus 2,"Jln.Tgk Chik Ditiro No. 26 Lancang Garam Lhokseumawe, Provinsi Aceh",198
+FAKULTAS EKONOMI DAN BISNIS,Kampus 1,"Jalan Kampus Bukit Jimbaran, Badung",199
+FAKULTAS PERTANIAN,Kampus 1,"Jalan Kampus Bukit Jimbaran, Badung",199
+FAKULTAS TEKNOLOGI PERTANIAN,Kampus 1,"Jalan Kampus Bukit Jimbaran, Badung",199
+FAKULTAS HUKUM,Kampus 1,"Jalan Kampus Bukit Jimbaran, Badung",199
+FAKULTAS PETERNAKAN,Kampus 1,"Jalan Kampus Bukit Jimbaran, Badung",199
+FAKULTAS TEKNIK,Kampus 1,"Jalan Kampus Bukit Jimbaran, Badung",199
+FAKULTAS ILMU KELAUTAN DAN PERIKANAN,Kampus 1,"Jalan Kampus Bukit Jimbaran, Badung",199
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus 1,"Jalan Kampus Bukit Jimbaran, Badung",199
+FAKULTAS EKONOMI DAN BISNIS,Kampus 2,"Jl. P. B. Sudirman, Denpasar",199
+FAKULTAS PARIWISATA,Kampus 2,"Jl. P. B. Sudirman, Denpasar",199
+FAKULTAS KEDOKTERAN,Kampus 2,"Jl. P. B. Sudirman, Denpasar",199
+FAKULTAS KEDOKTERAN HEWAN,Kampus 2,"Jl. P. B. Sudirman, Denpasar",199
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 2,"Jl. P. B. Sudirman, Denpasar",199
+PROGRAM PASCASARJANA,Kampus 2,"Jl. P. B. Sudirman, Denpasar",199
+FAKULTAS ILMU BUDAYA,Kampus 3,"Jl. Pulau Nias, Denpasar",199
+ALL,Kampus 1,"Jl. Uncen, Kota Baru, Abepura, Kota Jayapura, Papua 99351",200
+ALL,Kampus 2,Jl. Kampus Baru Kompleks Uncen Waena,200
+ALL,Kampus Utama,"Jl. Terusan Sekar Kemuning No. 199, Kel. Karyamulya, Kec. Kesambi, Kota Cirebon, 45135",201
+FAKULTAS ILMU PENDIDIKAN,Kampus 3,"Jalan Limau Manis, Kelurahan Limau Manis, Kecamatan Pauh, Padang, Sumatera Barat",202
+FAKULTAS ILMU PENDIDIKAN,Kampus 1,"Jalan Prof. Dr. Hamka Air Tawar Padang, Sumatra Barat",202
+FAKULTAS BAHASA DAN SENI,Kampus 1,"Jalan Prof. Dr. Hamka Air Tawar Padang, Sumatra Barat",202
+FAKULTAS EKONOMI,Kampus 1,"Jalan Prof. Dr. Hamka Air Tawar Padang, Sumatra Barat",202
+FAKULTAS ILMU KEOLAHRAGAAN,Kampus 1,"Jalan Prof. Dr. Hamka Air Tawar Padang, Sumatra Barat",202
+FAKULTAS TEKNIK,Kampus 1,"Jalan Prof. Dr. Hamka Air Tawar Padang, Sumatra Barat",202
+FAKULTAS PARIWISATA DAN PERHOTELAN,Kampus 1,"Jalan Prof. Dr. Hamka Air Tawar Padang, Sumatra Barat",202
+FAKULTAS ILMU SOSIAL,Kampus 1,"Jalan Prof. Dr. Hamka Air Tawar Padang, Sumatra Barat",202
+FAKULTAS MATEMATIKA DAN IPA,Kampus 1,"Jalan Prof. Dr. Hamka Air Tawar Padang, Sumatra Barat",202
+PROGRAM PASCASARJANA,Kampus 1,"Jalan Prof. Dr. Hamka Air Tawar Padang, Sumatra Barat",202
+FAKULTAS ILMU KEOLAHRAGAAN,Kampus 2,"Jl. Adinegoro, Lubuk Buaya, Koto Tengah, Lubuk Buaya, Koto Tangah, Kota Padang, Sumatera Barat 25586",202
+FAKULTAS ILMU PENDIDIKAN,Kampus 4,"Jalan Raya Lik Ulu Gadut, Padang Besi, Lubuk Kilangan, Kota Padang, Sumatera Barat 16320",202
+FAKULTAS ILMU PENDIDIKAN,Kampus 5,"Jl. Batang Masang, Belakang Balok, Aur Birugo Tigo Baleh, Kota Bukittinggi, Sumatera Barat 26181",202
+JURUSAN TEKNOLOGI REKAYASA KONSTRUKSI JALAN DAN JEMBATAN,Kampus Utama,"Jalan Rangge Sentap, Desa Dalong, Kecamatan Delta Pawan, Kabupaten Ketapang, Kalimantan Barat 78851",203
+JURUSAN TEKNIK PERTAMBANGAN,Kampus Utama,"Jalan Rangge Sentap, Desa Dalong, Kecamatan Delta Pawan, Kabupaten Ketapang, Kalimantan Barat 78851",203
+JURUSAN TEKNIK MESIN,Kampus Utama,"Jalan Rangge Sentap, Desa Dalong, Kecamatan Delta Pawan, Kabupaten Ketapang, Kalimantan Barat 78851",203
+JURUSAN TEKNIK INFORMATIKA,Kampus Utama,"Jalan Rangge Sentap, Desa Dalong, Kecamatan Delta Pawan, Kabupaten Ketapang, Kalimantan Barat 78851",203
+JURUSAN PERTANIAN,Kampus Utama,"Jalan Rangge Sentap, Desa Dalong, Kecamatan Delta Pawan, Kabupaten Ketapang, Kalimantan Barat 78851",203
+FAKULTAS TEKNIK,Kampus Utama,"Jl. Prof. Dr. H. Hadari Nawawi/Jendral Ahmad Yani, Pontianak-Kalimantan Barat 78124",204
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus Utama,"Jl. Prof. Dr. H. Hadari Nawawi/Jendral Ahmad Yani, Pontianak-Kalimantan Barat 78124",204
+FAKULTAS HUKUM,Kampus Utama,"Jl. Prof. Dr. H. Hadari Nawawi/Jendral Ahmad Yani, Pontianak-Kalimantan Barat 78124",204
+FAKULTAS EKONOMI DAN BISNIS,Kampus Utama,"Jl. Prof. Dr. H. Hadari Nawawi/Jendral Ahmad Yani, Pontianak-Kalimantan Barat 78124",204
+FAKULTAS KEHUTANAN,Kampus Utama,"Jl. Prof. Dr. H. Hadari Nawawi/Jendral Ahmad Yani, Pontianak-Kalimantan Barat 78124",204
+FAKULTAS KEDOKTERAN,Kampus Utama,"Jl. Prof. Dr. H. Hadari Nawawi/Jendral Ahmad Yani, Pontianak-Kalimantan Barat 78124",204
+FAKULTAS PERTANIAN,Kampus Utama,"Jl. Prof. Dr. H. Hadari Nawawi/Jendral Ahmad Yani, Pontianak-Kalimantan Barat 78124",204
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus Utama,"Jl. Prof. Dr. H. Hadari Nawawi/Jendral Ahmad Yani, Pontianak-Kalimantan Barat 78124",204
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus Utama,"Jl. Prof. Dr. H. Hadari Nawawi/Jendral Ahmad Yani, Pontianak-Kalimantan Barat 78124",204
+EKONOMI DAN BISNIS ISLAM,Kampus Utama,"Jl. G. Obos Kompleks Islamic Centre Kota Palangka Raya, Kalimantan Tengah, 73112",205
+"USLUHUDDIN, ADAB, DAN DAKWAH",Kampus Utama,"Jl. G. Obos Kompleks Islamic Centre Kota Palangka Raya, Kalimantan Tengah, 73112",205
+SYARIAH,Kampus Utama,"Jl. G. Obos Kompleks Islamic Centre Kota Palangka Raya, Kalimantan Tengah, 73112",205
+TARBIYAH DAN ILMU KEGURUAN,Kampus Utama,"Jl. G. Obos Kompleks Islamic Centre Kota Palangka Raya, Kalimantan Tengah, 73112",205
+PASCASARJANA,Kampus Utama,"Jl. G. Obos Kompleks Islamic Centre Kota Palangka Raya, Kalimantan Tengah, 73112",205
+ALL,Kampus Makassar,"Jalan Perintis Kemerdekaan VI No.50, Tamalanrea Jaya, Kecamatan Tamalanrea, Kota Makassar, Sulawesi Selatan 90245",206
+ALL,Kampus 2,"Jl. Sultan Amai, Pone, Kec. Limboto Barat Gorontalo",207
+ALL,Kampus 1,Jl. Gelatik No. 1 Gorontalo,207
+FAKULTAS POLITIK PEMERINTAHAN,Kampus 5,"Desa Tampusu, Kecamatan Remboken, Kabupaten Minahasa",208
+FAKULTAS MANAJEMEN PEMERINTAHAN,Kampus 5,"Desa Tampusu, Kecamatan Remboken, Kabupaten Minahasa",208
+FAKULTAS HUKUM TATA PEMERINTAHAN,Kampus 5,"Desa Tampusu, Kecamatan Remboken, Kabupaten Minahasa",208
+FAKULTAS POLITIK PEMERINTAHAN,Kampus 1,"Jalan Raya Jatinangor KM 20, Kabupaten Sumedang",208
+FAKULTAS MANAJEMEN PEMERINTAHAN,Kampus 1,"Jalan Raya Jatinangor KM 20, Kabupaten Sumedang",208
+PROGRAM PASCASARJANA,Kampus 1,"Jalan Raya Jatinangor KM 20, Kabupaten Sumedang",208
+FAKULTAS HUKUM TATA PEMERINTAHAN,Kampus 1,"Jalan Raya Jatinangor KM 20, Kabupaten Sumedang",208
+FAKULTAS POLITIK PEMERINTAHAN,Kampus 3,"Jalan Raya Bukittinggi-Payakumbuh KM 14, Kecamatan Baso, Kabupaten Agam",208
+FAKULTAS MANAJEMEN PEMERINTAHAN,Kampus 3,"Jalan Raya Bukittinggi-Payakumbuh KM 14, Kecamatan Baso, Kabupaten Agam",208
+FAKULTAS HUKUM TATA PEMERINTAHAN,Kampus 3,"Jalan Raya Bukittinggi-Payakumbuh KM 14, Kecamatan Baso, Kabupaten Agam",208
+FAKULTAS POLITIK PEMERINTAHAN,Kampus 4,"Jalan Jene Madinging Desa Kampili, Kecamatan Pallangga, Kabupaten Gowa",208
+FAKULTAS MANAJEMEN PEMERINTAHAN,Kampus 4,"Jalan Jene Madinging Desa Kampili, Kecamatan Pallangga, Kabupaten Gowa",208
+FAKULTAS HUKUM TATA PEMERINTAHAN,Kampus 4,"Jalan Jene Madinging Desa Kampili, Kecamatan Pallangga, Kabupaten Gowa",208
+FAKULTAS POLITIK PEMERINTAHAN,Kampus 6,Jalan Pemuda No. 59 Mataram,208
+FAKULTAS MANAJEMEN PEMERINTAHAN,Kampus 6,Jalan Pemuda No. 59 Mataram,208
+FAKULTAS HUKUM TATA PEMERINTAHAN,Kampus 6,Jalan Pemuda No. 59 Mataram,208
+FAKULTAS POLITIK PEMERINTAHAN,Kampus 7,Jalan Kotaraja Dalam No. 100 Jayapura,208
+FAKULTAS MANAJEMEN PEMERINTAHAN,Kampus 7,Jalan Kotaraja Dalam No. 100 Jayapura,208
+FAKULTAS HUKUM TATA PEMERINTAHAN,Kampus 7,Jalan Kotaraja Dalam No. 100 Jayapura,208
+FAKULTAS POLITIK PEMERINTAHAN,Kampus 2,"Jalan Ampera Raya, Pasar Minggu, Jakarta Selatan",208
+FAKULTAS MANAJEMEN PEMERINTAHAN,Kampus 2,"Jalan Ampera Raya, Pasar Minggu, Jakarta Selatan",208
+FAKULTAS HUKUM TATA PEMERINTAHAN,Kampus 2,"Jalan Ampera Raya, Pasar Minggu, Jakarta Selatan",208
+FAKULTAS POLITIK PEMERINTAHAN,Kampus 9,Kelurahan Banjar XII Kabupaten Rokan Hilir,208
+FAKULTAS MANAJEMEN PEMERINTAHAN,Kampus 9,Kelurahan Banjar XII Kabupaten Rokan Hilir,208
+FAKULTAS HUKUM TATA PEMERINTAHAN,Kampus 9,Kelurahan Banjar XII Kabupaten Rokan Hilir,208
+FAKULTAS POLITIK PEMERINTAHAN,Kampus 8,"Jalan Trans Kalimantan KM 11,5 Kecamatan Sungai Ambawang, Kabupaten Kubu Raya",208
+FAKULTAS MANAJEMEN PEMERINTAHAN,Kampus 8,"Jalan Trans Kalimantan KM 11,5 Kecamatan Sungai Ambawang, Kabupaten Kubu Raya",208
+FAKULTAS HUKUM TATA PEMERINTAHAN,Kampus 8,"Jalan Trans Kalimantan KM 11,5 Kecamatan Sungai Ambawang, Kabupaten Kubu Raya",208
+ALL,Kampus Utama,"Jalan Sumatera 118-120, Sumbersari, Jember, Jawa Timur",209
+FAKULTAS BAHASA DAN SENI,Kampus 1,"Jl. Lidah Wetan, Surabaya, 60213",210
+FAKULTAS ILMU KEOLAHRAGAAN,Kampus 1,"Jl. Lidah Wetan, Surabaya, 60213",210
+FAKULTAS ILMU PENDIDIKAN,Kampus 1,"Jl. Lidah Wetan, Surabaya, 60213",210
+FAKULTAS ILMU SOSIAL DAN HUKUM,Kampus 2,"Jl. Ketintang, Surabaya, 60231",210
+FAKULTAS TEKNIK,Kampus 2,"Jl. Ketintang, Surabaya, 60231",210
+FAKULTAS EKONOMI,Kampus 2,"Jl. Ketintang, Surabaya, 60231",210
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus 2,"Jl. Ketintang, Surabaya, 60231",210
+PROGRAM PASCASARJANA,Kampus 2,"Jl. Ketintang, Surabaya, 60231",210
+ALL,Kampus Utama,"Malendeng, Kecamatan Tikala, Kota Manado, Sulawesi Utara",211
+FAKULTAS ILMU BUDAYA,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+FAKULTAS KEPERAWATAN,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+FAKULTAS PSIKOLOGI,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+FAKULTAS FARMASI,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+FAKULTAS ILMU KOMPUTER DAN TEKNOLOGI INFORMASI,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+FAKULTAS KEDOKTERAN GIGI,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+FAKULTAS KESEHATAN MASYARAKAT,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+FAKULTAS PERTANIAN,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+FAKULTAS HUKUM,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+FAKULTAS KEDOKTERAN,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+FAKULTAS TEKNIK,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+FAKULTAS KEHUTANAN,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+FAKULTAS EKONOMI DAN BISNIS,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+SEKOLAH PASCASARJANA,Kampus Utama,"Jalan Dr. T. Mansur Nomor 9, Kampus Padang Bulan, Medan, Sumatera Utara",212
+ALL,Kampus Utama,Jalan Raya Petaling Km. 13 Desa Petaling Kecamatan Mendo Barat Kabupaten Bangka Provinsi Kepulauan Bangka Belitung 33173,213
+FAKULTAS ILMU KEOLAHRAGAAN,Kampus 3,"Jl. Cilallang, Banta-Bantaeng, Rappocini, Makassar, 90222",214
+FAKULTAS ILMU PENDIDIKAN,Kampus 6,"Jl. Jenderal Sudirman, Tanette Riattang, Watampone, Bone 92713",214
+FAKULTAS ILMU PENDIDIKAN,Kampus 4,"Jl. Tamalate I, Tidung, Rappocini, Makassar, 90222",214
+FAKULTAS TEKNIK,Kampus 2,"Jl. Mallengkeri Raya, Parang Tambung, Tamalate, Makassar, 90224",214
+FAKULTAS BAHASA DAN SASTRA,Kampus 2,"Jl. Mallengkeri Raya, Parang Tambung, Tamalate, Makassar, 90224",214
+FAKULTAS SENI DAN DESAIN,Kampus 2,"Jl. Mallengkeri Raya, Parang Tambung, Tamalate, Makassar, 90224",214
+FAKULTAS MATEMATIKA DAN IPA,Kampus 2,"Jl. Mallengkeri Raya, Parang Tambung, Tamalate, Makassar, 90224",214
+FAKULTAS EKONOMI,Kampus 1,"Jl A. P. Pettarani, Tidung, Rappocini, Makassar, 90222",214
+FAKULTAS ILMU SOSIAL,Kampus 1,"Jl A. P. Pettarani, Tidung, Rappocini, Makassar, 90222",214
+FAKULTAS PSIKOLOGI,Kampus 1,"Jl A. P. Pettarani, Tidung, Rappocini, Makassar, 90222",214
+PROGRAM PASCASARJANA,Kampus 1,"Jl A. P. Pettarani, Tidung, Rappocini, Makassar, 90222",214
+FAKULTAS ILMU PENDIDIKAN,Kampus 5,"Jl. Jenderal Sudirman No. 56, Bumi Harapan, Bacukiki Barat, Parepare, 91122",214
+PROGRAM PASCASARJANA,Kampus 7,"Jl. Bonto Langkasa, Banta-Bantaeng, Rappocini, Kec. Rappocini, Kota Makassar, Sulawesi Selatan 90222",214
+FAKULTAS EKONOMI DAN BISNIS,Kampus Utama,"Teuku Nyak Arief, Darussalam, Banda Aceh, Aceh, 23111, Indonesia",215
+FAKULTAS KEPERAWATAN,Kampus Utama,"Teuku Nyak Arief, Darussalam, Banda Aceh, Aceh, 23111, Indonesia",215
+FAKULTAS HUKUM,Kampus Utama,"Teuku Nyak Arief, Darussalam, Banda Aceh, Aceh, 23111, Indonesia",215
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus Utama,"Teuku Nyak Arief, Darussalam, Banda Aceh, Aceh, 23111, Indonesia",215
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus Utama,"Teuku Nyak Arief, Darussalam, Banda Aceh, Aceh, 23111, Indonesia",215
+FAKULTAS PERTANIAN,Kampus Utama,"Teuku Nyak Arief, Darussalam, Banda Aceh, Aceh, 23111, Indonesia",215
+FAKULTAS KEDOKTERAN HEWAN,Kampus Utama,"Teuku Nyak Arief, Darussalam, Banda Aceh, Aceh, 23111, Indonesia",215
+FAKULTAS TEKNIK,Kampus Utama,"Teuku Nyak Arief, Darussalam, Banda Aceh, Aceh, 23111, Indonesia",215
+FAKULTAS KEDOKTERAN,Kampus Utama,"Teuku Nyak Arief, Darussalam, Banda Aceh, Aceh, 23111, Indonesia",215
+FAKULTAS KEDOKTERAN GIGI,Kampus Utama,"Teuku Nyak Arief, Darussalam, Banda Aceh, Aceh, 23111, Indonesia",215
+FAKULTAS KELAUTAN DAN PERIKANAN,Kampus Utama,"Teuku Nyak Arief, Darussalam, Banda Aceh, Aceh, 23111, Indonesia",215
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUN ALAM,Kampus Utama,"Teuku Nyak Arief, Darussalam, Banda Aceh, Aceh, 23111, Indonesia",215
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus 3,"Jl. Ogan, RT.37/RW.12, Bukit Lama, Kec. Ilir Bar. I, Palembang, Sumatera Selatan 30139",216
+FAKULTAS ILMU KOMPUTER,Kampus 1,"Jl. Raya Palembang - Prabumulih Km. 32 Indralaya, Ogan Ilir, Sumatera Selatan 30662",216
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus 1,"Jl. Raya Palembang - Prabumulih Km. 32 Indralaya, Ogan Ilir, Sumatera Selatan 30662",216
+FAKULTAS KEDOKTERAN,Kampus 1,"Jl. Raya Palembang - Prabumulih Km. 32 Indralaya, Ogan Ilir, Sumatera Selatan 30662",216
+FAKULTAS PERTANIAN,Kampus 1,"Jl. Raya Palembang - Prabumulih Km. 32 Indralaya, Ogan Ilir, Sumatera Selatan 30662",216
+FAKULTAS EKONOMI,Kampus 1,"Jl. Raya Palembang - Prabumulih Km. 32 Indralaya, Ogan Ilir, Sumatera Selatan 30662",216
+FAKULTAS KESEHATAN MASYARAKAT,Kampus 1,"Jl. Raya Palembang - Prabumulih Km. 32 Indralaya, Ogan Ilir, Sumatera Selatan 30662",216
+FAKULTAS TEKNIK,Kampus 1,"Jl. Raya Palembang - Prabumulih Km. 32 Indralaya, Ogan Ilir, Sumatera Selatan 30662",216
+FAKULTAS ILMU SOSIAL DAN POLITIK,Kampus 1,"Jl. Raya Palembang - Prabumulih Km. 32 Indralaya, Ogan Ilir, Sumatera Selatan 30662",216
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus 1,"Jl. Raya Palembang - Prabumulih Km. 32 Indralaya, Ogan Ilir, Sumatera Selatan 30662",216
+FAKUTAS HUKUM,Kampus 1,"Jl. Raya Palembang - Prabumulih Km. 32 Indralaya, Ogan Ilir, Sumatera Selatan 30662",216
+PROGRAM PASCASARJANA,Kampus 4,Jl. Padang Selasa No. 524 Bukit Besar Palembang Sumatera Selatan 30139,216
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus 2,"Jl. Srijaya Negara, Bukit Besar, Palembang",216
+FAKULTAS KEDOKTERAN,Kampus 2,"Jl. Srijaya Negara, Bukit Besar, Palembang",216
+FAKULTAS PERTANIAN,Kampus 2,"Jl. Srijaya Negara, Bukit Besar, Palembang",216
+FAKULTAS EKONOMI,Kampus 2,"Jl. Srijaya Negara, Bukit Besar, Palembang",216
+FAKULTAS TEKNIK,Kampus 2,"Jl. Srijaya Negara, Bukit Besar, Palembang",216
+FAKULTAS ILMU SOSIAL DAN POLITIK,Kampus 2,"Jl. Srijaya Negara, Bukit Besar, Palembang",216
+FAKUTAS HUKUM,Kampus 2,"Jl. Srijaya Negara, Bukit Besar, Palembang",216
+FAKULTAS HUKUM,Kampus 1,"Jl. Rs. Fatmawati, Pondok Labu, Jakarta Selatan, DKI Jakarta, 12450",217
+FAKULTAS TEKNIK,Kampus 1,"Jl. Rs. Fatmawati, Pondok Labu, Jakarta Selatan, DKI Jakarta, 12450",217
+FAKULTAS ILMU KOMPUTER,Kampus 1,"Jl. Rs. Fatmawati, Pondok Labu, Jakarta Selatan, DKI Jakarta, 12450",217
+FAKULTAS EKONOMI DAN BISNIS,Kampus 1,"Jl. Rs. Fatmawati, Pondok Labu, Jakarta Selatan, DKI Jakarta, 12450",217
+FAKULTAS KEDOKTERAN,Kampus 1,"Jl. Rs. Fatmawati, Pondok Labu, Jakarta Selatan, DKI Jakarta, 12450",217
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 1,"Jl. Rs. Fatmawati, Pondok Labu, Jakarta Selatan, DKI Jakarta, 12450",217
+FAKULTAS TEKNIK,Kampus 2,"Jl. Limo Raya, Limo, Cinere, Depok",217
+FAKULTAS ILMU KESEHATAN,Kampus 2,"Jl. Limo Raya, Limo, Cinere, Depok",217
+ALL,Kampus II,"Jl. KH. Abdul Syukur No.17, Margadana, Tegal",218
+SISTEM TRANSPORTASI JALAN DAN OTOMOTIF,Kampus I,"Jl. Perintis Kemerdekaan No.17, Slerok, Tegal",218
+ALL,Kampus Utama,"Jalan Poros Makassar - Parepare Km. 83, Mandalle, Pangkep, Sulawesi Selatan 90761",219
+FAKULTAS TEKNIK,Kampus 1,"Kampus Tunjung Nyaho, Jl. Yos Sudarso, Palangka Raya, Kalimantan Tengah",220
+FAKULTAS PERTANIAN,Kampus 1,"Kampus Tunjung Nyaho, Jl. Yos Sudarso, Palangka Raya, Kalimantan Tengah",220
+FAKULTAS KEDOKTERAN,Kampus 1,"Kampus Tunjung Nyaho, Jl. Yos Sudarso, Palangka Raya, Kalimantan Tengah",220
+FAKULTAS HUKUM,Kampus 1,"Kampus Tunjung Nyaho, Jl. Yos Sudarso, Palangka Raya, Kalimantan Tengah",220
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus 1,"Kampus Tunjung Nyaho, Jl. Yos Sudarso, Palangka Raya, Kalimantan Tengah",220
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 1,"Kampus Tunjung Nyaho, Jl. Yos Sudarso, Palangka Raya, Kalimantan Tengah",220
+FAKULTAS EKONOMI,Kampus 1,"Kampus Tunjung Nyaho, Jl. Yos Sudarso, Palangka Raya, Kalimantan Tengah",220
+FAKULTAS MATEMATIKA DAN IPA,Kampus 1,"Kampus Tunjung Nyaho, Jl. Yos Sudarso, Palangka Raya, Kalimantan Tengah",220
+PROGRAM PASCASARJANA,Kampus 1,"Kampus Tunjung Nyaho, Jl. Yos Sudarso, Palangka Raya, Kalimantan Tengah",220
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus 2,"Jalan R. A. Kartini, Langkai, Jekan Raya, Langkai, Kec. Pahandut, Kota Palangka Raya, Kalimantan Tengah 74874",220
+FAKULTAS TEKNIK,Kampus 1,"Jalan Kuaro, Gunung Kelua, Samarinda 75119, Kalimantan Timur",221
+FAKULTAS KEHUTANAN,Kampus 1,"Jalan Kuaro, Gunung Kelua, Samarinda 75119, Kalimantan Timur",221
+FAKULTAS KEDOKTERAN,Kampus 1,"Jalan Kuaro, Gunung Kelua, Samarinda 75119, Kalimantan Timur",221
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 1,"Jalan Kuaro, Gunung Kelua, Samarinda 75119, Kalimantan Timur",221
+FAKULTAS PERIKANAN DAN ILMU KELAUTAN,Kampus 1,"Jalan Kuaro, Gunung Kelua, Samarinda 75119, Kalimantan Timur",221
+FAKULTAS ILMU BUDAYA,Kampus 1,"Jalan Kuaro, Gunung Kelua, Samarinda 75119, Kalimantan Timur",221
+FAKULTAS KESEHATAN MASYARAKAT,Kampus 1,"Jalan Kuaro, Gunung Kelua, Samarinda 75119, Kalimantan Timur",221
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus 1,"Jalan Kuaro, Gunung Kelua, Samarinda 75119, Kalimantan Timur",221
+FAKULTAS FARMASI,Kampus 1,"Jalan Kuaro, Gunung Kelua, Samarinda 75119, Kalimantan Timur",221
+FAKULTAS EKONOMI DAN BISNIS,Kampus 1,"Jalan Kuaro, Gunung Kelua, Samarinda 75119, Kalimantan Timur",221
+FAKULTAS HUKUM,Kampus 1,"Jalan Kuaro, Gunung Kelua, Samarinda 75119, Kalimantan Timur",221
+FAKULTAS PERTANIAN,Kampus 1,"Jalan Kuaro, Gunung Kelua, Samarinda 75119, Kalimantan Timur",221
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus 1,"Jalan Kuaro, Gunung Kelua, Samarinda 75119, Kalimantan Timur",221
+FAKULTAS ILMU KOMPUTER DAN TEKNOLOGI INFORMASI,Kampus 1,"Jalan Kuaro, Gunung Kelua, Samarinda 75119, Kalimantan Timur",221
+ALL,Kampus 3,Jalan Bangeris,221
+ALL,Kampus 2,"Jalan Pahlawan, Kecamatan Samarinda, Kota Samarinda",221
+ALL,Kampus 4,"Jalan Flores, Samarinda",221
+ALL,Kampus 5,"Jalan Sei Kalian, Samarinda",221
+FAKULTAS KEDOKTERAN GIGI,Kampus 2,"Jl. Salemba Raya No. 6, Jakarta Pusat, 10430",222
+FAKULTAS KEDOKTERAN,Kampus 2,"Jl. Salemba Raya No. 6, Jakarta Pusat, 10430",222
+FAKULTAS ILMU KOMPUTER,Kampus 1,"Kampus Baru UI, Kota Depok, Jakarta",222
+FAKULTAS ILMU ADMINISTRASI,Kampus 1,"Kampus Baru UI, Kota Depok, Jakarta",222
+FAKULTAS KESEHATAN MASYARAKAT,Kampus 1,"Kampus Baru UI, Kota Depok, Jakarta",222
+FAKULTAS PSIKOLOGI,Kampus 1,"Kampus Baru UI, Kota Depok, Jakarta",222
+FAKULTAS ILMU KEPERAWATAN,Kampus 1,"Kampus Baru UI, Kota Depok, Jakarta",222
+FAKULTAS EKONOMI DAN BISNIS,Kampus 1,"Kampus Baru UI, Kota Depok, Jakarta",222
+FAKULTAS FARMASI,Kampus 1,"Kampus Baru UI, Kota Depok, Jakarta",222
+FAKULTAS TEKNIK,Kampus 1,"Kampus Baru UI, Kota Depok, Jakarta",222
+FAKULTAS HUKUM,Kampus 1,"Kampus Baru UI, Kota Depok, Jakarta",222
+FAKULTAS PENDIDIKAN VOKASI,Kampus 1,"Kampus Baru UI, Kota Depok, Jakarta",222
+FAKULTAS ILMU SOSIAL ILMU POLITIK,Kampus 1,"Kampus Baru UI, Kota Depok, Jakarta",222
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus 1,"Kampus Baru UI, Kota Depok, Jakarta",222
+FAKULTAS ILMU PENGETAHUAN BUDAYA,Kampus 1,"Kampus Baru UI, Kota Depok, Jakarta",222
+FAKULTAS SYARIAH DAN HUKUM,Kampus Utama,"JL. Ahmad Yani No. 117, Jemur Wonosari, Wonocolo, Surabaya, Jawa Timur, 60237",223
+FAKULTAS TARBIYAH DAN KEGURUAN,Kampus Utama,"JL. Ahmad Yani No. 117, Jemur Wonosari, Wonocolo, Surabaya, Jawa Timur, 60237",223
+FAKULTAS USHULUDDIN DAN FILSAFAT,Kampus Utama,"JL. Ahmad Yani No. 117, Jemur Wonosari, Wonocolo, Surabaya, Jawa Timur, 60237",223
+FAKULTAS EKONOMI DAN BISNIS ISLAM,Kampus Utama,"JL. Ahmad Yani No. 117, Jemur Wonosari, Wonocolo, Surabaya, Jawa Timur, 60237",223
+FAKULTAS SAINS DAN TEKNOLOGI,Kampus Utama,"JL. Ahmad Yani No. 117, Jemur Wonosari, Wonocolo, Surabaya, Jawa Timur, 60237",223
+FAKULTAS ADAB DAN HUMANIORA,Kampus Utama,"JL. Ahmad Yani No. 117, Jemur Wonosari, Wonocolo, Surabaya, Jawa Timur, 60237",223
+FAKULTAS ILMU SOSIAL DAN POLITIK,Kampus Utama,"JL. Ahmad Yani No. 117, Jemur Wonosari, Wonocolo, Surabaya, Jawa Timur, 60237",223
+FAKULTAS PSIKOLOGI DAN KESEHATAN,Kampus Utama,"JL. Ahmad Yani No. 117, Jemur Wonosari, Wonocolo, Surabaya, Jawa Timur, 60237",223
+FAKULTAS DAKWAH DAN KOMUNIKASI,Kampus Utama,"JL. Ahmad Yani No. 117, Jemur Wonosari, Wonocolo, Surabaya, Jawa Timur, 60237",223
+PROGRAM PASCASARJANA,Kampus Utama,"JL. Ahmad Yani No. 117, Jemur Wonosari, Wonocolo, Surabaya, Jawa Timur, 60237",223
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+FAKULTAS KEDOKTERAN,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+FAKULTAS KEDOKTERAN GIGI,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+FAKULTAS TEKNIK,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+FAKULTAS TEKNOLOGI PERTANIAN,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+FAKULTAS HUKUM,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+FAKULTAS FARMASI,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+FAKULTAS PERTANIAN,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+FAKULTAS KESEHATAN MASYARAKAT,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+FAKULTAS EKONOMI DAN BISNIS,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+FAKULTAS ILMU BUDAYA,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+FAKULTAS KEPERAWATAN,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+FAKULTAS ILMU KOMPUTER,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+PROGRAM PASCASARJANA,Kampus 1,"Jalan Kalimantan No. 37, Kampus Tegalboto, Jember, Jawa Timur",224
+FAKULTAS KEPERAWATAN,Kampus 4,"Jl. KH. Mansyur No.207, Tembokrejo, Kec. Purworejo, Kota Pasuruan, Jawa Timur",224
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus 2,"Jl. Diponegoro, Poncogati, Curah Dami, Kabupaten Bondowoso, Jawa Timur",224
+FAKULTAS PERTANIAN,Kampus 2,"Jl. Diponegoro, Poncogati, Curah Dami, Kabupaten Bondowoso, Jawa Timur",224
+FAKULTAS EKONOMI DAN BISNIS,Kampus 2,"Jl. Diponegoro, Poncogati, Curah Dami, Kabupaten Bondowoso, Jawa Timur",224
+FAKULTAS KEPERAWATAN,Kampus 3,"Jl. Jalan Brigjen. Katamso, Tompokersan, Lumajang, Jawa Timur",224
+ALL,Kampus Utama,"Jalan Merah Putih Buper, Yabansai, Heram, 99224 Jayapura Papua",225
+FAKULTAS PERTANIAN,Kampus 2,"Jln. Ahmad Yani KM. 35-36, Simpang Empat, Kota Banjarbaru",226
+FAKULTAS TEKNIK,Kampus 2,"Jln. Ahmad Yani KM. 35-36, Simpang Empat, Kota Banjarbaru",226
+FAKULTAS KEHUTANAN,Kampus 2,"Jln. Ahmad Yani KM. 35-36, Simpang Empat, Kota Banjarbaru",226
+FAKULTAS PERIKANAN DAN KELAUTAN,Kampus 2,"Jln. Ahmad Yani KM. 35-36, Simpang Empat, Kota Banjarbaru",226
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus 2,"Jln. Ahmad Yani KM. 35-36, Simpang Empat, Kota Banjarbaru",226
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus 1,"Jln. H. Hasan Basri, Kayu Tangi, Kota Banjarmasin",226
+FAKULTAS HUKUM,Kampus 1,"Jln. H. Hasan Basri, Kayu Tangi, Kota Banjarmasin",226
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 1,"Jln. H. Hasan Basri, Kayu Tangi, Kota Banjarmasin",226
+FAKULTAS EKONOMI DAN BISNIS,Kampus 1,"Jln. H. Hasan Basri, Kayu Tangi, Kota Banjarmasin",226
+PROGRAM PASCASARJANA,Kampus 1,"Jln. H. Hasan Basri, Kayu Tangi, Kota Banjarmasin",226
+FAKULTAS KEDOKTERAN,Kampus 3,"Jln. Veteran, Banjarmasin Tengah, Kota Banjarmasin",226
+FAKULTAS KEDOKTERAN GIGI,Kampus 3,"Jln. Veteran, Banjarmasin Tengah, Kota Banjarmasin",226
+ALL,Kampus Utama,Jalan Raden Fatah Kelurahan Pagar Dewa Kecamatan Selebar Kota Bengkulu,227
+ALL,Kampus Utama,"Jalan T Rizal Nurdin Km 4,5 Sihitang Padangsidimpuan",228
+FAKULTAS TEKNIK,Kampus 2,"Jl. Poros Malino Km. 6, Bontomarannu. Gowa, Sulawesi Selatan. 92171",229
+FAKULTAS HUKUM,Kampus 2,"Jl. Poros Malino Km. 6, Bontomarannu. Gowa, Sulawesi Selatan. 92171",229
+FAKULTAS PETERNAKAN,Kampus 3,"Jl. Jend. Sudirman No.176, Pangkajene, Maritengngae, Kabupaten Sidenreng Rappang, 91611, Sulawesi Selatan",229
+FAKULTAS KEDOKTERAN GIGI,Kampus 1,"Jl. Perintis Kemerdekaan Km. 10, Kota Makassar, Sulawesi Selatan 90245",229
+FAKULTAS ILMU BUDAYA,Kampus 1,"Jl. Perintis Kemerdekaan Km. 10, Kota Makassar, Sulawesi Selatan 90245",229
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 1,"Jl. Perintis Kemerdekaan Km. 10, Kota Makassar, Sulawesi Selatan 90245",229
+FAKULTAS KEHUTANAN,Kampus 1,"Jl. Perintis Kemerdekaan Km. 10, Kota Makassar, Sulawesi Selatan 90245",229
+FAKULTAS KESEHATAN MASYARAKAT,Kampus 1,"Jl. Perintis Kemerdekaan Km. 10, Kota Makassar, Sulawesi Selatan 90245",229
+FAKULTAS KEDOKTERAN,Kampus 1,"Jl. Perintis Kemerdekaan Km. 10, Kota Makassar, Sulawesi Selatan 90245",229
+FAKULTAS PETERNAKAN,Kampus 1,"Jl. Perintis Kemerdekaan Km. 10, Kota Makassar, Sulawesi Selatan 90245",229
+FAKULTAS PERTANIAN,Kampus 1,"Jl. Perintis Kemerdekaan Km. 10, Kota Makassar, Sulawesi Selatan 90245",229
+FAKULTAS FARMASI,Kampus 1,"Jl. Perintis Kemerdekaan Km. 10, Kota Makassar, Sulawesi Selatan 90245",229
+FAKULTAS ILMU KELAUTAN DAN PERIKANAN,Kampus 1,"Jl. Perintis Kemerdekaan Km. 10, Kota Makassar, Sulawesi Selatan 90245",229
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus 1,"Jl. Perintis Kemerdekaan Km. 10, Kota Makassar, Sulawesi Selatan 90245",229
+FAKULTAS EKONOMI DAN BISNIS,Kampus 1,"Jl. Perintis Kemerdekaan Km. 10, Kota Makassar, Sulawesi Selatan 90245",229
+FAKULTAS KEPERAWATAN,Kampus 1,"Jl. Perintis Kemerdekaan Km. 10, Kota Makassar, Sulawesi Selatan 90245",229
+SEKOLAH PASCASARJANA,Kampus 1,"Jl. Perintis Kemerdekaan Km. 10, Kota Makassar, Sulawesi Selatan 90245",229
+ALL,Kampus Utama,"Jl. Prof. Dr. Baharuddin Lopa SH, Lingkungan Talumung, Kab. Majene, Sulbar 91214",230
+FAKULTAS SYARIAH,Kampus Utama,"Jalan Sultan Qaimuddin No. 17 Baruga, Kendari, Sulawesi Tenggara",231
+FAKULTAS TEKNIK,Kampus Utama,"Jalan Sumantri Brojonegoro No. 01, Gedong Meneng, Rajabasa, Kota Bandar Lampung, Lampung. 35141.",232
+FAKULTAS PERTANIAN,Kampus Utama,"Jalan Sumantri Brojonegoro No. 01, Gedong Meneng, Rajabasa, Kota Bandar Lampung, Lampung. 35141.",232
+FAKULTAS KEDOKTERAN,Kampus Utama,"Jalan Sumantri Brojonegoro No. 01, Gedong Meneng, Rajabasa, Kota Bandar Lampung, Lampung. 35141.",232
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus Utama,"Jalan Sumantri Brojonegoro No. 01, Gedong Meneng, Rajabasa, Kota Bandar Lampung, Lampung. 35141.",232
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus Utama,"Jalan Sumantri Brojonegoro No. 01, Gedong Meneng, Rajabasa, Kota Bandar Lampung, Lampung. 35141.",232
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus Utama,"Jalan Sumantri Brojonegoro No. 01, Gedong Meneng, Rajabasa, Kota Bandar Lampung, Lampung. 35141.",232
+FAKULTAS EKONOMI DAN BISNIS,Kampus Utama,"Jalan Sumantri Brojonegoro No. 01, Gedong Meneng, Rajabasa, Kota Bandar Lampung, Lampung. 35141.",232
+FAKULTAS HUKUM,Kampus Utama,"Jalan Sumantri Brojonegoro No. 01, Gedong Meneng, Rajabasa, Kota Bandar Lampung, Lampung. 35141.",232
+JURUSAN TEKNIK INFORMATIKA,Kampus Utama,"Jl. Bathin Alam, Sungai Alam, Bengkalis, Riau 28711",233
+JURUSAN TEKNIK MESIN,Kampus Utama,"Jl. Bathin Alam, Sungai Alam, Bengkalis, Riau 28711",233
+JURUSAN TEKNIK PERKAPALAN,Kampus Utama,"Jl. Bathin Alam, Sungai Alam, Bengkalis, Riau 28711",233
+JURUSAN TEKNIK ELEKTRO,Kampus Utama,"Jl. Bathin Alam, Sungai Alam, Bengkalis, Riau 28711",233
+JURUSAN TEKNIK SIPIL,Kampus Utama,"Jl. Bathin Alam, Sungai Alam, Bengkalis, Riau 28711",233
+JURUSAN BAHASA,Kampus Utama,"Jl. Bathin Alam, Sungai Alam, Bengkalis, Riau 28711",233
+ALL,Kampus III,"Jalan Raya Rangkasbitung Pandeglang No. 421, Kaduagung Tengah, Kecamatan Cibadak, Kabupaten Lebak, Banten 42317",234
+ALL,Kampus I,"Jalan Syech Nawawi Al Bantani No.12, Cipocok Jaya, Kota Serang",234
+ALL,Kampus II,"Jalan Doktor Sitanala, RT 002 RW 003, Karang Sari, Neglasari, Tangerang, Banten 15121",234
+ALL,Kampus Utama,"Jl. Ir. M. Putuhena, Kampus Poka, Ambon, Maluku, Indonesia 97233",235
+ALL,Kampus Utama,Jalan Wr.Supratman Kandang Limun Bengkulu,236
+FAKULTAS HUKUM,Kampus 5,"Graha STR Kemang, Jakarta Selatan",237
+FAKULTAS ILMU BUDAYA,Kampus 2,"Jl. Airlangga No. 4 - 6, Surabaya",237
+FAKULTAS PSIKOLOGI,Kampus 2,"Jl. Airlangga No. 4 - 6, Surabaya",237
+FAKULTAS FARMASI,Kampus 2,"Jl. Airlangga No. 4 - 6, Surabaya",237
+FAKULTAS EKONOMI DAN BISNIS,Kampus 2,"Jl. Airlangga No. 4 - 6, Surabaya",237
+FAKULTAS HUKUM,Kampus 2,"Jl. Airlangga No. 4 - 6, Surabaya",237
+FAKULTAS ILMU SOSIAL DAN POLITIK,Kampus 2,"Jl. Airlangga No. 4 - 6, Surabaya",237
+SEKOLAH PASCASARJANA,Kampus 2,"Jl. Airlangga No. 4 - 6, Surabaya",237
+FAKULTAS VOKASI,Kampus 2,"Jl. Airlangga No. 4 - 6, Surabaya",237
+FAKULTAS SAINS DAN TEKNOLOGI,Kampus 3,"Jl. Mulyorejo, Sukolilo, Surabaya",237
+FAKULTAS PERIKANAN DAN KELAUTAN,Kampus 3,"Jl. Mulyorejo, Sukolilo, Surabaya",237
+FAKULTAS KESEHATAN MASYARAKAT,Kampus 3,"Jl. Mulyorejo, Sukolilo, Surabaya",237
+FAKULTAS KEDOKTERAN HEWAN,Kampus 3,"Jl. Mulyorejo, Sukolilo, Surabaya",237
+FAKULTAS KEPERAWATAN,Kampus 3,"Jl. Mulyorejo, Sukolilo, Surabaya",237
+FAKULTAS TEKNOLOGI MAJU DAN MULTIDISIPLIN,Kampus 3,"Jl. Mulyorejo, Sukolilo, Surabaya",237
+FAKULTAS PERIKANAN DAN KELAUTAN,Kampus 4,"Jl. Wijaya Kusuma No. 113, Kec. Giri, Kabupaten Banyuwangi",237
+FAKULTAS EKONOMI DAN BISNIS,Kampus 4,"Jl. Wijaya Kusuma No. 113, Kec. Giri, Kabupaten Banyuwangi",237
+FAKULTAS KESEHATAN MASYARAKAT,Kampus 4,"Jl. Wijaya Kusuma No. 113, Kec. Giri, Kabupaten Banyuwangi",237
+FAKULTAS KEDOKTERAN HEWAN,Kampus 4,"Jl. Wijaya Kusuma No. 113, Kec. Giri, Kabupaten Banyuwangi",237
+FAKULTAS KEDOKTERAN GIGI,Kampus 1,"Jl. Prof. Dr. Moestopo 47, Surabaya",237
+FAKULTAS KEDOKTERAN,Kampus 1,"Jl. Prof. Dr. Moestopo 47, Surabaya",237
+FAKULTAS SENI PERTUNJUKAN,Kampus Utama,"Jalan Kampwolker Perumnas 3 Waena, Kota Jayapura, Papua",238
+FAKULTAS SENI RUPA DAN DESAIN,Kampus Utama,"Jalan Kampwolker Perumnas 3 Waena, Kota Jayapura, Papua",238
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Universitas Pamulang,"Jl. Surya Kencana No. 1 Pamulang, Tangerang Selatan, Banten",239
+FAKULTAS SASTRA,Universitas Pamulang,"Jl. Surya Kencana No. 1 Pamulang, Tangerang Selatan, Banten",239
+FAKULTAS TEKNIK,Universitas Pamulang,"Jl. Surya Kencana No. 1 Pamulang, Tangerang Selatan, Banten",239
+FAKULTAS EKONOMI DAN BISNIS,Universitas Pamulang,"Jl. Surya Kencana No. 1 Pamulang, Tangerang Selatan, Banten",239
+FAKULTAS MATEMATIKA DAN IPA,Universitas Pamulang,"Jl. Surya Kencana No. 1 Pamulang, Tangerang Selatan, Banten",239
+FAKULTAS HUKUM,Universitas Pamulang,"Jl. Surya Kencana No. 1 Pamulang, Tangerang Selatan, Banten",239
+ALL,Kampus Roxy,"Gedung Runata, Jl. Kyai Tapa No.99 A, RT.4/RW.16, Tomang, Kec. Grogol petamburan, Kota Jakarta Barat, 11440",240
+ALL,Kampus Sudirman,"Sahid Sudirman Residence Lantai 5, Jalan Jend. Sudirman No.86, Jakarta Pusat",240
+ALL,Kampus Pondok Cabe,"Jl. Kemiri Raya No.22, Pondok Cabe Udik, Kec. Pamulang, Kota Tangerang Selatan, Banten 15418",240
+ALL,Kampus Taman Puring,"Jl. Gandaria III No.3, RT.7/RW.1, Taman Puring, Kec. Kebayoran Baru, Kota Jakarta Selatan 12130",240
+ALL,Kampus Utama,Jl. Raya Pondok Gede No.23-25 Jakarta Timur 13550,241
+FAKULTAS PERIKANAN DAN ILMU KELAUTAN,Kampus 5,"Jalan Ade Irma Suryani, Jepara",242
+FAKULTAS KEDOKTERAN,Kampus 6,"Mlonggo, Jepara",242
+FAKULTAS PERIKANAN DAN ILMU KELAUTAN,Kampus 1,"Jalan Prof. Soedarto, SH, Tembalang, Semarang",242
+FAKULTAS HUKUM,Kampus 1,"Jalan Prof. Soedarto, SH, Tembalang, Semarang",242
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 1,"Jalan Prof. Soedarto, SH, Tembalang, Semarang",242
+FAKULTAS SAINS DAN MATEMATIKA,Kampus 1,"Jalan Prof. Soedarto, SH, Tembalang, Semarang",242
+FAKULTAS EKONOMIKA DAN BISNIS,Kampus 1,"Jalan Prof. Soedarto, SH, Tembalang, Semarang",242
+FAKULTAS PETERNAKAN DAN PERTANIAN,Kampus 1,"Jalan Prof. Soedarto, SH, Tembalang, Semarang",242
+FAKULTAS TEKNIK,Kampus 1,"Jalan Prof. Soedarto, SH, Tembalang, Semarang",242
+FAKULTAS PSIKOLOGI,Kampus 1,"Jalan Prof. Soedarto, SH, Tembalang, Semarang",242
+FAKULTAS KEDOKTERAN,Kampus 1,"Jalan Prof. Soedarto, SH, Tembalang, Semarang",242
+SEKOLAH VOKASI,Kampus 1,"Jalan Prof. Soedarto, SH, Tembalang, Semarang",242
+FAKULTAS KESEHATAN MASYARAKAT,Kampus 1,"Jalan Prof. Soedarto, SH, Tembalang, Semarang",242
+FAKULTAS ILMU BUDAYA,Kampus 1,"Jalan Prof. Soedarto, SH, Tembalang, Semarang",242
+SEKOLAH VOKASI,Kampus 2,"Jalan Imam Bardjo, Semarang",242
+SEKOLAH PASCASARJANA,Kampus 2,"Jalan Imam Bardjo, Semarang",242
+FAKULTAS TEKNIK,Kampus 4,"Jalan Kalisari, Semarang",242
+FAKULTAS KEDOKTERAN,Kampus 3,"Jalan Dr. Soetomo, Semarang",242
+FAKULTAS PERIKANAN DAN ILMU KELAUTAN,Kampus 7,"Teluk Awur, Jepara",242
+FAKULTAS PENDIDIKAN OLAHRAGA DAN KESEHATAN,Kampus 1,"Jalan Dr. Setiabudhi No.229 Bandung, Jawa Barat",243
+FAKULTAS ILMU PENDIDIKAN,Kampus 1,"Jalan Dr. Setiabudhi No.229 Bandung, Jawa Barat",243
+FAKULTAS PENDIDIKAN BAHASA DAN SASTRA,Kampus 1,"Jalan Dr. Setiabudhi No.229 Bandung, Jawa Barat",243
+FAKULTAS PENDIDIKAN TEKNOLOGI DAN KEJURUAN,Kampus 1,"Jalan Dr. Setiabudhi No.229 Bandung, Jawa Barat",243
+FAKULTAS PENDIDIKAN MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus 1,"Jalan Dr. Setiabudhi No.229 Bandung, Jawa Barat",243
+FAKULTAS PENDIDIKAN EKONOMI DAN BISNIS,Kampus 1,"Jalan Dr. Setiabudhi No.229 Bandung, Jawa Barat",243
+FAKULTAS PENDIDIKAN ILMU PENGETAHUAN SOSIAL,Kampus 1,"Jalan Dr. Setiabudhi No.229 Bandung, Jawa Barat",243
+FAKULTAS PENDIDIKAN SENI DAN DESAIN,Kampus 1,"Jalan Dr. Setiabudhi No.229 Bandung, Jawa Barat",243
+PROGRAM PASCASARJANA,Kampus 1,"Jalan Dr. Setiabudhi No.229 Bandung, Jawa Barat",243
+FAKULTAS ILMU PENDIDIKAN,Kampus 5,"Jl. Veteran No.8 Purwakarta, Jawa Barat",243
+FAKULTAS ILMU PENDIDIKAN,Kampus 4,"Jl. Dadaha No.18 Kota Tasikmalaya, Jawa Barat",243
+FAKULTAS ILMU PENDIDIKAN,Kampus 3,"Jl. Raya Cibiru KM15, Bandung, Jawa Barat",243
+FAKULTAS PENDIDIKAN MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus 3,"Jl. Raya Cibiru KM15, Bandung, Jawa Barat",243
+FAKULTAS ILMU PENDIDIKAN,Kampus 6,"Jl. Ciracas No.18 Serang, Banten",243
+FAKULTAS PENDIDIKAN OLAHRAGA DAN KESEHATAN,Kampus 2,"Jl. Mayor Abdurahman No.211, Kotakaler, Kec. Sumedang Utara",243
+FAKULTAS ILMU PENDIDIKAN,Kampus 2,"Jl. Mayor Abdurahman No.211, Kotakaler, Kec. Sumedang Utara",243
+FAKULTAS PENDIDIKAN ILMU PENGETAHUAN SOSIAL,Kampus 2,"Jl. Mayor Abdurahman No.211, Kotakaler, Kec. Sumedang Utara",243
+ALL,Kampus Utama,"Jl. Ahmad Yani Km.06 Desa Panggung, Kec. Pelaihari, Tanah Laut, Kalimantan Selatan, 70815",244
+MANAJEMEN INFORMATIKA,Kampus 1,"Jl. Brigjen Katamso No. 37, Dangdeur, Kec. Subang, Kabupaten Subang, Jawa Barat 41211",245
+TEKNIK PERAWATAN DAN PERBAIKAN MESIN,Kampus 1,"Jl. Brigjen Katamso No. 37, Dangdeur, Kec. Subang, Kabupaten Subang, Jawa Barat 41211",245
+KESEHATAN,Kampus 1,"Jl. Brigjen Katamso No. 37, Dangdeur, Kec. Subang, Kabupaten Subang, Jawa Barat 41211",245
+ALL,Kampus 2,"Blok Kaleng Banteng Desa Cibogo, Kec. Cibogo, Kabupaten Subang, Jawa Barat 41285",245
+FAKULTAS ILMU PENDIDIKAN,Kampus 4,"Jl. Taman Setiabudi I No.2, Jakarta Selatan, 12910",246
+FAKULTAS PENDIDIKAN PSIKOLOGI,Kampus 3,"Jl. Halimun Raya No. 2, Jakarta Selatan 12980",246
+FAKULTAS ILMU PENDIDIKAN,Kampus 1,"Jl. Rawamangun Muka, Jakarta Timur, 13220",246
+FAKULTAS ILMU SOSIAL,Kampus 1,"Jl. Rawamangun Muka, Jakarta Timur, 13220",246
+FAKULTAS BAHASA DAN SENI,Kampus 1,"Jl. Rawamangun Muka, Jakarta Timur, 13220",246
+FAKULTAS MATEMATIKA DAN IPA,Kampus 1,"Jl. Rawamangun Muka, Jakarta Timur, 13220",246
+FAKULTAS TEKNIK,Kampus 1,"Jl. Rawamangun Muka, Jakarta Timur, 13220",246
+FAKULTAS EKONOMI,Kampus 1,"Jl. Rawamangun Muka, Jakarta Timur, 13220",246
+PROGRAM PASCASARJANA,Kampus 1,"Jl. Rawamangun Muka, Jakarta Timur, 13220",246
+FAKULTAS ILMU OLAHRAGA,Kampus 2,"Jl. Pemuda 10, Rawamangun, Jakarta Timur, 13220",246
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 3,"Jl. Dieng Atas, Desa Kalisongo, Dau, Malang",247
+FAKULTAS PETERNAKAN,Kampus 3,"Jl. Dieng Atas, Desa Kalisongo, Dau, Malang",247
+FAKULTAS HUKUM,Kampus 3,"Jl. Dieng Atas, Desa Kalisongo, Dau, Malang",247
+FAKULTAS PERTANIAN,Kampus 3,"Jl. Dieng Atas, Desa Kalisongo, Dau, Malang",247
+FAKULTAS PERIKANAN DAN ILMU KELAUTAN,Kampus 3,"Jl. Dieng Atas, Desa Kalisongo, Dau, Malang",247
+FAKULTAS EKONOMI DAN BISNIS,Kampus 3,"Jl. Dieng Atas, Desa Kalisongo, Dau, Malang",247
+FAKULTAS ILMU KOMPUTER,Kampus 3,"Jl. Dieng Atas, Desa Kalisongo, Dau, Malang",247
+FAKULTAS ILMU ADMINISTRASI,Kampus 3,"Jl. Dieng Atas, Desa Kalisongo, Dau, Malang",247
+FAKULTAS KEDOKTERAN HEWAN,Kampus 2,"Jl. Dieng Atas, Desa Kalisongo, Dau, Malang",247
+FAKULTAS HUKUM,Kampus 4,"Jl. Abdul Muis No.52, RT.2/RW.3, Gambir, Jakarta Pusat",247
+FAKULTAS EKONOMI DAN BISNIS,Kampus 4,"Jl. Abdul Muis No.52, RT.2/RW.3, Gambir, Jakarta Pusat",247
+FAKULTAS ILMU ADMINISTRASI,Kampus 4,"Jl. Abdul Muis No.52, RT.2/RW.3, Gambir, Jakarta Pusat",247
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 1,"Jl. Veteran, Malang, Jawa Timur 65145",247
+FAKULTAS PETERNAKAN,Kampus 1,"Jl. Veteran, Malang, Jawa Timur 65145",247
+FAKULTAS TEKNOLOGI PERTANIAN,Kampus 1,"Jl. Veteran, Malang, Jawa Timur 65145",247
+FAKULTAS HUKUM,Kampus 1,"Jl. Veteran, Malang, Jawa Timur 65145",247
+FAKULTAS KEDOKTERAN,Kampus 1,"Jl. Veteran, Malang, Jawa Timur 65145",247
+FAKULTAS KEDOKTERAN GIGI,Kampus 1,"Jl. Veteran, Malang, Jawa Timur 65145",247
+FAKULTAS TEKNIK,Kampus 1,"Jl. Veteran, Malang, Jawa Timur 65145",247
+FAKULTAS PERTANIAN,Kampus 1,"Jl. Veteran, Malang, Jawa Timur 65145",247
+FAKULTAS ILMU BUDAYA,Kampus 1,"Jl. Veteran, Malang, Jawa Timur 65145",247
+FAKULTAS PERIKANAN DAN ILMU KELAUTAN,Kampus 1,"Jl. Veteran, Malang, Jawa Timur 65145",247
+FAKULTAS EKONOMI DAN BISNIS,Kampus 1,"Jl. Veteran, Malang, Jawa Timur 65145",247
+FAKULTAS ILMU KOMPUTER,Kampus 1,"Jl. Veteran, Malang, Jawa Timur 65145",247
+FAKULTAS ILMU ADMINISTRASI,Kampus 1,"Jl. Veteran, Malang, Jawa Timur 65145",247
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus 1,"Jl. Veteran, Malang, Jawa Timur 65145",247
+ALL,Kampus Utama,"Jln. Soekarno-Hatta KM. 15, Karang Joang, Balikpapan, Kalimantan Timur 76127",248
+SEKOLAH ILMU DAN TEKNOLOGI HAYATI,Kampus 1,"Jl. Ganesha no. 10, Bandung 40132",249
+FAKULTAS TEKNIK MESIN DAN DIRGANTARA,Kampus 1,"Jl. Ganesha no. 10, Bandung 40132",249
+FAKULTAS ILMU DAN TEKNOLOGI KEBUMIAN,Kampus 1,"Jl. Ganesha no. 10, Bandung 40132",249
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus 1,"Jl. Ganesha no. 10, Bandung 40132",249
+SEKOLAH FARMASI,Kampus 1,"Jl. Ganesha no. 10, Bandung 40132",249
+SEKOLAH BISNIS DAN MANAJEMEN,Kampus 1,"Jl. Ganesha no. 10, Bandung 40132",249
+SEKOLAH TEKNIK ELEKTRO DAN INFORMATIKA,Kampus 1,"Jl. Ganesha no. 10, Bandung 40132",249
+FAKULTAS TEKNIK PERTAMBANGAN DAN PERMINYAKAN,Kampus 1,"Jl. Ganesha no. 10, Bandung 40132",249
+FAKULTAS SENI RUPA DAN DESAIN,Kampus 1,"Jl. Ganesha no. 10, Bandung 40132",249
+FAKULTAS TEKNIK SIPIL DAN LINGKUNGAN,Kampus 1,"Jl. Ganesha no. 10, Bandung 40132",249
+FAKULTAS TEKNOLOGI INDUSTRI,Kampus 1,"Jl. Ganesha no. 10, Bandung 40132",249
+"SEKOLAH ARSITEK, PERENCANAAN DAN PENGEMBANGAN KEBIJAKAN",Kampus 1,"Jl. Ganesha no. 10, Bandung 40132",249
+SEKOLAH PASCASARJANA,Kampus 1,"Jl. Ganesha no. 10, Bandung 40132",249
+FAKULTAS TEKNIK MESIN DAN DIRGANTARA,Kampus 3,"Jl. Kebonturi, Arjawinangun Cirebon 45162",249
+FAKULTAS ILMU DAN TEKNOLOGI KEBUMIAN,Kampus 3,"Jl. Kebonturi, Arjawinangun Cirebon 45162",249
+FAKULTAS TEKNIK PERTAMBANGAN DAN PERMINYAKAN,Kampus 3,"Jl. Kebonturi, Arjawinangun Cirebon 45162",249
+FAKULTAS TEKNOLOGI INDUSTRI,Kampus 3,"Jl. Kebonturi, Arjawinangun Cirebon 45162",249
+"SEKOLAH ARSITEK, PERENCANAAN DAN PENGEMBANGAN KEBIJAKAN",Kampus 3,"Jl. Kebonturi, Arjawinangun Cirebon 45162",249
+SEKOLAH ILMU DAN TEKNOLOGI HAYATI,Kampus 2,"Jalan Let. Jen. Purn. Dr. . Mashudi N0.1/ Jl. Raya Jatinangor Km 20,75 Sumedang 45363",249
+SEKOLAH BISNIS DAN MANAJEMEN,Kampus 2,"Jalan Let. Jen. Purn. Dr. . Mashudi N0.1/ Jl. Raya Jatinangor Km 20,75 Sumedang 45363",249
+SEKOLAH TEKNIK ELEKTRO DAN INFORMATIKA,Kampus 2,"Jalan Let. Jen. Purn. Dr. . Mashudi N0.1/ Jl. Raya Jatinangor Km 20,75 Sumedang 45363",249
+FAKULTAS TEKNIK SIPIL DAN LINGKUNGAN,Kampus 2,"Jalan Let. Jen. Purn. Dr. . Mashudi N0.1/ Jl. Raya Jatinangor Km 20,75 Sumedang 45363",249
+FAKULTAS TEKNOLOGI INDUSTRI,Kampus 2,"Jalan Let. Jen. Purn. Dr. . Mashudi N0.1/ Jl. Raya Jatinangor Km 20,75 Sumedang 45363",249
+SEKOLAH BISNIS DAN MANAJEMEN,Kampus 4,"TK Low Center for Executive Education, GrahaIrama 12th Floor, Jl. HR Rasuna Said Kav. 1-2, Jakarta, 12950",249
+FAKULTAS EKONOMI,Kampus Utama,"Jalan Willem Iskandar, Pasar V Medan Estate",250
+FAKULTAS ILMU KEOLAHRAGAAN,Kampus Utama,"Jalan Willem Iskandar, Pasar V Medan Estate",250
+FAKULTAS BAHASA DAN SENI,Kampus Utama,"Jalan Willem Iskandar, Pasar V Medan Estate",250
+FAKULTAS ILMU SOSIAL,Kampus Utama,"Jalan Willem Iskandar, Pasar V Medan Estate",250
+FAKULTAS ILMU PENDIDIKAN,Kampus Utama,"Jalan Willem Iskandar, Pasar V Medan Estate",250
+FAKULTAS TEKNIK,Kampus Utama,"Jalan Willem Iskandar, Pasar V Medan Estate",250
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus Utama,"Jalan Willem Iskandar, Pasar V Medan Estate",250
+PROGRAM PASCASARJANA,Kampus Utama,"Jalan Willem Iskandar, Pasar V Medan Estate",250
+ALL,Kampus Utama,"Jalan Sriwijaya no. 1 Kedaung, Kab. Cirebon, Jawa Barat",251
+FAKULTAS HUKUM,Kampus 2,"Jl. Dr. Saharjo no 83, Tebet, Jakarta 12850",252
+FAKULTAS EKONOMIKA DAN BISNIS,Kampus 2,"Jl. Dr. Saharjo no 83, Tebet, Jakarta 12850",252
+FAKULTAS ILMU BUDAYA,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS TEKNIK,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS FARMASI,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS HUKUM,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS FILSAFAT,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS PSIKOLOGI,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS KEDOKTERAN GIGI,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+"FAKULTAS KEDOKTERAN, KESEHATAN MASYARAKAT DAN KEPERAWATAN",Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS KEDOKTERAN HEWAN,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS PERTANIAN,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS TEKNOLOGI PERTANIAN,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS PETERNAKAN,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS BIOLOGI,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+SEKOLAH VOKASI,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS KEHUTANAN,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS GEOGRAFI,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+FAKULTAS EKONOMIKA DAN BISNIS,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+SEKOLAH PASCASARJANA,Kampus 1,"Bulaksumur, Yogyakarta, 55281",252
+ALL,Kampus Utama,"Jalan Pancaka No. 7B Mataram, Nusa Tenggara Barat, Indonesia",253
+PERIKANAN DAN KEBAHARIAN,Kampus A,"Jl. Kesehatan No.1, Sawang Bendar, Tahuna, Kabupaten Kepulauan Sangihe, Sulawesi Utara",254
+TEKNIK KOMPUTER DAN KOMUNIKASI,Kampus A,"Jl. Kesehatan No.1, Sawang Bendar, Tahuna, Kabupaten Kepulauan Sangihe, Sulawesi Utara",254
+KESEHATAN,Kampus A,"Jl. Kesehatan No.1, Sawang Bendar, Tahuna, Kabupaten Kepulauan Sangihe, Sulawesi Utara",254
+ALL,Kampus B,"Kampung Siha, Manganitu, Kabupaten Kepulauan Sangihe, Sulawesi Utara",254
+FAKULTAS EKONOMI,Kampus Utama,"Jl. Sekaran Gunungpati, Semarang",255
+FAKULTAS ILMU PENDIDIKAN,Kampus Utama,"Jl. Sekaran Gunungpati, Semarang",255
+FAKULTAS ILMU SOSIAL,Kampus Utama,"Jl. Sekaran Gunungpati, Semarang",255
+FAKULTAS TEKNIK,Kampus Utama,"Jl. Sekaran Gunungpati, Semarang",255
+FAKULTAS HUKUM,Kampus Utama,"Jl. Sekaran Gunungpati, Semarang",255
+FAKULTAS ILMU KEOLAHRAGAAN,Kampus Utama,"Jl. Sekaran Gunungpati, Semarang",255
+FAKULTAS BAHASA DAN SENI,Kampus Utama,"Jl. Sekaran Gunungpati, Semarang",255
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM,Kampus Utama,"Jl. Sekaran Gunungpati, Semarang",255
+PROGRAM PASCASARJANA,Kampus Utama,"Jl. Sekaran Gunungpati, Semarang",255
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus Utama,"Jl. Cabe Raya, Pondok Cabe, Pamulang, Tangerang Selatan, Banten 15418",256
+FAKULTAS EKONOMI,Kampus Utama,"Jl. Cabe Raya, Pondok Cabe, Pamulang, Tangerang Selatan, Banten 15418",256
+"FAKULTAS HUKUM, ILMU SOSIAL DAN ILMU POLITIK",Kampus Utama,"Jl. Cabe Raya, Pondok Cabe, Pamulang, Tangerang Selatan, Banten 15418",256
+FAKULTAS SAINS DAN TEKNOLOGI,Kampus Utama,"Jl. Cabe Raya, Pondok Cabe, Pamulang, Tangerang Selatan, Banten 15418",256
+PASCASARJANA,Kampus Utama,"Jl. Cabe Raya, Pondok Cabe, Pamulang, Tangerang Selatan, Banten 15418",256
+ALL,Kampus 3,"Waisai, Raja Ampat",257
+ALL,Kampus 2,"Jalan Raya Aimas-Klamono Kilometer 21, Distrik Aimas, Sorong, Papua Barat",257
+ALL,Kampus 1,"Jalan Gunung Salju, Amban, Manokwari, Papua Barat",257
+ALL,Kampus Utama,"Jalan Sriwijaya Nomor 32, Karangrejo, Sumbersari, Jember, Jawa Timur, Indonesia",258
+FAKULTAS DESAIN KREATIF DAN BISNIS DIGITAL,Kampus 3,"Jl. Cokroaminoto 12 A, Surabaya 60264",259
+FAKULTAS TEKNOLOGI INDUSTRI DAN REKAYASA SISTEM,Kampus 1,"Jalan Raya ITS, Keputih, Sukolilo - Surabaya, Jawa Timur 60111",259
+FAKULTAS TEKNOLOGI KELAUTAN,Kampus 1,"Jalan Raya ITS, Keputih, Sukolilo - Surabaya, Jawa Timur 60111",259
+FAKULTAS DESAIN KREATIF DAN BISNIS DIGITAL,Kampus 1,"Jalan Raya ITS, Keputih, Sukolilo - Surabaya, Jawa Timur 60111",259
+FAKULTAS TEKNOLOGI ELEKTRO DAN INFORMATIKA CERDAS,Kampus 1,"Jalan Raya ITS, Keputih, Sukolilo - Surabaya, Jawa Timur 60111",259
+FAKULTAS VOKASI,Kampus 1,"Jalan Raya ITS, Keputih, Sukolilo - Surabaya, Jawa Timur 60111",259
+FAKULTAS TEKNOLOGI INFORMASI,Kampus 1,"Jalan Raya ITS, Keputih, Sukolilo - Surabaya, Jawa Timur 60111",259
+"FAKULTAS TEKNIK SIPIL, PERENCANAAN, DAN KEBUMIAN",Kampus 1,"Jalan Raya ITS, Keputih, Sukolilo - Surabaya, Jawa Timur 60111",259
+FAKULTAS SAINS DAN ANALITIKA DATA,Kampus 1,"Jalan Raya ITS, Keputih, Sukolilo - Surabaya, Jawa Timur 60111",259
+FAKULTAS VOKASI,Kampus 2,"Jl. Raya Menur No.127, Manyar Sabrangan, Mulyorejo - Kota Surabaya, Jawa Timur 60282",259
+ALL,Kampus Utama,"Jalan Pandawa, Pucangan, Kartasura, Sukoharjo Jawa Tengah",260
+JURUSAN AGRIBISNIS,Kampus Utama,"Jl. Raya Sejangkung Kawasan Pendidikan Tinggi, Sambas, Kalimantan Barat 79400",261
+JURUSAN TEKNIK MESIN,Kampus Utama,"Jl. Raya Sejangkung Kawasan Pendidikan Tinggi, Sambas, Kalimantan Barat 79400",261
+JURUSAN MANAJEMEN INFORMATIKA,Kampus Utama,"Jl. Raya Sejangkung Kawasan Pendidikan Tinggi, Sambas, Kalimantan Barat 79400",261
+ALL,Kampus Utama,"Kampus Terpadu UBB Gedung Babel IV, Balunijuk Merawang, Bangka, Kep. Bangka Belitung",262
+BAHASA ASING,Kampus 1,"Jl. Cut Muthia No.30, Margahayu, Bekasi Timur, Jawa Barat 17113",263
+BAHASA ASING,Kampus 2,"Jl.Cut Muthia No.16A Margahayu, Bekasi Timur, Jawa Barat 17113",263
+ALL,LaSalle College Jakarta,"Sahid Office Boutique Unit C-F, Jalan Jenderal Sudirman Kavling 86, Jakpus 10220",264
+FAKULTAS TELEMATIKA ENERGI,Kampus Utama,"Menara PLN, Jl. Lingkar Luar Barat, Kelurahan Duri Kosambi, Kecamatan Cengkareng, Jakarta Barat 11750",265
+PROGRAM PASCASARJANA,Kampus Utama,"Menara PLN, Jl. Lingkar Luar Barat, Kelurahan Duri Kosambi, Kecamatan Cengkareng, Jakarta Barat 11750",265
+FAKULTAS TEKNOLOGI INFRASTRUKTUR DAN KEWILAYAHAN,Kampus Utama,"Menara PLN, Jl. Lingkar Luar Barat, Kelurahan Duri Kosambi, Kecamatan Cengkareng, Jakarta Barat 11750",265
+FAKULTAS KETENAGALISTRIKAN DAN ENERGI TERBARUKAN,Kampus Utama,"Menara PLN, Jl. Lingkar Luar Barat, Kelurahan Duri Kosambi, Kecamatan Cengkareng, Jakarta Barat 11750",265
+FAKULTAS TEKNOLOGI DAN BISNIS ENERGI,Kampus Utama,"Menara PLN, Jl. Lingkar Luar Barat, Kelurahan Duri Kosambi, Kecamatan Cengkareng, Jakarta Barat 11750",265
+MAKEUP ARTIST,LaSalle College Surabaya,"Jalan Darmokali No.32, Darmo, Kec. Wonokromo, Jawa Timur 60241",266
+FASHION BUSINESS,LaSalle College Surabaya,"Jalan Darmokali No.32, Darmo, Kec. Wonokromo, Jawa Timur 60241",266
+FASHION DESIGN,LaSalle College Surabaya,"Jalan Darmokali No.32, Darmo, Kec. Wonokromo, Jawa Timur 60241",266
+GRAPHIC DESIGN,LaSalle College Surabaya,"Jalan Darmokali No.32, Darmo, Kec. Wonokromo, Jawa Timur 60241",266
+INTERIOR DESIGN,LaSalle College Surabaya,"Jalan Darmokali No.32, Darmo, Kec. Wonokromo, Jawa Timur 60241",266
+ALL,Kampus C Pascasarjana,"Jl. Pratekan No.25, RT.5/RW.3, Rawamangun, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220",267
+EKONOMI,Kampus A dan B,"Jl. Kayujati Raya, No. 11 A, Rawamangun, Kec. Pulogadung, Jakarta Timur",267
+ALL,Kampus E Bekasi,"Suncity Square, Ruko, Jl. Mayor Madmuin Hasibuan No.12,15,16, RT.004/RW.002, Marga Jaya, Kec. Bekasi Sel., Kota Bks, Jawa Barat 17141",267
+INFORMATIKA,Institut Teknologi Telkom Purwokerto,Jln. D.I. Panjaitan No. 128 Purwokerto,268
+REKAYASA INDUSTRI DAN DESAIN,Institut Teknologi Telkom Purwokerto,Jln. D.I. Panjaitan No. 128 Purwokerto,268
+TEKNIK TELEKOMUNIKASI DAN ELEKTRO,Institut Teknologi Telkom Purwokerto,Jln. D.I. Panjaitan No. 128 Purwokerto,268
+FAKULTAS TEKNOLOGI INFORMASI DAN KREATIF,Kampus Utama,"Kompleks PT. Semen Indonesia  Tbk, Jl. Veteran, Kb. Dalem, Sidomoro, Kebomas, Gresik Regency, Jawa Timur 61122",269
+FAKULTAS EKONOMI DAN BISNIS,Kampus Utama,"Kompleks PT. Semen Indonesia  Tbk, Jl. Veteran, Kb. Dalem, Sidomoro, Kebomas, Gresik Regency, Jawa Timur 61122",269
+FAKULTAS TEKNOLOGI INDUSTRI DAN AGROINDUSTRI,Kampus Utama,"Kompleks PT. Semen Indonesia  Tbk, Jl. Veteran, Kb. Dalem, Sidomoro, Kebomas, Gresik Regency, Jawa Timur 61122",269
+SCHOOL OF COMPUTER SCIENCE & DESIGN,Kampus Utama,Jalan Pulomas Selatan Kav 22 Jakarta Timur 13210,270
+SCHOOL OF BUSINESS & COMMUNICATION,Kampus Utama,Jalan Pulomas Selatan Kav 22 Jakarta Timur 13210,270
+ALL,Kampus Utama,"Jl. Wijaya Kusuma No.47-48, Pondok Labu, Cilandak, Jakarta Selatan",271
+FAKULTAS TEKNIK ELEKTRO,Kampus Utama,"Jl. Telekomunikasi Terusan Buah Batu, Bandung, Jawa Barat 40257",273
+FAKULTAS INDUSTRI KREATIF,Kampus Utama,"Jl. Telekomunikasi Terusan Buah Batu, Bandung, Jawa Barat 40257",273
+FAKULTAS INFORMATIKA,Kampus Utama,"Jl. Telekomunikasi Terusan Buah Batu, Bandung, Jawa Barat 40257",273
+FAKULTAS KOMUNIKASI DAN BISNIS,Kampus Utama,"Jl. Telekomunikasi Terusan Buah Batu, Bandung, Jawa Barat 40257",273
+FAKULTAS EKONOMI DAN BISNIS,Kampus Utama,"Jl. Telekomunikasi Terusan Buah Batu, Bandung, Jawa Barat 40257",273
+FAKULTAS ILMU TERAPAN,Kampus Utama,"Jl. Telekomunikasi Terusan Buah Batu, Bandung, Jawa Barat 40257",273
+FAKULTAS REKAYASA INDUSTRI,Kampus Utama,"Jl. Telekomunikasi Terusan Buah Batu, Bandung, Jawa Barat 40257",273
+TEKNIK,Institut Teknologi Telkom Jakarta,"Jl. Daan Mogot KM. 11, RT.1/RW.4, Kedaung Kali Angke, Kecamatan Cengkareng, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11710",274
+PROGRAM SARJANA,Kampus Utama,"Jl. Proklamasi No. 27, Jakarta Pusat 10320",275
+PROGRAM MAGISTER,Kampus Utama,"Jl. Proklamasi No. 27, Jakarta Pusat 10320",275
+PROGRAM DOKTOR,Kampus Utama,"Jl. Proklamasi No. 27, Jakarta Pusat 10320",275
+TATA BOGA,Akademi Tata Boga Bandung,"Jalan Raya Cinunuk, No. 186, Bandung",276
+ALL,Lokasi Kursus,"Wisma Barito Pacific, Tower A Level Ground, Jl. Letjen S. Parman, Slipi, Jakarta  Barat",277
+KEPERAWATAN,Kampus 3,"Jl. Dr. Otten No 32, Pasirkaliki, Bandung",278
+KESEHATAN LINGKUNGAN,Kampus 5,"Jl. Babakan Loa No.10A, Cimahi",278
+GIZI,Kampus 5,"Jl. Babakan Loa No.10A, Cimahi",278
+TEKNOLOGI LABORATORIUM MEDIS,Kampus 5,"Jl. Babakan Loa No.10A, Cimahi",278
+PROMOSI KESEHATAN,Kampus 5,"Jl. Babakan Loa No.10A, Cimahi",278
+KEBIDANAN,Kampus 2,"Jl. Sederhana No. 2, Bandung",278
+ALL,Kampus 1,Jalan Pajajaran No. 56 Bandung,278
+KESEHATAN GIGI,Kampus 4,"Jl. Prof. Eyckman No. 40, Bandung",278
+FARMASI,Kampus 4,"Jl. Prof. Eyckman No. 40, Bandung",278
+KEBIDANAN,Kampus 7,"Jl. Kertabumi No. 74, Karawang",278
+ALL,Kampus 8,"Jl. Westhoff No.31, Pasir Kaliki, Bandung",278
+KEPERAWATAN,Kampus 6,"Jl. Dr. Sumeru No. 116, Bogor",278
+KEBIDANAN,Kampus 6,"Jl. Dr. Sumeru No. 116, Bogor",278
+FAKULTAS KEDOKTERAN,Kampus 2,"Jl. Gadung No. 1 Komplek Barat RSAL dr. Ramelan, Surabaya",279
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 1,"Jalan Arief Rachman Hakim No. 150 Sukolilo, Surabaya",279
+FAKULTAS KEDOKTERAN GIGI,Kampus 1,"Jalan Arief Rachman Hakim No. 150 Sukolilo, Surabaya",279
+FAKULTAS PSIKOLOGI,Kampus 1,"Jalan Arief Rachman Hakim No. 150 Sukolilo, Surabaya",279
+FAKULTAS HUKUM,Kampus 1,"Jalan Arief Rachman Hakim No. 150 Sukolilo, Surabaya",279
+FAKULTAS TEKNIK DAN ILMU KELAUTAN,Kampus 1,"Jalan Arief Rachman Hakim No. 150 Sukolilo, Surabaya",279
+FAKULTAS VOKASI PELAYARAN,Kampus 1,"Jalan Arief Rachman Hakim No. 150 Sukolilo, Surabaya",279
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus 5,Jalan Ki Ageng Pemanahan No. 19 Sorosutan Yogyakarta 55164,280
+FAKULTAS SASTRA BUDAYA DAN KOMUNIKASI,Kampus 5,Jalan Ki Ageng Pemanahan No. 19 Sorosutan Yogyakarta 55164,280
+FAKULTAS FARMASI,Kampus 3,"Jalan Prof. Dr. Soepomo, S.H. Janturan Yogyakarta 55164",280
+FAKULTAS KESEHATAN MASYARAKAT,Kampus 3,"Jalan Prof. Dr. Soepomo, S.H. Janturan Yogyakarta 55164",280
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus 3,"Jalan Prof. Dr. Soepomo, S.H. Janturan Yogyakarta 55164",280
+FAKULTAS SAINS DAN TEKNOLOGI TERAPAN,Kampus 3,"Jalan Prof. Dr. Soepomo, S.H. Janturan Yogyakarta 55164",280
+FAKULTAS HUKUM,Kampus 4,"Jalan Ring Road Selatan, Tamanan, Banguntapan, Bantul, Yogyakarta 55166",280
+FAKULTAS AGAMA ISLAM,Kampus 4,"Jalan Ring Road Selatan, Tamanan, Banguntapan, Bantul, Yogyakarta 55166",280
+FAKULTAS TEKNOLOGI INDUSTRI,Kampus 4,"Jalan Ring Road Selatan, Tamanan, Banguntapan, Bantul, Yogyakarta 55166",280
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus 4,"Jalan Ring Road Selatan, Tamanan, Banguntapan, Bantul, Yogyakarta 55166",280
+FAKULTAS SASTRA BUDAYA DAN KOMUNIKASI,Kampus 4,"Jalan Ring Road Selatan, Tamanan, Banguntapan, Bantul, Yogyakarta 55166",280
+FAKULTAS SAINS DAN TEKNOLOGI TERAPAN,Kampus 4,"Jalan Ring Road Selatan, Tamanan, Banguntapan, Bantul, Yogyakarta 55166",280
+KEDOKTERAN,Kampus 4,"Jalan Ring Road Selatan, Tamanan, Banguntapan, Bantul, Yogyakarta 55166",280
+FAKULTAS AGAMA ISLAM,Kampus 1,"Jalan Kapas 9, Semaki, Umbulharjo, Yogyakarta 55166",280
+FAKULTAS PSIKOLOGI,Kampus 1,"Jalan Kapas 9, Semaki, Umbulharjo, Yogyakarta 55166",280
+FAKULTAS EKONOMI & BISNIS,Kampus 1,"Jalan Kapas 9, Semaki, Umbulharjo, Yogyakarta 55166",280
+FAKULTAS HUKUM,Kampus 2,"Jalan Pramuka Nomor 42 Sidikan, Yogyakarta 55161",280
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus 2,"Jalan Pramuka Nomor 42 Sidikan, Yogyakarta 55161",280
+FAKULTAS SASTRA BUDAYA DAN KOMUNIKASI,Kampus 2,"Jalan Pramuka Nomor 42 Sidikan, Yogyakarta 55161",280
+FAKULTAS AGAMA ISLAM,Kampus 6,"Jalan Ahmad Dahlan, Triharjo, Wates, Kulon Progo",280
+ALL,Kampus 2,"Jl. A. Yani, Lawang, Kabupaten Malang",282
+ALL,Kampus 4,Jl. K.H. Wahid Hasyim No. 64 Kota Kediri,282
+ALL,Kampus 1,"Jl. Srikoyo No. 106, Kota Jember",282
+ALL,Kampus 6,"Jalan Dr. Cipto Mangunkusumo No. 82A, Ponorogo",282
+ALL,Kampus 3,"Jl. Dr. Soetomo No. 46, Kota Blitar",282
+ALL,Kampus Pusat,"Jl. Besar Ijen No. 77 C, Klojen, Kota Malang",282
+ALL,Kampus 5,"Jalan Dr. Soetomo No.5, Trenggalek",282
+FAKULTAS MATEMATIKA DAN IPA,Universitas Islam Makassar,"Jln. Perintis Kemerdekaan KM.9 No.9 Makassar Sulawesi Selatan, Indonesia",283
+FAKULTAS SASTRA DAN HUMANIORA,Universitas Islam Makassar,"Jln. Perintis Kemerdekaan KM.9 No.9 Makassar Sulawesi Selatan, Indonesia",283
+FAKULTAS AGAMA ISLAM,Universitas Islam Makassar,"Jln. Perintis Kemerdekaan KM.9 No.9 Makassar Sulawesi Selatan, Indonesia",283
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Universitas Islam Makassar,"Jln. Perintis Kemerdekaan KM.9 No.9 Makassar Sulawesi Selatan, Indonesia",283
+FAKULTAS PERTANIAN,Universitas Islam Makassar,"Jln. Perintis Kemerdekaan KM.9 No.9 Makassar Sulawesi Selatan, Indonesia",283
+FAKULTAS TEKNIK,Universitas Islam Makassar,"Jln. Perintis Kemerdekaan KM.9 No.9 Makassar Sulawesi Selatan, Indonesia",283
+FAKULTAS SOSIAL DAN ILMU POLITIK,Universitas Islam Makassar,"Jln. Perintis Kemerdekaan KM.9 No.9 Makassar Sulawesi Selatan, Indonesia",283
+FAKULTAS HUKUM,Kampus Utama,"Jln. Sisingamangaraja, No.2, RT.2/RW.1, Selong, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12110",284
+FAKULTAS ILMU PENGETAHUAN BUDAYA,Kampus Utama,"Jln. Sisingamangaraja, No.2, RT.2/RW.1, Selong, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12110",284
+FAKUTAS EKONOMI DAN BISNIS,Kampus Utama,"Jln. Sisingamangaraja, No.2, RT.2/RW.1, Selong, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12110",284
+FAKULTAS PSIKOLOGI DAN PENDIDIKAN,Kampus Utama,"Jln. Sisingamangaraja, No.2, RT.2/RW.1, Selong, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12110",284
+FAKULTAS SAINS DAN TEKNOLOGI,Kampus Utama,"Jln. Sisingamangaraja, No.2, RT.2/RW.1, Selong, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12110",284
+FAKULTAS ILMU SOSIAL DAN POLITIK,Kampus Utama,"Jln. Sisingamangaraja, No.2, RT.2/RW.1, Selong, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12110",284
+ALL,Kampus D,"Jl. Gandaria IV Keramat Pela, Kebayoran Baru, Jakarta Selatan",285
+PASCASARJANA,Kampus G,"Jl. Warung Jati Barat, Blok Darul Muslimin No.17, Kalibata, Pancoran, Jakarta Selatan",285
+FAKULTAS FARMASI DAN SAINS,Kampus C,"Islamic Center, Jl. Delima II/IV Perumnas, Klender, Jakarta Timur",285
+FAKULTAS TEKNOLOGI INDUSTRI DAN INFORMATIKA,Kampus F,"Jl. Tanah Merdeka, No. 6, Kampung Rambutan, Ciracas, Jakarta Timur",285
+FAKULTAS PSIKOLOGI,Kampus A,"Jl. Limau 2 Kebayoran Baru, Jakarta Selatan",285
+FAKULTAS AGAMA ISLAM,Kampus A,"Jl. Limau 2 Kebayoran Baru, Jakarta Selatan",285
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus A,"Jl. Limau 2 Kebayoran Baru, Jakarta Selatan",285
+FAKULTAS KEDOKTERAN,Kampus A,"Jl. Limau 2 Kebayoran Baru, Jakarta Selatan",285
+FAKULTAS ILMU-ILMU KESEHATAN,Kampus A,"Jl. Limau 2 Kebayoran Baru, Jakarta Selatan",285
+FAKULTAS EKONOMI DAN BISNIS,Kampus E,"Jl. Raya Bogor KM.23 No.99, Rambutan, Kec. Ciracas, Kota Jakarta Timur",285
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN,Kampus B,"Jl. Tanah Merdeka No.20, Rambutan, Kec. Ciracas, Kota Jakarta Timur",285
+PASCASARJANA,Kampus 2,"Jalan Nakula I No. 5-11 Semarang, 50131 Kota Semarang - Prop. Jawa Tengah - Indonesia",286
+FAKULTAS ILMU KOMPUTER,Kampus 1,"Jalan Imam Bonjol 207 Semarang, 50131 Kota Semarang - Prop. Jawa Tengah - Indonesia",286
+FAKULTAS TEKNIK,Kampus 1,"Jalan Imam Bonjol 207 Semarang, 50131 Kota Semarang - Prop. Jawa Tengah - Indonesia",286
+FAKULTAS ILMU BUDAYA,Kampus 1,"Jalan Imam Bonjol 207 Semarang, 50131 Kota Semarang - Prop. Jawa Tengah - Indonesia",286
+FAKULTAS EKONOMI DAN BISNIS,Kampus 1,"Jalan Imam Bonjol 207 Semarang, 50131 Kota Semarang - Prop. Jawa Tengah - Indonesia",286
+FAKULTAS KESEHATAN,Kampus 1,"Jalan Imam Bonjol 207 Semarang, 50131 Kota Semarang - Prop. Jawa Tengah - Indonesia",286
+FAKULTAS ILMU KOMPUTER,Kampus 3,"Jl. Penanggungan 41 A, Bandar Lor, Mojoroto, Kota Kediri",286
+FAKULTAS EKONOMI DAN BISNIS,Kampus 3,"Jl. Penanggungan 41 A, Bandar Lor, Mojoroto, Kota Kediri",286
+MANAJEMEN,Kampus Utama,Jl. Kemang Raya No. 35 Jakarta Selatan,287
+MANAJEMEN KEUANGAN DAN PERBANKAN SYARIAH,Kampus Utama,Jl. Kemang Raya No. 35 Jakarta Selatan,287
+AKUNTANSI,Kampus Utama,Jl. Kemang Raya No. 35 Jakarta Selatan,287
+FAKULTAS PSIKOLOGI,Kampus Menteng,"Gedung Tedja Buana Jl. Menteng Raya No. 29, Jakarta Pusat",288
+FAKULTAS ILMU KOMUNIKASI,Kampus Menteng,"Gedung Tedja Buana Jl. Menteng Raya No. 29, Jakarta Pusat",288
+FAKULTAS TEKNIK,Kampus Menteng,"Gedung Tedja Buana Jl. Menteng Raya No. 29, Jakarta Pusat",288
+FAKULTAS DESAIN DAN SENI KREATIF,Kampus Menteng,"Gedung Tedja Buana Jl. Menteng Raya No. 29, Jakarta Pusat",288
+FAKULTAS EKONOMI DAN BISNIS,Kampus Menteng,"Gedung Tedja Buana Jl. Menteng Raya No. 29, Jakarta Pusat",288
+FAKULTAS ILMU KOMPUTER,Kampus Menteng,"Gedung Tedja Buana Jl. Menteng Raya No. 29, Jakarta Pusat",288
+ALL,Kampus Pejaten,"Jl Raya Warung Buncit No. 98, Pejaten Barat, Jakarta Selatan",288
+FAKULTAS PSIKOLOGI,Kampus Meruya,"Jl. Meruya Selatan No. 1, Kembangan, Jakarta Barat",288
+FAKULTAS ILMU KOMUNIKASI,Kampus Meruya,"Jl. Meruya Selatan No. 1, Kembangan, Jakarta Barat",288
+FAKULTAS TEKNIK,Kampus Meruya,"Jl. Meruya Selatan No. 1, Kembangan, Jakarta Barat",288
+FAKULTAS DESAIN DAN SENI KREATIF,Kampus Meruya,"Jl. Meruya Selatan No. 1, Kembangan, Jakarta Barat",288
+FAKULTAS EKONOMI DAN BISNIS,Kampus Meruya,"Jl. Meruya Selatan No. 1, Kembangan, Jakarta Barat",288
+FAKULTAS ILMU KOMPUTER,Kampus Meruya,"Jl. Meruya Selatan No. 1, Kembangan, Jakarta Barat",288
+FAKULTAS SAINS DAN TEKNOLOGI,Universitas Respati Yogyakarta,"Jln. Laksda Adisucipto KM 6,3 Depok Sleman Yogyakarta",289
+FAKULTAS ILMU KESEHATAN,Universitas Respati Yogyakarta,"Jln. Laksda Adisucipto KM 6,3 Depok Sleman Yogyakarta",289
+FAKULTAS ILMU SOSIAL DAN EKONOMI,Universitas Respati Yogyakarta,"Jln. Laksda Adisucipto KM 6,3 Depok Sleman Yogyakarta",289
+FAKULTAS TEKNIK,Kampus Utama,"Menara Calvin Lt. 8, RMCI, Jl. Industri Blok B14 Kav. 1, Kemayoran, Jakarta Pusat 10610",290
+EVENT MANAGEMENT,Multimedia Nusantara Polytechnic,"Jl. Jend. Gatot Subroto Kav.1, Gading Serpong, Tangerang",291
+E-COMMERCE LOGISTICS,Multimedia Nusantara Polytechnic,"Jl. Jend. Gatot Subroto Kav.1, Gading Serpong, Tangerang",291
+DIGITAL ANIMATION,Multimedia Nusantara Polytechnic,"Jl. Jend. Gatot Subroto Kav.1, Gading Serpong, Tangerang",291
+FAKULTAS SAINS DAN TEKNOLOGI,Kampus Utama,"Jl. Kalibata Raya - Dewi Sartika, Jakarta Timur - 13630",292
+FAKULTAS FISIOTERAPI,Kampus Utama,"Jl. Kalibata Raya - Dewi Sartika, Jakarta Timur - 13630",292
+FAKULTAS SOSIAL DAN HUMANIORA,Kampus Utama,"Jl. Kalibata Raya - Dewi Sartika, Jakarta Timur - 13630",292
+FAKULTAS KEPERAWATAN DAN KEBIDANAN,Kampus Utama,"Jl. Kalibata Raya - Dewi Sartika, Jakarta Timur - 13630",292
+FAKULTAS EKONOMI BISNIS,Kampus Utama,"Jl. Kalibata Raya - Dewi Sartika, Jakarta Timur - 13630",292
+FAKULTAS KESEHATAN MASYARAKAT,Kampus Utama,"Jl. Kalibata Raya - Dewi Sartika, Jakarta Timur - 13630",292
+EKONOMI DAN BISNIS SYARIAH,Kampus Utama,"Jl. Ir. H. Djuanda No. 78 Sentul City, Bogor 16810",293
+PROGRAM INTERNATIONAL,Kampus Utama,"Jl. Ir. H. Djuanda No. 78 Sentul City, Bogor 16810",293
+DAKWAH DAN KOMUNIKASI,Kampus Utama,"Jl. Ir. H. Djuanda No. 78 Sentul City, Bogor 16810",293
+SYARIAH,Kampus Utama,"Jl. Ir. H. Djuanda No. 78 Sentul City, Bogor 16810",293
+TARBIYAH,Kampus Utama,"Jl. Ir. H. Djuanda No. 78 Sentul City, Bogor 16810",293
+EKONOMI,Kampus Utama,"Jl. Kyai Tapa No.20, Tomang, Grogol Petamburan, Jakarta Barat, 11440",294
+ALL,Kampus Utama,"Gedung A Lt.1 Kampus Politeknik APP Jakarta Jl. Timbul No.34 Ciganjur, Jagakarsa, Jakarta Selatan 12630",295
+ALL,Kampus Utama,"Jalan Administrasi II, Pejompongan, Jakarta Pusat 10260",296
+ALL,Kampus Utama,"Kompleks Billy Moon Pondok Kelapa, Duren Sawit, Jakarta Timur 13450",297
+FAKULTAS PARIWISATA,Kampus Utama,"Jl.Srengseng Sawah, Jagakarsa Jakarta Selatan 12640",298
+FAKULTAS FARMASI,Kampus Utama,"Jl.Srengseng Sawah, Jagakarsa Jakarta Selatan 12640",298
+FAKULTAS TEKNIK,Kampus Utama,"Jl.Srengseng Sawah, Jagakarsa Jakarta Selatan 12640",298
+FAKULTAS PSIKOLOGI,Kampus Utama,"Jl.Srengseng Sawah, Jagakarsa Jakarta Selatan 12640",298
+FAKULTAS HUKUM,Kampus Utama,"Jl.Srengseng Sawah, Jagakarsa Jakarta Selatan 12640",298
+FAKULTAS ILMU KOMUNIKASI,Kampus Utama,"Jl.Srengseng Sawah, Jagakarsa Jakarta Selatan 12640",298
+FAKULTAS EKONOMI DAN BISNIS,Kampus Utama,"Jl.Srengseng Sawah, Jagakarsa Jakarta Selatan 12640",298
+ALL,Kampus Pascasarjana,Jln. Borobudur No.7,298
+FAKULTAS TEKNOLOGI INFORMASI,Kampus 1,"Jalan Terusan Dieng No. 62-64, Klojen, Pisang Candi, Sukun, Malang 65146",299
+FAKULTAS TEKNIK,Kampus 1,"Jalan Terusan Dieng No. 62-64, Klojen, Pisang Candi, Sukun, Malang 65146",299
+FAKULTAS HUKUM,Kampus 1,"Jalan Terusan Dieng No. 62-64, Klojen, Pisang Candi, Sukun, Malang 65146",299
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 1,"Jalan Terusan Dieng No. 62-64, Klojen, Pisang Candi, Sukun, Malang 65146",299
+PASCASARJANA,Kampus 1,"Jalan Terusan Dieng No. 62-64, Klojen, Pisang Candi, Sukun, Malang 65146",299
+FAKULTAS EKONOMI DAN BISNIS,Kampus 1,"Jalan Terusan Dieng No. 62-64, Klojen, Pisang Candi, Sukun, Malang 65146",299
+FAKULTAS PSIKOLOGI,Kampus 1,"Jalan Terusan Dieng No. 62-64, Klojen, Pisang Candi, Sukun, Malang 65146",299
+FAKULTAS HUKUM,Kampus 3,"Jl. Pacar No.35, Tonatan, Kec. Ponorogo, Kabupaten Ponorogo",299
+FAKULTAS ILMU SOSIAL DAN ILMU POLITIK,Kampus 3,"Jl. Pacar No.35, Tonatan, Kec. Ponorogo, Kabupaten Ponorogo",299
+FAKULTAS EKONOMI DAN BISNIS,Kampus 3,"Jl. Pacar No.35, Tonatan, Kec. Ponorogo, Kabupaten Ponorogo",299
+KEPARIWISATAAN,Kampus 2,"Jalan Bandung No. 1 Malang, 65146",299
+FAKULTAS TEKNOLOGI INFORMASI DAN BISNIS,Institut Teknologi Telkom Surabaya,"Jalan Ketintang, No. 156",300
+FAKULTAS TEKNIK ELEKTRO DAN INDUSTRI CERDAS,Institut Teknologi Telkom Surabaya,"Jalan Ketintang, No. 156",300
+PASCASARJANA,i3L School of Business,"Jln. Pulomas Barat No.Kav. 88, RT.4/RW.9, Kayu Putih, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13210",301
+BUSINESS,i3L School of Business,"Jln. Pulomas Barat No.Kav. 88, RT.4/RW.9, Kayu Putih, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13210",301
+FAKULTAS TEKNIK,Kampus Utama,"Jalan Letjen S Parman No 1, Tomang, Grogol Petamburan, Jakarta 11440",302
+FAKULTAS SENI RUPA DAN DESAIN,Kampus Utama,"Jalan Letjen S Parman No 1, Tomang, Grogol Petamburan, Jakarta 11440",302
+FAKULTAS EKONOMI DAN BISNIS,Kampus Utama,"Jalan Letjen S Parman No 1, Tomang, Grogol Petamburan, Jakarta 11440",302
+FAKULTAS ILMU KOMUNIKASI,Kampus Utama,"Jalan Letjen S Parman No 1, Tomang, Grogol Petamburan, Jakarta 11440",302
+FAKULTAS HUKUM,Kampus Utama,"Jalan Letjen S Parman No 1, Tomang, Grogol Petamburan, Jakarta 11440",302
+FAKULTAS PSIKOLOGI,Kampus Utama,"Jalan Letjen S Parman No 1, Tomang, Grogol Petamburan, Jakarta 11440",302
+FAKULTAS TEKNOLOGI  INFORMASI,Kampus Utama,"Jalan Letjen S Parman No 1, Tomang, Grogol Petamburan, Jakarta 11440",302
+ALL,Kampus Utama,"Jl. Cut Meutia No. 83, Bekasi, Jawa Barat 17113",303
+ALL,Kampus Utama,"Jl. Sersan Suharmadji No. 38, Kediri, Jawa Timur",304
+ISLAMIC STUDIES,Kampus Utama,"Jalan Raya Bogor KM. 33.5 Cisalak, Sukmajaya, Depok, Jawa Barat 16416",305
+SOCIAL SCIENCES,Kampus Utama,"Jalan Raya Bogor KM. 33.5 Cisalak, Sukmajaya, Depok, Jawa Barat 16416",305
+EDUCATION,Kampus Utama,"Jalan Raya Bogor KM. 33.5 Cisalak, Sukmajaya, Depok, Jawa Barat 16416",305
+ECONOMICS AND BUSINESS,Kampus Utama,"Jalan Raya Bogor KM. 33.5 Cisalak, Sukmajaya, Depok, Jawa Barat 16416",305
+SCHOOL OF LIFE SCIENCES,Kampus Utama,"Jl. Pulomas Barat Kav. 88, Kayu Putih, Pulo Gadung, Jakarta Timur, 13210",306
+SCHOOL OF BUSINESS,Kampus Utama,"Jl. Pulomas Barat Kav. 88, Kayu Putih, Pulo Gadung, Jakarta Timur, 13210",306
+ALL,Kampus 2 - Binus Campus Anggrek,"Jl. Kebon Jeruk Raya No. 27, Kebon Jeruk, Jakarta Barat 1153",307
+FACULTY OF DIGITAL COMMUNICATION AND HOTEL & TOURISM,Kampus 1 - Binus Campus Syahdan,"Jl. KH Syahdan No. 9, Kemanggisan, Palmerah, Jakarta 11480",307
+SCHOOL OF DESIGN,Kampus 1 - Binus Campus Syahdan,"Jl. KH Syahdan No. 9, Kemanggisan, Palmerah, Jakarta 11480",307
+SCHOOL OF INFORMATION SYSTEMS,Kampus 1 - Binus Campus Syahdan,"Jl. KH Syahdan No. 9, Kemanggisan, Palmerah, Jakarta 11480",307
+BUSINESS SCHOOL,Kampus 1 - Binus Campus Syahdan,"Jl. KH Syahdan No. 9, Kemanggisan, Palmerah, Jakarta 11480",307
+FACULTY OF ENGINEERING,Kampus 1 - Binus Campus Syahdan,"Jl. KH Syahdan No. 9, Kemanggisan, Palmerah, Jakarta 11480",307
+SCHOOL OF COMPUTER SCIENCE,Kampus 1 - Binus Campus Syahdan,"Jl. KH Syahdan No. 9, Kemanggisan, Palmerah, Jakarta 11480",307
+FACULTY OF HUMANITIES,Kampus 1 - Binus Campus Syahdan,"Jl. KH Syahdan No. 9, Kemanggisan, Palmerah, Jakarta 11480",307
+SCHOOL OF ACCOUNTING,Kampus 1 - Binus Campus Syahdan,"Jl. KH Syahdan No. 9, Kemanggisan, Palmerah, Jakarta 11480",307
+FACULTY OF DIGITAL COMMUNICATION AND HOTEL & TOURISM,Kampus 5 - Binus Campus Alam Sutera,"Jl. Jalur Sutera Barat Kav. 21, Alam Sutera, Tangerang",307
+SCHOOL OF DESIGN,Kampus 5 - Binus Campus Alam Sutera,"Jl. Jalur Sutera Barat Kav. 21, Alam Sutera, Tangerang",307
+SCHOOL OF INFORMATION SYSTEMS,Kampus 5 - Binus Campus Alam Sutera,"Jl. Jalur Sutera Barat Kav. 21, Alam Sutera, Tangerang",307
+BUSINESS SCHOOL,Kampus 5 - Binus Campus Alam Sutera,"Jl. Jalur Sutera Barat Kav. 21, Alam Sutera, Tangerang",307
+FACULTY OF ENGINEERING,Kampus 5 - Binus Campus Alam Sutera,"Jl. Jalur Sutera Barat Kav. 21, Alam Sutera, Tangerang",307
+SCHOOL OF COMPUTER SCIENCE,Kampus 5 - Binus Campus Alam Sutera,"Jl. Jalur Sutera Barat Kav. 21, Alam Sutera, Tangerang",307
+FACULTY OF HUMANITIES,Kampus 5 - Binus Campus Alam Sutera,"Jl. Jalur Sutera Barat Kav. 21, Alam Sutera, Tangerang",307
+FACULTY OF DIGITAL COMMUNICATION AND HOTEL & TOURISM,Kampus 8 - Binus @ Malang,"Jl. Araya Mansion No. 8-22, Araya, Malang",307
+SCHOOL OF DESIGN,Kampus 8 - Binus @ Malang,"Jl. Araya Mansion No. 8-22, Araya, Malang",307
+BUSINESS SCHOOL,Kampus 8 - Binus @ Malang,"Jl. Araya Mansion No. 8-22, Araya, Malang",307
+SCHOOL OF COMPUTER SCIENCE,Kampus 8 - Binus @ Malang,"Jl. Araya Mansion No. 8-22, Araya, Malang",307
+SCHOOL OF DESIGN,Kampus 9 - Binus @ Semarang,"POJ Avenue Kav. 3 Kel. Tawangsari, Kec. Semarang Barat, Kota Semarang",307
+SCHOOL OF INFORMATION SYSTEMS,Kampus 9 - Binus @ Semarang,"POJ Avenue Kav. 3 Kel. Tawangsari, Kec. Semarang Barat, Kota Semarang",307
+FACULTY OF ENGINEERING,Kampus 9 - Binus @ Semarang,"POJ Avenue Kav. 3 Kel. Tawangsari, Kec. Semarang Barat, Kota Semarang",307
+SCHOOL OF COMPUTER SCIENCE,Kampus 9 - Binus @ Semarang,"POJ Avenue Kav. 3 Kel. Tawangsari, Kec. Semarang Barat, Kota Semarang",307
+FACULTY OF DIGITAL COMMUNICATION AND HOTEL & TOURISM,Kampus 4 - Binus International,"Jalan Hang Lekir I No. 6, Senayan, Jakarta 10270",307
+SCHOOL OF INFORMATION SYSTEMS,Kampus 4 - Binus International,"Jalan Hang Lekir I No. 6, Senayan, Jakarta 10270",307
+BUSINESS SCHOOL,Kampus 4 - Binus International,"Jalan Hang Lekir I No. 6, Senayan, Jakarta 10270",307
+FACULTY OF ENGINEERING,Kampus 4 - Binus International,"Jalan Hang Lekir I No. 6, Senayan, Jakarta 10270",307
+FACULTY OF DIGITAL COMMUNICATION AND HOTEL & TOURISM,Kampus 6 - Binus @ Bekasi,"Jalan Lingkar Boulevar Blok WA No.1 Summarecon Bekasi Kel, Marga Mulya, Jawa Barat 17142",307
+SCHOOL OF INFORMATION SYSTEMS,Kampus 6 - Binus @ Bekasi,"Jalan Lingkar Boulevar Blok WA No.1 Summarecon Bekasi Kel, Marga Mulya, Jawa Barat 17142",307
+BUSINESS SCHOOL,Kampus 6 - Binus @ Bekasi,"Jalan Lingkar Boulevar Blok WA No.1 Summarecon Bekasi Kel, Marga Mulya, Jawa Barat 17142",307
+FACULTY OF HUMANITIES,Kampus 3 - Binus Campus Kijang,"Jl. Kemanggisan Ilir III No. 45, Kemanggisan, Palmerah, Jakarta Barat 11480",307
+SCHOOL OF DESIGN,Kampus 7 - Binus @ Bandung,"Jl. Pasirkaliki No. 25-27, Paskal Hyper Square, Bandung",307
+BUSINESS SCHOOL,Kampus 7 - Binus @ Bandung,"Jl. Pasirkaliki No. 25-27, Paskal Hyper Square, Bandung",307
+SCHOOL OF COMPUTER SCIENCE,Kampus 7 - Binus @ Bandung,"Jl. Pasirkaliki No. 25-27, Paskal Hyper Square, Bandung",307
+FAKULTAS HUMANIORA DAN BISNIS,Kampus Utama,"Jl. Cendrawasih Raya Blok B7/P, Bintaro Jaya, Tangerang, Banten, 15413",308
+FAKULTAS TEKNOLOGI DAN DESAIN,Kampus Utama,"Jl. Cendrawasih Raya Blok B7/P, Bintaro Jaya, Tangerang, Banten, 15413",308
+FAKULTAS DESAIN DAN INDUSTRI KREATIF,Universitas Dinamika Surabaya,"Jln. Raya Kedung Baruk, No. 98, Surabaya, Jawa Timur 60298",309
+FAKULTAS TEKNOLOGI DAN INFORMATIKA,Universitas Dinamika Surabaya,"Jln. Raya Kedung Baruk, No. 98, Surabaya, Jawa Timur 60298",309
+FAKULTAS EKONOMI DAN BISNIS,Universitas Dinamika Surabaya,"Jln. Raya Kedung Baruk, No. 98, Surabaya, Jawa Timur 60298",309
+FAKULTAS ILMU REKAYASA,Kampus Utama,"Jl. Gatot Subroto Kav. 97 Mampang, Jakarta Selatan, DKI Jakarta",310
+FAKULTAS FALSAFAH & PERADABAN,Kampus Utama,"Jl. Gatot Subroto Kav. 97 Mampang, Jakarta Selatan, DKI Jakarta",310
+FAKULTAS EKONOMI DAN BISNIS,Kampus Utama,"Jl. Gatot Subroto Kav. 97 Mampang, Jakarta Selatan, DKI Jakarta",310
+ALL,Kampus Cikarang,"Distrik 2 Meikarta, Cikarang, Jawa Barat",310
+ALL,Bali Campus,"Jl. Raya Puputan No. 140 Renon Denpasar, Bali 80239",311
+ALL,Sudirman Park Campus,"Jl. K.H Mas Mansyur, Kav. 35, Jakarta Pusat 10220",311
+ALL,Trans Park Bekasi Campus,"Jl. Ir. H. Juanda No. 220 Duren Jaya, Bekasi Timur Bekasi 17111",311
+KEBIDANAN,Kampus 6,"Jl. Jendral S. Parman No. 1, Magetan",312
+KEPERAWATAN,Kampus 2,"Jl. Prof. Moestopo 8C, Surabaya",312
+KEPERAWATAN,Kampus 4,"Jl. Pahlawan No. 173-A, Sidoarjo",312
+ANALIS KESEHATAN,Kampus 12,"Jl. Karangmenjangan No. 18A, Surabaya",312
+KESEHATAN LINGKUNGAN,Kampus 8,"Jl. Menur No. 118A, Surabaya",312
+KEPERAWATAN,Kampus 5,"Jl. Wahidin Sudirohusodo No. 2, Tuban",312
+GIZI,Kampus 1,"Jl. Pucang Jajar Tengah No. 56, Surabaya",312
+KESEHATAN LINGKUNGAN,Kampus 9,"Jl. Tripandita No. 6, Magetan",312
+KEPERAWATAN,Kampus 3,"Jl. Parangkusumo No. 1, Surabaya",312
+KEBIDANAN,Kampus 7,"Jl. Soekarno Hatta No. 32, Bangkalan",312
+KEBIDANAN,Kampus 14,"Jl. Dr. Wahidin No. 39, Bojonegoro",312
+KEBIDANAN,Kampus 15,"Jl. HOS Cokroaminoto, Desa Ngraseh, Kecamatan Dander, Kabupaten Bojonegoro",312
+TEKNIK ELEKTROMEDIK,Kampus 10,"Jl. Pucang Jajar Timur No. 10, Surabaya",312
+KEPERAWATAN GIGI,Kampus 11,"Jl. Pucang Jajar Selatan No. 24, Surabaya",312
+GIZI,Kampus 13,Jl. Pucang Jajar Selatan No. 24B Surabaya,312

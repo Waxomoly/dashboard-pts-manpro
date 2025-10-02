@@ -176,7 +176,6 @@ for idx,link in enumerate(links_list):
     values = get_text(soup, class_name='school-profile__detail-val', find_all=True)
     # turn to dictionary for better access
     info_dict = dict(zip(keys, values))
-    data_institution_row['email'] = info_dict.get('Email', None)
     data_institution_row['accred'] = info_dict.pop('Akreditasi', None)
     data_institution_row['fee'] = info_dict.pop('Biaya Kuliah', None)
     data_institution_row['student_amount'] = info_dict.pop('Siswa', None)
@@ -228,7 +227,7 @@ for idx,link in enumerate(links_list):
     # -------------------------------------------------------------------------------------------------------------
 
 
-df_institution = pd.DataFrame(data_institution, columns=['quipper_institution_code', 'email', 'institution_name', 'body_type', 'link', 'fee', 'student_amount', 'lecturer_amount', 'contact', 'description', 'unknown_field'])
+df_institution = pd.DataFrame(data_institution, columns=['quipper_institution_code', 'institution_name', 'body_type', 'link', 'fee', 'student_amount', 'lecturer_amount', 'contact', 'description', 'unknown_field'])
 df_prodi = pd.DataFrame(data_prodi, columns=['faculty', 'prodi', 'quipper_institution_code'])
 df_faculty = pd.DataFrame(data_faculty, columns=['faculty', 'building_name', 'address', 'quipper_institution_code']) 
 
@@ -237,6 +236,6 @@ driver.quit()
 
 #    index=False prevents Pandas from writing the DataFrame index as a column
 base_folder = "./csv_result/"
-df_institution.to_csv(base_folder + 'institution.csv', index=False)
-df_prodi.to_csv(base_folder + 'prodi.csv', index=False)
-df_faculty.to_csv(base_folder + 'faculty.csv', index=False)
+df_institution.to_csv(base_folder + 'quipper_institution.csv', index=False)
+df_prodi.to_csv(base_folder + 'quipper_prodi.csv', index=False)
+df_faculty.to_csv(base_folder + 'quipper_faculty.csv', index=False)
