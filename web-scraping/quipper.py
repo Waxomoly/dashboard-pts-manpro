@@ -16,6 +16,7 @@ from bs4 import BeautifulSoup
 url = 'https://campus.quipper.com/directory?'
 debug = False
 pd.set_option('display.max_columns', None)
+MAX_WAIT_TIME = 10  # seconds
 
 # Initialize Chrome driver instance
 options = Options()
@@ -45,7 +46,7 @@ while True:
             print("Pop-up close button did not exist or was not found.")
             pass
             
-        wait = WebDriverWait(driver, 10) # Wait up to 10 seconds
+        wait = WebDriverWait(driver, MAX_WAIT_TIME) # Wait up to 10 seconds
         load_more_div = wait.until(
             EC.element_to_be_clickable((By.XPATH, "//div[text()='Lihat kampus lain']"))
         )
