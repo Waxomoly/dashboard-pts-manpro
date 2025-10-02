@@ -1,8 +1,11 @@
 import pandas as pd
 import re
 
+# constants
+BASE_PATH = "csv_result/"
+
 # 1. Load data
-df = pd.read_csv("unirank_nasional.csv")
+df = pd.read_csv(BASE_PATH + "unirank_nasional.csv")
 
 # 2. UPPERCASE semua text di seluruh kolom object
 df = df.applymap(lambda x: x.upper() if isinstance(x, str) else x)
@@ -27,5 +30,5 @@ else:
     print("✅ Tidak ada kolom NULL")
 
 # 7. Simpan hasil bersih ke file baru
-df.to_csv("unirank_nasional_clean.csv", index=False)
+df.to_csv(BASE_PATH +"unirank_nasional_clean.csv", index=False)
 print("🎉 Preprocessing selesai! Data disimpan di unirank_nasional_clean.csv")
