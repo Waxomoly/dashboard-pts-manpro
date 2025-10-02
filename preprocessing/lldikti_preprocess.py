@@ -2,7 +2,7 @@ import pandas as pd
 import re
 
 # Load CSV
-df = pd.read_csv("prodi.csv")
+df = pd.read_csv("lldikti_prodi.csv")
 
 # Uppercase semua text di setiap kolom bertipe string
 df = df.applymap(lambda x: x.upper() if isinstance(x, str) else x)
@@ -30,4 +30,4 @@ print("Kolom dengan nilai NULL/kosong:")
 print(null_columns)
 
 # Simpan
-df.to_csv("prodi_clean.csv", index=False)
+df.to_csv("lldikti_prodi_clean.csv", index=False)
