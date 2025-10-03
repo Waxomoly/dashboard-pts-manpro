@@ -19,7 +19,7 @@ def apply_uppercase_vectorized(df, columns_list):
     return df
 
 faculty_columns_to_uppercase = ['faculty']
-institution_columns_to_uppercase = ['institution_name', 'body_type']
+institution_columns_to_uppercase = ['institution_name', 'body_type', 'fee']
 prodi_columns_to_uppercase = ['faculty']
 df_faculty = apply_uppercase_vectorized(df_faculty, faculty_columns_to_uppercase)
 df_institution = apply_uppercase_vectorized(df_institution, institution_columns_to_uppercase)
@@ -49,9 +49,9 @@ df_faculty = df_faculty.drop_duplicates()
 df_institution = df_institution.drop_duplicates()
 df_prodi = df_prodi.drop_duplicates()
 
-# 6. Handle null/empty columns
-# hapus instansi apabila tidak memiliki prodi atau fee
-print("Row count before institution discard:", len(df_institution))
+# 6. Modify data
+# hapus instansi apabila tidak memiliki fee
+print("Row count before institution discard (removing):", len(df_institution))
 df_institution = df_institution[
     df_institution['fee'].notna() &                     # Check for non-null values
     df_institution['fee'].astype(str).str.strip().ne('') # Check for non-empty/non-whitespace strings
@@ -60,6 +60,55 @@ print("Row count after institution discard:", len(df_institution))
 # unknown amount to -1
 df_institution['student_amount'] = df_institution['student_amount'].fillna(-1)
 df_institution['lecturer_amount'] = df_institution['lecturer_amount'].fillna(-1)
+
+# deskripsi kosong ubah menjadi "-"
+df_institution['description'] = df_institution['description'].fillna('-')
+df_institution['description'] = df_institution['description'].replace(r'^\s*$', '-', regex=True)
+df_institution['student_amount'] = df_institution['student_amount'].fillna(-1)
+df_institution['lecturer_amount'] = df_institution['lecturer_amount'].fillna(-1)
+
+# normalize body_type
+#uncomment for debugging--------------------------------------------------------------
+# print(df_institution['body_type'].unique())
+# target_values = ["LAINNYA", "KURSUS BERSERTIFIKASI"]
+# mask = df_institution['body_type'].isin(target_values)
+# count = mask.sum()
+# print(f"Number of rows with 'LAINNYA' or 'KURSUS BERSERTIFIKASI' in body_type: {count}")
+#---------------------------------------------------------------------------------------
+
+pattern = r'(SWASTA|NEGERI|NEGRI)'
+
+df_institution['body_type'] = (
+    df_institution['body_type']
+    .astype(str) 
+    .str.extract(pattern, expand=False) 
+    .fillna('-') 
+)
+
+#uncomment for debugging--------------------------------------------------------------
+# print('body type unique values:' + df_institution['body_type'].unique())
+# print(df_institution['body_type'].unique())
+# target_values = ["-"]
+# mask = df_institution['body_type'].isin(target_values)
+# count = mask.sum()
+# print(f"Number of rows with '-' in body_type: {count}")
+#---------------------------------------------------------------------------------------
+
+# only keep swasta institutions
+df_institution = df_institution[df_institution['body_type'] == 'SWASTA']
+print("Row count after keeping only SWASTA institutions:", len(df_institution))
+
+
+# Normalize fee (average, starting price, ending price) BELUM SLESAI
+# pattern = r'(SWASTA|NEGERI|NEGRI)'
+
+# df_institution['fee'] = (
+#     df_institution['body_type']
+#     .astype(str) 
+#     .str.extract(pattern, expand=False) 
+#     .fillna('-') 
+# )
+# print(df_institution['fee'].unique())
 
 # check null columns
 faculty_null_columns = df_faculty.columns[df_faculty.isnull().any()].tolist()
@@ -72,13 +121,8 @@ if faculty_null_columns or institution_null_columns or prodi_null_columns:
 else:
     print("✅ Tidak ada kolom NULL")
 
-# deskripsi kosong ubah menjadi "-"
-df_institution['description'] = df_institution['description'].fillna('-')
-df_institution['description'] = df_institution['description'].replace(r'^\s*$', '-', regex=True)
-df_institution['student_amount'] = df_institution['student_amount'].fillna(-1)
-df_institution['lecturer_amount'] = df_institution['lecturer_amount'].fillna(-1)
 
-# 7. Simpan hasil bersih ke file baru
+# 9. Simpan hasil bersih ke file baru
 df_faculty.to_csv(BASE_PATH + "faculty_clean.csv", index=False)
 df_institution.to_csv(BASE_PATH + "institution_clean.csv", index=False)
 df_prodi.to_csv(BASE_PATH + "prodi_clean.csv", index=False)
