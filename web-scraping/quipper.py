@@ -54,7 +54,8 @@ while True:
         # driver.execute_script("arguments[0].scrollIntoView(true);", load_more_div)
         
         # Click the div
-        load_more_div.click()
+        # load_more_div.click()
+        driver.execute_script("arguments[0].click();", load_more_div)
         print("Clicked the 'Lihat kampus lain' div...")
         
         # Wait for 2.5 seconds for new content to load
@@ -86,6 +87,14 @@ print("\nFinished loading all content.")
 html_content = driver.page_source
 
 soup = BeautifulSoup(html_content, 'html.parser')
+
+image_card_elements = soup.find_all(class_='campus-card-img')
+
+# 2. Get the count by finding the length of the list
+count = len(image_card_elements)
+
+print(f"{count} cards found.")
+
 a_tags = soup.find_all('a')
 links_list = []
 
