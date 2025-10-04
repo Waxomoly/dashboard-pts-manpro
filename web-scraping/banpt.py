@@ -12,6 +12,7 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 import time
+import os
 
 # Konfigurasi
 INSTITUTION_API_URL = "https://www.banpt.or.id/direktori/model/dir_aipt/get_data_institusi.php"
@@ -196,13 +197,12 @@ if __name__ == "__main__":
             df_prodi_clean = preprocess_df(df_prodi_final, "Prodi")
             df_prodi_debug_clean = preprocess_df(df_prodi_debug_report, "Debug Prodi")
 
-            base_folder = "./csv_result"
+            base_folder = "./csv_result/"
 
-            inst_filename = base_folder + '1_institution_code.csv'
-            prodi_filename = base_folder + '2_prodi_code.csv'
-            debug_filename = base_folder + '3_debug_prodi_jatim.csv'
-            
-            # Simpan DataFrame yang SUDAH DIBERSIHKAN
+            inst_filename = base_folder + 'banpt_institution.csv'
+            prodi_filename = base_folder + 'banpt_prodi_code.csv'
+            debug_filename = base_folder + 'banpt_debug_prodi.csv'
+
             df_institutions_clean.drop(columns=['normalized_name']).to_csv(inst_filename, index=False, encoding='utf-8-sig')
             df_prodi_clean.to_csv(prodi_filename, index=False, encoding='utf-8-sig')
             df_prodi_debug_clean.to_csv(debug_filename, index=False, encoding='utf-8-sig')
