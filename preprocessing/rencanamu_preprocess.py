@@ -70,6 +70,8 @@ class DataPreprocessor:
         self.log_info("\n" + "="*60)
         self.log_info("STEP 1: HAPUS KOLOM TIDAK DIPERLUKAN")
         self.log_info("="*60)
+        self.log_info("# Menghapus kolom yang tidak relevan untuk analisis")
+        self.log_info("# Kolom target: link_kampus, status, kota, website, ranking_webometric")
         
         columns_to_remove = [
             'link_kampus', 
@@ -91,6 +93,9 @@ class DataPreprocessor:
         self.log_info("\n" + "="*60)
         self.log_info("STEP 2: UPPERCASE SEMUA TEXT & BERSIHKAN AKREDITASI")
         self.log_info("="*60)
+        self.log_info("# Mengubah semua text menjadi UPPERCASE untuk konsistensi")
+        self.log_info("# Membersihkan format akreditasi (hapus prefix i:, n:, dll)")
+        self.log_info("# Mengisi akreditasi kosong dengan '-'")
         
         text_columns = [
             'nama_kampus', 'akreditasi_kampus', 'alamat', 'provinsi',
@@ -137,6 +142,8 @@ class DataPreprocessor:
         self.log_info("\n" + "="*60)
         self.log_info("STEP 3: HAPUS KURUNG DAN ISINYA")
         self.log_info("="*60)
+        self.log_info("# Menghapus semua jenis kurung: (), [], {}")
+        self.log_info("# Contoh: 'UNIVERSITAS ABC (JAKARTA)' → 'UNIVERSITAS ABC'")
         
         text_columns = ['nama_kampus', 'alamat', 'provinsi', 'fakultas', 'prodi']
         total_removed = 0
@@ -160,6 +167,8 @@ class DataPreprocessor:
         self.log_info("\n" + "="*60)
         self.log_info("STEP 4: TRIM SEMUA TEXT")
         self.log_info("="*60)
+        self.log_info("# Menghapus spasi berlebih di awal, akhir, dan tengah text")
+        self.log_info("# Contoh: '  TEXT   EXAMPLE  ' → 'TEXT EXAMPLE'")
         
         for col in self.df.columns:
             if self.df[col].dtype == 'object':
@@ -175,6 +184,9 @@ class DataPreprocessor:
         self.log_info("\n" + "="*60)
         self.log_info("STEP 5: RESTRUCTURE KOLOM BIAYA (6 KOLOM BARU)")
         self.log_info("="*60)
+        self.log_info("# Menghitung ulang struktur biaya dari biaya_semester_min & biaya_semester_max")
+        self.log_info("# Formula: semester_avg = (min + max) / 2")
+        self.log_info("# 6 kolom baru: average/starting/ending untuk semester & yearly")
         
         def to_numeric(val):
             if val == '-' or pd.isna(val) or val == '':
@@ -238,29 +250,31 @@ class DataPreprocessor:
             if col in self.df.columns:
                 self.df = self.df.drop(columns=[col])
         
-        # Tambah kolom biaya baru (urutan: Yearly dulu, baru Semester)
-        self.df['yearly_average'] = yearly_average
-        self.df['yearly_starting'] = yearly_starting
-        self.df['yearly_ending'] = yearly_ending
-        self.df['semester_average'] = semester_average
-        self.df['semester_starting'] = semester_starting
-        self.df['semester_ending'] = semester_ending
+        # Tambah kolom biaya baru (urutan: Semester dulu, baru Yearly)
+        self.df['average_semester_fee'] = semester_average
+        self.df['starting_semester_fee'] = semester_starting
+        self.df['ending_semester_fee'] = semester_ending
+        self.df['average_yearly_fee'] = yearly_average
+        self.df['starting_yearly_fee'] = yearly_starting
+        self.df['ending_yearly_fee'] = yearly_ending
         
         self.log_info("✓ Struktur biaya berhasil diubah menjadi 6 kolom:")
-        self.log_info("\n  YEARLY (Tahunan):")
-        self.log_info("    - yearly_average: rata-rata biaya per tahun (2 semester)")
-        self.log_info("    - yearly_starting: biaya tahun pertama")
-        self.log_info("    - yearly_ending: total biaya 4 tahun kuliah")
         self.log_info("\n  SEMESTER (Per 6 bulan):")
-        self.log_info("    - semester_average: rata-rata biaya per semester")
-        self.log_info("    - semester_starting: biaya semester pertama")
-        self.log_info("    - semester_ending: total biaya 8 semester (4 tahun)")
+        self.log_info("    - average_semester_fee: rata-rata biaya per semester")
+        self.log_info("    - starting_semester_fee: biaya semester pertama")
+        self.log_info("    - ending_semester_fee: total biaya 8 semester (4 tahun)")
+        self.log_info("\n  YEARLY (Tahunan):")
+        self.log_info("    - average_yearly_fee: rata-rata biaya per tahun (2 semester)")
+        self.log_info("    - starting_yearly_fee: biaya tahun pertama")
+        self.log_info("    - ending_yearly_fee: total biaya 4 tahun kuliah")
     
     def step6_map_provinsi(self):
         """STEP 6: Map provinsi dari provinsi_id ke nama provinsi"""
         self.log_info("\n" + "="*60)
         self.log_info("STEP 6: MAPPING PROVINSI")
         self.log_info("="*60)
+        self.log_info("# Mapping provinsi_id (1-34) ke nama provinsi lengkap")
+        self.log_info("# Contoh: 1 → ACEH, 12 → JAWA BARAT, 13 → DKI JAKARTA")
         
         if 'provinsi_id' in self.df.columns:
             # Cek berapa banyak yang perlu di-mapping
@@ -290,6 +304,8 @@ class DataPreprocessor:
         self.log_info("\n" + "="*60)
         self.log_info("STEP 7: HAPUS DUPLIKAT")
         self.log_info("="*60)
+        self.log_info("# Menghapus baris yang identik (duplikat sempurna)")
+        self.log_info("# Menggunakan metode: keep='first' (simpan data pertama)")
         
         before_count = len(self.df)
         
@@ -316,6 +332,8 @@ class DataPreprocessor:
         self.log_info("\n" + "="*60)
         self.log_info("STEP 8: CEK NULL VALUES")
         self.log_info("="*60)
+        self.log_info("# Melakukan audit lengkap terhadap missing data")
+        self.log_info("# Menghitung: NULL, Dash (-), dan Empty string per kolom")
         
         null_report = []
         
@@ -355,7 +373,7 @@ class DataPreprocessor:
         """Simpan data yang sudah diproses"""
         if output_file is None:
             base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-            preprocess_dir = os.path.join(base_dir, "preprocess")
+            preprocess_dir = os.path.join(base_dir, "csv_result")
             os.makedirs(preprocess_dir, exist_ok=True)
             
             filename = os.path.basename(self.input_file).replace('.csv', '_preprocessed.csv')
@@ -368,12 +386,93 @@ class DataPreprocessor:
         return output_file
     
     def save_log(self, log_file=None):
-        """Simpan log preprocessing"""
+        """Simpan log preprocessing dengan summary di awal"""
         if log_file is None:
             log_file = self.input_file.replace('.csv', '_preprocessing_log.txt')
         
+        # Buat summary header
+        summary_header = []
+        summary_header.append("=" * 80)
+        summary_header.append("DATA PREPROCESSING SUMMARY REPORT")
+        summary_header.append("=" * 80)
+        summary_header.append(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        summary_header.append(f"Input File: {os.path.basename(self.input_file)}")
+        summary_header.append("")
+        
+        # Statistik data
+        if self.df is not None:
+            summary_header.append("# FINAL DATA STATISTICS")
+            summary_header.append("-" * 80)
+            summary_header.append(f"  Total Rows: {len(self.df):,}")
+            summary_header.append(f"  Total Columns: {len(self.df.columns)}")
+            
+            if 'nama_kampus' in self.df.columns:
+                summary_header.append(f"  Unique Universities: {self.df['nama_kampus'].nunique():,}")
+            
+            if 'prodi' in self.df.columns:
+                summary_header.append(f"  Total Study Programs: {len(self.df):,}")
+            
+            if 'provinsi' in self.df.columns:
+                summary_header.append(f"  Provinces Covered: {self.df['provinsi'].nunique()}")
+            
+            summary_header.append("")
+            
+            # Kolom yang ada
+            summary_header.append("# AVAILABLE COLUMNS")
+            summary_header.append("-" * 80)
+            for i, col in enumerate(self.df.columns, 1):
+                summary_header.append(f"  {i}. {col}")
+            
+            summary_header.append("")
+            
+            # Fee columns summary
+            fee_cols = ['average_semester_fee', 'starting_semester_fee', 'ending_semester_fee',
+                       'average_yearly_fee', 'starting_yearly_fee', 'ending_yearly_fee']
+            existing_fee_cols = [col for col in fee_cols if col in self.df.columns]
+            
+            if existing_fee_cols:
+                summary_header.append("# FEE STRUCTURE (6 COLUMNS)")
+                summary_header.append("-" * 80)
+                summary_header.append("  SEMESTER (Per 6 months):")
+                summary_header.append("    - average_semester_fee: Average cost per semester")
+                summary_header.append("    - starting_semester_fee: First semester cost")
+                summary_header.append("    - ending_semester_fee: Total cost for 8 semesters (4 years)")
+                summary_header.append("")
+                summary_header.append("  YEARLY (Annual):")
+                summary_header.append("    - average_yearly_fee: Average cost per year (2 semesters)")
+                summary_header.append("    - starting_yearly_fee: First year cost")
+                summary_header.append("    - ending_yearly_fee: Total cost for 4 years")
+                summary_header.append("")
+                
+                # Statistik biaya
+                valid_fees = self.df[self.df['average_semester_fee'] != '-']
+                if len(valid_fees) > 0:
+                    summary_header.append("# FEE STATISTICS")
+                    summary_header.append("-" * 80)
+                    summary_header.append(f"  Programs with Fee Info: {len(valid_fees):,} ({len(valid_fees)/len(self.df)*100:.1f}%)")
+                    summary_header.append(f"  Programs without Fee Info: {len(self.df) - len(valid_fees):,} ({(len(self.df) - len(valid_fees))/len(self.df)*100:.1f}%)")
+                    
+                    # Min, Max, Average
+                    if len(valid_fees) > 0:
+                        avg_sem = valid_fees['average_semester_fee'].astype(int)
+                        summary_header.append(f"\n  Average Semester Fee:")
+                        summary_header.append(f"    Min: Rp {avg_sem.min():,}")
+                        summary_header.append(f"    Max: Rp {avg_sem.max():,}")
+                        summary_header.append(f"    Mean: Rp {int(avg_sem.mean()):,}")
+                        summary_header.append(f"    Median: Rp {int(avg_sem.median()):,}")
+                
+                summary_header.append("")
+        
+        summary_header.append("=" * 80)
+        summary_header.append("DETAILED PREPROCESSING LOG")
+        summary_header.append("=" * 80)
+        summary_header.append("")
+        
+        # Gabungkan summary dengan log
+        full_log = summary_header + self.log
+        
         with open(log_file, 'w', encoding='utf-8') as f:
-            f.write('\n'.join(self.log))
+            f.write('\n'.join(full_log))
         
         self.log_info(f"✓ Log disimpan di: {log_file}")
     
@@ -405,7 +504,7 @@ class DataPreprocessor:
         
         # Simpan hasil
         output_file = self.save_processed_data()
-        self.save_log()
+        # self.save_log()
         
         self.log_info("\n" + "="*60)
         self.log_info("PREPROCESSING SELESAI!")
@@ -453,8 +552,8 @@ if __name__ == "__main__":
             
             # Tampilkan contoh biaya
             print(f"\nContoh Perhitungan Biaya (5 baris pertama dengan biaya):")
-            biaya_cols = ['yearly_average', 'yearly_starting', 'yearly_ending', 
-                         'semester_average', 'semester_starting', 'semester_ending']
-            df_with_biaya = df_final[df_final['yearly_average'] != '-']
+            biaya_cols = ['average_semester_fee', 'starting_semester_fee', 'ending_semester_fee',
+                         'average_yearly_fee', 'starting_yearly_fee', 'ending_yearly_fee']
+            df_with_biaya = df_final[df_final['average_semester_fee'] != '-']
             if len(df_with_biaya) > 0:
                 print(df_with_biaya[['nama_kampus', 'prodi'] + biaya_cols].head())
