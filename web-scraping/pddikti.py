@@ -23,7 +23,7 @@ total_pages = 0
 
 try:
     # Lakukan satu request awal untuk mendapatkan metadata (termasuk total halaman)
-    initial_params = {'limit': 50, 'page': 1, 'jenis': 'PTS'}
+    initial_params = {'limit': 50, 'page': 1}
     response = requests.get(SEARCH_API_URL, headers=HEADERS, params=initial_params)
     response.raise_for_status()
     initial_data = response.json()
@@ -45,7 +45,6 @@ for page_number in range(1, total_pages + 1):
     params = {
         'limit': 50,
         'page': page_number,
-        'jenis': 'PTS'
     }
     
     print(f"Mengambil daftar dari halaman {page_number}/{total_pages}...")
@@ -116,6 +115,13 @@ if data_bersih_final:
     
     # Ganti semua nilai string kosong ("") dengan "-"
     df.replace("", "-", inplace=True)
+
+     # Loop melalui semua kolom yang tipenya string
+    for col in df.select_dtypes(include=['object']).columns:
+        # Hapus karakter kutip ganda
+        df[col] = df[col].str.replace('"', '', regex=False)
+        
+        df[col] = df[col].str.replace(',', ' ', regex=False)
     
     # Simpan ke file CSV di folder root proyek
     nama_file_output = 'pddikti_nasional.csv'
