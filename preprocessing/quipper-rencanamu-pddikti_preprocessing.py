@@ -4,12 +4,7 @@ import re
 # constants
 BASE_PATH = "csv_result/"
 
-# 1. Load data (NANTI SEMUA DIGABUNGIN DI SINI)
-df_faculty = pd.read_csv(BASE_PATH + "quipper_faculty.csv")
-df_institution = pd.read_csv(BASE_PATH + "quipper_institution.csv")
-df_prodi = pd.read_csv(BASE_PATH +"quipper_prodi.csv")
-
-# 2. UPPERCASE semua text di seluruh kolom object
+# functions
 def apply_uppercase_vectorized(df, columns_list):
     for col in columns_list:
         if col in df.columns:
@@ -18,6 +13,132 @@ def apply_uppercase_vectorized(df, columns_list):
             df.loc[:, col] = df[col].fillna('').str.upper()
     return df
 
+# TREAT 'fee' FOR EACH DATAFRAME SEPARATELY FIRST (final product is 3 columns: average_semester_fee, starting_semester_fee, ending_semester_fee, average_yearly_fee, starting_yearly_fee, ending_yearly_fee)
+# Quipper 
+df_quipper_faculty = pd.read_csv(BASE_PATH + "quipper_faculty.csv")
+df_quipper_institution = pd.read_csv(BASE_PATH + "quipper_institution.csv")
+df_quipper_prodi = pd.read_csv(BASE_PATH +"quipper_prodi.csv")
+
+
+# uppercase fee
+df_quipper_institution = apply_uppercase_vectorized(df_quipper_institution, ['fee'])
+
+df_quipper_institution['fee'] = (
+    df_quipper_institution['fee']
+    .astype(str)                      
+    .str.replace('RP', '', regex=False) 
+    .str.replace(' JUTAAN', '000000', regex=False)
+    .str.replace(',00', '', regex=False)
+    .str.replace('.', '', regex=False)  
+    .str.replace(',', '', regex=False)
+    .str.replace('-', ' ', regex=False)  
+    .str.replace(r'GRATIS|DITANGGUNG', '0 SEMESTER', regex=True) 
+)
+df_quipper_institution['fee'] = df_quipper_institution['fee'].str.findall(r'[0-9,.]+|SEMESTER|TAHUN|BULAN\s')
+df_quipper_institution['fee'] = df_quipper_institution['fee'].str.join(' ').str.strip()
+
+# hapus instansi apabila tidak memiliki fee
+print("Row count before empty fee discard:", len(df_quipper_institution))
+df_quipper_institution = df_quipper_institution[
+    df_quipper_institution['fee'].notna() &                     # Check for non-null values
+    df_quipper_institution['fee'].astype(str).str.strip().ne('') & # Check for non-empty/non-whitespace strings
+    df_quipper_institution['fee'].astype(str).str.strip().ne('-') &
+    df_quipper_institution['fee'].astype(str).str.strip().ne('$') &
+    df_quipper_institution['fee'].astype(str).str.strip().ne('USD')
+]
+print("Row count after empty fee discard:", len(df_quipper_institution))
+
+# set default values of fees
+df_quipper_institution['average_semester_fee'] = -1.0
+df_quipper_institution['starting_semester_fee'] = -1.0
+df_quipper_institution['ending_semester_fee'] = -1.0
+df_quipper_institution['average_yearly_fee'] = -1.0
+df_quipper_institution['starting_yearly_fee'] = -1.0
+df_quipper_institution['ending_yearly_fee'] = -1.0
+
+for index, row in df_quipper_institution.iterrows():
+    pattern = r'([\d\s,]+)(\s*(SEMESTER|BULAN|TAHUN))?'
+    
+    matches = re.findall(pattern, row['fee'])
+    
+    semester_fees = []
+    yearly_fees = []
+    # monthly_fees = []
+
+    for match in matches:
+        numbers = match[0]
+        individual_amounts_str = re.findall(r'\d+', match[0])
+
+        try:
+            individual_amounts_int = [int(amount) for amount in individual_amounts_str]
+                
+        except ValueError as e:
+            print(f"Warning: Could not convert amount to integer. Error: {e}. Skipping row.")
+            continue
+
+        period = 'SEMESTER'
+        if match[1]:
+            period = match[1]
+        
+
+        if (period == 'SEMESTER'):
+            semester_fees.extend(individual_amounts_str)
+        elif (period == 'TAHUN'):
+            yearly_fees.extend(individual_amounts_str)  
+        elif (period == 'BULAN'):
+            semester_fees.extend(individual_amounts_str * 6)  # assume 6 months in a semester
+
+        
+    semester_fees = pd.Series(semester_fees)
+    yearly_fees = pd.Series(yearly_fees)
+
+    if semester_fees.empty and yearly_fees.empty:
+        print(f"Warning: No valid fee data found for institution_code {row['institution_code']}. Skipping row.")
+        continue
+
+    if not semester_fees.empty:
+        df_quipper_institution.at[index, 'average_semester_fee'] = semester_fees.astype(int).mean()
+        df_quipper_institution.at[index, 'starting_semester_fee'] = semester_fees.astype(int).min()
+        df_quipper_institution.at[index, 'ending_semester_fee'] = semester_fees.astype(int).max()
+    elif not yearly_fees.empty:
+        df_quipper_institution.at[index, 'average_semester_fee'] = (yearly_fees.astype(int).mean() / 2)
+        df_quipper_institution.at[index, 'starting_semester_fee'] = (yearly_fees.astype(int).min() / 2)
+        df_quipper_institution.at[index, 'ending_semester_fee'] = (yearly_fees.astype(int).max() / 2)
+
+    if not yearly_fees.empty:
+        df_quipper_institution.at[index, 'average_yearly_fee'] = yearly_fees.astype(int).mean()
+        df_quipper_institution.at[index, 'starting_yearly_fee'] = yearly_fees.astype(int).min()
+        df_quipper_institution.at[index, 'ending_yearly_fee'] = yearly_fees.astype(int).max()
+    elif not semester_fees.empty:
+        df_quipper_institution.at[index, 'average_yearly_fee'] = (semester_fees.astype(int).mean() * 2)
+        df_quipper_institution.at[index, 'starting_yearly_fee'] = (semester_fees.astype(int).min() * 2)
+        df_quipper_institution.at[index, 'ending_yearly_fee'] = (semester_fees.astype(int).max() * 2)
+    
+
+    # print(row['institution_code'], semester_fees.values, yearly_fees.values)
+
+    # now fill in the fee columns
+    
+df_quipper_institution = df_quipper_institution.drop(columns=['fee'])
+print((df_quipper_institution[['institution_code', 'average_semester_fee', 'starting_semester_fee', 'ending_semester_fee', 'average_yearly_fee', 'starting_yearly_fee', 'ending_yearly_fee']] == -1).sum())
+
+# Rencanamu
+
+# PDDIKTI
+
+
+# 1. GABUNGIN SEMUA DF DI SINI
+df_faculty = pd.concat([df_quipper_faculty], ignore_index=True) 
+df_institution = pd.concat([df_quipper_institution], ignore_index=True) 
+df_prodi = pd.concat([df_quipper_prodi], ignore_index=True) 
+
+
+
+
+
+# GENERAL PIPELINE---------------------------------------------------------------------
+
+# 2. UPPERCASE semua text di seluruh kolom object
 faculty_columns_to_uppercase = ['faculty']
 institution_columns_to_uppercase = ['institution_name', 'body_type', 'fee']
 prodi_columns_to_uppercase = ['faculty']
@@ -50,13 +171,6 @@ df_institution = df_institution.drop_duplicates()
 df_prodi = df_prodi.drop_duplicates()
 
 # 6. Modify data
-# hapus instansi apabila tidak memiliki fee
-print("Row count before institution discard (removing):", len(df_institution))
-df_institution = df_institution[
-    df_institution['fee'].notna() &                     # Check for non-null values
-    df_institution['fee'].astype(str).str.strip().ne('') # Check for non-empty/non-whitespace strings
-]
-print("Row count after institution discard:", len(df_institution))
 # unknown amount to -1
 df_institution['student_amount'] = df_institution['student_amount'].fillna(-1)
 df_institution['lecturer_amount'] = df_institution['lecturer_amount'].fillna(-1)
