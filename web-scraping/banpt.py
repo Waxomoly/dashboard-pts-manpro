@@ -197,7 +197,7 @@ if __name__ == "__main__":
             base_folder = "./csv_result/"
 
             inst_filename = base_folder + 'banpt_institution.csv'
-            prodi_filename = base_folder + 'banpt_prodi_code.csv'
+            prodi_filename = base_folder + 'banpt_prodi.csv'
             debug_filename = base_folder + 'banpt_debug_prodi.csv'
 
             df_institutions_clean.drop(columns=['normalized_name']).to_csv(inst_filename, index=False, encoding='utf-8-sig')
