@@ -10,9 +10,9 @@
 
 import requests
 import pandas as pd
+import numpy as np
 from bs4 import BeautifulSoup
 import time
-import os
 
 # Konfigurasi
 INSTITUTION_API_URL = "https://www.banpt.or.id/direktori/model/dir_aipt/get_data_institusi.php"
@@ -55,8 +55,8 @@ def preprocess_df(df, df_name="DataFrame"):
     # Cek  data NULL
     null_rows_df = df[df.isnull().any(axis=1)]
     if not null_rows_df.empty:
-        print(f"\n {len(null_rows_df)} null")
-        print(null_rows_df.to_string())
+        print(f"\n Jumlah data instnasi instiusi di prodi yang NULL: {len(null_rows_df)}")
+        #print(null_rows_df.to_string())
         
     else:
         print("Tidak ditemukan baris dengan data kosong.")
@@ -136,7 +136,7 @@ def scrape_prodi(api_url, headers, df_institutions):
     for prodi_item in full_prodi_database:
         try:
             jenjang = prodi_item[2]
-            #prodi_wilayah_id = prodi_item[3]
+            # prodi_wilayah_id = prodi_item[3]
 
             # # 1. hanya proses prodi S1 dari Wilayah 07
             # if not (jenjang.strip().upper() == 'S1' and prodi_wilayah_id == '07'):
@@ -156,13 +156,13 @@ def scrape_prodi(api_url, headers, df_institutions):
             normalized_parent_name = normalize_name(parent_institution_name)
             institution_code = institution_map.get(normalized_parent_name)
             
-            if institution_code:
-                all_prodi_accepted.append({
+            all_prodi_accepted.append({
                     'prodi_name': prodi_name,
                     'jenjang': jenjang,
                     'akreditasi_prodi': akreditasi_prodi,
-                    'institution_code': institution_code
+                    'institution_code': institution_code if institution_code is not None else np.nan
                 })
+            if institution_code is not None:
                 debug_entry['status_pencocokan'] = 'Berhasil'
             else:
                 debug_entry['status_pencocokan'] = 'Gagal Cocok'
@@ -186,16 +186,13 @@ if __name__ == "__main__":
     if df_institutions_scrap is not None:
         df_prodi_scrap, df_prodi_debug_report = scrape_prodi(PRODI_API_URL, HEADERS, df_institutions_scrap)
         
-        if df_prodi_scrap is not None and not df_prodi_scrap.empty:
-            s1_institution_codes = df_prodi_scrap['institution_code'].unique()
-            df_institutions_final = df_institutions_scrap[df_institutions_scrap['institution_code'].isin(s1_institution_codes)]
-            
-            df_prodi_final = df_prodi_scrap
-
+        if df_prodi_scrap is not None:
             # Preprocess dataframes
-            df_institutions_clean = preprocess_df(df_institutions_final, "Institusi")
-            df_prodi_clean = preprocess_df(df_prodi_final, "Prodi")
+            df_institutions_clean = preprocess_df(df_institutions_scrap, "Institusi")
+            df_prodi_clean = preprocess_df(df_prodi_scrap, "Prodi")
             df_prodi_debug_clean = preprocess_df(df_prodi_debug_report, "Debug Prodi")
+
+            df_prodi_clean['institution_code'] = df_prodi_clean['institution_code'].astype('Int64')
 
             base_folder = "./csv_result/"
 
