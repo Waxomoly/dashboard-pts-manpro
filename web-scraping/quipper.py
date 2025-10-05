@@ -15,7 +15,9 @@ from bs4 import BeautifulSoup
 # constants
 url = 'https://campus.quipper.com/directory?'
 debug = False
+debug_iteration = 2
 pd.set_option('display.max_columns', None)
+MAX_WAIT_TIME = 10  # seconds
 
 # Initialize Chrome driver instance
 options = Options()
@@ -26,7 +28,15 @@ driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverMana
 driver.get(url)
 
 # load all cards ---------------------------------------------------------------------------------
+debug_count=0
 while True:
+
+    if(debug): # for testing purposes, limit to first 5 clicks
+        debug_count+=1
+        if(debug_count>debug_iteration):
+            print("Debug mode: Stopping after 5 iterations.")
+            break
+
     try:
         # Find the div based on its exact text content
         # This is often more reliable than using class names
@@ -45,7 +55,7 @@ while True:
             print("Pop-up close button did not exist or was not found.")
             pass
             
-        wait = WebDriverWait(driver, 10) # Wait up to 10 seconds
+        wait = WebDriverWait(driver, MAX_WAIT_TIME) # Wait up to 10 seconds
         load_more_div = wait.until(
             EC.element_to_be_clickable((By.XPATH, "//div[text()='Lihat kampus lain']"))
         )
@@ -53,7 +63,8 @@ while True:
         # driver.execute_script("arguments[0].scrollIntoView(true);", load_more_div)
         
         # Click the div
-        load_more_div.click()
+        # load_more_div.click()
+        driver.execute_script("arguments[0].click();", load_more_div)
         print("Clicked the 'Lihat kampus lain' div...")
         
         # Wait for 2.5 seconds for new content to load
@@ -73,6 +84,8 @@ while True:
         print(f"An unexpected error occurred: {e}. Stopping load.")
         break
 
+    
+
 print("\nFinished loading all content.")
 
 # -------------------------------------------------------------------------------------------------------------
@@ -85,6 +98,14 @@ print("\nFinished loading all content.")
 html_content = driver.page_source
 
 soup = BeautifulSoup(html_content, 'html.parser')
+
+image_card_elements = soup.find_all(class_='campus-card-img')
+
+# 2. Get the count by finding the length of the list
+count = len(image_card_elements)
+
+print(f"{count} cards found.")
+
 a_tags = soup.find_all('a')
 links_list = []
 
@@ -103,7 +124,6 @@ for tag in a_tags:
         
         
         
-
 print(f"\nSuccessfully extracted {len(links_list)} links.")
 # -------------------------------------------------------------------------------------------------------------
 
@@ -112,9 +132,9 @@ print(f"\nSuccessfully extracted {len(links_list)} links.")
 
 
 # end result are 3 dataframes:
-# 1. quipper_institution_code (act as primary key, increasing integer) | email | institution_name | body_type (negeri or swasta) | link | fee | student_amount | lecturer_amount | contact(json) | description
-# 2. quipper_prodi_code (act as primary key, increasing integer) | faculty | prodi  | PK_on_dataframe_one
-# 3. quipper_faculty_code (act as primary key, increasing integer) | faculty | address | PK_on_dataframe_one
+# 1. institution_code (act as primary key, quipper-[increasing integer]) | institution_name | body_type (negeri or swasta) | link | fee | student_amount | lecturer_amount | contact(json) | description
+# 2. quipper_prodi_code (act as primary key, quipper-[increasing integer]) | faculty | prodi  | PK_on_dataframe_one
+# 3. quipper_faculty_code (act as primary key, quipper-[increasing integer]) | faculty | address | PK_on_dataframe_one
 
 def get_text(soup_object, tag=None, class_name="", find_all=False):
     """
@@ -147,19 +167,35 @@ print(links_list)
 
 # iterate through each link to get the data
 for idx,link in enumerate(links_list):
-
-    if(idx>=5 and debug): # for testing purposes, limit to first 5 links
-        break
+    
     driver.get(link)
-    time.sleep(2) # wait for 2 seconds to load the page
-    html_content = driver.page_source
+    html_content = ''
+
+    try:
+        # Wait until a specific, critical element on the new page is visible.
+        # We choose the 'school-page-banner__title' class as it holds the university name.
+        WebDriverWait(driver, MAX_WAIT_TIME).until(
+            EC.visibility_of_element_located((By.CLASS_NAME, 'school-page-banner__title'))
+        )
+        
+        # Execution continues immediately when the element is visible (no wasted time).
+        html_content = driver.page_source
+        
+    except TimeoutException:
+        print(f"ERROR: Page content failed to load within {MAX_WAIT_TIME} seconds for link: {link}")
+        # Handle the error gracefully (e.g., set soup to None and skip data extraction for this link)
+        soup = None
+        pass
+
+
 
     # save the html for scraping
     soup = BeautifulSoup(html_content, 'html.parser')
 
+
     # for df_institution ---------------------------------------------------------------------------
     data_institution_row = {}
-    data_institution_row['quipper_institution_code'] = idx + 1
+    data_institution_row['institution_code'] = 'quipper-' + str(idx + 1)
     data_institution_row['institution_name'] = get_text(soup, 'h1', 'school-page-banner__title')
     data_institution_row['body_type'] = get_text(soup, 'p', 'school-page-banner__subbody')
 
@@ -173,9 +209,9 @@ for idx,link in enumerate(links_list):
     #---
     keys = get_text(soup, class_name='school-profile__detail-key', find_all=True)
     values = get_text(soup, class_name='school-profile__detail-val', find_all=True)
+    
     # turn to dictionary for better access
     info_dict = dict(zip(keys, values))
-    data_institution_row['email'] = info_dict.get('Email', None)
     data_institution_row['accred'] = info_dict.pop('Akreditasi', None)
     data_institution_row['fee'] = info_dict.pop('Biaya Kuliah', None)
     data_institution_row['student_amount'] = info_dict.pop('Siswa', None)
@@ -201,7 +237,7 @@ for idx,link in enumerate(links_list):
         subject_items = block.find_all(class_='faculty-subjects__item')
         
         for subject in subject_items:
-            data_prodi.append((faculty_name, subject.text.strip(), idx + 1)) # (faculty, prodi, quipper_institution_code)
+            data_prodi.append((faculty_name, subject.text.strip(), data_institution_row['institution_code'])) # (faculty, prodi, institution_code)
         
 
     # -------------------------------------------------------------------------------------------------------------
@@ -216,26 +252,26 @@ for idx,link in enumerate(links_list):
         faculties = get_text(block, class_name='school-locations__faculty-link', find_all=True)
 
         if not faculties or len(faculties) == 0:
-            data_faculty.append(("ALL", campus_name, address, idx + 1))
+            data_faculty.append(("ALL", campus_name, address, data_institution_row['institution_code']))
             continue
 
         for faculty_name in faculties:
-            data_faculty.append((faculty_name, campus_name, address, idx + 1)) # (faculty, prodi, quipper_institution_code)
+            data_faculty.append((faculty_name, campus_name, address, data_institution_row['institution_code'])) # (faculty, prodi, institution_code)
     
 
     
     # -------------------------------------------------------------------------------------------------------------
 
-
-df_institution = pd.DataFrame(data_institution, columns=['quipper_institution_code', 'email', 'institution_name', 'body_type', 'link', 'fee', 'student_amount', 'lecturer_amount', 'contact', 'description', 'unknown_field'])
-df_prodi = pd.DataFrame(data_prodi, columns=['faculty', 'prodi', 'quipper_institution_code'])
-df_faculty = pd.DataFrame(data_faculty, columns=['faculty', 'building_name', 'address', 'quipper_institution_code']) 
-
 # Close the driver
 driver.quit()
 
+df_institution = pd.DataFrame(data_institution, columns=['institution_code', 'institution_name', 'body_type', 'link', 'fee', 'student_amount', 'lecturer_amount', 'contact', 'description', 'unknown_field'])
+df_prodi = pd.DataFrame(data_prodi, columns=['faculty', 'prodi', 'institution_code'])
+df_faculty = pd.DataFrame(data_faculty, columns=['faculty', 'building_name', 'address', 'institution_code']) 
+
+
 #    index=False prevents Pandas from writing the DataFrame index as a column
 base_folder = "./csv_result/"
-df_institution.to_csv(base_folder + 'institution.csv', index=False)
-df_prodi.to_csv(base_folder + 'prodi.csv', index=False)
-df_faculty.to_csv(base_folder + 'faculty.csv', index=False)
+df_institution.to_csv(base_folder + 'quipper_institution.csv', index=False)
+df_prodi.to_csv(base_folder + 'quipper_prodi.csv', index=False)
+df_faculty.to_csv(base_folder + 'quipper_faculty.csv', index=False)
