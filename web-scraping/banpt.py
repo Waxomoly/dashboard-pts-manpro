@@ -10,9 +10,9 @@
 
 import requests
 import pandas as pd
-import numpy as np
 from bs4 import BeautifulSoup
 import time
+import re
 
 # Konfigurasi
 INSTITUTION_API_URL = "https://www.banpt.or.id/direktori/model/dir_aipt/get_data_institusi.php"
@@ -23,7 +23,6 @@ HEADERS = {
 }
 
 def normalize_name(name):
-    # Normalisasi nama institusi untuk pencocokan
     return name.split(',')[0].lower().strip()
 
 def preprocess_df(df, df_name="DataFrame"):
@@ -41,22 +40,16 @@ def preprocess_df(df, df_name="DataFrame"):
     for col in df.select_dtypes(include=['object']).columns:
         df[col] = df[col].str.replace(r'\s*\([^)]*\)', '', regex=True).str.upper().str.strip()
 
-    #is_duplicate = df.duplicated(keep=False)
-    # if is_duplicate.any():
-    #     print("\n--- Baris Duplikat yang Ditemukan ---")
-    #     print(df[is_duplicate].sort_values(by=list(df.columns)).to_string())
-    #     print("--------------------------------------------------\n")
+    is_duplicate = df.duplicated(keep=False)
+    if is_duplicate.any():
+        duplicate_rows_df = df[is_duplicate]
+        print(f"\nDitemukan {len(duplicate_rows_df)} baris duplikat di '{df_name}':")
+        df = df.drop_duplicates()
 
-    # Hapus duplikat 
-    df.drop_duplicates(inplace=True)
-    rows_after_dedup = len(df)
-    print(f"Menghapus {initial_rows - rows_after_dedup} baris duplikat.")
-    
     # Cek  data NULL
     null_rows_df = df[df.isnull().any(axis=1)]
     if not null_rows_df.empty:
         print(f"\n Jumlah data instnasi instiusi di prodi yang NULL: {len(null_rows_df)}")
-        #print(null_rows_df.to_string())
         
     else:
         print("Tidak ditemukan baris dengan data kosong.")
@@ -107,7 +100,7 @@ def scrape_instansi(api_url, headers):
             continue
     
     df = pd.DataFrame(all_institutions)
-    df.insert(0, 'institution_code', range(1, len(df) + 1))
+    df.insert(0, 'institution_code', [f'banpt-{i}' for i in range(1, len(df) + 1)])
     return df
 
 def scrape_prodi(api_url, headers, df_institutions):
@@ -146,36 +139,30 @@ def scrape_prodi(api_url, headers, df_institutions):
             prodi_name = prodi_item[1]
             akreditasi_prodi = prodi_item[6]
             
-            debug_entry = {
-                'institution_name': parent_institution_name,
-                'prodi_name': prodi_name,
-                'jenjang': jenjang,
-                'akreditasi_prodi': akreditasi_prodi
-            }
 
             normalized_parent_name = normalize_name(parent_institution_name)
             institution_code = institution_map.get(normalized_parent_name)
-            
+        
+            all_prodi_debug_report.append({
+                'institution_name': normalized_parent_name,
+                'prodi_name': prodi_name,
+                'jenjang': jenjang,
+                'akreditasi_prodi': akreditasi_prodi,
+                'status_pencocokan': 'Berhasil' if institution_code else 'Gagal Cocok'
+            })
+
             all_prodi_accepted.append({
                     'prodi_name': prodi_name,
                     'jenjang': jenjang,
                     'akreditasi_prodi': akreditasi_prodi,
-                    'institution_code': institution_code if institution_code is not None else np.nan
+                    'institution_code': institution_code if institution_code is not None else (f'banpt-{normalized_parent_name}')
                 })
-            if institution_code is not None:
-                debug_entry['status_pencocokan'] = 'Berhasil'
-            else:
-                debug_entry['status_pencocokan'] = 'Gagal Cocok'
-
-            all_prodi_debug_report.append(debug_entry)
+            
         except IndexError:
             continue
 
     df_prodi_accepted = pd.DataFrame(all_prodi_accepted) # DF prodi untuk yang cocok
     
-    if not df_prodi_accepted.empty:
-        df_prodi_accepted.insert(0, 'prodi_code', range(1, len(df_prodi_accepted) + 1))
-
     df_prodi_debug = pd.DataFrame(all_prodi_debug_report) # DF prodi debug untuk yang cocok dan tidak
     return df_prodi_accepted, df_prodi_debug
 
@@ -187,12 +174,13 @@ if __name__ == "__main__":
         df_prodi_scrap, df_prodi_debug_report = scrape_prodi(PRODI_API_URL, HEADERS, df_institutions_scrap)
         
         if df_prodi_scrap is not None:
+
             # Preprocess dataframes
             df_institutions_clean = preprocess_df(df_institutions_scrap, "Institusi")
             df_prodi_clean = preprocess_df(df_prodi_scrap, "Prodi")
             df_prodi_debug_clean = preprocess_df(df_prodi_debug_report, "Debug Prodi")
 
-            df_prodi_clean['institution_code'] = df_prodi_clean['institution_code'].astype('Int64')
+            df_prodi_clean['institution_code'] = df_prodi_clean['institution_code']
 
             base_folder = "./csv_result/"
 
