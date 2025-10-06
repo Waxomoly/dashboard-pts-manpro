@@ -73,9 +73,8 @@ class DataPreprocessor:
         self.log_info("# Menghapus kolom yang tidak relevan untuk analisis")
         
         columns_to_remove = [
-            'link_kampus', 'status', 'kota', 'website', 'ranking_webometric',
-            'telepon', 'email', 'fax', 'tahun_berdiri', 'jumlah_mahasiswa', 
-            'jumlah_dosen', 'luas_kampus', 'jenjang_tersedia', 'fasilitas', 
+            'link_kampus', 'status', 'kota', 'ranking_webometric',
+            'fax', 'luas_kampus', 'jenjang_tersedia', 'fasilitas', 
             'beasiswa', 'kerjasama', 'prestasi', 'visi', 'misi'
         ]
         existing_cols = [col for col in columns_to_remove if col in self.df.columns]
@@ -195,12 +194,12 @@ class DataPreprocessor:
                 yearly_starting.append(int(year_start))
                 yearly_ending.append(int(year_end))
             else:
-                semester_average.append('-')
-                semester_starting.append('-')
-                semester_ending.append('-')
-                yearly_average.append('-')
-                yearly_starting.append('-')
-                yearly_ending.append('-')
+                semester_average.append(-1)
+                semester_starting.append(-1)
+                semester_ending.append(-1)
+                yearly_average.append(-1)
+                yearly_starting.append(-1)
+                yearly_ending.append(-1)
         
         old_biaya_cols = ['biaya_semester_min', 'biaya_semester_max', 'biaya_rata_tahunan',
                          'biaya_rata_keseluruhan', 'uang_pangkal', 'biaya_semester',
@@ -218,6 +217,7 @@ class DataPreprocessor:
         self.df['ending_yearly_fee'] = yearly_ending
         
         self.log_info("✓ Struktur biaya berhasil diubah menjadi 6 kolom")
+        self.log_info("  Missing data biaya diisi dengan -1")
     
     def step6_map_provinsi(self):
         """STEP 6: Map provinsi dari provinsi_id ke nama provinsi"""
@@ -240,10 +240,78 @@ class DataPreprocessor:
         else:
             self.log_info("  Kolom provinsi_id tidak ditemukan")
     
-    def step7_remove_duplicates(self):
-        """STEP 7: Hapus duplikat"""
+    def step7_add_new_columns(self):
+        """STEP 7: Tambahkan kolom baru yang diperlukan"""
         self.log_info("\n" + "="*60)
-        self.log_info("STEP 7: HAPUS DUPLIKAT")
+        self.log_info("STEP 7: TAMBAH KOLOM BARU")
+        self.log_info("="*60)
+        
+        # Mapping untuk extract data yang ada
+        def safe_get(val, default='-'):
+            if pd.isna(val) or val == '' or str(val).strip() == '':
+                return default
+            return val
+        
+        # 1. body_type - gunakan data dari kolom yang ada atau set default
+        self.df['body_type'] = '-'
+        self.log_info("✓ Kolom 'body_type' ditambahkan (default: '-')")
+        
+        # 2. link - gunakan dari website jika ada
+        if 'website' in self.df.columns:
+            self.df['link'] = self.df['website'].apply(lambda x: safe_get(x))
+        else:
+            self.df['link'] = '-'
+        self.log_info("✓ Kolom 'link' ditambahkan")
+        
+        # 3. description - default '-'
+        self.df['description'] = '-'
+        self.log_info("✓ Kolom 'description' ditambahkan (default: '-')")
+        
+        # 4. contact - gabungan dari telepon dan email
+        def create_contact(row):
+            parts = []
+            if 'telepon' in self.df.columns:
+                tel = safe_get(row.get('telepon'))
+                if tel != '-':
+                    parts.append(f"Tel: {tel}")
+            if 'email' in self.df.columns:
+                email = safe_get(row.get('email'))
+                if email != '-':
+                    parts.append(f"Email: {email}")
+            return ' | '.join(parts) if parts else '-'
+        
+        self.df['contact'] = self.df.apply(create_contact, axis=1)
+        self.log_info("✓ Kolom 'contact' ditambahkan (dari telepon & email)")
+        
+        # 5. lecturer_amount - dari jumlah_dosen atau -1
+        if 'jumlah_dosen' in self.df.columns:
+            self.df['lecturer_amount'] = self.df['jumlah_dosen'].apply(
+                lambda x: int(x) if pd.notna(x) and str(x).isdigit() else -1
+            )
+        else:
+            self.df['lecturer_amount'] = -1
+        self.log_info("✓ Kolom 'lecturer_amount' ditambahkan")
+        
+        # 6. student_amount - dari jumlah_mahasiswa atau -1
+        if 'jumlah_mahasiswa' in self.df.columns:
+            self.df['student_amount'] = self.df['jumlah_mahasiswa'].apply(
+                lambda x: int(x) if pd.notna(x) and str(x).isdigit() else -1
+            )
+        else:
+            self.df['student_amount'] = -1
+        self.log_info("✓ Kolom 'student_amount' ditambahkan")
+        
+        # Hapus kolom lama yang sudah tidak diperlukan
+        cols_to_drop = ['website', 'telepon', 'email', 'jumlah_dosen', 'jumlah_mahasiswa', 'tahun_berdiri']
+        existing = [col for col in cols_to_drop if col in self.df.columns]
+        if existing:
+            self.df = self.df.drop(columns=existing)
+            self.log_info(f"✓ Kolom tidak diperlukan dihapus: {', '.join(existing)}")
+    
+    def step8_remove_duplicates(self):
+        """STEP 8: Hapus duplikat"""
+        self.log_info("\n" + "="*60)
+        self.log_info("STEP 8: HAPUS DUPLIKAT")
         self.log_info("="*60)
         
         before_count = len(self.df)
@@ -255,21 +323,30 @@ class DataPreprocessor:
         self.log_info(f"  Data sebelum: {before_count} rows")
         self.log_info(f"  Data setelah: {after_count} rows")
     
-    def step8_add_institution_code(self):
-        """STEP 8: Tambahkan kolom institution_code"""
+    def step9_add_institution_code(self):
+        """STEP 9: Tambahkan kolom institution_code berdasarkan unique institution"""
         self.log_info("\n" + "="*60)
-        self.log_info("STEP 8: TAMBAH INSTITUTION CODE")
+        self.log_info("STEP 9: TAMBAH INSTITUTION CODE")
         self.log_info("="*60)
         
-        self.df.insert(0, 'institution_code', 
-                      [f'rencanamu-{i+1}' for i in range(len(self.df))])
+        # Buat mapping institution_name -> institution_code
+        unique_institutions = self.df['institution_name'].unique()
+        institution_code_map = {
+            name: f'rencanamu-{i+1}' 
+            for i, name in enumerate(sorted(unique_institutions))
+        }
         
-        self.log_info(f"✓ Institution code ditambahkan: rencanamu-1 sampai rencanamu-{len(self.df)}")
+        # Assign institution_code berdasarkan nama kampus
+        self.df.insert(0, 'institution_code', 
+                      self.df['institution_name'].map(institution_code_map))
+        
+        self.log_info(f"✓ Institution code ditambahkan untuk {len(unique_institutions)} kampus unique")
+        self.log_info(f"  Range: rencanamu-1 sampai rencanamu-{len(unique_institutions)}")
     
-    def step9_rename_columns(self):
-        """STEP 9: Rename kolom sesuai standar baru"""
+    def step10_rename_columns(self):
+        """STEP 10: Rename kolom sesuai standar baru"""
         self.log_info("\n" + "="*60)
-        self.log_info("STEP 9: RENAME KOLOM")
+        self.log_info("STEP 10: RENAME KOLOM")
         self.log_info("="*60)
         
         rename_dict = {
@@ -289,60 +366,99 @@ class DataPreprocessor:
             for r in renamed:
                 self.log_info(f"  - {r}")
     
-    def step10_check_null_values(self):
-        """STEP 10: Cek kolom NULL"""
+    def step11_separate_prodi(self):
+        """STEP 11: Pisahkan data prodi ke file terpisah"""
         self.log_info("\n" + "="*60)
-        self.log_info("STEP 10: CEK NULL VALUES")
+        self.log_info("STEP 11: PISAHKAN DATA PRODI")
         self.log_info("="*60)
         
-        null_report = []
+        # Kolom untuk tabel institusi (tanpa prodi)
+        institution_cols = ['institution_code', 'institution_name', 'akreditasi_kampus', 
+                          'address', 'provinsi', 'body_type', 'link', 'description', 
+                          'contact', 'lecturer_amount', 'student_amount']
         
-        for col in self.df.columns:
-            null_count = self.df[col].isna().sum()
-            dash_count = (self.df[col] == '-').sum()
-            empty_count = (self.df[col] == '').sum()
-            total_missing = null_count + dash_count + empty_count
-            percentage = (total_missing / len(self.df)) * 100
-            
-            if total_missing > 0:
-                null_report.append({
-                    'kolom': col,
-                    'null': null_count,
-                    'dash': dash_count,
-                    'empty': empty_count,
-                    'total_missing': total_missing,
-                    'percentage': percentage
-                })
+        # Buat dataframe institusi (unique per kampus)
+        self.df_institution = self.df[institution_cols].drop_duplicates(subset=['institution_code'])
         
-        if null_report:
-            self.log_info("\n  LAPORAN MISSING DATA:")
-            self.log_info("  " + "-"*80)
-            self.log_info(f"  {'Kolom':<30} {'NULL':<8} {'Dash':<8} {'Empty':<8} {'Total':<8} {'%':<8}")
-            self.log_info("  " + "-"*80)
-            
-            for item in sorted(null_report, key=lambda x: x['total_missing'], reverse=True):
-                self.log_info(
-                    f"  {item['kolom']:<30} {item['null']:<8} {item['dash']:<8} "
-                    f"{item['empty']:<8} {item['total_missing']:<8} {item['percentage']:.1f}%"
-                )
-        else:
-            self.log_info("  ✓ Tidak ada missing data!")
+        # Buat dataframe prodi dengan institution_code sebagai foreign key
+        prodi_cols = ['institution_code', 'faculty', 'prodi', 'akreditasi_prodi',
+                     'average_semester_fee', 'starting_semester_fee', 'ending_semester_fee',
+                     'average_yearly_fee', 'starting_yearly_fee', 'ending_yearly_fee']
+        
+        self.df_prodi = self.df[prodi_cols].copy()
+        
+        # Tambahkan prodi_code
+        self.df_prodi.insert(0, 'prodi_code', 
+                            [f'prodi-{i+1}' for i in range(len(self.df_prodi))])
+        
+        self.log_info(f"✓ Data institusi: {len(self.df_institution)} kampus")
+        self.log_info(f"✓ Data prodi: {len(self.df_prodi)} program studi")
+        
+        return self.df_institution, self.df_prodi
     
-    def save_processed_data(self, output_file=None):
-        """Simpan data yang sudah diproses"""
-        if output_file is None:
-            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-            preprocess_dir = os.path.join(base_dir, "csv_result")
-            os.makedirs(preprocess_dir, exist_ok=True)
+    def step12_check_null_values(self):
+        """STEP 12: Cek kolom NULL untuk kedua tabel"""
+        self.log_info("\n" + "="*60)
+        self.log_info("STEP 12: CEK NULL VALUES")
+        self.log_info("="*60)
+        
+        for table_name, df in [('INSTITUSI', self.df_institution), ('PRODI', self.df_prodi)]:
+            self.log_info(f"\n  TABEL {table_name}:")
+            self.log_info("  " + "-"*80)
             
-            filename = os.path.basename(self.input_file).replace('.csv', '_preprocessed.csv')
-            output_file = os.path.join(preprocess_dir, filename)
+            null_report = []
+            
+            for col in df.columns:
+                null_count = df[col].isna().sum()
+                dash_count = (df[col] == '-').sum()
+                minus_one_count = (df[col] == -1).sum()
+                empty_count = (df[col] == '').sum()
+                total_missing = null_count + dash_count + minus_one_count + empty_count
+                percentage = (total_missing / len(df)) * 100
+                
+                if total_missing > 0:
+                    null_report.append({
+                        'kolom': col,
+                        'null': null_count,
+                        'dash': dash_count,
+                        'minus_one': minus_one_count,
+                        'empty': empty_count,
+                        'total_missing': total_missing,
+                        'percentage': percentage
+                    })
+            
+            if null_report:
+                self.log_info(f"  {'Kolom':<30} {'NULL':<7} {'Dash':<7} {'-1':<7} {'Empty':<7} {'Total':<7} {'%':<8}")
+                self.log_info("  " + "-"*80)
+                
+                for item in sorted(null_report, key=lambda x: x['total_missing'], reverse=True):
+                    self.log_info(
+                        f"  {item['kolom']:<30} {item['null']:<7} {item['dash']:<7} "
+                        f"{item['minus_one']:<7} {item['empty']:<7} {item['total_missing']:<7} {item['percentage']:.1f}%"
+                    )
+            else:
+                self.log_info("  ✓ Tidak ada missing data!")
+    
+    def save_processed_data(self, output_dir=None):
+        """Simpan data yang sudah diproses"""
+        if output_dir is None:
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            output_dir = os.path.join(base_dir, "csv_result")
+            os.makedirs(output_dir, exist_ok=True)
         
-        self.df.to_csv(output_file, index=False, encoding='utf-8-sig')
-        self.log_info(f"\n✓ Data preprocessed disimpan di: {output_file}")
-        self.log_info(f"  Total rows: {len(self.df)}")
+        # Simpan tabel institusi
+        institution_file = os.path.join(output_dir, "rencanamu_institutions_preprocessed.csv")
+        self.df_institution.to_csv(institution_file, index=False, encoding='utf-8-sig')
+        self.log_info(f"\n✓ Data institusi disimpan: {institution_file}")
+        self.log_info(f"  Total rows: {len(self.df_institution)}")
         
-        return output_file
+        # Simpan tabel prodi
+        prodi_file = os.path.join(output_dir, "rencanamu_prodi_preprocessed.csv")
+        self.df_prodi.to_csv(prodi_file, index=False, encoding='utf-8-sig')
+        self.log_info(f"✓ Data prodi disimpan: {prodi_file}")
+        self.log_info(f"  Total rows: {len(self.df_prodi)}")
+        
+        return institution_file, prodi_file
     
     def save_log(self, log_file=None):
         """Simpan log preprocessing"""
@@ -373,19 +489,21 @@ class DataPreprocessor:
         self.step4_trim_all_text()
         self.step5_restructure_biaya_columns()
         self.step6_map_provinsi()
-        self.step7_remove_duplicates()
-        self.step8_add_institution_code()
-        self.step9_rename_columns()
-        self.step10_check_null_values()
+        self.step7_add_new_columns()
+        self.step8_remove_duplicates()
+        self.step10_rename_columns()        # RENAME DULU kolom nama_kampus -> institution_name
+        self.step9_add_institution_code()   # BARU tambah institution_code (butuh institution_name sudah ada)
+        self.step11_separate_prodi()
+        self.step12_check_null_values()
         
-        output_file = self.save_processed_data()
+        institution_file, prodi_file = self.save_processed_data()
         # self.save_log()
         
         self.log_info("\n" + "="*60)
         self.log_info("PREPROCESSING SELESAI!")
         self.log_info("="*60)
         
-        return output_file
+        return institution_file, prodi_file
 
 
 if __name__ == "__main__":
@@ -397,27 +515,34 @@ if __name__ == "__main__":
         print("Pastikan file CSV ada di lokasi yang benar!")
     else:
         preprocessor = DataPreprocessor(input_file)
-        output_file = preprocessor.run_all_steps()
+        result = preprocessor.run_all_steps()
         
-        if output_file:
+        if result:
+            institution_file, prodi_file = result
             print(f"\n{'='*60}")
             print("HASIL PREPROCESSING:")
             print(f"{'='*60}")
-            print(f"✓ File output: {output_file}")
+            print(f"✓ File institusi: {institution_file}")
+            print(f"✓ File prodi: {prodi_file}")
             
-            df_final = pd.read_csv(output_file)
-            print(f"\nSummary Data Akhir:")
-            print(f"  Total rows: {len(df_final)}")
-            print(f"  Total kolom: {len(df_final.columns)}")
-            print(f"  Kolom: {', '.join(df_final.columns.tolist())}")
+            df_inst = pd.read_csv(institution_file)
+            df_prodi = pd.read_csv(prodi_file)
             
-            if 'institution_name' in df_final.columns:
-                print(f"  Total kampus unique: {df_final['institution_name'].nunique()}")
-            if 'prodi' in df_final.columns:
-                print(f"  Total prodi: {len(df_final)}")
+            print(f"\n TABEL INSTITUSI:")
+            print(f"  Total kampus: {len(df_inst)}")
+            print(f"  Kolom: {', '.join(df_inst.columns.tolist())}")
             
-            print(f"\nContoh Data (5 baris pertama):")
-            display_cols = ['institution_code', 'institution_name', 'prodi', 
-                          'average_semester_fee', 'average_yearly_fee']
-            existing_display = [col for col in display_cols if col in df_final.columns]
-            print(df_final[existing_display].head().to_string(index=False))
+            print(f"\n TABEL PRODI:")
+            print(f"  Total program studi: {len(df_prodi)}")
+            print(f"  Kolom: {', '.join(df_prodi.columns.tolist())}")
+            
+            print(f"\n Relasi:")
+            print(f"  institution_code sebagai foreign key di tabel prodi")
+            
+            print(f"\nContoh Data Institusi (3 baris pertama):")
+            display_cols_inst = ['institution_code', 'institution_name', 'provinsi', 'lecturer_amount', 'student_amount']
+            print(df_inst[display_cols_inst].head(3).to_string(index=False))
+            
+            print(f"\nContoh Data Prodi (3 baris pertama):")
+            display_cols_prodi = ['prodi_code', 'institution_code', 'prodi', 'average_semester_fee']
+            print(df_prodi[display_cols_prodi].head(3).to_string(index=False))
