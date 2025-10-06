@@ -211,7 +211,11 @@ df_prodi = df_prodi[
     df_prodi['prodi'].astype(str).str.strip().ne('-')
 ]
 
-# check null columns
+# 8. Drop make similar to other institution datasets
+df_institution = df_institution.drop(columns=['unknown_field'], errors='ignore')
+df_institution['address'] = '-'
+
+# 9. Check null columns
 faculty_null_columns = df_faculty.columns[df_faculty.isnull().any()].tolist()
 institution_null_columns = df_institution.columns[df_institution.isnull().any()].tolist()
 prodi_null_columns = df_prodi.columns[df_prodi.isnull().any()].tolist()

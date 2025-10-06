@@ -60,7 +60,7 @@ def gabung_kontak(row):
 
 # --- (SISA KODE PROSES UTAMA DI BAWAH INI TIDAK ADA YANG BERUBAH) ---
 try:
-    df = pd.read_csv('pddikti_nasional.csv', engine='python')
+    df = pd.read_csv('csv_result/pddikti_nasional.csv', engine='python')
     print("File 'pddikti_nasional.csv' berhasil dimuat.")
 except FileNotFoundError:
     print("Error: File 'pddikti_nasional.csv' tidak ditemukan.")
@@ -76,9 +76,11 @@ df['contact'] = df.apply(gabung_kontak, axis=1)
 rename_map = {'nama_pt': 'institution_name', 'alamat': 'address', 'kab_kota_pt': 'regency', 'provinsi_pt': 'province', 'status_pt': 'ownership'}
 df.rename(columns=rename_map, inplace=True)
 df.reset_index(drop=True, inplace=True)
-df['pddikti_institution_code'] = df.index + 1
+index_series = df.index + 1
+index_series_str = index_series.astype(str)
+df['institution_code'] = 'pddikti-' + index_series_str
 kolom_final_yang_diinginkan = [
-    'pddikti_institution_code','institution_name','ownership','address','regency','province','contact',
+    'institution_code','institution_name','ownership','address','regency','province','contact',
     'fee', 'average_semester_fee','starting_semester_fee','ending_semester_fee','average_yearly_fee','starting_yearly_fee','ending_yearly_fee',
     'body_type','link','student_amount','lecturer_amount','description'
 ]
@@ -86,7 +88,8 @@ for col in kolom_final_yang_diinginkan:
     if col not in df.columns:
         df[col] = np.nan
 df_final = df[kolom_final_yang_diinginkan]
-nama_file_output = 'pddikti_nasional_clean.csv'
+nama_file_output = 'csv_result/pddikti_nasional_clean.csv'
+
 df_final.to_csv(nama_file_output, index=False, encoding='utf-8-sig')
 
 print(f"\nPreprocessing Selesai! File final '{nama_file_output}' telah dibuat.")
