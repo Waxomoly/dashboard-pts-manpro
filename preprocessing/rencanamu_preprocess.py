@@ -66,14 +66,15 @@ class DataPreprocessor:
             return False
     
     def step1_remove_unwanted_columns(self):
-        """STEP 1: Hapus kolom yang tidak diperlukan"""
+        """STEP 1: Hapus kolom yang tidak diperlukan (KECUALI link_kampus)"""
         self.log_info("\n" + "="*60)
         self.log_info("STEP 1: HAPUS KOLOM TIDAK DIPERLUKAN")
         self.log_info("="*60)
         self.log_info("# Menghapus kolom yang tidak relevan untuk analisis")
         
+        # DIUBAH: JANGAN hapus link_kampus karena akan digunakan
         columns_to_remove = [
-            'link_kampus', 'status', 'kota', 'ranking_webometric',
+            'status', 'kota', 'ranking_webometric',
             'fax', 'luas_kampus', 'jenjang_tersedia', 'fasilitas', 
             'beasiswa', 'kerjasama', 'prestasi', 'visi', 'misi'
         ]
@@ -84,6 +85,10 @@ class DataPreprocessor:
             self.log_info(f"✓ Kolom dihapus: {', '.join(existing_cols)}")
         else:
             self.log_info("  Tidak ada kolom yang perlu dihapus")
+        
+        # Log: link_kampus akan tetap dipertahankan
+        if 'link_kampus' in self.df.columns:
+            self.log_info("✓ Kolom 'link_kampus' dipertahankan untuk digunakan sebagai 'link'")
     
     def step2_uppercase_all_text(self):
         """STEP 2: Uppercase semua text dan bersihkan akreditasi"""
@@ -252,16 +257,37 @@ class DataPreprocessor:
                 return default
             return val
         
-        # 1. body_type - gunakan data dari kolom yang ada atau set default
-        self.df['body_type'] = '-'
-        self.log_info("✓ Kolom 'body_type' ditambahkan (default: '-')")
+        # 1. body_type - extract dari link_kampus
+        def extract_body_type(link_kampus):
+            """Extract body_type (slug kampus) dari link_kampus"""
+            if pd.isna(link_kampus) or link_kampus == '-' or link_kampus == '':
+                return '-'
+            # Format: https://rencanamu.id/cari-kampus/universitas-kristen-petra
+            # Ambil bagian terakhir setelah /cari-kampus/
+            try:
+                parts = link_kampus.strip().split('/')
+                if 'cari-kampus' in parts:
+                    idx = parts.index('cari-kampus')
+                    if idx + 1 < len(parts):
+                        return parts[idx + 1]
+                return '-'
+            except:
+                return '-'
         
-        # 2. link - gunakan dari website jika ada
-        if 'website' in self.df.columns:
-            self.df['link'] = self.df['website'].apply(lambda x: safe_get(x))
+        if 'link_kampus' in self.df.columns:
+            self.df['body_type'] = self.df['link_kampus'].apply(extract_body_type)
+            self.log_info("✓ Kolom 'body_type' ditambahkan (extracted dari link_kampus)")
+        else:
+            self.df['body_type'] = '-'
+            self.log_info("⚠️  Kolom 'body_type' ditambahkan dengan default '-' (link_kampus tidak ada)")
+        
+        # 2. link - gunakan link_kampus (BUKAN website kampus)
+        if 'link_kampus' in self.df.columns:
+            self.df['link'] = self.df['link_kampus'].apply(lambda x: safe_get(x))
+            self.log_info("✓ Kolom 'link' ditambahkan (dari link_kampus rencanamu.id)")
         else:
             self.df['link'] = '-'
-        self.log_info("✓ Kolom 'link' ditambahkan")
+            self.log_info("⚠️  Kolom 'link' ditambahkan dengan default '-' (link_kampus tidak ada)")
         
         # 3. description - default '-'
         self.df['description'] = '-'
@@ -301,8 +327,9 @@ class DataPreprocessor:
             self.df['student_amount'] = -1
         self.log_info("✓ Kolom 'student_amount' ditambahkan")
         
-        # Hapus kolom lama yang sudah tidak diperlukan
-        cols_to_drop = ['website', 'telepon', 'email', 'jumlah_dosen', 'jumlah_mahasiswa', 'tahun_berdiri']
+        # Hapus kolom lama yang sudah tidak diperlukan (termasuk link_kampus, website)
+        cols_to_drop = ['link_kampus', 'website', 'telepon', 'email', 
+                       'jumlah_dosen', 'jumlah_mahasiswa', 'tahun_berdiri']
         existing = [col for col in cols_to_drop if col in self.df.columns]
         if existing:
             self.df = self.df.drop(columns=existing)
@@ -377,7 +404,7 @@ class DataPreprocessor:
         # Buat dataframe institusi (unique per kampus) dengan aggregation
         agg_dict = {
             'institution_name': 'first',
-            'campus_accreditation': 'first',  # TETAP akreditasi_kampus
+            'campus_accreditation': 'first',
             'address': 'first',
             'province': 'first',
             'body_type': 'first',
@@ -412,7 +439,7 @@ class DataPreprocessor:
         self.df_prodi.insert(0, 'prodi_code', 
                             [f'prodi-{i+1}' for i in range(len(self.df_prodi))])
         
-        self.log_info(f"✓ Data institusi: {len(self.df_institution)} kampus (dengan fee)")
+        self.log_info(f"✓ Data institusi: {len(self.df_institution)} kampus (dengan link & body_type)")
         self.log_info(f"✓ Data prodi: {len(self.df_prodi)} program studi (tanpa fee)")
         
         return self.df_institution, self.df_prodi
@@ -512,8 +539,8 @@ class DataPreprocessor:
         self.step6_map_provinsi()
         self.step7_add_new_columns()
         self.step8_remove_duplicates()
-        self.step10_rename_columns()        # RENAME DULU kolom nama_kampus -> institution_name
-        self.step9_add_institution_code()   # BARU tambah institution_code (butuh institution_name sudah ada)
+        self.step10_rename_columns()
+        self.step9_add_institution_code()
         self.step11_separate_prodi()
         self.step12_check_null_values()
         
@@ -548,13 +575,17 @@ if __name__ == "__main__":
             df_inst = pd.read_csv(institution_file)
             df_prodi = pd.read_csv(prodi_file)
             
-            print(f"\n TABEL INSTITUSI:")
+            print(f"\nTABEL INSTITUSI:")
             print(f"  Total kampus: {len(df_inst)}")
             print(f"  Kolom: {', '.join(df_inst.columns.tolist())}")
             
-            print(f"\n TABEL PRODI:")
+            print(f"\nTABEL PRODI:")
             print(f"  Total program studi: {len(df_prodi)}")
             print(f"  Kolom: {', '.join(df_prodi.columns.tolist())}")
             
-            print(f"\n Relasi:")
+            print(f"\nRelasi:")
             print(f"  institution_code sebagai foreign key di tabel prodi")
+            
+            # Cek sample data untuk link dan body_type
+            print(f"\nSAMPLE DATA LINK & BODY_TYPE:")
+            print(df_inst[['institution_name', 'body_type', 'link']].head(3).to_string(index=False))
