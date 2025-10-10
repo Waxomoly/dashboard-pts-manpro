@@ -42,7 +42,7 @@ def gabung_kontak(row):
 
 # --- PROSES UTAMA ---
 try:
-    df = pd.read_csv('pddikti_nasional.csv', engine='python')
+    df = pd.read_csv('csv_result/pddikti_nasional.csv', engine='python')
     print("File 'pddikti_nasional.csv' berhasil dimuat.")
 except FileNotFoundError:
     print("Error: File 'pddikti_nasional.csv' tidak ditemukan.")
@@ -59,11 +59,11 @@ df['contact'] = df.apply(gabung_kontak, axis=1)
 rename_map = {'nama_pt': 'institution_name', 'alamat': 'address', 'kab_kota_pt': 'regency', 'provinsi_pt': 'province', 'status_pt': 'ownership'}
 df.rename(columns=rename_map, inplace=True)
 df.reset_index(drop=True, inplace=True)
-df['pddikti_institution_code'] = df.index + 1
+df['institution_code'] = df.index + 1
 
 # --- FINALISASI STRUKTUR KOLOM ---
 kolom_final_yang_diinginkan = [
-    'pddikti_institution_code','institution_name','address','regency','province','contact',
+    'institution_code','institution_name','address','regency','province','contact',
     'average_semester_fee','starting_semester_fee','ending_semester_fee','average_yearly_fee','starting_yearly_fee','ending_yearly_fee',
     'body_type','link','student_amount','lecturer_amount','description'
 ]
@@ -96,7 +96,7 @@ for col in numeric_cols:
     df_final[col] = df_final[col].astype(int)
 
 # --- SIMPAN HASIL ---
-nama_file_output = 'pddikti_nasional_celan.csv'
+nama_file_output = 'csv_result/pddikti_nasional_clean.csv'
 df_final.to_csv(nama_file_output, index=False, encoding='utf-8-sig')
 
 print(f"\nPreprocessing Selesai! File final '{nama_file_output}' telah dibuat.")
