@@ -66,15 +66,15 @@ class DataPreprocessor:
             return False
     
     def step1_remove_unwanted_columns(self):
-        """STEP 1: Hapus kolom yang tidak diperlukan (KECUALI link_kampus)"""
+        """STEP 1: Hapus kolom yang tidak diperlukan (KECUALI link_kampus dan status)"""
         self.log_info("\n" + "="*60)
         self.log_info("STEP 1: HAPUS KOLOM TIDAK DIPERLUKAN")
         self.log_info("="*60)
         self.log_info("# Menghapus kolom yang tidak relevan untuk analisis")
         
-        # DIUBAH: JANGAN hapus link_kampus karena akan digunakan
+        # REVISI: Jangan hapus 'status' karena akan dijadikan body_type
         columns_to_remove = [
-            'status', 'kota', 'ranking_webometric',
+            'kota', 'ranking_webometric',
             'fax', 'luas_kampus', 'jenjang_tersedia', 'fasilitas', 
             'beasiswa', 'kerjasama', 'prestasi', 'visi', 'misi'
         ]
@@ -86,9 +86,11 @@ class DataPreprocessor:
         else:
             self.log_info("  Tidak ada kolom yang perlu dihapus")
         
-        # Log: link_kampus akan tetap dipertahankan
+        # Log: link_kampus dan status akan tetap dipertahankan
         if 'link_kampus' in self.df.columns:
             self.log_info("✓ Kolom 'link_kampus' dipertahankan untuk digunakan sebagai 'link'")
+        if 'status' in self.df.columns:
+            self.log_info("✓ Kolom 'status' dipertahankan untuk dijadikan 'body_type'")
     
     def step2_uppercase_all_text(self):
         """STEP 2: Uppercase semua text dan bersihkan akreditasi"""
@@ -97,7 +99,7 @@ class DataPreprocessor:
         self.log_info("="*60)
         
         text_columns = ['nama_kampus', 'akreditasi_kampus', 'alamat', 'provinsi',
-                       'fakultas', 'prodi', 'akreditasi_prodi']
+                       'fakultas', 'prodi', 'akreditasi_prodi', 'status']
         
         for col in text_columns:
             if col in self.df.columns:
@@ -257,29 +259,13 @@ class DataPreprocessor:
                 return default
             return val
         
-        # 1. body_type - extract dari link_kampus
-        def extract_body_type(link_kampus):
-            """Extract body_type (slug kampus) dari link_kampus"""
-            if pd.isna(link_kampus) or link_kampus == '-' or link_kampus == '':
-                return '-'
-            # Format: https://rencanamu.id/cari-kampus/universitas-kristen-petra
-            # Ambil bagian terakhir setelah /cari-kampus/
-            try:
-                parts = link_kampus.strip().split('/')
-                if 'cari-kampus' in parts:
-                    idx = parts.index('cari-kampus')
-                    if idx + 1 < len(parts):
-                        return parts[idx + 1]
-                return '-'
-            except:
-                return '-'
-        
-        if 'link_kampus' in self.df.columns:
-            self.df['body_type'] = self.df['link_kampus'].apply(extract_body_type)
-            self.log_info("✓ Kolom 'body_type' ditambahkan (extracted dari link_kampus)")
+        # 1. body_type - DARI STATUS (REVISI!)
+        if 'status' in self.df.columns:
+            self.df['body_type'] = self.df['status'].apply(lambda x: safe_get(x))
+            self.log_info("✓ Kolom 'body_type' ditambahkan (dari kolom status: NEGERI/SWASTA)")
         else:
             self.df['body_type'] = '-'
-            self.log_info("⚠️  Kolom 'body_type' ditambahkan dengan default '-' (link_kampus tidak ada)")
+            self.log_info("⚠️  Kolom 'body_type' ditambahkan dengan default '-' (status tidak ada)")
         
         # 2. link - gunakan link_kampus (BUKAN website kampus)
         if 'link_kampus' in self.df.columns:
@@ -327,8 +313,8 @@ class DataPreprocessor:
             self.df['student_amount'] = -1
         self.log_info("✓ Kolom 'student_amount' ditambahkan")
         
-        # Hapus kolom lama yang sudah tidak diperlukan (termasuk link_kampus, website)
-        cols_to_drop = ['link_kampus', 'website', 'telepon', 'email', 
+        # Hapus kolom lama yang sudah tidak diperlukan (termasuk status, link_kampus, website)
+        cols_to_drop = ['status', 'link_kampus', 'website', 'telepon', 'email', 
                        'jumlah_dosen', 'jumlah_mahasiswa', 'tahun_berdiri']
         existing = [col for col in cols_to_drop if col in self.df.columns]
         if existing:
@@ -439,7 +425,7 @@ class DataPreprocessor:
         self.df_prodi.insert(0, 'prodi_code', 
                             [f'prodi-{i+1}' for i in range(len(self.df_prodi))])
         
-        self.log_info(f"✓ Data institusi: {len(self.df_institution)} kampus (dengan link & body_type)")
+        self.log_info(f"✓ Data institusi: {len(self.df_institution)} kampus (body_type = NEGERI/SWASTA)")
         self.log_info(f"✓ Data prodi: {len(self.df_prodi)} program studi (tanpa fee)")
         
         return self.df_institution, self.df_prodi
@@ -549,6 +535,7 @@ class DataPreprocessor:
         self.log_info("\n" + "="*60)
         self.log_info("PREPROCESSING SELESAI!")
         self.log_info("="*60)
+        self.log_info("\n✓ body_type sekarang berisi: NEGERI atau SWASTA")
         
         return institution_file, prodi_file
 
