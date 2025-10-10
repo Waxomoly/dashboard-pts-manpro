@@ -352,7 +352,9 @@ class DataPreprocessor:
         rename_dict = {
             'nama_kampus': 'institution_name',
             'fakultas': 'faculty',
-            'alamat': 'address'
+            'alamat': 'address',
+            'provinsi': 'province',
+            'akreditasi_kampus': 'campus_accreditation'
         }
         
         renamed = []
@@ -365,34 +367,53 @@ class DataPreprocessor:
             self.log_info("✓ Kolom berhasil direname:")
             for r in renamed:
                 self.log_info(f"  - {r}")
-    
+
     def step11_separate_prodi(self):
         """STEP 11: Pisahkan data prodi ke file terpisah"""
         self.log_info("\n" + "="*60)
         self.log_info("STEP 11: PISAHKAN DATA PRODI")
         self.log_info("="*60)
         
-        # Kolom untuk tabel institusi (tanpa prodi)
-        institution_cols = ['institution_code', 'institution_name', 'akreditasi_kampus', 
-                          'address', 'provinsi', 'body_type', 'link', 'description', 
-                          'contact', 'lecturer_amount', 'student_amount']
+        # Buat dataframe institusi (unique per kampus) dengan aggregation
+        agg_dict = {
+            'institution_name': 'first',
+            'campus_accreditation': 'first',  # TETAP akreditasi_kampus
+            'address': 'first',
+            'province': 'first',
+            'body_type': 'first',
+            'link': 'first',
+            'description': 'first',
+            'contact': 'first',
+            'lecturer_amount': 'first',
+            'student_amount': 'first',
+            'average_semester_fee': 'mean',
+            'starting_semester_fee': 'mean',
+            'ending_semester_fee': 'mean',
+            'average_yearly_fee': 'mean',
+            'starting_yearly_fee': 'mean',
+            'ending_yearly_fee': 'mean'
+        }
         
-        # Buat dataframe institusi (unique per kampus)
-        self.df_institution = self.df[institution_cols].drop_duplicates(subset=['institution_code'])
+        self.df_institution = self.df.groupby('institution_code', as_index=False).agg(agg_dict)
         
-        # Buat dataframe prodi dengan institution_code sebagai foreign key
-        prodi_cols = ['institution_code', 'faculty', 'prodi', 'akreditasi_prodi',
-                     'average_semester_fee', 'starting_semester_fee', 'ending_semester_fee',
-                     'average_yearly_fee', 'starting_yearly_fee', 'ending_yearly_fee']
+        # Convert fee columns ke integer (bulatkan) dan handle -1
+        fee_cols = ['average_semester_fee', 'starting_semester_fee', 'ending_semester_fee',
+                    'average_yearly_fee', 'starting_yearly_fee', 'ending_yearly_fee']
+        for col in fee_cols:
+            self.df_institution[col] = self.df_institution[col].apply(
+                lambda x: -1 if x == -1 else int(round(x))
+            )
         
+        # Buat dataframe prodi TANPA fee
+        prodi_cols = ['institution_code', 'faculty', 'prodi', 'akreditasi_prodi']
         self.df_prodi = self.df[prodi_cols].copy()
         
         # Tambahkan prodi_code
         self.df_prodi.insert(0, 'prodi_code', 
                             [f'prodi-{i+1}' for i in range(len(self.df_prodi))])
         
-        self.log_info(f"✓ Data institusi: {len(self.df_institution)} kampus")
-        self.log_info(f"✓ Data prodi: {len(self.df_prodi)} program studi")
+        self.log_info(f"✓ Data institusi: {len(self.df_institution)} kampus (dengan fee)")
+        self.log_info(f"✓ Data prodi: {len(self.df_prodi)} program studi (tanpa fee)")
         
         return self.df_institution, self.df_prodi
     
@@ -497,7 +518,6 @@ class DataPreprocessor:
         self.step12_check_null_values()
         
         institution_file, prodi_file = self.save_processed_data()
-        # self.save_log()
         
         self.log_info("\n" + "="*60)
         self.log_info("PREPROCESSING SELESAI!")
@@ -538,11 +558,3 @@ if __name__ == "__main__":
             
             print(f"\n Relasi:")
             print(f"  institution_code sebagai foreign key di tabel prodi")
-            
-            print(f"\nContoh Data Institusi (3 baris pertama):")
-            display_cols_inst = ['institution_code', 'institution_name', 'provinsi', 'lecturer_amount', 'student_amount']
-            print(df_inst[display_cols_inst].head(3).to_string(index=False))
-            
-            print(f"\nContoh Data Prodi (3 baris pertama):")
-            display_cols_prodi = ['prodi_code', 'institution_code', 'prodi', 'average_semester_fee']
-            print(df_prodi[display_cols_prodi].head(3).to_string(index=False))

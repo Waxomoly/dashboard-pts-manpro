@@ -1,8 +1,11 @@
 import pandas as pd
 import re
+import os
 
-# constants
-BASE_PATH = "csv_result/"
+# constants - perbaiki path
+script_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(script_dir)
+BASE_PATH = os.path.join(parent_dir, "csv_result") + os.sep
 
 df_institution_quipper = pd.read_csv(BASE_PATH + "quipper_institution_clean.csv")
 df_institution_rencanamu = pd.read_csv(BASE_PATH + "rencanamu_institutions_preprocessed.csv")
