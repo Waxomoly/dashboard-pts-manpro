@@ -83,11 +83,11 @@ print(f"Total rows after cleaning duplicates: {len(df_merged)}")
 
 # merge with institution banpt (accreditation & )
 # load banpt data
-df_banpt = pd.read_csv(BASE_PATH + "banpt.csv")
+# df_banpt = pd.read_csv(BASE_PATH + "banpt.csv")
 
 
 
 # save to csv
-output_path = BASE_PATH + "merged_institutions.xlsx"
-df_merged.to_excel(output_path, index=False)
+output_path = BASE_PATH + "merged_institutions.csv"
+df_merged.to_csv(output_path, index=False, encoding='utf-8-sig')
 print(f"\nMerging Selesai! File final '{output_path}' telah dibuat.")
