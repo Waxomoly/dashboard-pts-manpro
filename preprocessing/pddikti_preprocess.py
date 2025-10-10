@@ -59,7 +59,7 @@ df['contact'] = df.apply(gabung_kontak, axis=1)
 rename_map = {'nama_pt': 'institution_name', 'alamat': 'address', 'kab_kota_pt': 'regency', 'provinsi_pt': 'province', 'status_pt': 'ownership'}
 df.rename(columns=rename_map, inplace=True)
 df.reset_index(drop=True, inplace=True)
-df['institution_code'] = df.index + 1
+df['institution_code'] = 'pddikti-' + (df.index + 1).astype(str)
 
 # --- FINALISASI STRUKTUR KOLOM ---
 kolom_final_yang_diinginkan = [
