@@ -5,7 +5,7 @@ import re
 BASE_PATH = "csv_result/"
 
 df_institution_quipper = pd.read_csv(BASE_PATH + "quipper_institution_clean.csv")
-df_institution_rencanamu = pd.read_csv(BASE_PATH + "rencanamu_preprocessed.csv")
+df_institution_rencanamu = pd.read_csv(BASE_PATH + "rencanamu_institutions_preprocessed.csv")
 df_institution_pddikti = pd.read_csv(BASE_PATH +"pddikti_nasional_clean.csv")
 
 # 1. Convert columns to sets
