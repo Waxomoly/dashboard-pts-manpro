@@ -1,0 +1,74 @@
+============================================================
+LAPORAN HASIL SCRAPING RENCANAMU.ID
+============================================================
+
+Total Kampus (Unique): 283
+Total Baris Data (Prodi): 6894
+Rata-rata Prodi per Kampus: 24.4
+
+============================================================
+BREAKDOWN PER PROVINSI
+============================================================
+Provinsi 1: 2 kampus
+Provinsi 2: 16 kampus
+Provinsi 3: 4 kampus
+Provinsi 4: 2 kampus
+Provinsi 5: 2 kampus
+Provinsi 6: 1 kampus
+Provinsi 7: 1 kampus
+Provinsi 8: 6 kampus
+Provinsi 10: 3 kampus
+Provinsi 11: 18 kampus
+Provinsi 12: 34 kampus
+Provinsi 13: 76 kampus
+Provinsi 14: 23 kampus
+Provinsi 15: 41 kampus
+Provinsi 16: 22 kampus
+Provinsi 17: 5 kampus
+Provinsi 18: 4 kampus
+Provinsi 19: 2 kampus
+Provinsi 20: 2 kampus
+Provinsi 21: 2 kampus
+Provinsi 23: 2 kampus
+Provinsi 25: 1 kampus
+Provinsi 26: 6 kampus
+Provinsi 27: 2 kampus
+Provinsi 28: 1 kampus
+Provinsi 29: 2 kampus
+Provinsi 31: 1 kampus
+Provinsi 32: 1 kampus
+Provinsi 33: 1 kampus
+
+============================================================
+BREAKDOWN STATUS KAMPUS
+============================================================
+Swasta: 283 kampus
+
+============================================================
+QUALITY CHECK
+============================================================
+Kampus tanpa info akreditasi: 0
+Kampus tanpa info biaya: 51
+Kampus tanpa alamat lengkap: 283
+Kampus tanpa info telepon: 4
+Kampus tanpa info email: 283
+Kampus tanpa info tahun berdiri: 0
+
+============================================================
+TOP 10 KAMPUS DENGAN PROGRAM STUDI TERBANYAK
+============================================================
+1. Universitas Muhammadiyah Jakarta: 84 prodi
+2. Universitas Ahmad Dahlan: 72 prodi
+3. Universitas Muhammadiyah Malang: 70 prodi
+4. Universitas Muhammadiyah Prof. Dr. Hamka: 70 prodi
+5. Universitas Surabaya: 68 prodi
+6. Universitas Kristen Indonesia: 66 prodi
+7. Universitas Muhammadiyah Surakarta: 66 prodi
+8. Universitas Muslim Indonesia Makassar: 64 prodi
+9. Universitas Kristen Satya Wacana: 62 prodi
+10. Universitas Katolik Indonesia Atma Jaya: 62 prodi
+
+============================================================
+TOP 10 FAKULTAS PALING BANYAK
+============================================================
+1. Umum: 6876 kali muncul
