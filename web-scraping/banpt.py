@@ -1,18 +1,12 @@
 # link prodi: https://www.banpt.or.id/direktori/prodi/pencarian_prodi.php
 # link institusi: https://www.banpt.or.id/direktori/institusi/pencarian_institusi.php
-# hasil akhir adalah 2 dataframe dengan kolom: 
-# 1. institution_code (act as primary key, increasing integer) | institution_name | akreditasi_institusi | wilayah
-# 2. prodi_code (act as primary key, increasing integer) prodi_code | prodi_name | jenjang | akreditasi_prodi | institution_code (sama kyk yg di dataframe pertama)
-
-# Yang perlu di cleaning:
-# 1. Pastikan institusi yang diambil hanya PTS (wilayah 01-16)
-# 2. Pastikan prodi yang diambil hanya S1
+# Code ini akan ambil semua data prodi dan institusi dari BAN-PT via API mereka
 
 import requests
 import pandas as pd
-from bs4 import BeautifulSoup
 import time
-import re
+import html
+
 
 # Konfigurasi
 INSTITUTION_API_URL = "https://www.banpt.or.id/direktori/model/dir_aipt/get_data_institusi.php"
@@ -22,42 +16,6 @@ HEADERS = {
     'X-Requested-With': 'XMLHttpRequest'
 }
 
-def normalize_name(name):
-    return name.split(',')[0].lower().strip()
-
-def preprocess_df(df, df_name="DataFrame"):
-    """
-    1. Uppercase semua text
-    2. Hapus semua kurung dan isinya
-    3. TRIM semua text
-    4. Hapus duplikat
-    5. Cek kolom NULL
-    """
-    df = df.copy()
-    initial_rows = len(df)
-
-    print(f"Membersihkan '{df_name}' ({initial_rows} baris)")
-    for col in df.select_dtypes(include=['object']).columns:
-        df[col] = df[col].str.replace(r'\s*\([^)]*\)', '', regex=True).str.upper().str.strip()
-
-    is_duplicate = df.duplicated(keep=False)
-    if is_duplicate.any():
-        duplicate_rows_df = df[is_duplicate]
-        print(f"\nDitemukan {len(duplicate_rows_df)} baris duplikat di '{df_name}':")
-        df = df.drop_duplicates()
-
-    # Cek  data NULL
-    null_rows_df = df[df.isnull().any(axis=1)]
-    if not null_rows_df.empty:
-        print(f"\n Jumlah data instnasi instiusi di prodi yang NULL: {len(null_rows_df)}")
-        
-    else:
-        print("Tidak ditemukan baris dengan data kosong.")
-
-    print(f"Jumlah baris setelah pembersihan: {len(df)}")
-    print("-------------------------------------------")
-    
-    return df
 
 def scrape_instansi(api_url, headers):
     """
@@ -80,21 +38,14 @@ def scrape_instansi(api_url, headers):
     
     for item in full_database:
         try:
-            institution_name = item[0]
-            akreditasi_institusi = item[1]
-            wilayah = item[4]
-            
-            # if wilayah != '07': # Hapus kalau mau semua wilayah
-            #     continue
-            
-            soup = BeautifulSoup(institution_name, 'html.parser')
-            institution_name = soup.get_text(strip=True)
-            
+            institution_name = html.unescape(item[0])
             all_institutions.append({
                 'institution_name': institution_name,
-                'normalized_name': normalize_name(institution_name),
-                'akreditasi_institusi': akreditasi_institusi,
-                'wilayah': f"Wilayah {wilayah}"
+                'akreditasi_institusi': item[1],
+                'no_sk': item[2],
+                'tahun_sk': item[3],
+                'wilayah': f"{item[4]}", 
+                'tanggal_kadaluarsa': item[5]
             })
         except IndexError:
             continue
@@ -103,16 +54,13 @@ def scrape_instansi(api_url, headers):
     df.insert(0, 'institution_code', [f'banpt-{i}' for i in range(1, len(df) + 1)])
     return df
 
-def scrape_prodi(api_url, headers, df_institutions):
+def scrape_prodi(api_url, headers):
     """
-    Ada 2 DataFrame yang bakal dihasilkan:
-    1. DataFrame prodi yang berhasil dicocokkan dengan institusi
-    2. DataFrame debug lengkap untuk semua prodi S1 yang berhasil cocok dan tidak dengan institusi
+    DataFrame yang bakal dihasilkan:
+    1. DataFrame prodi di Indonesia
     """
 
-    all_prodi_accepted = []
-    all_prodi_debug_report = []
-
+    all_prodi= []
     payload = {'length': '-1'}
     try:
         response = requests.post(api_url, headers=headers, data=payload, timeout=180)
@@ -124,70 +72,38 @@ def scrape_prodi(api_url, headers, df_institutions):
         print(f"Gagal mengambil data prodi dari API: {e}")
         return None, None
     
-    institution_map = pd.Series(df_institutions.institution_code.values, index=df_institutions.normalized_name).to_dict()
     
-    for prodi_item in full_prodi_database:
-        try:
-            jenjang = prodi_item[2]
-            # prodi_wilayah_id = prodi_item[3]
+    for item in full_prodi_database:
+        try: 
+            parent_institution_name = html.unescape(item[0])
+            all_prodi.append({
+                'parent_institution_name': parent_institution_name,
+                'prodi_name': item[1],
+                'jenjang': item[2],
+                'wilayah': item[3],
+                'no_sk': item[4],
+                'tahun_sk': item[5],
+                'akreditasi_prodi': item[6],
+                'tanggal_kadaluarsa': item[7]
 
-            # # 1. hanya proses prodi S1 dari Wilayah 07
-            # if not (jenjang.strip().upper() == 'S1' and prodi_wilayah_id == '07'):
-            #     continue
-
-            parent_institution_name = prodi_item[0]
-            prodi_name = prodi_item[1]
-            akreditasi_prodi = prodi_item[6]
-            
-
-            normalized_parent_name = normalize_name(parent_institution_name)
-            institution_code = institution_map.get(normalized_parent_name)
-        
-            all_prodi_debug_report.append({
-                'institution_name': normalized_parent_name,
-                'prodi_name': prodi_name,
-                'jenjang': jenjang,
-                'akreditasi_prodi': akreditasi_prodi,
-                'status_pencocokan': 'Berhasil' if institution_code else 'Gagal Cocok'
-            })
-
-            all_prodi_accepted.append({
-                    'prodi_name': prodi_name,
-                    'jenjang': jenjang,
-                    'akreditasi_prodi': akreditasi_prodi,
-                    'institution_code': institution_code if institution_code is not None else (f'banpt-{normalized_parent_name}')
                 })
             
         except IndexError:
             continue
 
-    df_prodi_accepted = pd.DataFrame(all_prodi_accepted) # DF prodi untuk yang cocok
-    
-    df_prodi_debug = pd.DataFrame(all_prodi_debug_report) # DF prodi debug untuk yang cocok dan tidak
-    return df_prodi_accepted, df_prodi_debug
+    df_prodi = pd.DataFrame(all_prodi) # DF prodi untuk yang cocok
+
+    return df_prodi
 
 if __name__ == "__main__":
+    base_folder = "./csv_result/"
     # Scraping data
     df_institutions_scrap = scrape_instansi(INSTITUTION_API_URL, HEADERS)
-    
     if df_institutions_scrap is not None:
-        df_prodi_scrap, df_prodi_debug_report = scrape_prodi(PRODI_API_URL, HEADERS, df_institutions_scrap)
-        
-        if df_prodi_scrap is not None:
-
-            # Preprocess dataframes
-            df_institutions_clean = preprocess_df(df_institutions_scrap, "Institusi")
-            df_prodi_clean = preprocess_df(df_prodi_scrap, "Prodi")
-            df_prodi_debug_clean = preprocess_df(df_prodi_debug_report, "Debug Prodi")
-
-            df_prodi_clean['institution_code'] = df_prodi_clean['institution_code']
-
-            base_folder = "./csv_result/"
-
-            inst_filename = base_folder + 'banpt_institution.csv'
-            prodi_filename = base_folder + 'banpt_prodi.csv'
-            debug_filename = base_folder + 'banpt_debug_prodi.csv'
-
-            df_institutions_clean.drop(columns=['normalized_name']).to_csv(inst_filename, index=False, encoding='utf-8-sig')
-            df_prodi_clean.to_csv(prodi_filename, index=False, encoding='utf-8-sig')
-            df_prodi_debug_clean.to_csv(debug_filename, index=False, encoding='utf-8-sig')
+        inst_filename = base_folder + 'banpt_institution.csv'
+        df_institutions_scrap.to_csv(inst_filename, index=False, encoding='utf-8-sig')
+    
+    df_prodi_scrap = scrape_prodi(PRODI_API_URL, HEADERS)
+    if df_prodi_scrap is not None:
+        prodi_filename = base_folder + 'banpt_prodi.csv'
+        df_prodi_scrap.to_csv(prodi_filename, index=False, encoding='utf-8-sig')
