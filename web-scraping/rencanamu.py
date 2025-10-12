@@ -581,7 +581,7 @@ class RencanamuScraper:
             
             for table in tables:
                 heading = table.find_previous(['h2', 'h3', 'h4', 'h5', 'div', 'p'])
-                fakultas_name = "Umum"
+                fakultas_name = "UNKNOWN"
                 
                 if heading:
                     heading_text = heading.get_text(strip=True)

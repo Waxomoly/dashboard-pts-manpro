@@ -132,7 +132,7 @@ print((df_institution[['institution_code', 'average_semester_fee', 'starting_sem
 # 2. UPPERCASE semua text di seluruh kolom object
 faculty_columns_to_uppercase = ['faculty']
 institution_columns_to_uppercase = ['institution_name', 'body_type', 'fee']
-prodi_columns_to_uppercase = ['faculty']
+prodi_columns_to_uppercase = ['faculty', 'prodi']
 df_faculty = apply_uppercase_vectorized(df_faculty, faculty_columns_to_uppercase)
 df_institution = apply_uppercase_vectorized(df_institution, institution_columns_to_uppercase)
 df_prodi = apply_uppercase_vectorized(df_prodi, prodi_columns_to_uppercase)
