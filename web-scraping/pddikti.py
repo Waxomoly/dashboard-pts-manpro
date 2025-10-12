@@ -85,6 +85,8 @@ for page_number in range(1, total_pages + 1):
             semua_data_lengkap.append(kampus_dasar)
             time.sleep(0.3) # Jeda kecil antar request detail
         
+        time.sleep(0.3)
+        
     except requests.exceptions.RequestException as e:
         print(f"Error pada halaman daftar {page_number}: {e}. Melanjutkan ke halaman berikutnya.")
         continue
