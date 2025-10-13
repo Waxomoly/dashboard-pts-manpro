@@ -42,7 +42,7 @@ def gabung_kontak(row):
 
 # --- 2. PROSES UTAMA ---
 try:
-    df = pd.read_csv('pddikti_nasional.csv', engine='python')
+    df = pd.read_csv('csv_result/pddikti_nasional.csv', engine='python')
     print("File 'pddikti_nasional.csv' berhasil dimuat.")
 except FileNotFoundError:
     print("Error: File 'pddikti_nasional.csv' tidak ditemukan.")
@@ -88,11 +88,11 @@ print("Kolom 'regency' telah digabungkan ke dalam 'address'.")
 # =========================================================================
 
 df.reset_index(drop=True, inplace=True)
-df['pddikti_institution_code'] = df.index + 1
+df['institution_code'] = 'pddikti-' + (df.index + 1).astype(str)
 
 # --- 3. FINALISASI STRUKTUR KOLOM ---
 kolom_final_yang_diinginkan = [
-    'pddikti_institution_code','institution_name','address','province','contact',
+    'institution_code','institution_name','address','province','contact',
     'average_semester_fee','starting_semester_fee','ending_semester_fee','average_yearly_fee','starting_yearly_fee','ending_yearly_fee',
     'body_type','link','student_amount','lecturer_amount','description'
 ]
@@ -114,7 +114,7 @@ df_final[string_cols] = df_final[string_cols].fillna('-')
 for col in numeric_cols: df_final[col] = df_final[col].astype(int)
 
 # --- 4. SIMPAN HASIL ---
-nama_file_output = 'pddikti_nasional_clean.csv'
+nama_file_output = 'csv_result/pddikti_nasional_clean.csv'
 df_final.to_csv(nama_file_output, index=False, encoding='utf-8-sig')
 
 print(f"\nPreprocessing Selesai! File final '{nama_file_output}' telah dibuat.")
