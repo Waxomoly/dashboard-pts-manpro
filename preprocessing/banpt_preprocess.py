@@ -53,6 +53,7 @@ def preprocess_institutions(raw_file_path, clean_file_path):
     df_clean.drop_duplicates(subset=['institution_name', 'wilayah_lldikti'], inplace=True)
     print(f"Menghapus {initial_rows - len(df_clean)} baris duplikat.")
 
+    df_clean['institution_code'] = df_clean['institution_code'].str.lower()
     final_columns = [
         'institution_code', 'institution_name', 'akreditasi_institusi',
         'wilayah_lldikti', 'wilayah_kerja'
@@ -106,7 +107,7 @@ def preprocess_prodi(df_prodi_raw_path, df_institutions_clean, clean_file_path):
 
 
         normalized_for_code = unmatched_inst_names.str.upper().str.replace(r'\s+', ' ', regex=True)
-        placeholder = 'BANPT-' + normalized_for_code
+        placeholder = 'banpt-' + normalized_for_code
         
         df_prodi_filtered['institution_code'] = df_prodi_filtered['institution_code'].fillna(placeholder)
 
