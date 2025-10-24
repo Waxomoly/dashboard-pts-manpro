@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 import re
 import os
@@ -6,7 +7,6 @@ import os
 script_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(script_dir)
 BASE_PATH = os.path.join(parent_dir, "csv_result") + os.sep
-web_hierarchy = ['quipper', 'rencanamu', 'pddikti', 'banpt']
 
 df_institution_quipper = pd.read_csv(BASE_PATH + "quipper_institution_clean.csv")
 df_institution_rencanamu = pd.read_csv(BASE_PATH + "rencanamu_institutions_preprocessed.csv")
@@ -56,7 +56,40 @@ df_institution_pddikti['campus_accreditation'] = '-'
 
 # combine all into one big dataframe
 df_merged = pd.concat([df_institution_quipper, df_institution_rencanamu, df_institution_pddikti], ignore_index=True, sort=False)
-print(df_merged.columns)
+df_merged['quipper_code'] = '-'
+df_merged['pddikti_code'] = '-'
+df_merged['rencanamu_code'] = '-'
+df_merged['banpt_code'] = '-'
+source_prefix = df_merged['institution_code'].str.partition('-')[0].str.lower()
+
+
+df_merged['quipper_code'] = np.where(
+    source_prefix == 'quipper',                             # Condition: Is the prefix 'quipper'?
+    df_merged['institution_code'],                          # Value if True: Use the full institution_code
+    df_merged['quipper_code']                               # Value if False: Keep the existing value ('-')
+)
+
+df_merged['pddikti_code'] = np.where(
+    source_prefix == 'pddikti',
+    df_merged['institution_code'],
+    df_merged['pddikti_code']
+)
+
+df_merged['rencanamu_code'] = np.where(
+    source_prefix == 'rencanamu',
+    df_merged['institution_code'],
+    df_merged['rencanamu_code']
+)
+
+df_merged['banpt_code'] = np.where(
+    source_prefix == 'banpt',
+    df_merged['institution_code'],
+    df_merged['banpt_code']
+)
+
+
+
+print(df_merged['institution_code'].unique())
 
 
 # erase duplicate institution_name rows, keep one with biggest average_yearly_fee.
@@ -79,9 +112,31 @@ for idx, row in df_duplicates.iterrows():
             
             if col == 'institution_code':
                 print(val_new)
-                if (web_hierarchy.index(val_new.partition('-')[0].lower()) < web_hierarchy.index(val_existing.partition('-')[0].lower())):
+                val_new_web = val_new.partition('-')[0].lower()
+                val_existing_web = val_existing.partition('-')[0].lower()
+                web_col = '-'
+
+
+                if(val_new_web != val_existing_web):
+                    if val_new_web == "quipper":
+                        web_col = 'quipper_code'
+                    elif val_new_web == "rencanamu":
+                        web_col = 'rencanamu_code'
+                    elif val_new_web == "pddikti":
+                        web_col = 'pddikti_code'
+                    elif val_new_web == "banpt":
+                        web_col = 'banpt_code'
+                    else:
+                        print(f"Unknown source code prefix: {val_new_web}")
+
+
+
+                    try:
+                        df_merged.loc[df_merged['institution_name'] == institution_name, web_col] = val_new
+                    except KeyError as e:
+                        print(f"KeyError: {e} for column {web_col}")
                     # prefer the one with higher priority source
-                    df_merged.loc[df_merged['institution_name'] == institution_name, col] = val_new
+                    # df_merged.loc[df_merged['institution_name'] == institution_name, col] = val_new
                 
             if pd.isna(val_existing) or val_existing in ['-', -1, '']:
                 if not (pd.isna(val_new) or val_new in ['-', -1, '']):
