@@ -1,4 +1,5 @@
 import pandas as pd
+pd.set_option('future.no_silent_downcasting', True)
 import os
 import re
 
@@ -45,7 +46,7 @@ def preprocess_institutions(raw_file_path, clean_file_path):
     print(f"Ditemukan {len(df_clean)} institusi PTS di wilayah 1-16.")
 
     df_clean['wilayah_lldikti'] = df_clean['wilayah_num'].map(WILAYAH_TO_ROMAN)
-    df_clean['wilayah_kerja'] = df_clean['wilayah_lldikti'].map(ROMAN_TO_PROVINCE)
+    df_clean['province'] = df_clean['wilayah_lldikti'].map(ROMAN_TO_PROVINCE)
 
     df_clean = clean_dataframe_text(df_clean)
 
@@ -55,10 +56,25 @@ def preprocess_institutions(raw_file_path, clean_file_path):
 
     df_clean['institution_code'] = df_clean['institution_code'].str.lower()
     final_columns = [
-        'institution_code', 'institution_name', 'akreditasi_institusi',
-        'wilayah_lldikti', 'wilayah_kerja'
+        'institution_code', 'institution_name', 'akreditasi_institusi', 'address', 'regency', 'province', 'contact', 'average_semester_fee',
+        'starting_semester_fee', 'ending_semester_fee', 'average_yearly_fee', 'starting_yearly_fee', 'ending_yearly_fee', 'body_type', 'link', 'student_amount', 'lecturer_amount', 'description'
     ]
-    df_final = df_clean[final_columns]
+    for col in final_columns:
+        if col not in df_clean.columns:
+            df_clean[col] = pd.NA
+
+    df_final = df_clean[final_columns].copy()
+
+    num_cols = [
+        'average_semester_fee', 'starting_semester_fee', 'ending_semester_fee',
+        'average_yearly_fee', 'starting_yearly_fee', 'ending_yearly_fee',
+        'student_amount', 'lecturer_amount'
+    ]
+    
+    df_final.loc[:, num_cols] = df_final[num_cols].fillna(-1)
+
+    obj_cols = df_final.select_dtypes(include=['object']).columns
+    df_final.loc[:, obj_cols] = df_final[obj_cols].fillna('-')
 
     df_final.to_csv(clean_file_path, index=False, encoding='utf-8-sig')
     # print jumlah institusi
