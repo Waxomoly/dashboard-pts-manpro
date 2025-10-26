@@ -472,6 +472,24 @@ class DataPreprocessor:
                     )
             else:
                 self.log_info("  ✓ Tidak ada missing data!")
+
+    def step13_remove_empty_rows(self):
+        """STEP 13: Hapus baris kosong di kedua tabel"""
+        self.log_info("\n" + "="*60)
+        self.log_info("STEP 13: HAPUS BARIS KOSONG")
+        self.log_info("="*60)
+        
+        # Hapus baris kosong di df_institution
+        condition_to_drop = self.df_institution['institution_name'] == '-'
+        self.df_institution = self.df_institution[~condition_to_drop]
+        removed_inst = condition_to_drop.sum()
+        self.log_info(f"✓ Baris kosong di tabel INSTITUSI dihapus: {removed_inst} rows")
+        
+        # Hapus baris kosong di df_prodi
+        condition_to_drop = self.df_prodi['prodi'] == '-'
+        self.df_prodi = self.df_prodi[~condition_to_drop]
+        removed_prodi = condition_to_drop.sum()
+        self.log_info(f"✓ Baris kosong di tabel PRODI dihapus: {removed_prodi} rows")
     
     def save_processed_data(self, output_dir=None):
         """Simpan data yang sudah diproses"""
@@ -529,6 +547,7 @@ class DataPreprocessor:
         self.step9_add_institution_code()
         self.step11_separate_prodi()
         self.step12_check_null_values()
+        self.step13_remove_empty_rows()
         
         institution_file, prodi_file = self.save_processed_data()
         
