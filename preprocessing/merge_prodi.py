@@ -5,8 +5,15 @@ import re
 WORDS_TO_REMOVE = [
     'TEKNIK', 'PENDIDIKAN', 'KEGURUAN', 'ILMU', 'SAINS', 'MANAJEMEN', 
     'BISNIS', 'EKONOMI', 'SOSIAL', 'POLITIK', 'HUKUM', 'ADMINISTRASI',
-    'SENI', 'SASTRA', 'TERAPAN', 'AGAMA'
+    'SENI', 'SASTRA', 'TERAPAN', 'AGAMA',
+
+    
 ]
+
+WORDS_TO_CHANGE = {
+    'FOOD TECHNOLOGY': 'TEKNOLOGI PANGAN',
+    
+}
 
 
 def normalize_prodi_name(series):
