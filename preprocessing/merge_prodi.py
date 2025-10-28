@@ -1,19 +1,16 @@
 import pandas as pd
 import os
 import re
+from googletrans import Translator, constants
+from tqdm import tqdm
+translator = Translator()
 
 WORDS_TO_REMOVE = [
     'TEKNIK', 'PENDIDIKAN', 'KEGURUAN', 'ILMU', 'SAINS', 'MANAJEMEN', 
     'BISNIS', 'EKONOMI', 'SOSIAL', 'POLITIK', 'HUKUM', 'ADMINISTRASI',
-    'SENI', 'SASTRA', 'TERAPAN', 'AGAMA',
-
-    
+    'SENI', 'SASTRA', 'TERAPAN', 'AGAMA'
 ]
 
-WORDS_TO_CHANGE = {
-    'FOOD TECHNOLOGY': 'TEKNOLOGI PANGAN',
-    
-}
 # Prioritas Sumber: Quipper (0) > Rencanamu (1) > BAN-PT (2)
 SOURCE_PRIORITY = {'quipper': 0, 'rencanamu': 1, 'banpt': 2}
 
@@ -94,6 +91,40 @@ except FileNotFoundError as e:
     print(f"Error: File tidak ditemukan: {e.filename}")
     exit()
 
+# translate all prodi to indonesian
+unique_prodi_series = pd.concat([
+    df_prodi_quipper['prodi'], 
+    df_prodi_rencanamu['prodi'], 
+    df_prodi_banpt['prodi_name']
+]).dropna().astype(str).drop_duplicates()
+
+print(f"Total unique prodi names to translate: {len(unique_prodi_series)}")
+
+tqdm.pandas(desc="Translating Program Names")
+detected_langs_series = unique_prodi_series.progress_apply(lambda x: translator.translate(x, dest='id').text)
+print("Translation completed.")
+
+debug_df = pd.DataFrame({
+    'prodi_name': unique_prodi_series,  # Use the original list of unique names
+    'indonesian_name': detected_langs_series.values, # Use the detection results
+})
+print(debug_df)
+
+mapping_series = debug_df.set_index('prodi_name')['indonesian_name']
+
+# df_prodi_quipper['prodi_slug'] = df_prodi_quipper['prodi'].map(mapping_series)
+print("Mapping prodi names to Indonesian...")
+print("Mapping quipper prodi names...")
+df_prodi_quipper['prodi'] = df_prodi_quipper['prodi'].map(mapping_series)
+print("Mapping rencanamu prodi names...")
+df_prodi_rencanamu['prodi'] = df_prodi_rencanamu['prodi'].map(mapping_series)
+print("Mapping banpt prodi names...")
+df_prodi_banpt['prodi_name'] = df_prodi_banpt['prodi_name'].map(mapping_series)
+
+# df_prodi_quipper['prodi'] = df_prodi_quipper['prodi'].apply(lambda x: translator.translate(x, dest='id').text)
+# df_prodi_rencanamu['prodi'] = df_prodi_rencanamu['prodi'].apply(lambda x: translator.translate(x, dest='id').text)
+# df_prodi_banpt['prodi'] = df_prodi_banpt['prodi'].apply(lambda x: translator.translate(x, dest='id').text)
+
 map_rencanamu_code_to_name = pd.Series(df_inst_rencanamu.institution_name.values, index=df_inst_rencanamu.institution_code).to_dict()
 map_quipper_code_to_name = pd.Series(df_inst_quipper.institution_name.values, index=df_inst_quipper.institution_code).to_dict()
 map_banpt_code_to_name = pd.Series(df_inst_banpt.institution_name.values, index=df_inst_banpt.institution_code).to_dict()
@@ -105,7 +136,7 @@ required_cols = ['institution_name', 'prodi_name', 'edu_level', 'accreditation',
 # A. Proses RENCANAMU
 df_prodi_rencanamu['institution_name'] = df_prodi_rencanamu['institution_code'].map(map_rencanamu_code_to_name)
 df_prodi_rencanamu.rename(columns={'prodi': 'prodi_name', 'akreditasi_prodi': 'accreditation'}, inplace=True)
-df_prodi_rencanamu['faculty'] = df_prodi_rencanamu['faculty'].replace('UMUM', 'UNKNOWN').fillna('UNKNOWN')
+df_prodi_rencanamu['faculty'] = df_prodi_rencanamu['faculty'].replace('UMUM', '-').fillna('-')
 df_prodi_rencanamu['edu_level'] = 'S1'
 df_prodi_rencanamu['source'] = 'rencanamu'
 df_prodi_rencanamu['rencanamu_code'] = df_prodi_rencanamu['institution_code'] 
@@ -114,17 +145,17 @@ processed_rencanamu = df_prodi_rencanamu.drop(columns=['institution_code'], erro
 # B. Proses QUIPPER
 df_prodi_quipper['institution_name'] = df_prodi_quipper['institution_code'].map(map_quipper_code_to_name)
 df_prodi_quipper.rename(columns={'prodi': 'prodi_name'}, inplace=True)
-df_prodi_quipper['accreditation'] = 'UNKNOWN' 
+df_prodi_quipper['accreditation'] = '-' 
 df_prodi_quipper['edu_level'] = 'S1'
 df_prodi_quipper['source'] = 'quipper'
-df_prodi_quipper['faculty'] = df_prodi_quipper['faculty'].fillna('UNKNOWN')
+df_prodi_quipper['faculty'] = df_prodi_quipper['faculty'].fillna('-')
 df_prodi_quipper['quipper_code'] = df_prodi_quipper['institution_code'] 
 processed_quipper = df_prodi_quipper.drop(columns=['institution_code'], errors='ignore')
 
 # C. Proses BAN-PT
 df_prodi_banpt['institution_name'] = df_prodi_banpt['institution_code'].map(map_banpt_code_to_name)
 df_prodi_banpt.rename(columns={'jenjang': 'edu_level', 'akreditasi_prodi': 'accreditation'}, inplace=True)
-df_prodi_banpt['faculty'] = 'UNKNOWN'
+df_prodi_banpt['faculty'] = '-'
 df_prodi_banpt['source'] = 'banpt'
 df_prodi_banpt['banpt_code'] = df_prodi_banpt['institution_code']
 processed_banpt = df_prodi_banpt.drop(columns=['institution_code'], errors='ignore')
