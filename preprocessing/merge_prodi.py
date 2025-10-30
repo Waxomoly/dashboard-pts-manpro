@@ -98,7 +98,7 @@ required_cols = ['institution_name', 'prodi_name', 'edu_level', 'accreditation',
 # A. Proses RENCANAMU
 df_prodi_rencanamu['institution_name'] = df_prodi_rencanamu['institution_code'].map(map_rencanamu_code_to_name)
 df_prodi_rencanamu.rename(columns={'prodi': 'prodi_name', 'akreditasi_prodi': 'accreditation'}, inplace=True)
-df_prodi_rencanamu['faculty'] = df_prodi_rencanamu['faculty'].replace('UMUM', 'UNKNOWN').fillna('UNKNOWN')
+df_prodi_rencanamu['faculty'] = df_prodi_rencanamu['faculty'].replace('UMUM', '-').fillna('-')
 df_prodi_rencanamu['edu_level'] = 'S1'
 df_prodi_rencanamu['source'] = 'rencanamu'
 df_prodi_rencanamu['rencanamu_code'] = df_prodi_rencanamu['institution_code'] 
@@ -107,17 +107,17 @@ processed_rencanamu = df_prodi_rencanamu.drop(columns=['institution_code'], erro
 # B. Proses QUIPPER
 df_prodi_quipper['institution_name'] = df_prodi_quipper['institution_code'].map(map_quipper_code_to_name)
 df_prodi_quipper.rename(columns={'prodi': 'prodi_name'}, inplace=True)
-df_prodi_quipper['accreditation'] = 'UNKNOWN' 
+df_prodi_quipper['accreditation'] = '-' 
 df_prodi_quipper['edu_level'] = 'S1'
 df_prodi_quipper['source'] = 'quipper'
-df_prodi_quipper['faculty'] = df_prodi_quipper['faculty'].fillna('UNKNOWN')
-df_prodi_quipper['quipper_code'] = df_prodi_quipper['institution_code'] 
+df_prodi_quipper['faculty'] = df_prodi_quipper['faculty'].fillna('-')
+df_prodi_quipper['quipper_code'] = df_prodi_quipper['institution_code']
 processed_quipper = df_prodi_quipper.drop(columns=['institution_code'], errors='ignore')
 
 # C. Proses BAN-PT
 df_prodi_banpt['institution_name'] = df_prodi_banpt['institution_code'].map(map_banpt_code_to_name)
 df_prodi_banpt.rename(columns={'jenjang': 'edu_level', 'akreditasi_prodi': 'accreditation'}, inplace=True)
-df_prodi_banpt['faculty'] = 'UNKNOWN'
+df_prodi_banpt['faculty'] = '-'
 df_prodi_banpt['source'] = 'banpt'
 df_prodi_banpt['banpt_code'] = df_prodi_banpt['institution_code']
 processed_banpt = df_prodi_banpt.drop(columns=['institution_code'], errors='ignore')
@@ -171,6 +171,7 @@ final_columns = [
 ]
 
 df_final = df_final.reindex(columns=final_columns)
+df_final['prodi_name'] = normalize_prodi_name(df_final['prodi_name'])
 df_final.rename(columns={'prodi_name': 'prodi'}, inplace=True)
 output_path = BASE_PATH + "merged_prodi.csv"
 df_final.to_csv(output_path, index=False, encoding='utf-8-sig')
