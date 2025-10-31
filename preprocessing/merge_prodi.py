@@ -41,12 +41,18 @@ def aggregate_by_priority(series, priority_map):
     })
     
     if temp_df.empty:
-        return '-' # Kembalikan '-' jika tidak ada data
+        return '-'
     
     temp_df['priority'] = temp_df['source'].map(priority_map).fillna(99)
     temp_df.sort_values(by='priority', inplace=True)
     
-    return temp_df['value'].iloc[0]
+    # Ambil nilai pertama yang valid (bukan '-' dan bukan kosong)
+    valid_values = temp_df.loc[temp_df['value'].astype(str).str.strip() != '-', 'value']
+    if not valid_values.empty:
+        return valid_values.iloc[0]
+    
+    # Kalau semua '-', baru fallback ke '-'
+    return '-'
 
 try:
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -128,12 +134,29 @@ df_prodi_quipper['quipper_code'] = df_prodi_quipper['institution_code']
 processed_quipper = df_prodi_quipper.drop(columns=['institution_code'], errors='ignore')
 
 # C. Proses BAN-PT
+# df_prodi_banpt['institution_name'] = df_prodi_banpt['institution_code'].map(map_banpt_code_to_name)
+# df_prodi_banpt.rename(columns={'jenjang': 'edu_level', 'akreditasi_prodi': 'accreditation'}, inplace=True)
+# df_prodi_banpt['faculty'] = '-'
+# df_prodi_banpt['source'] = 'banpt'
+# df_prodi_banpt['banpt_code'] = df_prodi_banpt['institution_code']
+# processed_banpt = df_prodi_banpt.drop(columns=['institution_code'], errors='ignore')
+
 df_prodi_banpt['institution_name'] = df_prodi_banpt['institution_code'].map(map_banpt_code_to_name)
+# cari baris yang gagal di map
+failed_mask = df_prodi_banpt['institution_name'].isnull()
+# untuk yang gagal, ambil nama dari kode placeholder (misal: 'banpt-NAMA UNIV')
+if failed_mask.any():
+    print(f"Mengambil {failed_mask.sum()} nama institusi BAN-PT dari placeholder...")
+    # Ambil nama dari placeholder dengan menghapus 'banpt-'
+    placeholder_names = df_prodi_banpt.loc[failed_mask, 'institution_code'].str.replace('banpt-', '', n=1)
+    df_prodi_banpt['institution_name'] = df_prodi_banpt['institution_name'].fillna(placeholder_names)
+
 df_prodi_banpt.rename(columns={'jenjang': 'edu_level', 'akreditasi_prodi': 'accreditation'}, inplace=True)
 df_prodi_banpt['faculty'] = '-'
 df_prodi_banpt['source'] = 'banpt'
 df_prodi_banpt['banpt_code'] = df_prodi_banpt['institution_code']
 processed_banpt = df_prodi_banpt.drop(columns=['institution_code'], errors='ignore')
+
 
 for df in [processed_rencanamu, processed_quipper, processed_banpt]:
     for col in ['quipper_code', 'rencanamu_code', 'banpt_code', 'pddikti_code']:
