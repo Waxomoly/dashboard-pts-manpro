@@ -1,12 +1,15 @@
 import pandas as pd
 import os
 import re
+from googletrans import Translator, constants
+from tqdm import tqdm
+translator = Translator()
 
+# INI KATA-KATA UMUM YANG INGIN DIHAPUS DARI NAMA PRODI
 WORDS_TO_REMOVE = [
-    'TEKNIK', 'PENDIDIKAN', 'KEGURUAN', 'ILMU', 'SAINS', 'MANAJEMEN', 
-    'BISNIS', 'EKONOMI', 'SOSIAL', 'POLITIK', 'HUKUM', 'ADMINISTRASI',
-    'SENI', 'SASTRA', 'TERAPAN', 'AGAMA'
+    'TEKNIK', 'ILMU', 'DAN', 'PENDIDIKAN'
 ]
+
 # Prioritas Sumber: Quipper (0) > Rencanamu (1) > BAN-PT (2)
 SOURCE_PRIORITY = {'quipper': 0, 'rencanamu': 1, 'banpt': 2}
 
@@ -17,8 +20,8 @@ def normalize_prodi_name(series):
                     .str.replace(r'\s*\([^)]*\)', '', regex=True)
                     .str.upper().str.strip())
     
-    # 2. Hapus kata-kata "noise"
-    generic_words = [r'\bS1\b', r'\bSARJANA\b', r'\bPROGRAM STUDI\b', r'\bPRODI\b', r'\bJURUSAN\b']
+    # 2. Hapus kata-kata "noise" - INI BUAT HAPUS YG GELARAN, JURUSAN, PRODI, DLL
+    generic_words = [r'\bS1\b', r'\bSARJANA\b', r'\bPROGRAM STUDI\b', r'\bPRODI\b', r'\bJURUSAN\b', r'\bPROGRAM\b']
     for word in generic_words:
         cleaned = cleaned.str.replace(word, '', regex=True)
         
@@ -45,30 +48,6 @@ def aggregate_by_priority(series, priority_map):
     
     return temp_df['value'].iloc[0]
 
-def get_best_prodi_name(series):
-    """Mengambil prodi_name yang paling panjang (paling lengkap) dari prioritas terbaik."""
-    temp_df = pd.DataFrame({
-        'name': series.astype(str).dropna(),
-        'source': series.dropna().index.get_level_values('source')
-    })
-    
-    if temp_df.empty:
-        return '-'
-
-    # 1. Tambahkan kolom prioritas sumber
-    temp_df['priority'] = temp_df['source'].map(SOURCE_PRIORITY).fillna(99)
-    
-    # 2. Tambahkan kolom rank berdasarkan panjang nama
-    #    rank(ascending=False) memberi rank 1 pada nama terpanjang
-    temp_df['len_rank'] = temp_df['name'].str.len().rank(ascending=False) 
-    
-    # 3. Urutkan berdasarkan kedua kolom
-    #    Kita urutkan berdasarkan 'priority' (angka kecil lebih baik) lalu 'len_rank' (angka kecil/rank 1 lebih baik)
-    temp_df.sort_values(by=['priority', 'len_rank'], inplace=True) 
-    
-    return temp_df['name'].iloc[0]
-
-
 try:
     script_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(script_dir)
@@ -87,6 +66,40 @@ except FileNotFoundError as e:
     print(f"Error: File tidak ditemukan: {e.filename}")
     exit()
 
+# translate all prodi to indonesian
+unique_prodi_series = pd.concat([
+    df_prodi_quipper['prodi'], 
+    df_prodi_rencanamu['prodi'], 
+    df_prodi_banpt['prodi_name']
+]).dropna().astype(str).drop_duplicates()
+
+print(f"Total unique prodi names to translate: {len(unique_prodi_series)}")
+
+tqdm.pandas(desc="Translating Program Names")
+detected_langs_series = unique_prodi_series.progress_apply(lambda x: translator.translate(x, dest='id').text)
+print("Translation completed.")
+
+debug_df = pd.DataFrame({
+    'prodi_name': unique_prodi_series,  # Use the original list of unique names
+    'indonesian_name': detected_langs_series.values, # Use the detection results
+})
+print(debug_df)
+
+mapping_series = debug_df.set_index('prodi_name')['indonesian_name']
+
+# df_prodi_quipper['prodi_slug'] = df_prodi_quipper['prodi'].map(mapping_series)
+print("Mapping prodi names to Indonesian...")
+print("Mapping quipper prodi names...")
+df_prodi_quipper['prodi'] = df_prodi_quipper['prodi'].map(mapping_series)
+print("Mapping rencanamu prodi names...")
+df_prodi_rencanamu['prodi'] = df_prodi_rencanamu['prodi'].map(mapping_series)
+print("Mapping banpt prodi names...")
+df_prodi_banpt['prodi_name'] = df_prodi_banpt['prodi_name'].map(mapping_series)
+
+# df_prodi_quipper['prodi'] = df_prodi_quipper['prodi'].apply(lambda x: translator.translate(x, dest='id').text)
+# df_prodi_rencanamu['prodi'] = df_prodi_rencanamu['prodi'].apply(lambda x: translator.translate(x, dest='id').text)
+# df_prodi_banpt['prodi'] = df_prodi_banpt['prodi'].apply(lambda x: translator.translate(x, dest='id').text)
+
 map_rencanamu_code_to_name = pd.Series(df_inst_rencanamu.institution_name.values, index=df_inst_rencanamu.institution_code).to_dict()
 map_quipper_code_to_name = pd.Series(df_inst_quipper.institution_name.values, index=df_inst_quipper.institution_code).to_dict()
 map_banpt_code_to_name = pd.Series(df_inst_banpt.institution_name.values, index=df_inst_banpt.institution_code).to_dict()
@@ -98,7 +111,7 @@ required_cols = ['institution_name', 'prodi_name', 'edu_level', 'accreditation',
 # A. Proses RENCANAMU
 df_prodi_rencanamu['institution_name'] = df_prodi_rencanamu['institution_code'].map(map_rencanamu_code_to_name)
 df_prodi_rencanamu.rename(columns={'prodi': 'prodi_name', 'akreditasi_prodi': 'accreditation'}, inplace=True)
-df_prodi_rencanamu['faculty'] = df_prodi_rencanamu['faculty'].replace('UMUM', '-').fillna('-')
+df_prodi_rencanamu['faculty'] = df_prodi_rencanamu['faculty'].replace('UNKNOWN', '-').fillna('-')
 df_prodi_rencanamu['edu_level'] = 'S1'
 df_prodi_rencanamu['source'] = 'rencanamu'
 df_prodi_rencanamu['rencanamu_code'] = df_prodi_rencanamu['institution_code'] 
@@ -111,7 +124,7 @@ df_prodi_quipper['accreditation'] = '-'
 df_prodi_quipper['edu_level'] = 'S1'
 df_prodi_quipper['source'] = 'quipper'
 df_prodi_quipper['faculty'] = df_prodi_quipper['faculty'].fillna('-')
-df_prodi_quipper['quipper_code'] = df_prodi_quipper['institution_code']
+df_prodi_quipper['quipper_code'] = df_prodi_quipper['institution_code'] 
 processed_quipper = df_prodi_quipper.drop(columns=['institution_code'], errors='ignore')
 
 # C. Proses BAN-PT
@@ -141,7 +154,7 @@ agg_funcs = {
     'rencanamu_code': lambda x: x[x != '-'].iloc[0] if (x != '-').any() else '-',
     'banpt_code': lambda x: x[x != '-'].iloc[0] if (x != '-').any() else '-',
     'pddikti_code': 'first', 
-    'prodi_name': get_best_prodi_name,
+    'prodi_name': 'first',
     'accreditation': lambda x: aggregate_by_priority(x.str.upper().str.strip().replace('', '-'), SOURCE_PRIORITY),
     'faculty': lambda x: aggregate_by_priority(x, SOURCE_PRIORITY),
     'edu_level': 'first', 
@@ -165,13 +178,12 @@ final_columns = [
     'banpt_code', 
     'pddikti_code', 
     'faculty',
-    'prodi_name', 
+    'prodi_name_normalized', 
     'edu_level', 
     'accreditation', 
 ]
 
 df_final = df_final.reindex(columns=final_columns)
-df_final['prodi_name'] = normalize_prodi_name(df_final['prodi_name'])
-df_final.rename(columns={'prodi_name': 'prodi'}, inplace=True)
+df_final.rename(columns={'prodi_name_normalized': 'prodi'}, inplace=True)
 output_path = BASE_PATH + "merged_prodi.csv"
 df_final.to_csv(output_path, index=False, encoding='utf-8-sig')

@@ -47,7 +47,7 @@ df = pd.DataFrame(data, columns=["primary_key", "institution_name", "rank"])
 print(df)
 
 # Simpan ke CSV
-df.to_csv("unirank_nasional.csv", index=False, encoding="utf-8-sig")
+df.to_csv("unirank_nasional.csv", index=False, encoding="utf-8-sig", mode='w')
 print("✅ Data berhasil disimpan ke unirank_east_java.csv")
 
 # Tutup browser
