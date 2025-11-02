@@ -19,7 +19,8 @@ def normalize_prodi_name(series):
                     .str[0]
                     .str.replace(r'\s*\([^)]*\)', '', regex=True)
                     .str.upper().str.strip())
-    
+    cleaned = cleaned.str.replace(r'[^\w\s]', ' ', regex=True)
+
     # 2. Hapus kata-kata "noise" - INI BUAT HAPUS YG GELARAN, JURUSAN, PRODI, DLL
     generic_words = [r'\bS1\b', r'\bSARJANA\b', r'\bPROGRAM STUDI\b', r'\bPRODI\b', r'\bJURUSAN\b', r'\bPROGRAM\b']
     for word in generic_words:
@@ -172,6 +173,17 @@ df_combined = pd.concat([
 df_combined['prodi_name_normalized'] = normalize_prodi_name(df_combined['prodi_name'])
 print(f"\nTotal baris setelah digabung: {len(df_combined)}")
 
+# Hapus prodi buat jenjang selain S1
+filter_pattern = r'\bD1\b|\bD2\b|\bD3\b|\bD4\b|PROFESI|MAGISTER|VOKASI|DIPLOMA'
+is_invalid_prodi = df_combined['prodi_name'].str.contains(
+    filter_pattern, 
+    case=False,  
+    na=False,   
+    regex=True 
+)
+df_combined = df_combined[~is_invalid_prodi].copy()
+print(f"Total baris setelah filter jenjang S1: {len(df_combined)}")
+
 agg_funcs = {
     'quipper_code': lambda x: x[x != '-'].iloc[0] if (x != '-').any() else '-',
     'rencanamu_code': lambda x: x[x != '-'].iloc[0] if (x != '-').any() else '-',
@@ -190,9 +202,7 @@ df_final = (
     .agg(agg_funcs)
 )
 
-# Kembalikan indeks ke kolom
 df_final = df_final.reset_index()
-
 print(f"Total baris setelah agregasi: {len(df_final)}")
 
 final_columns = [
