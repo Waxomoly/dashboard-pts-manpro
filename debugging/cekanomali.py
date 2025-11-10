@@ -14,6 +14,6 @@ df_res = df[(df[fee_columns].abs() > 999999999).any(axis=1) | (df[fee_columns] <
 # print(len(df_res))
 
 # df_res = df[df['province'].str.contains(',', na=False)]
-# print(len(df_res))
+print(len(df_res))
 
 df_res.to_csv('./debug_anomali_harga.csv', index=False, encoding='utf-8-sig')
