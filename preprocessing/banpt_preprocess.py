@@ -56,7 +56,7 @@ def preprocess_institutions(raw_file_path, clean_file_path):
 
     df_clean['institution_code'] = df_clean['institution_code'].str.lower()
     final_columns = [
-        'institution_code', 'institution_name', 'akreditasi_institusi', 'address', 'regency', 'province', 'contact', 'average_semester_fee',
+        'institution_code', 'institution_name', 'akreditasi_institusi', 'address', 'province', 'contact', 'average_semester_fee',
         'starting_semester_fee', 'ending_semester_fee', 'average_yearly_fee', 'starting_yearly_fee', 'ending_yearly_fee', 'body_type', 'link', 'student_amount', 'lecturer_amount', 'description'
     ]
     for col in final_columns:
