@@ -201,7 +201,7 @@ institutions_to_update = df_anomaly[df_anomaly['CHECKED'] == True]
 # update
 df_merged_indexed = df_merged.set_index('institution_name')
 institutions_indexed = institutions_to_update.set_index('institution_name')
-df_anomaly.to_csv('./debug_institutions_to_update.csv', index=True, encoding='utf-8-sig')
+# df_anomaly.to_csv('./debug_institutions_to_update.csv', index=True, encoding='utf-8-sig')
 # print(institutions_indexed)
 df_merged_indexed.update(institutions_indexed)
 df_merged = df_merged_indexed.reset_index()
@@ -218,6 +218,13 @@ irrelevant_keywords = [
 
 df_merged = df_merged[~df_merged['institution_name'].str.contains('|'.join(irrelevant_keywords), na=False)]
 print(f"Total institutions AFTER drop non-s1 institutions: {len(df_merged)}")
+
+
+# GIVE ALL INSTITUTIONS RANKING
+df_rank = pd.read_csv(os.path.join(BASE_PATH, "unirank_nasional_clean.csv"))
+df_merged = df_merged.merge(df_rank[['institution_name', 'rank']], on='institution_name', how='left')
+
+print(f"Rows lack unirank rank info: {len(df_merged[df_merged['rank'].isna()])}")
 
 
 # re-index institution_code
