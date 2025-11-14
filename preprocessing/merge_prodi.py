@@ -576,13 +576,16 @@ final_columns = [
     'banpt_code', 
     'pddikti_code', 
     'faculty',
-    'prodi',
+    'prodi_name',
     'prodi_name_normalized', 
     'edu_level', 
     'accreditation', 
 ]
 
 df_final = df_final.reindex(columns=final_columns)
-df_final.rename(columns={'prodi_name_normalized': 'prodi_normalized'}, inplace=True)
+df_final.rename(columns={
+    'prodi_name': 'prodi', 
+    'prodi_name_normalized': 'prodi_normalized'
+}, inplace=True)
 output_path = BASE_PATH + "merged_prodi.csv"
 df_final.to_csv(output_path, index=False, encoding='utf-8-sig')
