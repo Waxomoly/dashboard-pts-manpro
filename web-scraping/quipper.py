@@ -1,6 +1,7 @@
 import pandas as pd
 import time
 import json
+import os
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
@@ -13,6 +14,10 @@ from bs4 import BeautifulSoup
 
 
 # constants
+script_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(script_dir)
+BASE_PATH = os.path.join(parent_dir, "csv_result") + os.sep
+
 url = 'https://campus.quipper.com/directory?'
 debug = False
 debug_iteration = 2
@@ -271,7 +276,6 @@ df_faculty = pd.DataFrame(data_faculty, columns=['faculty', 'building_name', 'ad
 
 
 #    index=False prevents Pandas from writing the DataFrame index as a column
-base_folder = "./csv_result/"
-df_institution.to_csv(base_folder + 'quipper_institution.csv', index=False)
-df_prodi.to_csv(base_folder + 'quipper_prodi.csv', index=False)
-df_faculty.to_csv(base_folder + 'quipper_faculty.csv', index=False)
+df_institution.to_csv(os.path.join(BASE_PATH, 'quipper_institution.csv'), index=False)
+df_prodi.to_csv(os.path.join(BASE_PATH, 'quipper_prodi.csv'), index=False)
+df_faculty.to_csv(os.path.join(BASE_PATH, 'quipper_faculty.csv'), index=False)

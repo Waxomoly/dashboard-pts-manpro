@@ -2,6 +2,8 @@ import pandas as pd
 import re
 import os
 from datetime import datetime
+import helpers.csv_crud as csv_crud
+import tempfile
 
 class DataPreprocessor:
     def __init__(self, input_file):
@@ -58,7 +60,7 @@ class DataPreprocessor:
     def load_data(self):
         """Load CSV file"""
         try:
-            self.df = pd.read_csv(self.input_file, encoding='utf-8-sig')
+            self.df = csv_crud.read_csv_file(self.input_file)
             self.log_info(f"✓ Data loaded: {len(self.df)} rows, {len(self.df.columns)} columns")
             return True
         except Exception as e:
@@ -499,14 +501,14 @@ class DataPreprocessor:
             os.makedirs(output_dir, exist_ok=True)
         
         # Simpan tabel institusi
-        institution_file = os.path.join(output_dir, "rencanamu_institutions_preprocessed.csv")
-        self.df_institution.to_csv(institution_file, index=False, encoding='utf-8-sig')
+        institution_file = "rencanamu_institutions_preprocessed.csv"
+        csv_crud.save_csv_file(self.df_institution, institution_file)
         self.log_info(f"\n✓ Data institusi disimpan: {institution_file}")
         self.log_info(f"  Total rows: {len(self.df_institution)}")
         
         # Simpan tabel prodi
-        prodi_file = os.path.join(output_dir, "rencanamu_prodi_preprocessed.csv")
-        self.df_prodi.to_csv(prodi_file, index=False, encoding='utf-8-sig')
+        prodi_file = "rencanamu_prodi_preprocessed.csv"
+        csv_crud.save_csv_file(self.df_prodi, prodi_file)
         self.log_info(f"✓ Data prodi disimpan: {prodi_file}")
         self.log_info(f"  Total rows: {len(self.df_prodi)}")
         
@@ -560,8 +562,8 @@ class DataPreprocessor:
 
 
 if __name__ == "__main__":
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    input_file = os.path.join(base_dir, "csv_result", "rencanamu.csv")
+    # base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    input_file = os.path.join(tempfile.gettempdir(), "rencanamu.csv")
     
     if not os.path.exists(input_file):
         print(f"❌ File tidak ditemukan: {input_file}")
@@ -578,8 +580,8 @@ if __name__ == "__main__":
             print(f"✓ File institusi: {institution_file}")
             print(f"✓ File prodi: {prodi_file}")
             
-            df_inst = pd.read_csv(institution_file)
-            df_prodi = pd.read_csv(prodi_file)
+            df_inst = csv_crud.read_csv_file(institution_file)
+            df_prodi = csv_crud.read_csv_file(prodi_file)
             
             print(f"\nTABEL INSTITUSI:")
             print(f"  Total kampus: {len(df_inst)}")

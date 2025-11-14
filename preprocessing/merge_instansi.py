@@ -2,17 +2,16 @@ import numpy as np
 import pandas as pd
 import re
 import os
+import helpers.csv_crud as csv_crud
 from tqdm import tqdm
 
 # constants - perbaiki path
-script_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.dirname(script_dir)
-BASE_PATH = os.path.join(parent_dir, "csv_result") + os.sep
+# BASE_PATH = "/tmp"
 
-df_institution_quipper = pd.read_csv(BASE_PATH + "quipper_institution_clean.csv")
-df_institution_rencanamu = pd.read_csv(BASE_PATH + "rencanamu_institutions_preprocessed.csv")
-df_institution_pddikti = pd.read_csv(BASE_PATH +"pddikti_nasional_clean.csv")
-df_institution_banpt = pd.read_csv(BASE_PATH +"banpt_institution_clean.csv")
+df_institution_quipper = csv_crud.read_csv_file("quipper_institution_clean.csv")
+df_institution_rencanamu = csv_crud.read_csv_file("rencanamu_institutions_preprocessed.csv")
+df_institution_pddikti = csv_crud.read_csv_file("pddikti_nasional_clean.csv")
+df_institution_banpt = csv_crud.read_csv_file("banpt_institution_clean.csv")
 
 # 1. Convert columns to sets
 rencanamu_cols = set(df_institution_rencanamu.columns)
@@ -185,7 +184,7 @@ df_merged = df_merged[~((df_merged['campus_accreditation'].isin(['-', '', pd.NA]
 print(f"Removed {initial_len - len(df_merged)} rows lacking both accreditation and price info.")
 
 # UPDATE PRICE ANOMALIES FROM MANUAL CSV --------------------------------------------
-df_anomaly = pd.read_csv(os.path.join(parent_dir, "csv_manual", "normalisasi_harga_instansi.csv"))
+df_anomaly = pd.read_csv(os.path.join("csv_manual", "normalisasi_harga_instansi.csv"))
 df_anomaly.dropna(subset=['institution_code'], inplace=True)
 # change to numeric
 df_anomaly['starting_yearly_fee'] = pd.to_numeric(df_anomaly['starting_yearly_fee'], errors='coerce')
@@ -221,7 +220,7 @@ print(f"Total institutions AFTER drop non-s1 institutions: {len(df_merged)}")
 
 
 # GIVE ALL INSTITUTIONS RANKING
-df_rank = pd.read_csv(os.path.join(BASE_PATH, "unirank_nasional_clean.csv"))
+df_rank = csv_crud.read_csv_file("unirank_nasional_clean.csv")
 df_merged = df_merged.merge(df_rank[['institution_name', 'rank']], on='institution_name', how='left')
 
 print(f"Rows lack unirank rank info: {len(df_merged[df_merged['rank'].isna()])}")
@@ -235,6 +234,8 @@ df_merged['institution_code'] = (df_merged.index + 1)
 print(f"Total institutions after final cleaning: {len(df_merged)}")
 
 # save to csv
-output_path = BASE_PATH + "merged_institutions.csv"
-df_merged.to_csv(output_path, index=False, encoding='utf-8-sig')
-print(f"\nMerging Selesai! File final '{output_path}' telah dibuat.")
+# output_path = os.path.join(BASE_PATH, "merged_institutions.csv")
+# df_merged.to_csv(output_path, index=False, encoding='utf-8-sig')
+file_path = "merged_institutions.csv"
+csv_crud.save_csv_file(df_merged, file_path)
+print(f"\nMerging Selesai! File final '{file_path}' telah dibuat.")

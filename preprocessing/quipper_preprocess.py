@@ -1,8 +1,6 @@
 import pandas as pd
 import re
-
-# constants
-BASE_PATH = "csv_result/"
+import helpers.csv_crud as csv_crud
 
 # functions
 def apply_uppercase_vectorized(df, columns_list):
@@ -14,9 +12,9 @@ def apply_uppercase_vectorized(df, columns_list):
     return df
 
 # TREAT 'fee' FOR EACH DATAFRAME SEPARATELY FIRST (final product is 3 columns: average_semester_fee, starting_semester_fee, ending_semester_fee, average_yearly_fee, starting_yearly_fee, ending_yearly_fee)
-df_faculty = pd.read_csv(BASE_PATH + "quipper_faculty.csv")
-df_institution = pd.read_csv(BASE_PATH + "quipper_institution.csv")
-df_prodi = pd.read_csv(BASE_PATH +"quipper_prodi.csv")
+df_faculty = csv_crud.read_csv_file("quipper_faculty.csv")
+df_institution = csv_crud.read_csv_file("quipper_institution.csv")
+df_prodi = csv_crud.read_csv_file("quipper_prodi.csv")
 
 
 # uppercase fee
@@ -237,7 +235,7 @@ df_institution.loc[df_institution['institution_name'] == 'PRESIDENT UNIVERSITY',
 
 
 # 11. Simpan hasil bersih ke file baru
-df_faculty.to_csv(BASE_PATH + "quipper_faculty_clean.csv", index=False)
-df_institution.to_csv(BASE_PATH + "quipper_institution_clean.csv", index=False)
-df_prodi.to_csv(BASE_PATH + "quipper_prodi_clean.csv", index=False)
+csv_crud.save_csv_file(df_faculty, "quipper_faculty_clean.csv")
+csv_crud.save_csv_file(df_institution, "quipper_institution_clean.csv") 
+csv_crud.save_csv_file(df_prodi, "quipper_prodi_clean.csv")
 print("🎉 Preprocessing selesai!")

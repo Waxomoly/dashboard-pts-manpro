@@ -1,8 +1,9 @@
 import pandas as pd
+import helpers.csv_crud as csv_crud
 
-BASE_PATH = "csv_result/"
-df_prodi = pd.read_csv(BASE_PATH + "merged_prodi.csv")
-df_institution = pd.read_csv(BASE_PATH + "merged_institutions.csv")
+# BASE_PATH = "csv_result/"
+df_prodi = csv_crud.read_csv_file("merged_prodi.csv")
+df_institution = csv_crud.read_csv_file("merged_institutions.csv")
 
 df_quipper_map = df_institution[['quipper_code', 'institution_code']].copy()
 df_rencanamu_map = df_institution[['rencanamu_code', 'institution_code']].copy()
@@ -41,4 +42,6 @@ print(f"Jumlah prodi sebelum matching: {len(df_prodi)}")
 df_prodi = df_prodi[df_prodi['institution_code'] != -1]
 print(f"Jumlah prodi setelah matching: {len(df_prodi)}")
 
-df_prodi.to_csv(BASE_PATH + 'merged_prodi_final.csv', index=False, encoding='utf-8-sig')
+# df_prodi.to_csv(BASE_PATH + 'merged_prodi_final.csv', index=False, encoding='utf-8-sig')
+csv_crud.save_csv_file(df_prodi, 'merged_prodi_final.csv')
+print(f"\nFile final 'merged_prodi_final.csv' telah dibuat dengan institution_code yang sesuai.")

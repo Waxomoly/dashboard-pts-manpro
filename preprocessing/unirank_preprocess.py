@@ -1,11 +1,12 @@
 import pandas as pd
 import re
+import helpers.csv_crud as csv_crud
 
 # constants
-BASE_PATH = "csv_result/"
+# BASE_PATH = "csv_result/"
 
 # 1. Load data
-df = pd.read_csv(BASE_PATH + "unirank_nasional.csv")
+df = csv_crud.read_csv_file("unirank_nasional.csv")
 
 # 2. UPPERCASE semua text di seluruh kolom object
 df = df.applymap(lambda x: x.upper() if isinstance(x, str) else x)
@@ -30,5 +31,6 @@ else:
     print("✅ Tidak ada kolom NULL")
 
 # 7. Simpan hasil bersih ke file baru
-df.to_csv(BASE_PATH +"unirank_nasional_clean.csv", index=False)
+# df.to_csv(BASE_PATH +"unirank_nasional_clean.csv", index=False)
+csv_crud.save_csv_file(df, "unirank_nasional_clean.csv")
 print("🎉 Preprocessing selesai! Data disimpan di unirank_nasional_clean.csv")

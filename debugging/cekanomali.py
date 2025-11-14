@@ -1,7 +1,8 @@
 import pandas as pd
+import os
 
-BASE_PATH = "csv_result/"
-df = pd.read_csv(BASE_PATH + "merged_institutions.csv")
+BASE_PATH = "/tmp"
+df = pd.read_csv(os.path.join(BASE_PATH, "merged_institutions.csv"))
 
 fee_columns = [
     'average_semester_fee', 'starting_semester_fee', 'ending_semester_fee',

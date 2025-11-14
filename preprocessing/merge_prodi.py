@@ -2,8 +2,10 @@ import pandas as pd
 import os
 import re
 from googletrans import Translator, constants
+import httpx
+translator = Translator(timeout=httpx.Timeout(30.0))
 from tqdm import tqdm
-translator = Translator()
+import helpers.csv_crud as csv_crud
 
 # INI KATA-KATA UMUM YANG INGIN DIHAPUS DARI NAMA PRODI
 WORDS_TO_REMOVE = [
@@ -55,20 +57,20 @@ def aggregate_by_priority(series, priority_map):
     # Kalau semua '-', baru fallback ke '-'
     return '-'
 
-try:
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    parent_dir = os.path.dirname(script_dir)
-    BASE_PATH = os.path.join(parent_dir, "csv_result") + os.sep
-except NameError:
-    BASE_PATH = "csv_result/"
+# try:
+#     script_dir = os.path.dirname(os.path.abspath(__file__))
+#     parent_dir = os.path.dirname(script_dir)
+#     BASE_PATH = os.path.join(parent_dir, "csv_result") + os.sep
+# except NameError:
+#     BASE_PATH = "csv_result/"
 
 try:
-    df_prodi_rencanamu = pd.read_csv(BASE_PATH + "rencanamu_prodi_preprocessed.csv")
-    df_prodi_quipper = pd.read_csv(BASE_PATH + "quipper_prodi_clean.csv")
-    df_prodi_banpt = pd.read_csv(BASE_PATH + "banpt_prodi_clean.csv")
-    df_inst_rencanamu = pd.read_csv(BASE_PATH + "rencanamu_institutions_preprocessed.csv")
-    df_inst_quipper = pd.read_csv(BASE_PATH + "quipper_institution_clean.csv")
-    df_inst_banpt = pd.read_csv(BASE_PATH + "banpt_institution_clean.csv")
+    df_prodi_rencanamu = csv_crud.read_csv_file("rencanamu_prodi_preprocessed.csv")
+    df_prodi_quipper = csv_crud.read_csv_file("quipper_prodi_clean.csv")
+    df_prodi_banpt = csv_crud.read_csv_file("banpt_prodi_clean.csv")
+    df_inst_rencanamu = csv_crud.read_csv_file("rencanamu_institutions_preprocessed.csv")
+    df_inst_quipper = csv_crud.read_csv_file("quipper_institution_clean.csv")
+    df_inst_banpt = csv_crud.read_csv_file("banpt_institution_clean.csv")
 except FileNotFoundError as e:
     print(f"Error: File tidak ditemukan: {e.filename}")
     exit()
@@ -218,5 +220,6 @@ final_columns = [
 
 df_final = df_final.reindex(columns=final_columns)
 df_final.rename(columns={'prodi_name_normalized': 'prodi'}, inplace=True)
-output_path = BASE_PATH + "merged_prodi.csv"
-df_final.to_csv(output_path, index=False, encoding='utf-8-sig')
+output_path = "merged_prodi.csv"
+csv_crud.save_csv_file(df_final, output_path)
+print(f"\nMerging Prodi Selesai! File final '{output_path}' telah dibuat.")

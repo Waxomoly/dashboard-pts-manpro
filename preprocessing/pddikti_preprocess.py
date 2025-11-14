@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import re
 import json
+import helpers.csv_crud as csv_crud
 
 # --- 1. FUNGSI-FUNGSI BANTU (Tidak ada perubahan) ---
 def bersihkan_teks(df):
@@ -42,7 +43,7 @@ def gabung_kontak(row):
 
 # --- 2. PROSES UTAMA ---
 try:
-    df = pd.read_csv('csv_result/pddikti_nasional.csv', engine='python')
+    df = csv_crud.read_csv_file('pddikti_nasional.csv')
     print("File 'pddikti_nasional.csv' berhasil dimuat.")
 except FileNotFoundError:
     print("Error: File 'pddikti_nasional.csv' tidak ditemukan.")
@@ -114,7 +115,7 @@ df_final[string_cols] = df_final[string_cols].fillna('-')
 for col in numeric_cols: df_final[col] = df_final[col].astype(int)
 
 # --- 4. SIMPAN HASIL ---
-nama_file_output = 'csv_result/pddikti_nasional_clean.csv'
-df_final.to_csv(nama_file_output, index=False, encoding='utf-8-sig')
+nama_file_output = 'pddikti_nasional_clean.csv'
+csv_crud.save_csv_file(df_final, nama_file_output)
 
 print(f"\nPreprocessing Selesai! File final '{nama_file_output}' telah dibuat.")

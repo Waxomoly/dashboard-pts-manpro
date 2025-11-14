@@ -3,3 +3,5 @@
 /*.csv
 /*.xlsx
 /*.xls
+*.env
+service_account_key.json

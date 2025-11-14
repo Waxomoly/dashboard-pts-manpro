@@ -2,6 +2,7 @@ import pandas as pd
 pd.set_option('future.no_silent_downcasting', True)
 import os
 import re
+import helpers.csv_crud as csv_crud
 
 WILAYAH_TO_ROMAN = {
     1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII',
@@ -36,7 +37,7 @@ def clean_dataframe_text(df):
 
 def preprocess_institutions(raw_file_path, clean_file_path):
     print("--PREPROCESS INSTITUSI--")
-    df = pd.read_csv(raw_file_path)
+    df = csv_crud.read_csv_file(raw_file_path)
 
     df['wilayah_num'] = pd.to_numeric(df['wilayah'], errors='coerce')
     df.dropna(subset=['wilayah_num'], inplace=True) # Buang baris yang wilayahnya tidak valid
@@ -76,13 +77,14 @@ def preprocess_institutions(raw_file_path, clean_file_path):
     obj_cols = df_final.select_dtypes(include=['object']).columns
     df_final.loc[:, obj_cols] = df_final[obj_cols].fillna('-')
 
-    df_final.to_csv(clean_file_path, index=False, encoding='utf-8-sig')
+    # df_final.to_csv(clean_file_path, index=False, encoding='utf-8-sig')
+    csv_crud.save_csv_file(df_final, clean_file_path)
     # print jumlah institusi
     print(f"Total institusi bersih: {len(df_final)}\n")
     return df_final
 
 def preprocess_prodi(df_prodi_raw_path, df_institutions_clean, clean_file_path):
-    df_prodi = pd.read_csv(df_prodi_raw_path)
+    df_prodi = csv_crud.read_csv_file(df_prodi_raw_path)
 
     # 1. ambil prodi berdasarkan atributnya sendiri (jenjang dan wilayah).
     df_prodi['wilayah_num'] = pd.to_numeric(df_prodi['wilayah'], errors='coerce')
@@ -139,21 +141,22 @@ def preprocess_prodi(df_prodi_raw_path, df_institutions_clean, clean_file_path):
     # 7. SIMPAN: Pilih kolom final dan simpan ke CSV.
     final_columns = ['prodi_name', 'jenjang', 'akreditasi_prodi', 'institution_code']
     df_final = df_prodi_filtered[final_columns]
-    df_final.to_csv(clean_file_path, index=False, encoding='utf-8-sig')
+    # df_final.to_csv(clean_file_path, index=False, encoding='utf-8-sig')
+    csv_crud.save_csv_file(df_final, clean_file_path)
     print(f"Total prodi bersih: {len(df_final)}\n")
     return df_final
 
 if __name__ == "__main__":
-    base_folder = "csv_result/"
+    # base_folder = "/temp/csv_result/"
     
-    raw_inst_file = os.path.join(base_folder, "banpt_institution.csv")
-    raw_prodi_file = os.path.join(base_folder, "banpt_prodi.csv")
+    raw_inst_file = "banpt_institution.csv"
+    raw_prodi_file = "banpt_prodi.csv"
 
-    clean_inst_file = os.path.join(base_folder, "banpt_institution_clean.csv")
-    clean_prodi_file = os.path.join(base_folder, "banpt_prodi_clean.csv")
+    clean_inst_file = "banpt_institution_clean.csv"
+    clean_prodi_file = "banpt_prodi_clean.csv"
     
-    if os.path.exists(raw_inst_file) and os.path.exists(raw_prodi_file):
-        df_clean_institutions = preprocess_institutions(raw_inst_file, clean_inst_file)
-        preprocess_prodi(raw_prodi_file, df_clean_institutions, clean_prodi_file)
-    else:
-        print(f"Error: Pastikan file '{raw_inst_file}' dan '{raw_prodi_file}' ada.")
+    # if os.path.exists(raw_inst_file) and os.path.exists(raw_prodi_file):
+    df_clean_institutions = preprocess_institutions(raw_inst_file, clean_inst_file)
+    preprocess_prodi(raw_prodi_file, df_clean_institutions, clean_prodi_file)
+    # else:
+    #     print(f"Error: Pastikan file '{raw_inst_file}' dan '{raw_prodi_file}' ada.")
