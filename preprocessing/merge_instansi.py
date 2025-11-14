@@ -199,11 +199,13 @@ df_anomaly['average_semester_fee'] = (df_anomaly['starting_semester_fee'] + df_a
 df_anomaly['average_yearly_fee'] = (df_anomaly['starting_yearly_fee'] + df_anomaly['ending_yearly_fee']) / 2
 institutions_to_update = df_anomaly[df_anomaly['CHECKED'] == True]
 # update
+columns_to_update = ['average_semester_fee','starting_semester_fee','ending_semester_fee','average_yearly_fee','starting_yearly_fee','ending_yearly_fee']
 df_merged_indexed = df_merged.set_index('institution_name')
 institutions_indexed = institutions_to_update.set_index('institution_name')
+institutions_filtered = institutions_indexed[columns_to_update]
 # df_anomaly.to_csv('./debug_institutions_to_update.csv', index=True, encoding='utf-8-sig')
 # print(institutions_indexed)
-df_merged_indexed.update(institutions_indexed)
+df_merged_indexed.update(institutions_filtered)
 df_merged = df_merged_indexed.reset_index()
 # drop prices that does not make sense
 df_merged = df_merged[~((df_merged['average_yearly_fee'] > 999999999) | (df_merged['average_yearly_fee'] < 100000))]
