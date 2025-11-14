@@ -554,7 +554,7 @@ agg_funcs = {
     'rencanamu_code': lambda x: x[x != '-'].iloc[0] if (x != '-').any() else '-',
     'banpt_code': lambda x: x[x != '-'].iloc[0] if (x != '-').any() else '-',
     'pddikti_code': 'first', 
-    'prodi_name': 'first',
+    'prodi_name': lambda x: aggregate_by_priority(x.astype(str).str.strip().replace('', '-'), SOURCE_PRIORITY),
     'accreditation': lambda x: aggregate_by_priority(x.str.upper().str.strip().replace('', '-'), SOURCE_PRIORITY),
     'faculty': lambda x: aggregate_by_priority(x, SOURCE_PRIORITY),
     'edu_level': 'first', 
@@ -576,12 +576,13 @@ final_columns = [
     'banpt_code', 
     'pddikti_code', 
     'faculty',
+    'prodi',
     'prodi_name_normalized', 
     'edu_level', 
     'accreditation', 
 ]
 
 df_final = df_final.reindex(columns=final_columns)
-df_final.rename(columns={'prodi_name_normalized': 'prodi'}, inplace=True)
+df_final.rename(columns={'prodi_name_normalized': 'prodi_normalized'}, inplace=True)
 output_path = BASE_PATH + "merged_prodi.csv"
 df_final.to_csv(output_path, index=False, encoding='utf-8-sig')
