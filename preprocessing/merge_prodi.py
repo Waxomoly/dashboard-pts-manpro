@@ -133,7 +133,7 @@ PRODI_MAPPING = {
     'BAHASA SASTRA INDONESIA': 'SASTRA INDONESIA',
     'BAHASA SASTRA INGGRIS': 'SASTRA INGGRIS',
     'AKUNTANSI DATA ANALISIS': 'AKUNTANSI',
-    'BISNIS MENEJEMEN': 'BISNIS',
+    'BISNIS MENEJEMEN': 'BISnis',
     'KIMIA FARMASI': 'FARMASI',
     'TEKNOLOGI MANUFAKTUR': 'MANUFAKTUR',
     'PEMERINTAHAN POLITIK': 'PEMERINTAHAN',
@@ -175,7 +175,7 @@ PRODI_MAPPING = {
     'MANAJEMEN PELABUHAN LOGISTIK MARITIM': 'LOGISTIK',
     'TEKNOLOGI REKAYASA OPERASI KAPAL': 'PERKAPALAN',
     'TEKNOLOGI REKAYASA PERMESINAN KAPAL': 'PERKAPALAN',
-    'ADMINISTRASI PERPAJAKAN': 'PAJAK',
+    'ADMINISTRASI PERPAJAKAN': 'PERPAJAKAN',
     'DESAIN ROBOTIKA INDUSTRI': 'ROBOTIKA',
     'MANAJEMEN PENGELOLAAN SUMBERDAYA PERAIRAN': 'BUDIDAYA PERAIRAN',
     'IF - P. K. SISTEM INFORMASI BISNIS': 'SISTEM INFORMASI',
@@ -303,9 +303,6 @@ PRODI_MAPPING = {
     'REKAYASA GEOLOGI': 'GEOLOGI',
     'PEMERINTAHAN POLITIK': 'POLITIK',
     
-
-    
-
 }
 
 # Prioritas Sumber: Quipper (0) > Rencanamu (1) > BAN-PT (2)
@@ -370,6 +367,8 @@ try:
     df_inst_rencanamu = pd.read_csv(BASE_PATH + "rencanamu_institutions_preprocessed.csv")
     df_inst_quipper = pd.read_csv(BASE_PATH + "quipper_institution_clean.csv")
     df_inst_banpt = pd.read_csv(BASE_PATH + "banpt_institution_clean.csv")
+    df_normalisasi_csv = pd.read_csv(BASE_PATH + "normalisasi_prodi.csv")
+
 except FileNotFoundError as e:
     print(f"Error: File tidak ditemukan: {e.filename}")
     exit()
@@ -412,6 +411,14 @@ map_rencanamu_code_to_name = pd.Series(df_inst_rencanamu.institution_name.values
 map_quipper_code_to_name = pd.Series(df_inst_quipper.institution_name.values, index=df_inst_quipper.institution_code).to_dict()
 map_banpt_code_to_name = pd.Series(df_inst_banpt.institution_name.values, index=df_inst_banpt.institution_code).to_dict()
 
+df_normalisasi_csv['normalisasi'] = df_normalisasi_csv['normalisasi'].astype(str)
+df_normalisasi_csv['normalisasi'] = df_normalisasi_csv['normalisasi'].replace('nan', '', regex=False).fillna('')
+df_norm_filtered = df_normalisasi_csv[df_normalisasi_csv['normalisasi'] != ''].copy()
+prodi_map_from_csv = pd.Series(
+    df_norm_filtered['normalisasi'].values, 
+    index=df_norm_filtered['prodi']
+).to_dict()
+
 
 required_cols = ['institution_name', 'prodi_name', 'edu_level', 'accreditation', 'faculty', 'source', 
                  'quipper_code', 'rencanamu_code', 'banpt_code', 'pddikti_code']
@@ -446,7 +453,7 @@ processed_quipper = df_prodi_quipper.drop(columns=['institution_code'], errors='
 df_prodi_banpt['institution_name'] = df_prodi_banpt['institution_code'].map(map_banpt_code_to_name)
 # cari baris yang gagal di map
 failed_mask = df_prodi_banpt['institution_name'].isnull()
-# untuk yang gagal, ambil nama dari kode placeholder (misal: 'banpt-NAMA UNIV')
+# untuk yang gagal, ambil nama dari kode placeholde
 if failed_mask.any():
     print(f"Mengambil {failed_mask.sum()} nama institusi BAN-PT dari placeholder...")
     # Ambil nama dari placeholder dengan menghapus 'banpt-'
@@ -472,7 +479,21 @@ df_combined = pd.concat([
 ], ignore_index=True)
 
 df_combined['prodi_name_normalized'] = normalize_prodi_name(df_combined['prodi_name'])
-print(f"\nTotal baris setelah digabung: {len(df_combined)}")
+
+
+
+print("Menerapkan normalisasi prodi dari file CSV...")
+df_combined['prodi_csv_norm'] = df_combined['prodi_name_normalized'].map(prodi_map_from_csv)
+cond_delete = (df_combined['prodi_csv_norm'] == '-')
+rows_to_delete = cond_delete.sum()
+if rows_to_delete > 0:
+    df_combined = df_combined[~cond_delete].copy()
+cond_update = df_combined['prodi_csv_norm'].notna()
+rows_to_update = cond_update.sum()
+if rows_to_update > 0:
+    df_combined.loc[cond_update, 'prodi_name_normalized'] = df_combined.loc[cond_update, 'prodi_csv_norm']
+df_combined = df_combined.drop(columns=['prodi_csv_norm'])
+
 
 # Hapus fakultas yang bukan S1
 filter_pattern_faculty = r'\bVOKASI\b|\bMAGISTER\b|\bPROFESI\b|\bDIPLOMA\b|\bD3\b|\bPASCASARJANA\b|\bDOKTOR\b|\bAKADEMI\b'
@@ -516,7 +537,7 @@ filter_pattern_prodi = (
     r'\bPGRA\b|\bMANAJEMEN KEUANGAN PERBANKAN SYARIAH\b|\bAKADEMI AWS\b|\bBIOPROSES\b|'
     r'\bMANAJEMEN SUPPLY CHAIN\b|\bKONSELING PASTORAL\b|\bNERS KEPERAWATAN\b|'
     r'\bGURU MADRASAN IBTIDAIYAH\b|\bFALAK\b|\bMANAJEMEN SYARIAH\b|\bSAINS PERKOPIAN\b|'
-    r'\bTEKNOLOGI BATIK\b|\bMEREK\b|\bPERISTIWA\b|\bKEUANGAN PERBANKAN SYARIAH\b'
+    r'\bTEKNOLOGI BATIK\b|\bMEREK\b|\bPERISTIWA\b|\bKEUANGAN PERBANKAN SYARIAH\b|\bKEPERCAYAAN TERHADAP TUHAN YANG MAHA ESA\b'
 )
 
 is_invalid_prodi = df_combined['prodi_name'].str.contains(
