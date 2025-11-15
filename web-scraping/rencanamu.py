@@ -658,7 +658,7 @@ class RencanamuScraper:
         
         return issues
     
-    def export_summary_report_single_file(self, csv_filename, output_filename='scraping_summary.txt'):
+    # def export_summary_report_single_file(self, csv_filename, output_filename='scraping_summary.txt'):
         """Generate laporan summary dari 1 file CSV gabungan"""
         try:
             df = pd.read_csv(csv_filename)
@@ -736,7 +736,7 @@ class RencanamuScraper:
         except Exception as e:
             print(f"Error generating summary: {e}")
     
-    def export_summary_report(self, output_filename='scraping_summary.txt'):
+    # def export_summary_report(self, output_filename='scraping_summary.txt'):
         """Generate laporan summary hasil scraping (legacy untuk 2 file)"""
         self.export_summary_report_single_file('rencanamu.csv', output_filename)
     
