@@ -5,13 +5,11 @@ from scipy.cluster.hierarchy import dendrogram, linkage, fcluster
 from sklearn.preprocessing import StandardScaler
 import os
 
+# ============================
+# 1. LOAD FILE CSV
+# ============================
 
-# 1. LOAD DATA DARI FOLDER csv_result/
-
-
-# Pilih salah satu file:
-csv_filename = "merged_institutions.csv"     
-
+csv_filename = "merged_institutions.csv"
 csv_path = os.path.join("..", "csv_result", csv_filename)
 
 if not os.path.exists(csv_path):
@@ -21,24 +19,34 @@ df = pd.read_csv(csv_path)
 print(f"Berhasil load file: {csv_filename}")
 print(df.head())
 
-# 2. PILIH KOLOM NUMERIK SAJA
+# ============================
+# 2. PILIH KOLOM NUMERIK
+# ============================
 
-numeric_df = df.select_dtypes(include=[np.number]).dropna()
+numeric_df = df.select_dtypes(include=[np.number])
+
+# Jika ada missing values → isi dengan median agar rapi
+numeric_df = numeric_df.fillna(numeric_df.median())
 
 if numeric_df.empty:
     raise ValueError("Tidak ada kolom numerik untuk clustering!")
 
-
-# 3. NORMALISASI
+# ============================
+# 3. NORMALISASI DATA
+# ============================
 
 scaler = StandardScaler()
 scaled_data = scaler.fit_transform(numeric_df)
 
+# ============================
 # 4. HIERARCHICAL CLUSTERING
+# ============================
 
 Z = linkage(scaled_data, method="ward")
 
-# 5. PLOT DENDROGRAM
+# ============================
+# 5. DENDROGRAM
+# ============================
 
 plt.figure(figsize=(12, 6))
 dendrogram(Z)
@@ -48,17 +56,35 @@ plt.ylabel("Distance")
 plt.tight_layout()
 plt.show()
 
-# 6. BENTUK CLUSTER (misal 4)
+# ============================
+# 6. BENTUK CLUSTER
+# ============================
 
 num_clusters = 4
 clusters = fcluster(Z, num_clusters, criterion='maxclust')
 
 df["cluster"] = clusters
 
-# 7. SIMPAN HASIL KE CSV
+# ============================
+# 7. RAPIKAN CSV
+# ============================
 
-output_file = f"hasil_clustering_{csv_filename}"
-df.to_csv(output_file, index=False)
+# Tentukan urutan kolom agar tidak acak-acakan
+ordered_columns = (
+    ["institution_name", "institution_code", "body_type", "link",
+     "province", "campus_accreditation", "banpt_code", "rank"]
+    + list(numeric_df.columns)  # kolom numerik
+    + ["cluster"]
+)
+
+# Hanya ambil kolom yang benar-benar ada
+ordered_columns = [c for c in ordered_columns if c in df.columns]
+
+df_clean = df[ordered_columns]
+
+# Simpan CSV rapi tanpa index
+output_file = f"hasil_clustering_rapi_{csv_filename}"
+df_clean.to_csv(output_file, index=False)
 
 print("Clustering selesai!")
-print(f"Hasil disimpan sebagai: {output_file}")
+print(f"Hasil CSV rapi disimpan sebagai: {output_file}")
