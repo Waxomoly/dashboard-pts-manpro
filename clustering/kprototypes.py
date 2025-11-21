@@ -20,15 +20,16 @@ df_full = pd.merge(df_prodi, df_institusi, on='institution_code', how='left')
 
 print(f"Data berhasil digabung. Total baris: {len(df_full)}")
 
-# Kolom numerik yang akan digunakan
+# Kolom numerik yang digunakan
 kolom_numerik = [
     'average_semester_fee', # Biaya semester rata-rata
     'student_amount',       # Jumlah mahasiswa di institusi
     'lecturer_amount'       # Jumlah dosen di institusi
 ]
 
-# Kolom kategorikal yang akan digunakan
+# Kolom kategorikal yang digunakan
 kolom_kategorikal = [
+    'institution_name',
     'faculty',              # Fakultas prodi
     'edu_level',            # Jenjang pendidikan (S1, D3, dll)
     'accreditation',        # Akreditasi prodi
@@ -125,8 +126,8 @@ for col in kolom_kategorikal:
     print(df_cluster.groupby('klaster')[col].describe())
 
 # Menyimpan Hasil 
-df_cluster.to_csv('hasil_clustering_prodi.csv', index=False)
-print(f"\nAnalisis selesai. Hasil lengkap disimpan di 'hasil_clustering_prodi.csv'")
+df_cluster.to_csv('hasil_clustering.csv', index=False)
+print(f"\nAnalisis selesai. Hasil di 'hasil_clustering.csv'")
 
 # Menampilkan 5 baris pertama dari hasil
 print("\nContoh 5 baris pertama dari hasil:")
