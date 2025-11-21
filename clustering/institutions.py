@@ -24,8 +24,6 @@ print(df.head())
 # ============================
 
 numeric_df = df.select_dtypes(include=[np.number])
-
-# Jika ada missing values → isi dengan median agar rapi
 numeric_df = numeric_df.fillna(numeric_df.median())
 
 if numeric_df.empty:
@@ -62,27 +60,38 @@ plt.show()
 
 num_clusters = 4
 clusters = fcluster(Z, num_clusters, criterion='maxclust')
-
 df["cluster"] = clusters
+
+# ============================
+# 6B. TAMBAHKAN NAMA CLUSTER
+# ============================
+
+cluster_names = {
+    1: "Perguruan Tinggi Murah di Kota Besar",
+    2: "Perguruan Tinggi Unggulan Akreditasi Tinggi",
+    3: "Perguruan Tinggi Menengah di Daerah",
+    4: "Perguruan Tinggi Premium & Prestisius"
+}
+
+df["cluster_name"] = df["cluster"].map(cluster_names)
 
 # ============================
 # 7. RAPIKAN CSV
 # ============================
 
-# Tentukan urutan kolom agar tidak acak-acakan
 ordered_columns = (
-    ["institution_name", "institution_code", "body_type", "link",
-     "province", "campus_accreditation", "banpt_code", "rank"]
-    + list(numeric_df.columns)  # kolom numerik
-    + ["cluster"]
+    ["cluster", "cluster_name", "institution_name", "institution_code", "body_type",
+     "link", "province", "campus_accreditation", "banpt_code", "rank"]
+    + list(numeric_df.columns)
 )
 
-# Hanya ambil kolom yang benar-benar ada
 ordered_columns = [c for c in ordered_columns if c in df.columns]
-
 df_clean = df[ordered_columns]
 
-# Simpan CSV rapi tanpa index
+# ============================
+# 8. SIMPAN CSV
+# ============================
+
 output_file = f"hasil_clustering_rapi_{csv_filename}"
 df_clean.to_csv(output_file, index=False)
 

@@ -19,7 +19,6 @@ df = pd.read_csv(csv_path)
 print(f"Berhasil load file: {csv_filename}")
 print(df.head())
 
-
 # ===========================
 # 2. PILIH KOLOM NUMERIK
 # ===========================
@@ -29,7 +28,6 @@ numeric_df = df.select_dtypes(include=[np.number]).dropna()
 if numeric_df.empty:
     raise ValueError("Tidak ada kolom numerik untuk clustering!")
 
-
 # ===========================
 # 3. NORMALISASI
 # ===========================
@@ -37,13 +35,11 @@ if numeric_df.empty:
 scaler = StandardScaler()
 scaled_data = scaler.fit_transform(numeric_df)
 
-
 # ===========================
 # 4. HIERARCHICAL CLUSTERING
 # ===========================
 
 Z = linkage(scaled_data, method="ward")
-
 
 # ===========================
 # 5. PLOT DENDROGRAM
@@ -57,7 +53,6 @@ plt.ylabel("Distance")
 plt.tight_layout()
 plt.show()
 
-
 # ===========================
 # 6. TENTUKAN CLUSTER
 # ===========================
@@ -66,19 +61,27 @@ num_clusters = 4
 clusters = fcluster(Z, num_clusters, criterion='maxclust')
 df["cluster"] = clusters
 
+# ===========================
+# 6B. TAMBAHKAN NAMA CLUSTER
+# ===========================
+
+cluster_names = {
+    1: "Prodi Unggulan & Kompetitif",
+    2: "Prodi Populer di Kampus Besar",
+    3: "Prodi Terjangkau & Aksesibel",
+    4: "Prodi Spesialis / Fokus Tertentu"
+}
+
+df["cluster_name"] = df["cluster"].map(cluster_names)
 
 # ===========================
 # 7. RAPIKAN OUTPUT CSV
 # ===========================
 
-# urutkan berdasarkan cluster
 df = df.sort_values("cluster")
-
-# bulatkan kolom numerik agar tidak banyak angka desimal
 df = df.round(2)
 
-# pindahkan kolom cluster ke depan
-cols = ["cluster"] + [c for c in df.columns if c != "cluster"]
+cols = ["cluster", "cluster_name"] + [c for c in df.columns if c not in ["cluster", "cluster_name"]]
 df = df[cols]
 
 # ===========================
