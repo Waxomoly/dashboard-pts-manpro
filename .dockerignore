@@ -1,0 +1,20 @@
+# Ignore Git history
+.git
+.gitignore
+
+# Ignore Python cache and environment
+__pycache__
+*.pyc
+.venv
+venv
+env
+
+# Dont upload these
+service_account_key.json
+.env
+
+# Ignore local output files
+*.csv
+!csv_manual/*.csv
+*.xlsx
+*.log
