@@ -16,5 +16,6 @@ service_account_key.json
 # Ignore local output files
 *.csv
 !csv_manual/*.csv
+debugging/
 *.xlsx
 *.log
