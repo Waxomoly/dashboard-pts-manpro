@@ -6,13 +6,20 @@ from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
+import helpers.csv_crud as csv_crud
 
 # URL target
 url = 'https://www.unirank.org/id/ranking/'
 
 # Setup Chrome
 options = Options()
-options.add_experimental_option("detach", True)  # biar Chrome nggak auto-close
+
+# FOR CLOUD RUN
+options.add_argument("--headless=new")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--window-size=1920,1080")
+
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
 
 # Buka halaman
@@ -47,7 +54,8 @@ df = pd.DataFrame(data, columns=["primary_key", "institution_name", "rank"])
 print(df)
 
 # Simpan ke CSV
-df.to_csv("unirank_nasional.csv", index=False, encoding="utf-8-sig", mode='w')
+# df.to_csv("unirank_nasional.csv", index=False, encoding="utf-8-sig", mode='w')
+csv_crud.save_csv_file(df, "unirank_nasional.csv")
 print("✅ Data berhasil disimpan ke unirank_east_java.csv")
 
 # Tutup browser

@@ -1,40 +1,48 @@
 import subprocess
 import sys
 import os
-from dotenv import load_dotenv
+import helpers.gcp_store as gcp_store
+import datetime
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 my_env = os.environ.copy()
-my_env["PYTHONIOENCODING"] = "utf-8"
+my_env["PYTHONIOENCODING"] = "utf-8" # supaya emoji gak error
 
-print("--- Main Job Started ---")
+
+start_time = datetime.datetime.now()
+
+print(f"--- Main Job Started [{start_time}] ---")
 
 # HARUS URUT ORDERNYA
 scripts_to_run = {
-    # 'web-scraping' : [
-    #     "quipper.py",
-    #     "rencanamu.py",
-    #     "pddikti.py",
-    #     "banpt.py",
-    #     "unirank.py"
-    # ],
-    # 'preprocessing' : [
-    #     'quipper_preprocess.py',
-    #     'rencanamu_preprocess.py',
-    #     "pddikti_preprocess.py",
-    #     "banpt_preprocess.py", 
-    #     "unirank_preprocess.py",
+    'web-scraping' : [
+        "quipper.py",
+        "rencanamu.py",
+        "pddikti.py",
+        "banpt.py",
+        "unirank.py"
+    ],
+    'preprocessing' : [
+        'quipper_preprocess.py',
+        'rencanamu_preprocess.py',
+        "pddikti_preprocess.py",
+        "banpt_preprocess.py", 
+        "unirank_preprocess.py",
 
-    #     "merge_instansi.py",
-    #     "merge_prodi.py",
-    #     "merge_institution_prodi.py"
-    # ],
-    'helpers' : [
-        'save_csv_to_storage.py'
+        "merge_instansi.py",
+        "merge_prodi.py",
+        "merge_institution_prodi.py"
     ]
     
 }
+
+
+# downloads csvs from GCS
+gcp_store.download_all_files()
+
+
 for folder, scripts in scripts_to_run.items():
     for script in scripts:
 
@@ -86,4 +94,10 @@ for folder, scripts in scripts_to_run.items():
             continue
             # sys.exit(1) 
 
-print("\n--- Main Job Finished All Tasks ---")
+
+# # uploads csvs to GCS
+gcp_store.upload_all_files()
+
+end_time = datetime.datetime.now()
+print(f"Time taken: {end_time - start_time}")
+print(f"--- Main Job Finished [{end_time}] ---")

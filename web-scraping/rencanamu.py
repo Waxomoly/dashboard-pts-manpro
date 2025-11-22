@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import time
 import csv
+import helpers.csv_crud as csv_crud
 import re
 from urllib.parse import urljoin
 import os
@@ -661,8 +662,8 @@ class RencanamuScraper:
     def export_summary_report_single_file(self, csv_filename, output_filename='scraping_summary.txt'):
         """Generate laporan summary dari 1 file CSV gabungan"""
         try:
-            df = pd.read_csv(csv_filename)
-            
+            # df = pd.read_csv(csv_filename)
+            df = csv_crud.read_csv_file(csv_filename)
             with open(output_filename, 'w', encoding='utf-8') as f:
                 f.write("="*60 + "\n")
                 f.write("LAPORAN HASIL SCRAPING RENCANAMU.ID\n")
@@ -743,10 +744,11 @@ class RencanamuScraper:
     def scrape_all(self, start_prov=1, end_prov=34):
         """Scraping semua data dan save ke SATU CSV gabungan"""
         
-        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        csv_dir = os.path.join(base_dir, "csv_result")
-        os.makedirs(csv_dir, exist_ok=True)
-        output_csv = os.path.join(csv_dir, "rencanamu.csv")
+        # base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        # csv_dir = os.path.join(base_dir, "csv_result")
+        # os.makedirs(csv_dir, exist_ok=True)
+        # output_csv = os.path.join(csv_dir, "rencanamu.csv")
+        output_csv = "rencanamu.csv"
         
         # Header CSV gabungan dengan kolom tambahan
         headers = [
@@ -861,7 +863,8 @@ class RencanamuScraper:
             all_rows.append(kampus_data)
         
         df = pd.DataFrame(all_rows)
-        df.to_csv(kampus_filename, index=False, encoding='utf-8-sig')
+        # df.to_csv(kampus_filename, index=False, encoding='utf-8-sig')
+        csv_crud.save_csv_file(df, kampus_filename)
         
         print(f"\n✓ Data tersimpan di: {kampus_filename}")
         print(f"  Total baris: {len(all_rows)}")
@@ -902,7 +905,8 @@ def scrape_multiple_kampus(kampus_list):
     
     if all_rows:
         df = pd.DataFrame(all_rows)
-        df.to_csv('all_kampus_prodi.csv', index=False, encoding='utf-8-sig')
+        # df.to_csv('all_kampus_prodi.csv', index=False, encoding='utf-8-sig')
+        csv_crud.save_csv_file(df, 'all_kampus_prodi.csv')
         
         total_kampus = df['nama_kampus'].nunique()
         total_prodi = len(df)

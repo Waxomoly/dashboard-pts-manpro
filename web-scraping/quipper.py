@@ -2,6 +2,8 @@ import pandas as pd
 import time
 import json
 import os
+import tempfile
+import helpers.csv_crud as csv_crud
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
@@ -14,9 +16,10 @@ from bs4 import BeautifulSoup
 
 
 # constants
-script_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.dirname(script_dir)
-BASE_PATH = os.path.join(parent_dir, "csv_result") + os.sep
+# script_dir = os.path.dirname(os.path.abspath(__file__))
+# parent_dir = os.path.dirname(script_dir)
+# BASE_PATH = os.path.join(parent_dir, "csv_result") + os.sep
+# BASE_PATH = tempfile.gettempdir()
 
 url = 'https://campus.quipper.com/directory?'
 debug = False
@@ -26,7 +29,13 @@ MAX_WAIT_TIME = 10  # seconds
 
 # Initialize Chrome driver instance
 options = Options()
-options.add_experimental_option("detach", True) # supaya g otomatis ketutup windownya
+
+# SETTINGS FOR CLOUD RUN
+options.add_argument("--headless=new")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--window-size=1920,1080")
+
 driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()), options=options)
 
 # Navigate to the url
@@ -173,8 +182,16 @@ print(links_list)
 # iterate through each link to get the data
 for idx,link in enumerate(links_list):
     
-    driver.get(link)
-    html_content = ''
+    try:
+        driver.get(link)
+        html_content = ''
+    except TimeoutException:
+        print(f"⚠️ Timeout loading {link}. Stopping page load and skipping...")
+        try:
+            # Tell Chrome to stop trying to load the rest of the page
+            driver.execute_script("window.stop();")
+        except Exception:
+            pass
 
     try:
         # Wait until a specific, critical element on the new page is visible.
@@ -276,6 +293,11 @@ df_faculty = pd.DataFrame(data_faculty, columns=['faculty', 'building_name', 'ad
 
 
 #    index=False prevents Pandas from writing the DataFrame index as a column
-df_institution.to_csv(os.path.join(BASE_PATH, 'quipper_institution.csv'), index=False)
-df_prodi.to_csv(os.path.join(BASE_PATH, 'quipper_prodi.csv'), index=False)
-df_faculty.to_csv(os.path.join(BASE_PATH, 'quipper_faculty.csv'), index=False)
+
+# df_institution.to_csv(os.path.join(BASE_PATH, 'quipper_institution.csv'), index=False)
+# df_prodi.to_csv(os.path.join(BASE_PATH, 'quipper_prodi.csv'), index=False)
+# df_faculty.to_csv(os.path.join(BASE_PATH, 'quipper_faculty.csv'), index=False)
+
+csv_crud.save_csv_file(df_institution, 'quipper_institution.csv')
+csv_crud.save_csv_file(df_prodi, 'quipper_prodi.csv')
+csv_crud.save_csv_file(df_faculty, 'quipper_faculty.csv')

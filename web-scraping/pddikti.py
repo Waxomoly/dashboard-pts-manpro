@@ -2,6 +2,7 @@ import requests
 import time
 import pandas as pd
 import os
+import helpers.csv_crud as csv_crud
 
 # --- 1. KONFIGURASI ---
 # URL API untuk daftar pencarian dan detail
@@ -127,7 +128,8 @@ if data_bersih_final:
     
     # Simpan ke file CSV di folder root proyek
     nama_file_output = 'pddikti_nasional.csv'
-    df.to_csv(nama_file_output, index=False, encoding='utf-8-sig')
+    # df.to_csv(nama_file_output, index=False, encoding='utf-8-sig')
+    csv_crud.save_csv_file(df, nama_file_output)
     
     print(f"Data berhasil disimpan di: {os.path.join(os.getcwd(), nama_file_output)}")
 else:

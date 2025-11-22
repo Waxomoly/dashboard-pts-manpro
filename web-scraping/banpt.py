@@ -6,6 +6,7 @@ import requests
 import pandas as pd
 import time
 import html
+import helpers.csv_crud as csv_crud
 
 
 # Konfigurasi
@@ -96,14 +97,16 @@ def scrape_prodi(api_url, headers):
     return df_prodi
 
 if __name__ == "__main__":
-    base_folder = "./csv_result/"
+    
     # Scraping data
     df_institutions_scrap = scrape_instansi(INSTITUTION_API_URL, HEADERS)
     if df_institutions_scrap is not None:
-        inst_filename = base_folder + 'banpt_institution.csv'
-        df_institutions_scrap.to_csv(inst_filename, index=False, encoding='utf-8-sig')
+        inst_filename = 'banpt_institution.csv'
+        # df_institutions_scrap.to_csv(inst_filename, index=False, encoding='utf-8-sig')
+        csv_crud.save_csv_file(df_institutions_scrap, inst_filename)
     
     df_prodi_scrap = scrape_prodi(PRODI_API_URL, HEADERS)
     if df_prodi_scrap is not None:
-        prodi_filename = base_folder + 'banpt_prodi.csv'
-        df_prodi_scrap.to_csv(prodi_filename, index=False, encoding='utf-8-sig')
+        prodi_filename = 'banpt_prodi.csv'
+        # df_prodi_scrap.to_csv(prodi_filename, index=False, encoding='utf-8-sig')
+        csv_crud.save_csv_file(df_prodi_scrap, prodi_filename)
