@@ -7,14 +7,15 @@ from sklearn.preprocessing import StandardScaler
 import warnings
 warnings.filterwarnings('ignore')
 
+# Setup path
 try:
     script_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(script_dir)
     BASE_PATH = os.path.join(parent_dir, "csv_result") + os.sep
-    OUTPUT_PATH = os.path.join(parent_dir, "csv_mary") + os.sep
+    OUTPUT_PATH = os.path.join(parent_dir, "csv_maryprodi") + os.sep
 except NameError:
     BASE_PATH = "csv_result/"
-    OUTPUT_PATH = "csv_mary/"
+    OUTPUT_PATH = "csv_maryprodi/"
 
 def kategori_akreditasi(akred):
     """Kategorikan akreditasi dengan detail lengkap"""
@@ -72,17 +73,14 @@ def kategori_lokasi(provinsi):
         return provinsi, 'Luar Jawa', 'Daerah'
 
 def buat_nama_cluster(data):
-    """Buat nama cluster - PAKSA deteksi Belum Terakreditasi"""
+    """Buat nama cluster berdasarkan karakteristik dominan"""
     avg_akred = data['skor_akreditasi'].mean()
     avg_biaya = data['biaya_tahunan'].mean()
     pct_kota_besar = (data['tipe_lokasi'] == 'Kota Besar').sum() / len(data) * 100
-    
-    has_belum = (data['skor_akreditasi'] == 0).any()
     pct_belum = (data['skor_akreditasi'] == 0).sum() / len(data) * 100
     
-    if has_belum and avg_akred < 0.3:
-        kualitas = 'Belum Terakreditasi'
-    elif pct_belum >= 40:  # Turunkan threshold dari 60% ke 40%
+    # Kualitas - prioritas ke yang paling dominan
+    if pct_belum >= 50:
         kualitas = 'Belum Terakreditasi'
     elif avg_akred >= 4.5:
         kualitas = 'Unggul'
@@ -114,25 +112,21 @@ def buat_nama_cluster(data):
         lokasi = 'Daerah'
     
     return f"{kualitas} - {harga} - {lokasi}"
-
-# MAIN 
 try:
     df_institutions = pd.read_csv(BASE_PATH + "merged_institutions.csv")
     df_prodi = pd.read_csv(BASE_PATH + "merged_prodi.csv")
     print(f"Loaded {len(df_institutions):,} kampus")
     print(f"Loaded {len(df_prodi):,} program studi")
 except FileNotFoundError as e:
-    print(f"Error: File tidak ditemukan - {e.filename}")
+    print(f"Error: {e}")
     exit(1)
 
-# Create mapping dict untuk institutions berdasarkan codes
 inst_map = {}
 for _, row in df_institutions.iterrows():
     for code_col in ['quipper_code', 'rencanamu_code', 'banpt_code', 'pddikti_code']:
         if code_col in row and row[code_col] != '-':
             inst_map[row[code_col]] = row
 
-# Merge prodi dengan institutions
 merged_data = []
 matched = 0
 no_match = 0
@@ -150,15 +144,20 @@ for _, prodi_row in df_prodi.iterrows():
         no_match += 1
         continue
     
+    # PRIORITAS: Akreditasi PRODI > Kampus
     prodi_akred = str(prodi_row['accreditation']).strip()
     kampus_akred = str(inst_row['campus_accreditation']).strip()
     
+    # Source tracking untuk debugging
     if prodi_akred not in ['-', '', 'nan', 'None']:
         final_akred = prodi_akred
+        akred_source = 'prodi'
     elif kampus_akred not in ['-', '', 'nan', 'None']:
         final_akred = kampus_akred
+        akred_source = 'kampus'
     else:
         final_akred = 'Belum Terakreditasi'
+        akred_source = 'none'
     
     merged_data.append({
         'kode_kampus': inst_row['institution_code'],
@@ -168,15 +167,16 @@ for _, prodi_row in df_prodi.iterrows():
         'prodi_normalized': prodi_row['prodi_normalized'],
         'fakultas': prodi_row['faculty'],
         'akreditasi': final_akred,
+        'akreditasi_prodi': prodi_akred,  # Track asli
+        'akreditasi_kampus': kampus_akred,  # Track asli
+        'akreditasi_source': akred_source,
         'biaya_tahunan': inst_row['average_yearly_fee']
     })
 
 df_merged = pd.DataFrame(merged_data)
 print(f"✓ Matched: {matched:,} prodi")
-print(f"✓ No match: {no_match:,} prodi (skipped)")
-print(f"✓ Final dataset: {len(df_merged):,} kombinasi kampus-prodi")
+print(f"✓ No match: {no_match:,} prodi")
 
-# 3. CLEAN & PROCESS DATA
 initial_len = len(df_merged)
 df_merged = df_merged.dropna(subset=['biaya_tahunan'])
 df_merged = df_merged[df_merged['biaya_tahunan'] > 100000]
@@ -196,6 +196,11 @@ akred_info = df_merged['akreditasi'].apply(kategori_akreditasi)
 df_merged['kategori_akreditasi'] = akred_info.apply(lambda x: x[0])
 df_merged['skor_akreditasi'] = akred_info.apply(lambda x: x[1])
 
+# STATISTIK SUMBER AKREDITASI\
+akred_sources = df_merged['akreditasi_source'].value_counts()
+for source, count in akred_sources.items():
+    pct = count/len(df_merged)*100
+    
 terakreditasi = len(df_merged[df_merged['skor_akreditasi'] > 0])
 belum = len(df_merged[df_merged['skor_akreditasi'] == 0])
 
@@ -214,11 +219,12 @@ df_merged['bobot_lokasi'] = df_merged['tipe_lokasi'].map({
     'Daerah': 0.0
 })
 
-# CLUSTERING
+# CLUSTERING - PISAHKAN BERDASARKAN AKREDITASI
+
 df_belum = df_merged[df_merged['skor_akreditasi'] == 0].copy()
 df_terakreditasi = df_merged[df_merged['skor_akreditasi'] > 0].copy()
 
-# Clustering untuk TERAKREDITASI
+# Clustering TERAKREDITASI
 if len(df_terakreditasi) > 0:
     features = df_terakreditasi[['biaya_tahunan', 'skor_akreditasi', 'bobot_lokasi']].copy()
     scaler = StandardScaler()
@@ -227,79 +233,76 @@ if len(df_terakreditasi) > 0:
     dbscan = DBSCAN(eps=0.5, min_samples=30)
     df_terakreditasi['cluster'] = dbscan.fit_predict(features_scaled)
     
+    # Handle noise
     noise_count = (df_terakreditasi['cluster'] == -1).sum()
     if noise_count > 0:
+        print(f"   Reassigning {noise_count} noise points...")
         for idx in df_terakreditasi[df_terakreditasi['cluster'] == -1].index:
             biaya = df_terakreditasi.loc[idx, 'biaya_tahunan']
-            similar = df_terakreditasi[(df_terakreditasi['cluster'] != -1) & 
-                               (abs(df_terakreditasi['biaya_tahunan'] - biaya) < 5000000)]
+            similar = df_terakreditasi[
+                (df_terakreditasi['cluster'] != -1) & 
+                (abs(df_terakreditasi['biaya_tahunan'] - biaya) < 5000000)
+            ]
             if len(similar) > 0:
                 df_terakreditasi.loc[idx, 'cluster'] = similar['cluster'].mode()[0]
             else:
                 df_terakreditasi.loc[idx, 'cluster'] = 0
     
     max_cluster = df_terakreditasi['cluster'].max()
-    print(f"   ✓ Terakreditasi: {max_cluster + 1} clusters (ID 0-{max_cluster})")
 else:
     max_cluster = -1
 
+# Clustering BELUM TERAKREDITASI
 if len(df_belum) > 0:
-    # STRATEGY: Cluster berdasarkan harga + lokasi
+    print(f"\n   Processing {len(df_belum):,} belum terakreditasi...")
+    
     features_belum = df_belum[['biaya_tahunan', 'bobot_lokasi']].copy()
     
-    if len(df_belum) >= 20:  # Turunkan threshold
+    if len(df_belum) >= 20:
         scaler_belum = StandardScaler()
         features_belum_scaled = scaler_belum.fit_transform(features_belum)
         
-        # LOOSER clustering untuk belum terakreditasi
-        dbscan_belum = DBSCAN(eps=0.7, min_samples=5)  # eps lebih besar, min_samples kecil
+        dbscan_belum = DBSCAN(eps=0.7, min_samples=5)
         sub_clusters = dbscan_belum.fit_predict(features_belum_scaled)
         
-        # Offset cluster ID
         df_belum['cluster'] = max_cluster + 1 + sub_clusters
         
-        # Fix noise: assign ke cluster terdekat atau buat cluster baru
-        noise_belum = (df_belum['cluster'] < max_cluster + 1)
-        if noise_belum.sum() > 0:
-            df_belum.loc[noise_belum, 'cluster'] = max_cluster + 1
+        # Fix noise
+        noise_mask = df_belum['cluster'] < max_cluster + 1
+        if noise_mask.sum() > 0:
+            df_belum.loc[noise_mask, 'cluster'] = max_cluster + 1
         
-        n_belum_clusters = df_belum['cluster'].nunique()
+        print(f"   ✓ Belum terakreditasi: {df_belum['cluster'].nunique()} clusters")
     else:
-        # Terlalu sedikit: buat 1 cluster khusus
         df_belum['cluster'] = max_cluster + 1
-    
-    # VERIFY: Pastikan SEMUA belum terakreditasi punya cluster >= max_cluster+1
-    min_cluster_belum = df_belum['cluster'].min()
-    max_cluster_belum = df_belum['cluster'].max()
-    
-    if min_cluster_belum <= max_cluster:
-        df_belum['cluster'] = df_belum['cluster'] + (max_cluster + 1 - min_cluster_belum)
+        print(f"   ✓ Single cluster (small dataset)")
 
-# Gabung kembali
+# Merge back
 df_merged = pd.concat([df_terakreditasi, df_belum], ignore_index=True)
 
 n_clusters = df_merged['cluster'].nunique()
-
-# VERIFY FINAL
-belum_in_clusters = df_merged[df_merged['skor_akreditasi'] == 0]['cluster'].unique()
+belum_clusters = df_merged[df_merged['skor_akreditasi'] == 0]['cluster'].unique()
 
 cluster_profiles = {}
 for cluster_id in sorted(df_merged['cluster'].unique()):
     cluster_data = df_merged[df_merged['cluster'] == cluster_id]
     nama = buat_nama_cluster(cluster_data)
     
-    # COUNT belum terakreditasi di cluster ini
-    n_belum_in_cluster = (cluster_data['skor_akreditasi'] == 0).sum()
+    n_belum = (cluster_data['skor_akreditasi'] == 0).sum()
+    n_dari_prodi = (cluster_data['akreditasi_source'] == 'prodi').sum()
+    n_dari_kampus = (cluster_data['akreditasi_source'] == 'kampus').sum()
     
     cluster_profiles[cluster_id] = {
         'nama': nama,
         'jumlah': len(cluster_data),
-        'jumlah_belum_terakreditasi': n_belum_in_cluster,
+        'jumlah_belum': n_belum,
+        'akred_dari_prodi': n_dari_prodi,
+        'akred_dari_kampus': n_dari_kampus,
         'rata_biaya': int(cluster_data['biaya_tahunan'].mean()),
         'min_biaya': int(cluster_data['biaya_tahunan'].min()),
         'max_biaya': int(cluster_data['biaya_tahunan'].max())
     }
-    
+
 df_merged['nama_cluster'] = df_merged['cluster'].map(lambda x: cluster_profiles[x]['nama'])
 
 output_main = df_merged[[
@@ -307,13 +310,13 @@ output_main = df_merged[[
     'nama_kampus', 'kode_kampus',
     'nama_prodi', 'prodi_normalized', 'fakultas',
     'akreditasi', 'kategori_akreditasi', 'skor_akreditasi',
+    'akreditasi_prodi', 'akreditasi_kampus', 'akreditasi_source',
     'biaya_tahunan', 'kategori_harga',
     'provinsi_detail', 'wilayah', 'tipe_lokasi'
 ]].copy()
 
 output_main = output_main.sort_values(['cluster', 'biaya_tahunan'])
 output_main.to_csv(OUTPUT_PATH + 'hasil_clustering.csv', index=False, encoding='utf-8-sig')
-print(f"✓ File 1: hasil_clustering.csv ({len(output_main):,} baris)")
 
 summary_data = []
 for cid, info in cluster_profiles.items():
@@ -321,7 +324,9 @@ for cid, info in cluster_profiles.items():
         'cluster_id': cid,
         'nama_cluster': info['nama'],
         'jumlah_prodi': info['jumlah'],
-        'jumlah_belum_terakreditasi': info['jumlah_belum_terakreditasi'],
+        'jumlah_belum_terakreditasi': info['jumlah_belum'],
+        'akreditasi_dari_prodi': info['akred_dari_prodi'],
+        'akreditasi_dari_kampus': info['akred_dari_kampus'],
         'biaya_termurah': info['min_biaya'],
         'biaya_termahal': info['max_biaya'],
         'rata_rata_biaya': info['rata_biaya']
@@ -330,31 +335,22 @@ for cid, info in cluster_profiles.items():
 df_summary = pd.DataFrame(summary_data)
 df_summary.to_csv(OUTPUT_PATH + 'ringkasan_cluster.csv', index=False, encoding='utf-8-sig')
 
+# Filter Akreditasi PRODI
 from itertools import product
 all_akreditasi = ['Unggul', 'A', 'Baik Sekali', 'Baik', 'C', 'Belum Terakreditasi']
 all_wilayah = df_merged['wilayah'].unique().tolist()
 
-filter_akred = df_merged.groupby(['kategori_akreditasi', 'wilayah']).agg({
+filter_akred = df_merged.groupby(['kategori_akreditasi', 'wilayah', 'akreditasi_source']).agg({
     'nama_prodi': 'count',
     'nama_kampus': 'nunique',
     'biaya_tahunan': 'mean'
 }).reset_index()
-filter_akred.columns = ['akreditasi', 'wilayah', 'jumlah_prodi', 'jumlah_kampus', 'rata_biaya']
-
-all_combinations = pd.DataFrame(list(product(all_akreditasi, all_wilayah)), 
-                                columns=['akreditasi', 'wilayah'])
-filter_akred = all_combinations.merge(filter_akred, on=['akreditasi', 'wilayah'], how='left')
-filter_akred = filter_akred.fillna({'jumlah_prodi': 0, 'jumlah_kampus': 0, 'rata_biaya': 0})
-filter_akred['jumlah_prodi'] = filter_akred['jumlah_prodi'].astype(int)
-filter_akred['jumlah_kampus'] = filter_akred['jumlah_kampus'].astype(int)
-filter_akred = filter_akred.sort_values(['akreditasi', 'jumlah_prodi'], ascending=[True, False])
+filter_akred.columns = ['akreditasi', 'wilayah', 'source', 'jumlah_prodi', 'jumlah_kampus', 'rata_biaya']
 filter_akred.to_csv(OUTPUT_PATH + 'filter_akreditasi.csv', index=False, encoding='utf-8-sig')
 
-filter_harga = df_merged.groupby(['kategori_harga', 'tier_harga']).agg({
-    'nama_prodi': 'count'
-}).reset_index()
+# File lainnya (sama seperti sebelumnya)
+filter_harga = df_merged.groupby(['kategori_harga', 'tier_harga']).agg({'nama_prodi': 'count'}).reset_index()
 filter_harga.columns = ['kategori_harga', 'tier', 'jumlah_prodi']
-filter_harga = filter_harga.sort_values('tier')
 filter_harga.to_csv(OUTPUT_PATH + 'filter_harga.csv', index=False, encoding='utf-8-sig')
 
 filter_lokasi = df_merged.groupby(['wilayah', 'tipe_lokasi']).agg({
@@ -381,28 +377,14 @@ kampus_wilayah = df_merged.groupby(['wilayah', 'nama_kampus', 'kategori_akredita
     'provinsi_detail': 'first'
 }).reset_index()
 kampus_wilayah.columns = ['wilayah', 'nama_kampus', 'akreditasi', 'jumlah_prodi', 'biaya_tahunan', 'provinsi']
-kampus_wilayah = kampus_wilayah.sort_values(['wilayah', 'jumlah_prodi'], ascending=[True, False])
 kampus_wilayah.to_csv(OUTPUT_PATH + 'kampus_per_wilayah.csv', index=False, encoding='utf-8-sig')
 
 summary_dashboard = pd.DataFrame([{
     'total_kampus': df_merged['nama_kampus'].nunique(),
     'total_prodi': len(df_merged),
     'total_cluster': n_clusters,
-    'biaya_termurah': int(df_merged['biaya_tahunan'].min()),
-    'biaya_termahal': int(df_merged['biaya_tahunan'].max()),
-    'rata_biaya': int(df_merged['biaya_tahunan'].mean()),
-    'prodi_unggul': len(df_merged[df_merged['kategori_akreditasi'] == 'Unggul']),
-    'prodi_a': len(df_merged[df_merged['kategori_akreditasi'] == 'A']),
-    'prodi_baik_sekali': len(df_merged[df_merged['kategori_akreditasi'] == 'Baik Sekali']),
-    'prodi_baik': len(df_merged[df_merged['kategori_akreditasi'] == 'Baik']),
-    'prodi_c': len(df_merged[df_merged['kategori_akreditasi'] == 'C']),
+    'akreditasi_dari_prodi': (df_merged['akreditasi_source'] == 'prodi').sum(),
+    'akreditasi_dari_kampus': (df_merged['akreditasi_source'] == 'kampus').sum(),
     'prodi_belum_terakreditasi': len(df_merged[df_merged['kategori_akreditasi'] == 'Belum Terakreditasi']),
 }])
 summary_dashboard.to_csv(OUTPUT_PATH + 'summary_dashboard.csv', index=False, encoding='utf-8-sig')
-
-akred_order = ['Unggul', 'A', 'Baik Sekali', 'Baik', 'C', 'Belum Terakreditasi']
-for akred in akred_order:
-    count = len(df_merged[df_merged['kategori_akreditasi'] == akred])
-    pct = count/len(df_merged)*100 if len(df_merged) > 0 else 0
-    status = "✅" if akred != 'Belum Terakreditasi' else "🔴"
-    print(f"   {status} {akred}: {count} prodi ({pct:.1f}%)")

@@ -184,6 +184,51 @@ initial_len = len(df_merged)
 df_merged = df_merged[~((df_merged['campus_accreditation'].isin(['-', '', pd.NA])) | (df_merged['average_yearly_fee'] == -1))]
 print(f"Removed {initial_len - len(df_merged)} rows lacking both accreditation and price info.")
 
+# UPDATE PRICE ANOMALIES FROM MANUAL CSV --------------------------------------------
+df_anomaly = pd.read_csv(os.path.join(parent_dir, "csv_manual", "normalisasi_harga_instansi.csv"))
+df_anomaly.dropna(subset=['institution_code'], inplace=True)
+# change to numeric
+df_anomaly['starting_yearly_fee'] = pd.to_numeric(df_anomaly['starting_yearly_fee'], errors='coerce')
+df_anomaly['ending_yearly_fee'] = pd.to_numeric(df_anomaly['ending_yearly_fee'], errors='coerce')
+df_anomaly['average_yearly_fee'] = pd.to_numeric(df_anomaly['average_yearly_fee'], errors='coerce')
+df_anomaly['starting_semester_fee'] = pd.to_numeric(df_anomaly['starting_semester_fee'], errors='coerce')
+df_anomaly['ending_semester_fee'] = pd.to_numeric(df_anomaly['ending_semester_fee'], errors='coerce')
+df_anomaly['average_semester_fee'] = pd.to_numeric(df_anomaly['average_semester_fee'], errors='coerce')
+# normalize average fee
+df_anomaly['average_semester_fee'] = (df_anomaly['starting_semester_fee'] + df_anomaly['ending_semester_fee']) / 2
+df_anomaly['average_yearly_fee'] = (df_anomaly['starting_yearly_fee'] + df_anomaly['ending_yearly_fee']) / 2
+institutions_to_update = df_anomaly[df_anomaly['CHECKED'] == True]
+# update
+columns_to_update = ['average_semester_fee','starting_semester_fee','ending_semester_fee','average_yearly_fee','starting_yearly_fee','ending_yearly_fee']
+df_merged_indexed = df_merged.set_index('institution_name')
+institutions_indexed = institutions_to_update.set_index('institution_name')
+institutions_filtered = institutions_indexed[columns_to_update]
+# df_anomaly.to_csv('./debug_institutions_to_update.csv', index=True, encoding='utf-8-sig')
+# print(institutions_indexed)
+df_merged_indexed.update(institutions_filtered)
+df_merged = df_merged_indexed.reset_index()
+# drop prices that does not make sense
+df_merged = df_merged[~((df_merged['average_yearly_fee'] > 999999999) | (df_merged['average_yearly_fee'] < 100000))]
+df_merged = df_merged[~((df_merged['average_semester_fee'] > 999999999) | (df_merged['average_semester_fee'] < 100000))]
+
+
+# DROP IRRELEVANT INSTITUTIONS ------------------------------------------------------
+print(f"Total institutions BEFORE drop non-s1 institutions: {len(df_merged)}")
+irrelevant_keywords = [
+    'POLITEKNIK', 'AKADEMI'
+]
+
+df_merged = df_merged[~df_merged['institution_name'].str.contains('|'.join(irrelevant_keywords), na=False)]
+print(f"Total institutions AFTER drop non-s1 institutions: {len(df_merged)}")
+
+
+# GIVE ALL INSTITUTIONS RANKING
+df_rank = pd.read_csv(os.path.join(BASE_PATH, "unirank_nasional_clean.csv"))
+df_merged = df_merged.merge(df_rank[['institution_name', 'rank']], on='institution_name', how='left')
+
+print(f"Rows lack unirank rank info: {len(df_merged[df_merged['rank'].isna()])}")
+
+
 # re-index institution_code
 df_merged.reset_index(drop=True, inplace=True)
 df_merged['institution_code'] = (df_merged.index + 1)

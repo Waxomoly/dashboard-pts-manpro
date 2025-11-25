@@ -230,7 +230,13 @@ else:
     print("✅ Tidak ada kolom NULL")
 
 
-# 9. Simpan hasil bersih ke file baru
+# 10. Special handling for binus & president university
+# binus
+df_institution.loc[df_institution['institution_name'] == 'BINUS UNIVERSITY', 'institution_name'] = 'UNIVERSITAS BINA NUSANTARA'
+df_institution.loc[df_institution['institution_name'] == 'PRESIDENT UNIVERSITY', 'institution_name'] = 'UNIVERSITAS PRESIDEN'
+
+
+# 11. Simpan hasil bersih ke file baru
 df_faculty.to_csv(BASE_PATH + "quipper_faculty_clean.csv", index=False)
 df_institution.to_csv(BASE_PATH + "quipper_institution_clean.csv", index=False)
 df_prodi.to_csv(BASE_PATH + "quipper_prodi_clean.csv", index=False)
