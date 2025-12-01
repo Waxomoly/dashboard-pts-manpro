@@ -3,9 +3,8 @@ import sys
 import os
 import helpers.gcp_store as gcp_store
 import datetime
-# from dotenv import load_dotenv
+import helpers.gcp_bigquery as gcp_bq
 
-# load_dotenv()
 
 my_env = os.environ.copy()
 my_env["PYTHONIOENCODING"] = "utf-8" # supaya emoji gak error
@@ -95,8 +94,15 @@ for folder, scripts in scripts_to_run.items():
             # sys.exit(1) 
 
 
-# # uploads csvs to GCS
+# uploads csvs to GCS
 gcp_store.upload_all_files()
+
+end_time = datetime.datetime.now()
+
+print(f"=== LOADING DATA TO BIGQUERY [{end_time}] ===")
+gcp_bq.load_tables_to_bq()
+
+
 
 end_time = datetime.datetime.now()
 print(f"Time taken: {end_time - start_time}")

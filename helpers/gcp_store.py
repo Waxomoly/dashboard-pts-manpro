@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SERVICE_ACCOUNT_FILE = 'service_account_key.json'
+SERVICE_ACCOUNT_FILE = os.getenv("SERVICE_ACCOUNT_FILE")
 BASE_PATH = tempfile.gettempdir()
 
 BUCKET_NAME = os.getenv("BUCKET_NAME")
@@ -60,7 +60,6 @@ def get_storage_client():
             return None
         return storage.Client.from_service_account_json(SERVICE_ACCOUNT_FILE)
 
-# --- Main Functions ---
 
 def upload_to_gcs(bucket_name, source_file_path, destination_blob_name):
     """
@@ -132,6 +131,7 @@ def download_from_gcs(bucket_name, source_blob_name, destination_file_path):
     return False
 
 
+
 def download_all_files():   
     print("--- Starting GCS File Download ---")
 
@@ -140,6 +140,7 @@ def download_all_files():
         download_from_gcs(BUCKET_NAME, file_name, destination_path)
 
     print("--- Finished GCS File Download ---")
+
 
 def upload_all_files():
     print("--- Starting GCS File Upload ---")
