@@ -220,6 +220,7 @@ final_columns = [
 
 df_final = df_final.reindex(columns=final_columns)
 df_final.rename(columns={'prodi_name_normalized': 'prodi'}, inplace=True)
+df_final['accreditation'] = df_final['accreditation'].replace('-', 'TIDAK TERAKREDITASI')
 output_path = "merged_prodi.csv"
 csv_crud.save_csv_file(df_final, output_path)
 print(f"\nMerging Prodi Selesai! File final '{output_path}' telah dibuat.")
