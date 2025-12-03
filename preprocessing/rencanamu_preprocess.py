@@ -512,7 +512,7 @@ class DataPreprocessor:
         
         return institution_file, prodi_file
     
-    def save_log(self, log_file=None):
+    # def save_log(self, log_file=None):
         """Simpan log preprocessing"""
         if log_file is None:
             log_file = self.input_file.replace('.csv', '_preprocessing_log.txt')
