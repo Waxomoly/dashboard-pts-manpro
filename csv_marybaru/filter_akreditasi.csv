@@ -1,0 +1,43 @@
+﻿akreditasi,wilayah,jumlah_prodi,jumlah_kampus,rata_biaya
+A,Jawa,390,97,44157421.776923075
+A,Jabodetabek,135,43,75587508.22962964
+A,Sumatera,44,28,30789931.818181816
+A,Sulawesi,31,16,13299193.548387097
+A,Bali-Nusa Tenggara,14,11,13902485.714285715
+A,Kalimantan,9,5,14160430.0
+A,Maluku-Papua,4,3,13562500.0
+Baik,Jawa,0,0,0.0
+Baik,Kalimantan,0,0,0.0
+Baik,Sumatera,0,0,0.0
+Baik,Sulawesi,0,0,0.0
+Baik,Jabodetabek,0,0,0.0
+Baik,Bali-Nusa Tenggara,0,0,0.0
+Baik,Maluku-Papua,0,0,0.0
+Baik Sekali,Jawa,3313,587,22034910.178388167
+Baik Sekali,Sumatera,1447,257,15933391.403593643
+Baik Sekali,Sulawesi,780,141,16534590.82051282
+Baik Sekali,Jabodetabek,690,131,36365120.34057971
+Baik Sekali,Bali-Nusa Tenggara,526,93,14608956.58174905
+Baik Sekali,Kalimantan,368,84,15789969.831521738
+Baik Sekali,Maluku-Papua,294,66,7957227.040816327
+Belum Terakreditasi,Jawa,0,0,0.0
+Belum Terakreditasi,Kalimantan,0,0,0.0
+Belum Terakreditasi,Sumatera,0,0,0.0
+Belum Terakreditasi,Sulawesi,0,0,0.0
+Belum Terakreditasi,Jabodetabek,0,0,0.0
+Belum Terakreditasi,Bali-Nusa Tenggara,0,0,0.0
+Belum Terakreditasi,Maluku-Papua,0,0,0.0
+C,Jawa,206,75,26891645.747572817
+C,Sumatera,110,33,52495304.845454544
+C,Jabodetabek,86,27,31983066.290697675
+C,Sulawesi,46,14,21292936.847826086
+C,Bali-Nusa Tenggara,27,7,13882777.777777778
+C,Maluku-Papua,17,3,8767897.05882353
+C,Kalimantan,8,4,12620701.25
+Unggul,Jawa,222,89,36906604.62162162
+Unggul,Jabodetabek,91,29,58129460.71428572
+Unggul,Sulawesi,40,12,23380000.0
+Unggul,Sumatera,31,16,41263548.451612905
+Unggul,Bali-Nusa Tenggara,23,10,15950860.869565217
+Unggul,Kalimantan,13,8,12922461.538461538
+Unggul,Maluku-Papua,3,2,8900000.0

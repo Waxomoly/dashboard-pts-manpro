@@ -1,0 +1,5 @@
+﻿kategori_harga,tier,jumlah_prodi
+Murah (< 5 juta),1,990
+Terjangkau (5-10 juta),2,3059
+Menengah (10-20 juta),3,2302
+Mahal (> 20 juta),4,2617

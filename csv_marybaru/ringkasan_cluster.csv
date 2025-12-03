@@ -1,0 +1,121 @@
+﻿cluster_final,cluster_lokasi,lokasi,nama_cluster,jumlah_prodi,biaya_termurah,biaya_termahal,rata_rata_biaya,rata_akreditasi
+1,0,Aceh,Aceh | Akreditasi C - Murah,9,2200000,6300000,3566666,1.0
+0,0,Aceh,Aceh | Baik Sekali - Terjangkau,141,2200000,15505000,6427340,3.06
+2,0,Aceh,Aceh | Baik Sekali - Menengah,14,15505000,32400000,17918571,3.0
+3,1,Bali,Bali | Akreditasi A - Menengah,6,5900000,29000000,12382466,4.0
+6,1,Bali,Bali | Akreditasi C - Menengah,7,11000000,13500000,13142857,1.0
+4,1,Bali,Bali | Baik Sekali - Menengah,133,3855000,39000000,13427706,3.0
+5,1,Bali,Bali | Unggul - Menengah,21,6900000,39000000,16812847,5.0
+7,1,Bali,Bali | Baik Sekali - Mahal,6,142175000,142175000,142175000,3.0
+9,2,Bangka Belitung,Bangka Belitung | Baik Sekali - Murah,12,4480000,6400000,4960000,3.17
+8,2,Bangka Belitung,Bangka Belitung | Baik Sekali - Menengah,11,12900000,20350000,17250000,3.0
+11,3,Banten,Banten | Akreditasi C - Menengah,27,7300000,27000000,11253620,1.0
+10,3,Banten,Banten | Baik Sekali - Menengah,291,1100000,36600000,11661339,3.0
+12,3,Banten,Banten | Akreditasi A - Menengah,11,7200000,27000000,19225079,4.18
+15,3,Banten,Banten | Unggul - Mahal,9,61000000,68250000,61805555,5.0
+14,3,Banten,Banten | Akreditasi C - Mahal,13,59000000,68250000,64692307,1.0
+13,3,Banten,Banten | Baik Sekali - Mahal,47,59000000,251500000,66382978,3.02
+17,4,Bengkulu,Bengkulu | Baik Sekali - Terjangkau,25,6350000,6600000,6560000,2.84
+16,4,Bengkulu,Bengkulu | Baik Sekali - Menengah,32,14000000,20575000,18069843,3.03
+22,5,D.I. Yogyakarta,D.I. Yogyakarta | Akreditasi C - Terjangkau,15,4250000,17800000,8983333,1.0
+21,5,D.I. Yogyakarta,D.I. Yogyakarta | Unggul - Menengah,9,5000000,18000000,10684444,5.0
+19,5,D.I. Yogyakarta,D.I. Yogyakarta | Baik Sekali - Menengah,248,2340000,19370000,11211742,3.0
+18,5,D.I. Yogyakarta,D.I. Yogyakarta | Akreditasi A - Menengah,57,6500000,18925000,15507675,4.0
+23,5,D.I. Yogyakarta,D.I. Yogyakarta | Akreditasi A - Mahal,34,25000000,33065000,26593970,4.09
+20,5,D.I. Yogyakarta,D.I. Yogyakarta | Baik Sekali - Mahal,32,25000000,36200000,30246406,2.75
+27,6,DKI Jakarta,DKI Jakarta | Akreditasi C - Mahal,84,1900000,136680000,25848139,1.0
+25,6,DKI Jakarta,DKI Jakarta | Baik Sekali - Mahal,692,1750000,289650000,37097157,2.99
+24,6,DKI Jakarta,DKI Jakarta | Unggul - Mahal,91,5760000,126000000,58129460,5.0
+26,6,DKI Jakarta,DKI Jakarta | Akreditasi A - Mahal,135,5760000,289650000,75587508,4.0
+31,7,Gorontalo,Gorontalo | Baik Sekali - Murah,12,3000000,3000000,3000000,3.0
+30,7,Gorontalo,Gorontalo | Baik Sekali - Terjangkau,13,7250000,7250000,7250000,3.0
+29,7,Gorontalo,Gorontalo | Baik Sekali - Menengah,40,11000000,13500000,11875000,3.05
+28,7,Gorontalo,Gorontalo | Baik Sekali - Mahal,6,32050000,32050000,32050000,3.0
+32,8,Jambi,Jambi | Baik Sekali - Terjangkau,59,4800000,12285000,7562737,2.95
+33,8,Jambi,Jambi | Baik Sekali - Menengah,5,14000000,14950000,14570000,3.0
+36,9,Jawa Barat,Jawa Barat | Akreditasi C - Menengah,45,4150000,48250000,16089667,1.0
+35,9,Jawa Barat,Jawa Barat | Baik Sekali - Menengah,935,900000,93250000,17771099,3.0
+34,9,Jawa Barat,Jawa Barat | Unggul - Mahal,76,4000146,93250000,30736741,5.0
+38,9,Jawa Barat,Jawa Barat | Akreditasi A - Mahal,98,2000000,93250000,41465076,4.0
+39,9,Jawa Barat,Jawa Barat | Akreditasi C - Mahal,7,67040000,67040000,67040000,1.0
+37,9,Jawa Barat,Jawa Barat | Baik Sekali - Mahal,14,243400000,243400000,243400000,3.0
+41,10,Jawa Tengah,Jawa Tengah | Akreditasi A - Menengah,36,4000000,33048600,11684961,4.0
+43,10,Jawa Tengah,Jawa Tengah | Akreditasi C - Menengah,35,4075000,36170000,15129571,1.0
+40,10,Jawa Tengah,Jawa Tengah | Baik Sekali - Menengah,621,2600000,91025000,16824812,3.0
+42,10,Jawa Tengah,Jawa Tengah | Unggul - Mahal,47,4000000,91025000,22255638,5.0
+46,10,Jawa Tengah,Jawa Tengah | Akreditasi C - Mahal,11,91025000,276850001,144943182,1.0
+45,10,Jawa Tengah,Jawa Tengah | Akreditasi A - Mahal,39,72100000,276850001,178457051,4.1
+44,10,Jawa Tengah,Jawa Tengah | Baik Sekali - Mahal,32,201750001,276850001,251034376,3.0
+47,11,Jawa Timur,Jawa Timur | Baik Sekali - Menengah,1059,900000,71250000,16396368,3.0
+50,11,Jawa Timur,Jawa Timur | Akreditasi C - Menengah,49,5550000,71250000,16542780,1.0
+49,11,Jawa Timur,Jawa Timur | Akreditasi A - Mahal,121,2400000,234470600,37132775,4.0
+48,11,Jawa Timur,Jawa Timur | Unggul - Mahal,74,3950000,146900000,45709567,4.97
+51,11,Jawa Timur,Jawa Timur | Baik Sekali - Mahal,39,142200000,234470600,181139220,3.0
+52,12,Kalimantan,Kalimantan | Baik Sekali - Terjangkau,10,7400000,7400000,7400000,3.0
+53,13,Kalimantan Barat,Kalimantan Barat | Baik Sekali - Terjangkau,69,3500000,10400000,7303956,2.94
+54,13,Kalimantan Barat,Kalimantan Barat | Baik Sekali - Menengah,5,13625000,14400000,13780000,3.0
+55,13,Kalimantan Barat,Kalimantan Barat | Akreditasi A - Menengah,11,8000000,21249000,17258818,3.73
+56,13,Kalimantan Barat,Kalimantan Barat | Baik Sekali - Mahal,9,25500000,25500000,25500000,3.0
+57,14,Kalimantan Selatan,Kalimantan Selatan | Baik Sekali - Terjangkau,75,3650000,30355000,7341937,3.01
+58,14,Kalimantan Selatan,Kalimantan Selatan | Baik Sekali - Mahal,23,25100000,41850000,33253695,3.0
+59,15,Kalimantan Tengah,Kalimantan Tengah | Baik Sekali - Menengah,45,3900000,20743000,11159866,3.0
+60,15,Kalimantan Tengah,Kalimantan Tengah | Akreditasi A - Menengah,6,14895000,20743000,19768333,4.17
+61,15,Kalimantan Tengah,Kalimantan Tengah | Baik Sekali - Mahal,7,287400000,287400000,287400000,3.0
+62,16,Kalimantan Timur,Kalimantan Timur | Baik Sekali - Terjangkau,99,2400132,13500000,7583944,3.12
+63,16,Kalimantan Timur,Kalimantan Timur | Baik Sekali - Menengah,29,11985000,14000000,12372261,2.83
+64,17,Kalimantan Utara,Kalimantan Utara | Baik Sekali - Terjangkau,10,8000000,8400000,8320000,3.0
+65,18,Lampung,Lampung | Baik Sekali - Terjangkau,129,4350000,27000000,8780236,2.91
+67,18,Lampung,Lampung | Unggul - Menengah,9,5800000,26550000,11667222,5.0
+66,18,Lampung,Lampung | Baik Sekali - Mahal,30,26550000,48115001,34592167,3.0
+68,18,Lampung,Lampung | Akreditasi C - Mahal,12,48115001,48115001,48115001,1.0
+69,19,Maluku,Maluku | Baik Sekali - Murah,12,1826000,3000000,2632166,3.0
+70,19,Maluku,Maluku | Baik Sekali - Terjangkau,56,4000000,16000000,5289955,3.0
+71,20,Maluku Utara,Maluku Utara | Baik Sekali - Murah,45,2250000,10000000,4725194,3.0
+73,20,Maluku Utara,Maluku Utara | Akreditasi C - Terjangkau,11,7886750,7886750,7886750,1.0
+72,20,Maluku Utara,Maluku Utara | Baik Sekali - Menengah,14,15260000,41500000,17134285,3.0
+74,21,Nusa Tenggara Barat,Nusa Tenggara Barat | Baik Sekali - Terjangkau,188,1500000,26500000,9247245,3.03
+75,21,Nusa Tenggara Barat,Nusa Tenggara Barat | Akreditasi C - Mahal,9,6250000,46850000,20755555,1.0
+76,21,Nusa Tenggara Barat,Nusa Tenggara Barat | Baik Sekali - Mahal,26,46850000,115100000,67850000,3.0
+77,22,Nusa Tenggara Timur,Nusa Tenggara Timur | Baik Sekali - Terjangkau,153,3002112,11600000,6368000,3.03
+79,22,Nusa Tenggara Timur,Nusa Tenggara Timur | Akreditasi C - Terjangkau,11,7725000,9305000,8730454,1.0
+80,22,Nusa Tenggara Timur,Nusa Tenggara Timur | Baik Sekali - Menengah,11,19330000,19330000,19330000,3.0
+78,22,Nusa Tenggara Timur,Nusa Tenggara Timur | Baik Sekali - Mahal,19,22700000,33660000,25789477,3.11
+81,23,Papua,Papua | Baik Sekali - Terjangkau,91,800000,19250000,8022115,3.0
+83,23,Papua,Papua | Akreditasi C - Menengah,6,9800000,10500000,10383333,1.0
+82,23,Papua,Papua | Baik Sekali - Mahal,8,29350000,34250000,33637500,3.12
+84,24,Papua Barat,Papua Barat | Baik Sekali - Murah,56,1650000,18700000,4700446,3.16
+85,24,Papua Barat,Papua Barat | Baik Sekali - Menengah,19,18700000,29900000,19878947,3.0
+86,25,Sulawesi Barat,Sulawesi Barat | Baik Sekali - Murah,28,3500000,5000000,4490682,3.07
+87,25,Sulawesi Barat,Sulawesi Barat | Baik Sekali - Terjangkau,16,5920000,7000000,6325000,3.0
+89,26,Sulawesi Selatan,Sulawesi Selatan | Akreditasi A - Terjangkau,21,4400000,22600000,8916666,4.0
+90,26,Sulawesi Selatan,Sulawesi Selatan | Akreditasi C - Menengah,9,6000000,22600000,10811111,1.0
+88,26,Sulawesi Selatan,Sulawesi Selatan | Baik Sekali - Menengah,441,2630000,57900000,11021357,3.0
+92,26,Sulawesi Selatan,Sulawesi Selatan | Unggul - Menengah,35,6000000,33600000,11815714,5.0
+91,26,Sulawesi Selatan,Sulawesi Selatan | Baik Sekali - Mahal,29,168250000,242400055,173363796,3.24
+93,27,Sulawesi Tengah,Sulawesi Tengah | Baik Sekali - Murah,26,2300000,7512000,4874000,3.23
+94,27,Sulawesi Tengah,Sulawesi Tengah | Baik Sekali - Menengah,15,15750000,16700000,16320000,3.0
+95,27,Sulawesi Tengah,Sulawesi Tengah | Akreditasi C - Mahal,6,4800000,36000019,30800015,1.0
+96,27,Sulawesi Tengah,Sulawesi Tengah | Baik Sekali - Mahal,7,36000019,36000019,36000019,3.0
+97,28,Sulawesi Tenggara,Sulawesi Tenggara | Baik Sekali - Terjangkau,52,2000000,26400000,7564692,3.0
+99,28,Sulawesi Tenggara,Sulawesi Tenggara | Akreditasi C - Terjangkau,6,7700000,7700000,7700000,1.0
+98,28,Sulawesi Tenggara,Sulawesi Tenggara | Akreditasi C - Menengah,14,18700000,18700000,18700000,1.0
+100,28,Sulawesi Tenggara,Sulawesi Tenggara | Akreditasi C - Mahal,9,40250000,40250000,40250000,1.0
+101,28,Sulawesi Tenggara,Sulawesi Tenggara | Baik Sekali - Mahal,7,40250000,40250000,40250000,3.0
+102,29,Sulawesi Utara,Sulawesi Utara | Baik Sekali - Terjangkau,95,3870000,19270000,9874578,2.99
+103,29,Sulawesi Utara,Sulawesi Utara | Baik Sekali - Mahal,10,52160000,52160000,52160000,3.0
+105,30,Sumatera Barat,Sumatera Barat | Akreditasi C - Terjangkau,7,5250000,6950000,6471428,1.0
+104,30,Sumatera Barat,Sumatera Barat | Baik Sekali - Menengah,209,2640000,20000000,10404323,3.0
+107,30,Sumatera Barat,Sumatera Barat | Akreditasi A - Menengah,14,7410000,19500000,13603000,4.36
+106,30,Sumatera Barat,Sumatera Barat | Baik Sekali - Mahal,23,24850000,36300000,31210869,3.04
+110,31,Sumatera Selatan,Sumatera Selatan | Akreditasi C - Menengah,11,4800000,38610000,10755454,1.0
+108,31,Sumatera Selatan,Sumatera Selatan | Baik Sekali - Menengah,208,2500000,55000000,17481044,3.0
+109,31,Sumatera Selatan,Sumatera Selatan | Akreditasi A - Mahal,8,4800000,401975000,119463750,4.38
+111,31,Sumatera Selatan,Sumatera Selatan | Baik Sekali - Mahal,13,401975000,401975000,401975000,3.15
+112,31,Sumatera Selatan,Sumatera Selatan | Akreditasi C - Mahal,10,401975000,401975000,401975000,1.0
+117,32,Sumatera Utara,Sumatera Utara | Akreditasi A - Terjangkau,7,4000000,6000000,5157142,4.0
+115,32,Sumatera Utara,Sumatera Utara | Akreditasi C - Terjangkau,33,2400000,17250000,7619151,1.0
+113,32,Sumatera Utara,Sumatera Utara | Baik Sekali - Menengah,525,2000000,33500000,11232125,3.0
+116,32,Sumatera Utara,Sumatera Utara | Akreditasi A - Menengah,12,12000000,17250000,14229166,4.0
+119,32,Sumatera Utara,Sumatera Utara | Unggul - Mahal,11,12000000,62000000,22527272,5.0
+118,32,Sumatera Utara,Sumatera Utara | Akreditasi C - Mahal,17,25000001,50000000,32879706,1.0
+114,32,Sumatera Utara,Sumatera Utara | Baik Sekali - Mahal,36,40335000,62000000,46276527,3.0
