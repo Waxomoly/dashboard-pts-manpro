@@ -220,6 +220,7 @@ final_columns = [
 
 df_final = df_final.reindex(columns=final_columns)
 df_final.rename(columns={'prodi_name_normalized': 'prodi'}, inplace=True)
+df_final['accreditation'] = df_final['accreditation'].replace(['B', 'BAIK'], 'B (BAIK)')
 # df_final['accreditation'] = df_final['accreditation'].replace(['-', '', ' '], 'TIDAK TERAKREDITASI')
 values_to_drop = ['-', '', ' ', 'TIDAK TERAKREDITASI']
 df_final = df_final[~df_final['accreditation'].isin(values_to_drop)]
