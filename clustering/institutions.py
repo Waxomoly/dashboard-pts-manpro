@@ -1,99 +1,133 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-from scipy.cluster.hierarchy import dendrogram, linkage, fcluster
 from sklearn.preprocessing import StandardScaler
+from scipy.cluster.hierarchy import linkage, fcluster
 import os
+# import matplotlib.pyplot as plt # Dihapus karena tidak memerlukan visualisasi
 
 # ============================
-# 1. LOAD FILE CSV
+# PENGATURAN FILE
 # ============================
-
 csv_filename = "merged_institutions.csv"
-csv_path = os.path.join("..", "csv_result", csv_filename)
-
-if not os.path.exists(csv_path):
-    raise FileNotFoundError(f"File tidak ditemukan: {csv_path}")
-
-df = pd.read_csv(csv_path)
-print(f"Berhasil load file: {csv_filename}")
-print(df.head())
+output_file = "hasil_clustering_dua_level_final.csv"
 
 # ============================
-# 2. PILIH KOLOM NUMERIK
+# 1. LOAD & CLEAN DATA
 # ============================
 
-numeric_df = df.select_dtypes(include=[np.number])
-numeric_df = numeric_df.fillna(numeric_df.median())
+# Mengakses file CSV secara langsung
+try:
+    df = pd.read_csv(csv_filename)
+except FileNotFoundError:
+    print(f"Error: File '{csv_filename}' tidak ditemukan. Pastikan file berada di direktori yang sama.")
+    exit()
 
-if numeric_df.empty:
-    raise ValueError("Tidak ada kolom numerik untuk clustering!")
+print(f"Data awal dimuat: {len(df)} baris.")
 
-# ============================
-# 3. NORMALISASI DATA
-# ============================
+# Menghapus institusi yang tidak memiliki data akreditasi atau biaya yang valid
+# Memastikan 'average_yearly_fee' > 0
+df_clean = df[df['average_yearly_fee'] > 0].copy()
 
-scaler = StandardScaler()
-scaled_data = scaler.fit_transform(numeric_df)
+# Mendefinisikan nilai akreditasi yang tidak valid
+invalid_accreditation = ['-', '-1.0', np.nan]
+# Menghapus baris di mana 'campus_accreditation' adalah salah satu dari nilai yang tidak valid
+df_clean = df_clean[~df_clean['campus_accreditation'].astype(str).isin(invalid_accreditation)].copy()
 
-# ============================
-# 4. HIERARCHICAL CLUSTERING
-# ============================
+# Mengganti NaN pada 'province' dengan string kosong sementara sebelum standardisasi
+df_clean['province'] = df_clean['province'].fillna('')
 
-Z = linkage(scaled_data, method="ward")
+# Standardisasi penulisan Akreditasi (huruf kapital dan tanpa spasi ekstra)
+df_clean['campus_accreditation'] = df_clean['campus_accreditation'].str.upper().str.strip()
 
-# ============================
-# 5. DENDROGRAM
-# ============================
+# Standardisasi penulisan Provinsi untuk konsistensi
+df_clean['province'] = df_clean['province'].str.replace('D.K.I. JAKARTA', 'DKI JAKARTA', regex=False)
+df_clean['province'] = df_clean['province'].str.replace('DI YOGYAKARTA', 'D.I. YOGYAKARTA', regex=False)
+df_clean['province'] = df_clean['province'].str.replace('DAERAH ISTIMEWA YOGYAKARTA', 'D.I. YOGYAKARTA', regex=False)
+df_clean['province'] = df_clean['province'].str.replace('JAWA TIMUR', 'JAWA TIMUR', regex=False)
+df_clean['province'] = df_clean['province'].str.strip() # Menghapus spasi di awal/akhir
 
-plt.figure(figsize=(12, 6))
-dendrogram(Z)
-plt.title("Hierarchical Clustering Dendrogram")
-plt.xlabel("Sample Index")
-plt.ylabel("Distance")
-plt.tight_layout()
-plt.show()
+print(f"Data setelah pembersihan: {len(df_clean)} baris.")
 
-# ============================
-# 6. BENTUK CLUSTER
-# ============================
-
-num_clusters = 4
-clusters = fcluster(Z, num_clusters, criterion='maxclust')
-df["cluster"] = clusters
-
-# ============================
-# 6B. TAMBAHKAN NAMA CLUSTER
-# ============================
-
-cluster_names = {
-    1: "Perguruan Tinggi Murah di Kota Besar",
-    2: "Perguruan Tinggi Unggulan Akreditasi Tinggi",
-    3: "Perguruan Tinggi Menengah di Daerah",
-    4: "Perguruan Tinggi Premium & Prestisius"
+# --- Fitur Akreditasi ---
+# Menggunakan mapping skor yang konsisten: Unggul(5) > A(4) > Baik Sekali(3) > B(2) > Baik(1)
+acc_map = {
+    "UNGGUL": 5, "A": 4, "BAIK SEKALI": 3, "B": 2, "BAIK": 1
 }
+# Menghitung skor akreditasi, mengisi 0 untuk nilai yang tidak terdaftar/valid
+df_clean["acc_score"] = df_clean["campus_accreditation"].map(acc_map).fillna(0)
 
-df["cluster_name"] = df["cluster"].map(cluster_names)
+# --- Fitur Biaya Tahunan ---
+df_clean["cost_per_year"] = df_clean["average_yearly_fee"]
 
 # ============================
-# 7. RAPIKAN CSV
+# 2. CLUSTERING LEVEL 1: PENENTUAN LOKASI BESAR
 # ============================
 
-ordered_columns = (
-    ["cluster", "cluster_name", "institution_name", "institution_code", "body_type",
-     "link", "province", "campus_accreditation", "banpt_code", "rank"]
-    + list(numeric_df.columns)
+# Menentukan provinsi dengan jumlah institusi terbanyak sebagai "Lokasi Besar"
+# Menggunakan value_counts dan idxmax untuk mendapatkan nama provinsi
+top_province = df_clean["province"].value_counts().idxmax()
+print(f"\n--- Clustering Level 1: Lokasi Besar ---")
+print(f"Lokasi Besar Terpilih (Provinsi dengan Institusi terbanyak): {top_province}")
+
+# Filter data untuk Lokasi Besar terpilih
+cluster1_df = df_clean[df_clean["province"] == top_province].copy()
+
+# ============================
+# 3. CLUSTERING LEVEL 2 (INSTITUSI)
+# ============================
+
+sub_features = ["acc_score", "cost_per_year"]
+cluster1_sub = cluster1_df[sub_features].copy()
+
+# Standardisasi fitur (Penting untuk Hierarchical Clustering)
+scaler2 = StandardScaler()
+scaled_sub = scaler2.fit_transform(cluster1_sub)
+
+print(f"Melakukan Hierarchical Clustering pada {len(cluster1_df)} institusi di {top_province}...")
+
+# Hierarchical Clustering (Metode Ward - meminimalkan varians di dalam setiap klaster)
+Z2 = linkage(scaled_sub, method="ward")
+
+# Pemotongan dendrogram untuk 3 klaster (sesuai permintaan)
+# criterion="maxclust" digunakan untuk menentukan jumlah klaster maksimum
+NUM_CLUSTERS = 3
+cluster1_df["cluster_lvl2"] = fcluster(Z2, NUM_CLUSTERS, criterion="maxclust")
+
+print(f"Institusi dikelompokkan menjadi {NUM_CLUSTERS} klaster.")
+
+# ============================
+# 4. RINGKASAN & SAVE CSV
+# ============================
+
+# Menghitung ringkasan klaster
+cluster_summary = cluster1_df.groupby('cluster_lvl2').agg(
+    Avg_Acc_Score=('acc_score', 'mean'),
+    Avg_Yearly_Fee=('cost_per_year', 'mean'),
+    Total_Institutions=('institution_name', 'count')
+).reset_index()
+cluster_summary['cluster_lvl2'] = 'Cluster ' + cluster_summary['cluster_lvl2'].astype(str)
+
+
+print("\n--- Ringkasan Clustering Level 2 di Provinsi Terpilih ---")
+print(f"Provinsi: {top_province}")
+print(cluster_summary.to_markdown(index=False, numalign="left", stralign="left", floatfmt=".2f"))
+
+# Merge hasil cluster level 2 kembali ke DataFrame awal (df_clean)
+# Menggunakan index untuk merge agar lebih aman
+df_clean = df_clean.merge(
+    cluster1_df[["cluster_lvl2"]],
+    left_index=True,
+    right_index=True,
+    how="left"
 )
+df_clean = df_clean.rename(columns={'cluster_lvl2': 'cluster_institusi_lvl2'})
 
-ordered_columns = [c for c in ordered_columns if c in df.columns]
-df_clean = df[ordered_columns]
+# Menandai seluruh institusi di Lokasi Besar sebagai "Cluster Level 1" = 1
+# Institusi di luar top_province akan memiliki nilai NaN di kolom ini
+df_clean['cluster_lokasi_lvl1'] = np.where(df_clean['province'] == top_province, 1, np.nan)
 
-# ============================
-# 8. SIMPAN CSV
-# ============================
 
-output_file = f"hasil_clustering_rapi_{csv_filename}"
+# Menyimpan hasil akhir ke CSV
 df_clean.to_csv(output_file, index=False)
 
-print("Clustering selesai!")
-print(f"Hasil CSV rapi disimpan sebagai: {output_file}")
+print(f"\nSelesai! Hasil pengelompokan (termasuk kolom cluster_institusi_lvl2) disimpan sebagai: {output_file}")
