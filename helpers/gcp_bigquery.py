@@ -17,7 +17,7 @@ SERVICE_ACCOUNT_FILE = os.getenv("SERVICE_ACCOUNT_FILE")
 # List of tables to load
 TABLES_TO_LOAD = [
     ('merged_institutions.csv', 'institutions'),
-    ('merged_prodi_final.csv', 'prodi'),
+    ('merged_prodi_final.csv', 'prodi')
 ]
 
 # --- Smart Authentication ---
@@ -34,14 +34,19 @@ def get_bigquery_client():
         return bigquery.Client.from_service_account_json(SERVICE_ACCOUNT_FILE)
 
 # --- Main Load Logic ---
-def load_tables_to_bq():
+def load_tables_to_bq(is_timestamp=False):
     print("--- Starting BigQuery Load Job ---")
     
     client = get_bigquery_client()
     if not client:
         return
 
-    for csv_name, table_name in TABLES_TO_LOAD:
+    if is_timestamp:
+        tables = [('last_updated.csv', 'last_updated_timestamp')]
+    else:
+        tables = TABLES_TO_LOAD
+
+    for csv_name, table_name in tables:
         
         gcs_uri = f"gs://{BUCKET_NAME}/{csv_name}"
         table_id = f"{client.project}.{DATASET_ID}.{table_name}"

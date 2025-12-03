@@ -16,6 +16,8 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --d
 
 WORKDIR /app
 
+ENV FORCE_REINSTALL=1
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 

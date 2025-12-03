@@ -106,4 +106,9 @@ gcp_bq.load_tables_to_bq()
 
 end_time = datetime.datetime.now()
 print(f"Time taken: {end_time - start_time}")
+
+gcp_store.save_last_updated_timestamp(end_time)
+gcp_bq.load_tables_to_bq(is_timestamp=True)
+
+
 print(f"--- Main Job Finished [{end_time}] ---")

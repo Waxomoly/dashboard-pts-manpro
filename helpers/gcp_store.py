@@ -150,3 +150,27 @@ def upload_all_files():
         upload_to_gcs(BUCKET_NAME, source_path, file_name)
         
     print("--- Finished GCS File Upload ---")
+
+
+def save_last_updated_timestamp(timestamp_str):
+    """
+    Saves the last updated timestamp to a CSV file and uploads it to GCS.
+    """
+    import pandas as pd
+
+    print("Saving last update timestamp top csv...")
+    df_meta = pd.DataFrame([{
+        'last_updated_wib': timestamp_str.strftime("%Y-%m-%d %H:%M:%S")
+    }])
+    
+    temp_dir = tempfile.gettempdir()
+    temp_file_path = os.path.join(temp_dir, "last_updated.csv")
+    
+    try:
+        df_meta.to_csv(temp_file_path, index=False)
+        upload_to_gcs(BUCKET_NAME, temp_file_path, 'last_updated.csv')
+        
+        print("✅ Timestamp uploaded successfully.")
+        
+    except Exception as e:
+        print(f"❌ Failed to save timestamp: {e}")
