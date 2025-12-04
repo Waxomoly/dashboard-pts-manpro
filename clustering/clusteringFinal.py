@@ -225,10 +225,13 @@ df_final = df_final.sort_values(
 )
 
 file_out = os.path.join(OUTPUT_PATH, 'final_clustering_result.csv')
+
+#filter hanya is outlier false
+df_final = df_final[df_final['is_outlier'] == False]
 cols = [
     'institution_name', 'province', 'prodi_normalized',
     'campus_accreditation', 'average_yearly_fee', 
-    'cluster_label', 'is_outlier', 'link'
+    'cluster_label', 'link'
 ]
 
 df_final[cols].to_csv(file_out, index=False)
