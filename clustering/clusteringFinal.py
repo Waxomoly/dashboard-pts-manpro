@@ -9,7 +9,7 @@ import sys
 warnings.filterwarnings('ignore')
 
 BASE_PATH = "csv_result/"
-OUTPUT_PATH = "csv_clustering/"
+OUTPUT_PATH = "csv_manual/"
 if not os.path.exists(OUTPUT_PATH):
     os.makedirs(OUTPUT_PATH)
 
