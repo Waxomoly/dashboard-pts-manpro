@@ -229,7 +229,7 @@ file_out = os.path.join(OUTPUT_PATH, 'final_clustering_result.csv')
 #filter hanya is outlier false
 df_final = df_final[df_final['is_outlier'] == False]
 cols = [
-    'institution_name', 'province', 'prodi_normalized',
+    'institution_code', 'institution_name', 'province', 'prodi_normalized',
     'campus_accreditation', 'average_yearly_fee', 
     'cluster_label', 'link'
 ]
