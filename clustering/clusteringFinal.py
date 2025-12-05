@@ -85,7 +85,7 @@ df_inst['province'] = df_inst['province'].replace(norm_prov)
 
 # Merge
 df_merged = df_prodi.merge(
-    df_inst[['institution_code', 'institution_name', 'province', 'average_yearly_fee', 'campus_accreditation', 'link']],
+    df_inst[['institution_code', 'institution_name', 'province', 'contact', 'average_yearly_fee', 'campus_accreditation', 'link']],
     on='institution_code', how='inner'
 )
 
@@ -230,11 +230,14 @@ file_out = os.path.join(OUTPUT_PATH, 'final_clustering_result.csv')
 df_final = df_final[df_final['is_outlier'] == False]
 cols = [
     'institution_code', 'institution_name', 'province', 'prodi_normalized',
-    'campus_accreditation', 'average_yearly_fee', 
+    'campus_accreditation', 'average_yearly_fee', 'contact',
     'cluster_label', 'link'
 ]
 
-df_final[cols].to_csv(file_out, index=False)
+df_final = df_final[cols]
+df_final['campus_accreditation'] = df_final['campus_accreditation'].replace(['B', 'BAIK'], 'B (BAIK)')
+df_final.to_csv(file_out, index=False)
 
 print("\nHead Data Hasil Clustering:")
-print(df_final[['prodi_normalized', 'acc_tier', 'cluster_label']].head(5))
+print(df_final[['prodi_normalized', 'cluster_label']].head(5))
+print(df_final.columns)
