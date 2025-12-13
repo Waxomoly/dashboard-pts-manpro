@@ -206,7 +206,12 @@ df_merged_indexed.update(institutions_indexed)
 df_merged = df_merged_indexed.reset_index()
 # drop prices that does not make sense
 df_merged = df_merged[~((df_merged['average_yearly_fee'] > 999999999) | (df_merged['average_yearly_fee'] < 100000))]
+df_merged = df_merged[~((df_merged['starting_yearly_fee'] > 999999999) | (df_merged['starting_yearly_fee'] < 100000))]
+df_merged = df_merged[~((df_merged['ending_yearly_fee'] > 999999999) | (df_merged['ending_yearly_fee'] < 100000))]
+
 df_merged = df_merged[~((df_merged['average_semester_fee'] > 999999999) | (df_merged['average_semester_fee'] < 100000))]
+df_merged = df_merged[~((df_merged['starting_semester_fee'] > 999999999) | (df_merged['starting_semester_fee'] < 100000))]
+df_merged = df_merged[~((df_merged['ending_semester_fee'] > 999999999) | (df_merged['ending_semester_fee'] < 100000))]
 
 
 # DROP IRRELEVANT INSTITUTIONS ------------------------------------------------------
