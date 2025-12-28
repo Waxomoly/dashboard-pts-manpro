@@ -205,13 +205,13 @@ institutions_indexed = institutions_to_update.set_index('institution_name')
 df_merged_indexed.update(institutions_indexed)
 df_merged = df_merged_indexed.reset_index()
 # drop prices that does not make sense
-df_merged = df_merged[~((df_merged['average_yearly_fee'] > 999999999) | (df_merged['average_yearly_fee'] < 100000))]
-df_merged = df_merged[~((df_merged['starting_yearly_fee'] > 999999999) | (df_merged['starting_yearly_fee'] < 100000))]
-df_merged = df_merged[~((df_merged['ending_yearly_fee'] > 999999999) | (df_merged['ending_yearly_fee'] < 100000))]
+df_merged = df_merged[~((df_merged['average_yearly_fee'] > 1000000000) | (df_merged['average_yearly_fee'] < 4000000))]
+df_merged = df_merged[~((df_merged['starting_yearly_fee'] > 1000000000) | (df_merged['starting_yearly_fee'] < 4000000))]
+df_merged = df_merged[~((df_merged['ending_yearly_fee'] > 1000000000) | (df_merged['ending_yearly_fee'] < 4000000))]
 
-df_merged = df_merged[~((df_merged['average_semester_fee'] > 999999999) | (df_merged['average_semester_fee'] < 100000))]
-df_merged = df_merged[~((df_merged['starting_semester_fee'] > 999999999) | (df_merged['starting_semester_fee'] < 100000))]
-df_merged = df_merged[~((df_merged['ending_semester_fee'] > 999999999) | (df_merged['ending_semester_fee'] < 100000))]
+df_merged = df_merged[~((df_merged['average_semester_fee'] > 100000000) | (df_merged['average_semester_fee'] < 2000000))]
+df_merged = df_merged[~((df_merged['starting_semester_fee'] > 100000000) | (df_merged['starting_semester_fee'] < 2000000))]
+df_merged = df_merged[~((df_merged['ending_semester_fee'] > 100000000) | (df_merged['ending_semester_fee'] < 2000000))]
 
 
 # DROP IRRELEVANT INSTITUTIONS ------------------------------------------------------
@@ -234,6 +234,9 @@ print(f"Rows lack unirank rank info: {len(df_merged[df_merged['rank'].isna()])}"
 # re-index institution_code
 df_merged.reset_index(drop=True, inplace=True)
 df_merged['institution_code'] = (df_merged.index + 1)
+
+# accreditation update
+df_merged['campus_accreditation'] = df_merged['campus_accreditation'].replace(['B', 'BAIK'], 'B (BAIK)')
 
 # number of institutions left
 print(f"Total institutions after final cleaning: {len(df_merged)}")
